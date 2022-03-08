@@ -1,0 +1,27 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.header{
+    background-color: #ccc;
+}
+.footer{background-color: grey;}
+.text-red{
+    color:red
+          
+}
+
+.block{
+    border: 1px solid #000;
+    width: 350px;
+    height: 250px;
+    margin-left: 50px;
+    margin-top: 20px;
+    padding: 48px;
+    box-sizing: border-box;
+    margin-bottom: 50px;
+}
+
+.heading{
+    margin-top: 50px;
+}

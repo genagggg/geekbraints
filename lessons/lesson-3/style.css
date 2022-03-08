@@ -1,0 +1,21 @@
+p {
+    color: cornflowerblue
+}
+
+h3 {
+    color: purple
+}
+.heading{
+    color: yellow
+}
+.back-grey{
+    background-color: green;
+}
+
+a[href]{
+    color:red
+}
+
+input[type="text"]{
+    color:blue
+}

@@ -210,6 +210,72 @@ body {
     display: none;
 }
 
+.slider {
+    min-height: 624px;
+    border: 1px solid #eaeaea;
+    background: #f7f7f7;
+    position: relative;
+}
+
+@media (min-width: 1600px) {
+    .slider {
+        min-height: 777px;
+    }
+}
+
+.sliderImage {
+    max-width: 100%;
+    object-fit: cover;
+    margin-top: 85px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
+@media (min-width: 768px) {
+    .sliderImage {
+        margin-top: 30px;
+    }
+}
+
+@media (min-width: 1600px) {
+    .sliderImage {
+        margin-top: 11px;
+    }
+}
+
+
+.sliderLeftArrow,
+.sliderRightArrow {
+    width: 47px;
+    height: 47px;
+    background-color: rgba(42, 42, 42, 0.15);
+    background-repeat: no-repeat;
+    background-position: center center;
+    position: absolute;
+    top: calc(50% - 47px / 2);
+    cursor: pointer;
+}
+
+.sliderLeftArrow {
+    left: 0;
+    background-image: url(images/slider/leftArrow.svg);
+}
+
+.sliderLeftArrow:hover {
+    background-image: url(images/slider/leftArrowHover.svg);
+}
+
+.sliderRightArrow {
+    right: 0;
+    background-image: url(images/slider/rightArrow.svg);
+}
+
+.sliderRightArrow:hover {
+    background-image: url(images/slider/rightArrowHover.svg);
+}
+
+
 /* @media(min-width:1600px) {
     .brandDark {
         display: block;

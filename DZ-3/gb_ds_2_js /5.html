@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        'use strict'
+        function mathOperation(arg1, arg2, operation) {
+            if (operation === '+') {
+                return arg1 + arg2;
+            }
+            else if (operation === '-') {
+                return arg1 - arg2;
+            }
+            else if (operation === '*') {
+                return arg1 * arg2;
+            }
+            else if (operation === '/') {
+                return arg1 / arg2;
+            }
+
+        }
+        console.log(mathOperation(2, 3, '+'), 'Сложение')
+        console.log(mathOperation(5, 7, '-'), 'Вычитание')
+        console.log(mathOperation(9, 4, '*'), 'Умножение')
+        console.log(mathOperation(23, 13, '/'), 'Деление')
+    </script>
+</body>
+
+</html>

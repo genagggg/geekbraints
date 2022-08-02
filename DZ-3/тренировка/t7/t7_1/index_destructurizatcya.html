@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //Деструктуризация массива
+        // 'use strict';
+        // let arr = ['Москва', 'Лондон', 'Токио'];
+        // let [city1, city2, city3] = arr;
+        // console.log(city1, city2, city3);
+
+        //Вторая строка
+        // 'use strict';
+        // let arr = ['Москва', 'Лондон', 'Токио'];
+        // let [, sitySecond] = arr;
+        // console.log(sitySecond);
+
+        //Средняя строка
+        // 'use strict';
+        // let arr = ['Москва', 'Лондон', 'Токио'];
+        // let [firstCity, , thirdCity] = arr;
+        // console.log(firstCity, thirdCity);
+        // ============================================
+        //Деструктуризация строки
+
+        // let [letter1, letter2] = 'hi';
+        // console.log(letter1, letter2);
+        //=========================================
+        //Запись свойства Обьекта
+
+        // let comment = {};
+        // [comment.id, comment.text] = [3, 'text'];
+        // console.log(comment);
+        //=======================================
+
+        //Остаточные параметры
+
+        // let [first, second, ...other] = ['one', 'two', 'three', 'four', 'five'];
+        // console.log(first, second);
+        // console.log(other);
+        //===============================
+        //значение по умолчанию
+        // let [drink = 'coffe', dessert = 'donut'] = ['tea'];
+        // console.log(drink, dessert);
+        //==================
+
+        //деструктуризация Обьекта
+
+        // const user = {
+        //     id: 7,
+        //     name: 'Alex',
+        //     role: 'user',
+        // }
+
+        // let { id, name, role } = user;
+
+        // console.log(id, name, role);ключа Обьекта
+        //================================
+
+        //Деструктуризация с переименованием
+        // const user = {
+        //     id: 9,
+        //     name: 'Oleg',
+        //     role: 'user',
+        // }
+
+        // let { id: nomer, name: imya, role: rol } = user;
+        // console.log(nomer, imya, rol);
+        //==================================
+
+        //Значение по умолчанию
+
+        // const welcome = {
+        //     text: 'Чем, могу вам помочь? '
+        // };
+        // let { text = 'Hi, can i help you?' } = welcome;
+        // console.log(text);
+        // const user = {
+
+        //     name: 'Alex',
+        //     avatarUrl: 'http://site.ru/Avatar.jpg',
+        // }
+
+        // let { name, avatarUrl = 'http://site.ru/defaultAvatar.jpg' } = user;
+        // console.log(name, avatarUrl);
+        //============================================
+
+        //Берём только нужное
+        // const message = {
+        //     id: 9492,
+        //     text: 'hello world',
+        //     authorName: 'Иван',
+        // };
+        // // let { text } = message;
+        // let { text, ...other } = message;
+        // console.log(text);
+        // console.log(other);
+        //=============================================
+        //Присваивание в существующие переменные
+
+        // let hello, world;
+        // let obj = {
+        //     hello: 'hello',
+        //     world: 'world',
+        // };
+        // ({ hello, world } = obj);
+        // console.log(hello, world);
+        //===============================================
+
+        //Вложенная деструктуризация
+
+        // const user = {
+        //     name: 'Alex',
+        //     images: ['one.jpg', 'two.jpg'],
+        //     birthDate: {
+        //         day: 3,
+        //         month: 'january',
+        //         year: 2000,
+        //     },
+        // }
+
+        // let {
+        //     name,
+        //     images: [images1, images2],
+        //     birthDate: {
+        //         day,
+        //         month,
+        //         year,
+        //     }
+        // } = user;
+        // console.log(name, images1, images2, day, month, year);
+        //===================================================================
+        //Проблема
+        // function renderStatusBar(helthPoints = 100, score = 0, ammo = 30) {
+        //     console.log(helthPoints, score, ammo);
+        // }
+
+        // renderStatusBar(undefined, 1, 25);
+
+        //Решение
+        function renderStatusBar({ helthPoints = 100, score = 0, ammo = 30 }) {
+            console.log(helthPoints, score, ammo);
+        }
+
+        renderStatusBar({ ammo: 25 });
+        renderStatusBar({});//все значения по умолчанию
+
+    </script>
+</body>
+
+</html>

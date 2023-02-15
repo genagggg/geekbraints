@@ -121,3 +121,56 @@
 //Клонирование свойств массива
 // let arr1 = ['one', 'two'];
 // let arr2 = ['first', ...arr1, 'second']
+
+// const product = [
+//     {
+//         id: 1,
+//         title: 'ноутбук',
+//         price: 2000
+//     },
+//     {
+//         id: 2,
+//         title: 'Наушники',
+//         price: 3000
+//     },
+//     {
+//         id: 3,
+//         title: 'Мышка',
+//         price: 4000
+//     },
+//     {
+//         id: 4,
+//         title: 'Клавиатура',
+//         price: 5000
+//     }
+
+// ]
+
+// const renderProduct = (product) => {
+//     return `<div>
+//     <img>
+//     <h3>${product.title}</h3>
+//     <p>${product.price}</p>
+//     </div>`
+// }
+
+// const renderPage = list => {
+//     const productList = list.map(item => renderProduct(item))
+//     document.querySelector('.content-container').innerHTML = productList;
+// }
+
+
+// renderPage(product);
+
+class Product {
+    constructor(name) {
+        this.name = name
+        this.state = { date: new Date() };
+
+    }
+    prodHi() {
+        return this.name + ' hi'
+    }
+}
+let prod1 = new Product('Petya')
+console.log(prod1.state.date)

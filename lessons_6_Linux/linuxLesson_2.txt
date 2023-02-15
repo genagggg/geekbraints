@@ -1,0 +1,1167 @@
+user@user-Aspire-A315-56:~$ #SSH
+user@user-Aspire-A315-56:~$ sudo apt update
+[sudo] пароль для user:            
+Сущ:1 http://archive.canonical.com/ubuntu focal InRelease
+Сущ:2 https://linux.teamviewer.com/deb stable InRelease                        
+Сущ:3 http://deb.anydesk.com all InRelease                                     
+Сущ:4 https://repo.skype.com/deb stable InRelease                              
+Сущ:5 http://archive.ubuntu.com/ubuntu focal InRelease                         
+Пол:6 http://security.ubuntu.com/ubuntu focal-security InRelease [114 kB]      
+Игн:7 https://download.docker.com/linux/ubuntu una InRelease                   
+Пол:8 http://archive.ubuntu.com/ubuntu focal-updates InRelease [114 kB]        
+Ошб:9 https://download.docker.com/linux/ubuntu una Release                     
+  404  Not Found [IP: 52.85.49.85 443]
+Игн:10 http://packages.linuxmint.com una InRelease                             
+Сущ:11 http://packages.linuxmint.com una Release                               
+Сущ:13 http://packages.microsoft.com/repos/code stable InRelease               
+Сущ:14 https://deb.nodesource.com/node_17.x focal InRelease                    
+Пол:15 http://security.ubuntu.com/ubuntu focal-security/main amd64 DEP-11 Metadata [40,8 kB]
+Пол:16 http://archive.ubuntu.com/ubuntu focal-backports InRelease [108 kB]     
+Пол:17 http://security.ubuntu.com/ubuntu focal-security/universe amd64 DEP-11 Metadata [92,8 kB]
+Пол:18 http://security.ubuntu.com/ubuntu focal-security/multiverse amd64 DEP-11 Metadata [2 468 B]
+Пол:19 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 Packages [2 191 kB]
+Пол:20 http://archive.ubuntu.com/ubuntu focal-updates/main i386 Packages [744 kB]
+Пол:21 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 DEP-11 Metadata [278 kB]
+Пол:22 http://archive.ubuntu.com/ubuntu focal-updates/universe amd64 Packages [970 kB]
+Пол:23 http://archive.ubuntu.com/ubuntu focal-updates/universe i386 Packages [697 kB]
+Пол:24 http://archive.ubuntu.com/ubuntu focal-updates/universe amd64 DEP-11 Metadata [405 kB]
+Пол:25 http://archive.ubuntu.com/ubuntu focal-updates/multiverse amd64 DEP-11 Metadata [940 B]
+Пол:26 http://archive.ubuntu.com/ubuntu focal-backports/main amd64 DEP-11 Metadata [7 992 B]
+Пол:27 http://archive.ubuntu.com/ubuntu focal-backports/universe amd64 DEP-11 Metadata [30,5 kB]
+Чтение списков пакетов… Готово                                        
+E: Репозиторий «https://download.docker.com/linux/ubuntu una Release» не содержит файла Release.
+N: Обновление из этого репозитория нельзя выполнить безопасным способом, поэтому по умолчанию он отключён.
+N: Информацию о создании репозитория и настройках пользователя смотрите в справочной странице apt-secure(8).
+user@user-Aspire-A315-56:~$ sudo apt install openssh-server -y
+Чтение списков пакетов… Готово
+Построение дерева зависимостей       
+Чтение информации о состоянии… Готово
+Будут установлены следующие дополнительные пакеты:
+  ncurses-term openssh-sftp-server ssh-import-id
+Предлагаемые пакеты:
+  molly-guard monkeysphere ssh-askpass
+Следующие НОВЫЕ пакеты будут установлены:
+  ncurses-term openssh-server openssh-sftp-server ssh-import-id
+Обновлено 0 пакетов, установлено 4 новых пакетов, для удаления отмечено 0 пакетов, и 0 пакетов не обновлено.
+Необходимо скачать 688 kB архивов.
+После данной операции объём занятого дискового пространства возрастёт на 6 010 kB.
+Пол:1 http://archive.ubuntu.com/ubuntu focal/main amd64 ncurses-term all 6.2-0ubuntu2 [249 kB]
+Пол:2 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 openssh-sftp-server amd64 1:8.2p1-4ubuntu0.5 [51,5 kB]
+Пол:3 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 openssh-server amd64 1:8.2p1-4ubuntu0.5 [377 kB]
+Пол:4 http://archive.ubuntu.com/ubuntu focal/main amd64 ssh-import-id all 5.10-0ubuntu1 [10,0 kB]
+Получено 688 kB за 1с (892 kB/s)           
+Предварительная настройка пакетов …
+Выбор ранее не выбранного пакета ncurses-term.
+(Чтение базы данных … на данный момент установлен 386481 файл и каталог.)
+Подготовка к распаковке …/ncurses-term_6.2-0ubuntu2_all.deb …
+Распаковывается ncurses-term (6.2-0ubuntu2) …
+Выбор ранее не выбранного пакета openssh-sftp-server.
+Подготовка к распаковке …/openssh-sftp-server_1%3a8.2p1-4ubuntu0.5_amd64.deb …
+Распаковывается openssh-sftp-server (1:8.2p1-4ubuntu0.5) …
+Выбор ранее не выбранного пакета openssh-server.
+Подготовка к распаковке …/openssh-server_1%3a8.2p1-4ubuntu0.5_amd64.deb …
+Распаковывается openssh-server (1:8.2p1-4ubuntu0.5) …
+Выбор ранее не выбранного пакета ssh-import-id.
+Подготовка к распаковке …/ssh-import-id_5.10-0ubuntu1_all.deb …
+Распаковывается ssh-import-id (5.10-0ubuntu1) …
+Настраивается пакет openssh-sftp-server (1:8.2p1-4ubuntu0.5) …
+Настраивается пакет openssh-server (1:8.2p1-4ubuntu0.5) …
+rescue-ssh.target is a disabled or a static unit, not starting it.
+Настраивается пакет ssh-import-id (5.10-0ubuntu1) …
+Настраивается пакет ncurses-term (6.2-0ubuntu2) …
+Обрабатываются триггеры для systemd (245.4-4ubuntu3.18) …
+Обрабатываются триггеры для man-db (2.9.1-1) …
+Обрабатываются триггеры для ufw (0.36-6ubuntu1) …
+user@user-Aspire-A315-56:~$ sudo systemctl start ssh
+user@user-Aspire-A315-56:~$ 
+user@user-Aspire-A315-56:~$ sudo systemctl enable ssh
+Synchronizing state of ssh.service with SysV service script with /lib/systemd/systemd-sysv-install.
+Executing: /lib/systemd/systemd-sysv-install enable ssh
+user@user-Aspire-A315-56:~$ sudo systemctl status ssh
+● ssh.service - OpenBSD Secure Shell server
+     Loaded: loaded (/lib/systemd/system/ssh.service; enabled; vendor preset: e>
+     Active: active (running) since Thu 2022-10-20 21:09:58 +05; 2min 53s ago
+       Docs: man:sshd(8)
+             man:sshd_config(5)
+   Main PID: 28867 (sshd)
+      Tasks: 1 (limit: 14007)
+     Memory: 1.3M
+     CGroup: /system.slice/ssh.service
+             └─28867 sshd: /usr/sbin/sshd -D [listener] 0 of 10-100 startups
+
+окт 20 21:09:58 user-Aspire-A315-56 systemd[1]: Starting OpenBSD Secure Shell s>
+окт 20 21:09:58 user-Aspire-A315-56 sshd[28867]: Server listening on 0.0.0.0 po>
+окт 20 21:09:58 user-Aspire-A315-56 sshd[28867]: Server listening on :: port 22.
+окт 20 21:09:58 user-Aspire-A315-56 systemd[1]: Started OpenBSD Secure Shell se>
+
+[1]+  Остановлен    sudo systemctl status ssh
+user@user-Aspire-A315-56:~$ ip addr
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+    inet6 ::1/128 scope host 
+       valid_lft forever preferred_lft forever
+2: enp1s0: <NO-CARRIER,BROADCAST,MULTICAST,UP> mtu 1500 qdisc fq_codel state DOWN group default qlen 1000
+    link/ether 08:8f:c3:0d:1c:d9 brd ff:ff:ff:ff:ff:ff
+3: wlp0s20f3: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue state UP group default qlen 1000
+    link/ether dc:21:5c:81:22:c0 brd ff:ff:ff:ff:ff:ff
+    inet 192.168.0.9/24 brd 192.168.0.255 scope global dynamic noprefixroute wlp0s20f3
+       valid_lft 52377sec preferred_lft 52377sec
+    inet6 fe80::1914:5c84:a35c:7e66/64 scope link noprefixroute 
+       valid_lft forever preferred_lft forever
+user@user-Aspire-A315-56:~$ 
+user@user-Aspire-A315-56:~$ hostname -I
+192.168.0.9 
+user@user-Aspire-A315-56:~$ hostname -i
+127.0.1.1
+user@user-Aspire-A315-56:~$ hostname
+user-Aspire-A315-56
+user@user-Aspire-A315-56:~$ whoami
+user
+user@user-Aspire-A315-56:~$ ssh user@192.168.0.9
+The authenticity of host '192.168.0.9 (192.168.0.9)' can't be established.
+ECDSA key fingerprint is SHA256:C1nwacFuU42Goqgtvd/6Ur+4eOZ6q/vtHUJ1wUDObeQ.
+Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
+Warning: Permanently added '192.168.0.9' (ECDSA) to the list of known hosts.
+user@192.168.0.9's password: 
+user@user-Aspire-A315-56:~$ hostnamectl
+   Static hostname: user-Aspire-A315-56
+         Icon name: computer-laptop
+           Chassis: laptop
+        Machine ID: dafd9a61376b4676aa8b190bc1ed4b43
+           Boot ID: c2936e2fbe2548f88557db9e0cbae980
+  Operating System: Linux Mint 20.3
+            Kernel: Linux 5.4.0-131-generic
+      Architecture: x86-64
+user@user-Aspire-A315-56:~$ exit
+выход
+Connection to 192.168.0.9 closed.
+user@user-Aspire-A315-56:~$ echo Hello world!
+Hello world!
+user@user-Aspire-A315-56:~$ #clear
+user@user-Aspire-A315-56:~$ #ctr+l
+user@user-Aspire-A315-56:~$ #jjjjj
+user@user-Aspire-A315-56:~$ #ctrl+u
+user@user-Aspire-A315-56:~$ #ctrl+k
+user@user-Aspire-A315-56:~$ #reset
+user@user-Aspire-A315-56:~$ 
+user@user-Aspire-A315-56:~$ pwd
+/home/user
+user@user-Aspire-A315-56:~$ cd /home
+user@user-Aspire-A315-56:/home$ cd user
+user@user-Aspire-A315-56:~$ cd /user
+bash: cd: /user: Нет такого файла или каталога
+user@user-Aspire-A315-56:~$ cd ..
+user@user-Aspire-A315-56:/home$ cd ..
+user@user-Aspire-A315-56:/$ pwd
+/
+user@user-Aspire-A315-56:/$ cd ~
+user@user-Aspire-A315-56:~$ pwd
+/home/user
+user@user-Aspire-A315-56:~$ cd ../../var
+user@user-Aspire-A315-56:/var$ cd -
+/home/user
+user@user-Aspire-A315-56:~$ pwd
+/home/user
+user@user-Aspire-A315-56:~$ history
+
+ 2001  #SSH
+ 2002  sudo apt update
+ 2003  sudo apt install openssh-server -y
+ 2004  sudo systemctl start ssh
+ 2005  sudo systemctl enable ssh
+ 2006  sudo systemctl status ssh
+ 2007  ip addr
+ 2008  hostname -I
+ 2009  hostname -i
+ 2010  hostname
+ 2011  whoami
+ 2012  ssh user@192.168.0.9
+ 2013  echo Hello world!
+ 2014  #clear
+ 2015  #ctr+l
+ 2016  #jjjjj
+ 2017  #ctrl+u
+ 2018  #ctrl+k
+ 2019  #reset
+ 2020  pwd
+ 2021  cd /home
+ 2022  cd user
+ 2023  cd /user
+ 2024  cd ..
+ 2025  pwd
+ 2026  cd ~
+ 2027  pwd
+ 2028  cd ../../var
+ 2029  cd -
+ 2030  pwd
+ 2031  history
+user@user-Aspire-A315-56:~$ ls
+ Dockerr                         Warpinator          Изображения
+ Documents                       web                 Музыка
+ my-app                          workbox             Общедоступные
+ node_modules                    Видео              'Рабочий стол'
+ phpshtorm                       ДЗ_продвинутый_JS   Шаблоны
+"PlayOnLinux's virtual drives"   Документы
+ Postman                         Загрузки
+user@user-Aspire-A315-56:~$ ls -l
+итого 100
+drwxrwxr-x   3 user user  4096 июл  7 18:49  Dockerr
+drwxr-xr-x   4 user user  4096 авг 19 01:11  Documents
+drwxrwxr-x   6 user user  4096 янв 17  2022  my-app
+drwxr-xr-x 312 user user 12288 мар  1  2022  node_modules
+drwxrwxr-x   8 user user  4096 мар 31  2022  phpshtorm
+lrwxrwxrwx   1 user user    36 ноя 25  2021 "PlayOnLinux's virtual drives" -> /home/user/.PlayOnLinux//wineprefix/
+drwxr-xr-x   3 user user  4096 окт  7 16:19  Postman
+drwxrwxr-x   2 user user  4096 дек 13  2021  Warpinator
+drwxrwxr-x  12 user user  4096 авг  3 16:20  web
+drwxrwxr-x   4 user user  4096 мар 21  2022  workbox
+drwxr-xr-x   2 user user  4096 июл  7 18:50  Видео
+drwxr-xr-x  10 user user  4096 авг 30 16:55  ДЗ_продвинутый_JS
+drwxr-xr-x   9 user user  4096 окт  3 11:57  Документы
+drwxr-xr-x   8 user user  4096 окт 20 15:58  Загрузки
+drwxr-xr-x   2 user user 20480 окт 15 20:33  Изображения
+drwxr-xr-x   2 user user  4096 ноя 23  2021  Музыка
+drwxr-xr-x   2 user user  4096 ноя 23  2021  Общедоступные
+drwxr-xr-x   3 user user  4096 окт 20 20:42 'Рабочий стол'
+drwxr-xr-x   2 user user  4096 июл  7 16:46  Шаблоны
+user@user-Aspire-A315-56:~$ ls -a
+ .               .mozilla                        .vscode
+ ..              my-app                          Warpinator
+ .anydesk        .node-gyp                       web
+ .bash_history   node_modules                    .wget-hsts
+ .bash_logout    .npm                            .wine
+ .bashrc         .nvm                            workbox
+ .cache          .nx                             .Xauthority
+ .cinnamon       .odbc.ini                       .xsession-errors
+ .config         phpshtorm                       .xsession-errors.old
+ .dbus           .pki                            .yarn
+ Dockerr         .PlayOnLinux                    .yarnrc
+ Documents      "PlayOnLinux's virtual drives"   .zoom
+ .gconf          Postman                         Видео
+ .gitconfig      .profile                        ДЗ_продвинутый_JS
+ .gitkraken      .putty                          Документы
+ .gnupg          .qt                             Загрузки
+ .gtkrc-2.0      .selected_editor                Изображения
+ .gtkrc-xfce     .ssh                            Музыка
+ .hardinfo       .sudo_as_admin_successful       Общедоступные
+ .hypnotix       .themes                        'Рабочий стол'
+ .java           .thunderbird                    Шаблоны
+ .linuxmint      .var
+ .local          .viminfo
+user@user-Aspire-A315-56:~$ ls -la
+итого 336
+drwxr-xr-x  50 user user  4096 окт 20 21:25  .
+drwxr-xr-x   3 root root  4096 ноя 23  2021  ..
+drwxr-xr-x   2 user user  4096 мар 17  2022  .anydesk
+-rw-------   1 user user 35413 окт 20 21:25  .bash_history
+-rw-r--r--   1 user user   220 ноя 23  2021  .bash_logout
+-rw-r--r--   1 user user  4322 ноя 25  2021  .bashrc
+drwx------  35 user user  4096 окт 20 21:23  .cache
+drwxrwxr-x   5 user user  4096 ноя 24  2021  .cinnamon
+drwx------  41 user user  4096 окт 17 22:07  .config
+drwx------   3 user user  4096 мар  2  2022  .dbus
+drwxrwxr-x   3 user user  4096 июл  7 18:49  Dockerr
+drwxr-xr-x   4 user user  4096 авг 19 01:11  Documents
+drwx------   2 user user  4096 фев  1  2022  .gconf
+-rw-rw-r--   1 user user   107 авг 17 13:57  .gitconfig
+drwxrwxr-x   7 user user  4096 июл  7 17:12  .gitkraken
+drwx------   3 user user  4096 фев 18  2022  .gnupg
+-rw-r--r--   1 user user    22 ноя 23  2021  .gtkrc-2.0
+-rw-r--r--   1 user user   516 ноя 23  2021  .gtkrc-xfce
+drwxr--r--   2 user user  4096 ноя 25  2021  .hardinfo
+drwxrwxr-x   3 user user  4096 ноя 24  2021  .hypnotix
+drwxrwxr-x   4 user user  4096 мар  5  2022  .java
+drwxrwxrwx   4 user user  4096 ноя 25  2021  .linuxmint
+drwxrwxr-x   3 user user  4096 ноя 23  2021  .local
+drwx------   5 user user  4096 дек 21  2021  .mozilla
+drwxrwxr-x   6 user user  4096 янв 17  2022  my-app
+drwxrwxr-x   3 user user  4096 мар  2  2022  .node-gyp
+drwxr-xr-x 312 user user 12288 мар  1  2022  node_modules
+drwxrwxr-x   6 user user  4096 сен 13 20:07  .npm
+drwxrwxr-x   8 user user  4096 ноя 24  2021  .nvm
+drwx------  35 user user  4096 окт 20 20:44  .nx
+-rw-rw-r--   1 user user     0 сен  1 17:35  .odbc.ini
+drwxrwxr-x   8 user user  4096 мар 31  2022  phpshtorm
+drwx------   3 user user  4096 ноя 24  2021  .pki
+drwxrwxr-x  11 user user  4096 дек 24  2021  .PlayOnLinux
+lrwxrwxrwx   1 user user    36 ноя 25  2021 "PlayOnLinux's virtual drives" -> /home/user/.PlayOnLinux//wineprefix/
+drwxr-xr-x   3 user user  4096 окт  7 16:19  Postman
+-rw-r--r--   1 user user   807 ноя 23  2021  .profile
+drwx------   3 user user  4096 мар 21  2022  .putty
+drwx------   2 user user  4096 мар 21  2022  .qt
+-rw-rw-r--   1 user user    72 мар 17  2022  .selected_editor
+drwx------   2 user user  4096 окт 18 17:33  .ssh
+-rw-r--r--   1 user user     0 ноя 23  2021  .sudo_as_admin_successful
+drwxr-xr-x   2 user user  4096 ноя 23  2021  .themes
+drwx------   6 user user  4096 ноя 25  2021  .thunderbird
+drwxr-xr-x   3 user user  4096 янв 25  2022  .var
+-rw-------   1 user user  1368 окт 17 21:06  .viminfo
+drwxrwxr-x   3 user user  4096 ноя 24  2021  .vscode
+drwxrwxr-x   2 user user  4096 дек 13  2021  Warpinator
+drwxrwxr-x  12 user user  4096 авг  3 16:20  web
+-rw-rw-r--   1 user user   180 ноя 24  2021  .wget-hsts
+drwxrwxr-x   4 user user  4096 ноя 25  2021  .wine
+drwxrwxr-x   4 user user  4096 мар 21  2022  workbox
+-rw-------   1 user user    64 окт 20 11:46  .Xauthority
+-rw-------   1 user user 10498 окт 20 21:01  .xsession-errors
+-rw-------   1 user user  9806 окт 19 21:41  .xsession-errors.old
+drwxrwxr-x   3 user user  4096 янв 17  2022  .yarn
+-rw-rw-r--   1 user user   116 окт  4 15:48  .yarnrc
+drwx------   8 user user  4096 окт 15 19:13  .zoom
+drwxr-xr-x   2 user user  4096 июл  7 18:50  Видео
+drwxr-xr-x  10 user user  4096 авг 30 16:55  ДЗ_продвинутый_JS
+drwxr-xr-x   9 user user  4096 окт  3 11:57  Документы
+drwxr-xr-x   8 user user  4096 окт 20 15:58  Загрузки
+drwxr-xr-x   2 user user 20480 окт 15 20:33  Изображения
+drwxr-xr-x   2 user user  4096 ноя 23  2021  Музыка
+drwxr-xr-x   2 user user  4096 ноя 23  2021  Общедоступные
+drwxr-xr-x   3 user user  4096 окт 20 20:42 'Рабочий стол'
+drwxr-xr-x   2 user user  4096 июл  7 16:46  Шаблоны
+user@user-Aspire-A315-56:~$ ls -al
+итого 336
+drwxr-xr-x  50 user user  4096 окт 20 21:25  .
+drwxr-xr-x   3 root root  4096 ноя 23  2021  ..
+drwxr-xr-x   2 user user  4096 мар 17  2022  .anydesk
+-rw-------   1 user user 35413 окт 20 21:25  .bash_history
+-rw-r--r--   1 user user   220 ноя 23  2021  .bash_logout
+-rw-r--r--   1 user user  4322 ноя 25  2021  .bashrc
+drwx------  35 user user  4096 окт 20 21:23  .cache
+drwxrwxr-x   5 user user  4096 ноя 24  2021  .cinnamon
+drwx------  41 user user  4096 окт 17 22:07  .config
+drwx------   3 user user  4096 мар  2  2022  .dbus
+drwxrwxr-x   3 user user  4096 июл  7 18:49  Dockerr
+drwxr-xr-x   4 user user  4096 авг 19 01:11  Documents
+drwx------   2 user user  4096 фев  1  2022  .gconf
+-rw-rw-r--   1 user user   107 авг 17 13:57  .gitconfig
+drwxrwxr-x   7 user user  4096 июл  7 17:12  .gitkraken
+drwx------   3 user user  4096 фев 18  2022  .gnupg
+-rw-r--r--   1 user user    22 ноя 23  2021  .gtkrc-2.0
+-rw-r--r--   1 user user   516 ноя 23  2021  .gtkrc-xfce
+drwxr--r--   2 user user  4096 ноя 25  2021  .hardinfo
+drwxrwxr-x   3 user user  4096 ноя 24  2021  .hypnotix
+drwxrwxr-x   4 user user  4096 мар  5  2022  .java
+drwxrwxrwx   4 user user  4096 ноя 25  2021  .linuxmint
+drwxrwxr-x   3 user user  4096 ноя 23  2021  .local
+drwx------   5 user user  4096 дек 21  2021  .mozilla
+drwxrwxr-x   6 user user  4096 янв 17  2022  my-app
+drwxrwxr-x   3 user user  4096 мар  2  2022  .node-gyp
+drwxr-xr-x 312 user user 12288 мар  1  2022  node_modules
+drwxrwxr-x   6 user user  4096 сен 13 20:07  .npm
+drwxrwxr-x   8 user user  4096 ноя 24  2021  .nvm
+drwx------  35 user user  4096 окт 20 20:44  .nx
+-rw-rw-r--   1 user user     0 сен  1 17:35  .odbc.ini
+drwxrwxr-x   8 user user  4096 мар 31  2022  phpshtorm
+drwx------   3 user user  4096 ноя 24  2021  .pki
+drwxrwxr-x  11 user user  4096 дек 24  2021  .PlayOnLinux
+lrwxrwxrwx   1 user user    36 ноя 25  2021 "PlayOnLinux's virtual drives" -> /home/user/.PlayOnLinux//wineprefix/
+drwxr-xr-x   3 user user  4096 окт  7 16:19  Postman
+-rw-r--r--   1 user user   807 ноя 23  2021  .profile
+drwx------   3 user user  4096 мар 21  2022  .putty
+drwx------   2 user user  4096 мар 21  2022  .qt
+-rw-rw-r--   1 user user    72 мар 17  2022  .selected_editor
+drwx------   2 user user  4096 окт 18 17:33  .ssh
+-rw-r--r--   1 user user     0 ноя 23  2021  .sudo_as_admin_successful
+drwxr-xr-x   2 user user  4096 ноя 23  2021  .themes
+drwx------   6 user user  4096 ноя 25  2021  .thunderbird
+drwxr-xr-x   3 user user  4096 янв 25  2022  .var
+-rw-------   1 user user  1368 окт 17 21:06  .viminfo
+drwxrwxr-x   3 user user  4096 ноя 24  2021  .vscode
+drwxrwxr-x   2 user user  4096 дек 13  2021  Warpinator
+drwxrwxr-x  12 user user  4096 авг  3 16:20  web
+-rw-rw-r--   1 user user   180 ноя 24  2021  .wget-hsts
+drwxrwxr-x   4 user user  4096 ноя 25  2021  .wine
+drwxrwxr-x   4 user user  4096 мар 21  2022  workbox
+-rw-------   1 user user    64 окт 20 11:46  .Xauthority
+-rw-------   1 user user 10498 окт 20 21:01  .xsession-errors
+-rw-------   1 user user  9806 окт 19 21:41  .xsession-errors.old
+drwxrwxr-x   3 user user  4096 янв 17  2022  .yarn
+-rw-rw-r--   1 user user   116 окт  4 15:48  .yarnrc
+drwx------   8 user user  4096 окт 15 19:13  .zoom
+drwxr-xr-x   2 user user  4096 июл  7 18:50  Видео
+drwxr-xr-x  10 user user  4096 авг 30 16:55  ДЗ_продвинутый_JS
+drwxr-xr-x   9 user user  4096 окт  3 11:57  Документы
+drwxr-xr-x   8 user user  4096 окт 20 15:58  Загрузки
+drwxr-xr-x   2 user user 20480 окт 15 20:33  Изображения
+drwxr-xr-x   2 user user  4096 ноя 23  2021  Музыка
+drwxr-xr-x   2 user user  4096 ноя 23  2021  Общедоступные
+drwxr-xr-x   3 user user  4096 окт 20 20:42 'Рабочий стол'
+drwxr-xr-x   2 user user  4096 июл  7 16:46  Шаблоны
+user@user-Aspire-A315-56:~$ ls -l -a
+итого 336
+drwxr-xr-x  50 user user  4096 окт 20 21:25  .
+drwxr-xr-x   3 root root  4096 ноя 23  2021  ..
+drwxr-xr-x   2 user user  4096 мар 17  2022  .anydesk
+-rw-------   1 user user 35413 окт 20 21:25  .bash_history
+-rw-r--r--   1 user user   220 ноя 23  2021  .bash_logout
+-rw-r--r--   1 user user  4322 ноя 25  2021  .bashrc
+drwx------  35 user user  4096 окт 20 21:23  .cache
+drwxrwxr-x   5 user user  4096 ноя 24  2021  .cinnamon
+drwx------  41 user user  4096 окт 17 22:07  .config
+drwx------   3 user user  4096 мар  2  2022  .dbus
+drwxrwxr-x   3 user user  4096 июл  7 18:49  Dockerr
+drwxr-xr-x   4 user user  4096 авг 19 01:11  Documents
+drwx------   2 user user  4096 фев  1  2022  .gconf
+-rw-rw-r--   1 user user   107 авг 17 13:57  .gitconfig
+drwxrwxr-x   7 user user  4096 июл  7 17:12  .gitkraken
+drwx------   3 user user  4096 фев 18  2022  .gnupg
+-rw-r--r--   1 user user    22 ноя 23  2021  .gtkrc-2.0
+-rw-r--r--   1 user user   516 ноя 23  2021  .gtkrc-xfce
+drwxr--r--   2 user user  4096 ноя 25  2021  .hardinfo
+drwxrwxr-x   3 user user  4096 ноя 24  2021  .hypnotix
+drwxrwxr-x   4 user user  4096 мар  5  2022  .java
+drwxrwxrwx   4 user user  4096 ноя 25  2021  .linuxmint
+drwxrwxr-x   3 user user  4096 ноя 23  2021  .local
+drwx------   5 user user  4096 дек 21  2021  .mozilla
+drwxrwxr-x   6 user user  4096 янв 17  2022  my-app
+drwxrwxr-x   3 user user  4096 мар  2  2022  .node-gyp
+drwxr-xr-x 312 user user 12288 мар  1  2022  node_modules
+drwxrwxr-x   6 user user  4096 сен 13 20:07  .npm
+drwxrwxr-x   8 user user  4096 ноя 24  2021  .nvm
+drwx------  35 user user  4096 окт 20 20:44  .nx
+-rw-rw-r--   1 user user     0 сен  1 17:35  .odbc.ini
+drwxrwxr-x   8 user user  4096 мар 31  2022  phpshtorm
+drwx------   3 user user  4096 ноя 24  2021  .pki
+drwxrwxr-x  11 user user  4096 дек 24  2021  .PlayOnLinux
+lrwxrwxrwx   1 user user    36 ноя 25  2021 "PlayOnLinux's virtual drives" -> /home/user/.PlayOnLinux//wineprefix/
+drwxr-xr-x   3 user user  4096 окт  7 16:19  Postman
+-rw-r--r--   1 user user   807 ноя 23  2021  .profile
+drwx------   3 user user  4096 мар 21  2022  .putty
+drwx------   2 user user  4096 мар 21  2022  .qt
+-rw-rw-r--   1 user user    72 мар 17  2022  .selected_editor
+drwx------   2 user user  4096 окт 18 17:33  .ssh
+-rw-r--r--   1 user user     0 ноя 23  2021  .sudo_as_admin_successful
+drwxr-xr-x   2 user user  4096 ноя 23  2021  .themes
+drwx------   6 user user  4096 ноя 25  2021  .thunderbird
+drwxr-xr-x   3 user user  4096 янв 25  2022  .var
+-rw-------   1 user user  1368 окт 17 21:06  .viminfo
+drwxrwxr-x   3 user user  4096 ноя 24  2021  .vscode
+drwxrwxr-x   2 user user  4096 дек 13  2021  Warpinator
+drwxrwxr-x  12 user user  4096 авг  3 16:20  web
+-rw-rw-r--   1 user user   180 ноя 24  2021  .wget-hsts
+drwxrwxr-x   4 user user  4096 ноя 25  2021  .wine
+drwxrwxr-x   4 user user  4096 мар 21  2022  workbox
+-rw-------   1 user user    64 окт 20 11:46  .Xauthority
+-rw-------   1 user user 10498 окт 20 21:01  .xsession-errors
+-rw-------   1 user user  9806 окт 19 21:41  .xsession-errors.old
+drwxrwxr-x   3 user user  4096 янв 17  2022  .yarn
+-rw-rw-r--   1 user user   116 окт  4 15:48  .yarnrc
+drwx------   8 user user  4096 окт 15 19:13  .zoom
+drwxr-xr-x   2 user user  4096 июл  7 18:50  Видео
+drwxr-xr-x  10 user user  4096 авг 30 16:55  ДЗ_продвинутый_JS
+drwxr-xr-x   9 user user  4096 окт  3 11:57  Документы
+drwxr-xr-x   8 user user  4096 окт 20 15:58  Загрузки
+drwxr-xr-x   2 user user 20480 окт 15 20:33  Изображения
+drwxr-xr-x   2 user user  4096 ноя 23  2021  Музыка
+drwxr-xr-x   2 user user  4096 ноя 23  2021  Общедоступные
+drwxr-xr-x   3 user user  4096 окт 20 20:42 'Рабочий стол'
+drwxr-xr-x   2 user user  4096 июл  7 16:46  Шаблоны
+user@user-Aspire-A315-56:~$ ll
+итого 336
+drwxr-xr-x  50 user user  4096 окт 20 21:25  ./
+drwxr-xr-x   3 root root  4096 ноя 23  2021  ../
+drwxr-xr-x   2 user user  4096 мар 17  2022  .anydesk/
+-rw-------   1 user user 35413 окт 20 21:25  .bash_history
+-rw-r--r--   1 user user   220 ноя 23  2021  .bash_logout
+-rw-r--r--   1 user user  4322 ноя 25  2021  .bashrc
+drwx------  35 user user  4096 окт 20 21:23  .cache/
+drwxrwxr-x   5 user user  4096 ноя 24  2021  .cinnamon/
+drwx------  41 user user  4096 окт 17 22:07  .config/
+drwx------   3 user user  4096 мар  2  2022  .dbus/
+drwxrwxr-x   3 user user  4096 июл  7 18:49  Dockerr/
+drwxr-xr-x   4 user user  4096 авг 19 01:11  Documents/
+drwx------   2 user user  4096 фев  1  2022  .gconf/
+-rw-rw-r--   1 user user   107 авг 17 13:57  .gitconfig
+drwxrwxr-x   7 user user  4096 июл  7 17:12  .gitkraken/
+drwx------   3 user user  4096 фев 18  2022  .gnupg/
+-rw-r--r--   1 user user    22 ноя 23  2021  .gtkrc-2.0
+-rw-r--r--   1 user user   516 ноя 23  2021  .gtkrc-xfce
+drwxr--r--   2 user user  4096 ноя 25  2021  .hardinfo/
+drwxrwxr-x   3 user user  4096 ноя 24  2021  .hypnotix/
+drwxrwxr-x   4 user user  4096 мар  5  2022  .java/
+drwxrwxrwx   4 user user  4096 ноя 25  2021  .linuxmint/
+drwxrwxr-x   3 user user  4096 ноя 23  2021  .local/
+drwx------   5 user user  4096 дек 21  2021  .mozilla/
+drwxrwxr-x   6 user user  4096 янв 17  2022  my-app/
+drwxrwxr-x   3 user user  4096 мар  2  2022  .node-gyp/
+drwxr-xr-x 312 user user 12288 мар  1  2022  node_modules/
+drwxrwxr-x   6 user user  4096 сен 13 20:07  .npm/
+drwxrwxr-x   8 user user  4096 ноя 24  2021  .nvm/
+drwx------  35 user user  4096 окт 20 20:44  .nx/
+-rw-rw-r--   1 user user     0 сен  1 17:35  .odbc.ini
+drwxrwxr-x   8 user user  4096 мар 31  2022  phpshtorm/
+drwx------   3 user user  4096 ноя 24  2021  .pki/
+drwxrwxr-x  11 user user  4096 дек 24  2021  .PlayOnLinux/
+lrwxrwxrwx   1 user user    36 ноя 25  2021 "PlayOnLinux's virtual drives" -> /home/user/.PlayOnLinux//wineprefix//
+drwxr-xr-x   3 user user  4096 окт  7 16:19  Postman/
+-rw-r--r--   1 user user   807 ноя 23  2021  .profile
+drwx------   3 user user  4096 мар 21  2022  .putty/
+drwx------   2 user user  4096 мар 21  2022  .qt/
+-rw-rw-r--   1 user user    72 мар 17  2022  .selected_editor
+drwx------   2 user user  4096 окт 18 17:33  .ssh/
+-rw-r--r--   1 user user     0 ноя 23  2021  .sudo_as_admin_successful
+drwxr-xr-x   2 user user  4096 ноя 23  2021  .themes/
+drwx------   6 user user  4096 ноя 25  2021  .thunderbird/
+drwxr-xr-x   3 user user  4096 янв 25  2022  .var/
+-rw-------   1 user user  1368 окт 17 21:06  .viminfo
+drwxrwxr-x   3 user user  4096 ноя 24  2021  .vscode/
+drwxrwxr-x   2 user user  4096 дек 13  2021  Warpinator/
+drwxrwxr-x  12 user user  4096 авг  3 16:20  web/
+-rw-rw-r--   1 user user   180 ноя 24  2021  .wget-hsts
+drwxrwxr-x   4 user user  4096 ноя 25  2021  .wine/
+drwxrwxr-x   4 user user  4096 мар 21  2022  workbox/
+-rw-------   1 user user    64 окт 20 11:46  .Xauthority
+-rw-------   1 user user 10498 окт 20 21:01  .xsession-errors
+-rw-------   1 user user  9806 окт 19 21:41  .xsession-errors.old
+drwxrwxr-x   3 user user  4096 янв 17  2022  .yarn/
+-rw-rw-r--   1 user user   116 окт  4 15:48  .yarnrc
+drwx------   8 user user  4096 окт 15 19:13  .zoom/
+drwxr-xr-x   2 user user  4096 июл  7 18:50  Видео/
+drwxr-xr-x  10 user user  4096 авг 30 16:55  ДЗ_продвинутый_JS/
+drwxr-xr-x   9 user user  4096 окт  3 11:57  Документы/
+drwxr-xr-x   8 user user  4096 окт 20 15:58  Загрузки/
+drwxr-xr-x   2 user user 20480 окт 15 20:33  Изображения/
+drwxr-xr-x   2 user user  4096 ноя 23  2021  Музыка/
+drwxr-xr-x   2 user user  4096 ноя 23  2021  Общедоступные/
+drwxr-xr-x   3 user user  4096 окт 20 20:42 'Рабочий стол'/
+drwxr-xr-x   2 user user  4096 июл  7 16:46  Шаблоны/
+user@user-Aspire-A315-56:~$ ls /home
+user
+user@user-Aspire-A315-56:~$ ls /var -l
+итого 44
+drwxr-xr-x  2 root root   4096 окт 20 21:09 backups
+drwxr-xr-x 18 root root   4096 июл  7 17:00 cache
+drwxr-xr-x 84 root root   4096 мар  1  2022 lib
+drwxrwsr-x  2 root staff  4096 апр 15  2020 local
+lrwxrwxrwx  1 root root      9 ноя 23  2021 lock -> /run/lock
+drwxrwxr-x 18 root syslog 4096 окт 20 11:47 log
+drwxrwsr-x  2 root mail   4096 июл  3  2021 mail
+drwxr-xr-x  3 root root   4096 мар 21  2022 NX
+drwxr-xr-x  2 root root   4096 июл  3  2021 opt
+lrwxrwxrwx  1 root root      4 ноя 23  2021 run -> /run
+drwxr-xr-x  7 root root   4096 июл  3  2021 spool
+drwxrwxrwt 14 root root   4096 окт 20 21:25 tmp
+drwxr-xr-x  5 root root   4096 мар  1  2022 www
+user@user-Aspire-A315-56:~$ ls
+ Dockerr                         Warpinator          Изображения
+ Documents                       web                 Музыка
+ my-app                          workbox             Общедоступные
+ node_modules                    Видео              'Рабочий стол'
+ phpshtorm                       ДЗ_продвинутый_JS   Шаблоны
+"PlayOnLinux's virtual drives"   Документы
+ Postman                         Загрузки
+user@user-Aspire-A315-56:~$ cd /lws
+bash: cd: /lws: Нет такого файла или каталога
+user@user-Aspire-A315-56:~$ ls
+ Dockerr                         Postman             Загрузки
+ Documents                       Warpinator          Изображения
+ lws                             web                 Музыка
+ my-app                          workbox             Общедоступные
+ node_modules                    Видео              'Рабочий стол'
+ phpshtorm                       ДЗ_продвинутый_JS   Шаблоны
+"PlayOnLinux's virtual drives"   Документы
+user@user-Aspire-A315-56:~$ cd lws
+user@user-Aspire-A315-56:~/lws$ mkdir lesson02
+user@user-Aspire-A315-56:~/lws$ ll
+итого 12
+drwxrwxr-x  3 user user 4096 окт 20 21:41 ./
+drwxr-xr-x 51 user user 4096 окт 20 21:40 ../
+drwxrwxr-x  2 user user 4096 окт 20 21:41 lesson02/
+user@user-Aspire-A315-56:~/lws$ cd lesson02/
+user@user-Aspire-A315-56:~/lws/lesson02$ ll
+итого 8
+drwxrwxr-x 2 user user 4096 окт 20 21:41 ./
+drwxrwxr-x 3 user user 4096 окт 20 21:41 ../
+user@user-Aspire-A315-56:~/lws/lesson02$ mkdir dir1 dir2 dir3
+user@user-Aspire-A315-56:~/lws/lesson02$ ll
+итого 20
+drwxrwxr-x 5 user user 4096 окт 20 21:42 ./
+drwxrwxr-x 3 user user 4096 окт 20 21:41 ../
+drwxrwxr-x 2 user user 4096 окт 20 21:42 dir1/
+drwxrwxr-x 2 user user 4096 окт 20 21:42 dir2/
+drwxrwxr-x 2 user user 4096 окт 20 21:42 dir3/
+user@user-Aspire-A315-56:~/lws/lesson02$ ls
+dir1  dir2  dir3
+user@user-Aspire-A315-56:~/lws/lesson02$ mkdir 10/20/30 -p
+user@user-Aspire-A315-56:~/lws/lesson02$ ls
+10  dir1  dir2  dir3
+user@user-Aspire-A315-56:~/lws/lesson02$ cd 10
+user@user-Aspire-A315-56:~/lws/lesson02/10$ ls
+20
+user@user-Aspire-A315-56:~/lws/lesson02/10$ cd 20
+user@user-Aspire-A315-56:~/lws/lesson02/10/20$ ls
+30
+user@user-Aspire-A315-56:~/lws/lesson02/10/20$ cd 30
+user@user-Aspire-A315-56:~/lws/lesson02/10/20/30$ ll
+итого 8
+drwxrwxr-x 2 user user 4096 окт 20 21:42 ./
+drwxrwxr-x 3 user user 4096 окт 20 21:42 ../
+user@user-Aspire-A315-56:~/lws/lesson02/10/20/30$ cd ../../../
+user@user-Aspire-A315-56:~/lws/lesson02$ pwd
+/home/user/lws/lesson02
+user@user-Aspire-A315-56:~/lws/lesson02$ tree
+
+Команда «tree» не найдена, но может быть установлена с помощью:
+
+sudo apt install tree
+
+user@user-Aspire-A315-56:~/lws/lesson02$ sudo apt install tree
+[sudo] пароль для user:            
+Чтение списков пакетов… Готово
+Построение дерева зависимостей       
+Чтение информации о состоянии… Готово
+Следующие НОВЫЕ пакеты будут установлены:
+  tree
+Обновлено 0 пакетов, установлено 1 новых пакетов, для удаления отмечено 0 пакетов, и 0 пакетов не обновлено.
+Необходимо скачать 43,0 kB архивов.
+После данной операции объём занятого дискового пространства возрастёт на 115 kB.
+Пол:1 http://archive.ubuntu.com/ubuntu focal/universe amd64 tree amd64 1.8.0-1 [43,0 kB]
+Получено 43,0 kB за 1с (47,7 kB/s)        
+Выбор ранее не выбранного пакета tree.
+(Чтение базы данных … на данный момент установлено 389322 файла и каталога.)
+Подготовка к распаковке …/tree_1.8.0-1_amd64.deb …
+Распаковывается tree (1.8.0-1) …
+Настраивается пакет tree (1.8.0-1) …
+Обрабатываются триггеры для man-db (2.9.1-1) …
+user@user-Aspire-A315-56:~/lws/lesson02$ tree
+.
+├── 10
+│   └── 20
+│       └── 30
+├── dir1
+├── dir2
+└── dir3
+
+6 directories, 0 files
+user@user-Aspire-A315-56:~/lws/lesson02$ mkdir /myfolder
+mkdir: невозможно создать каталог «/myfolder»: Отказано в доступе
+user@user-Aspire-A315-56:~/lws/lesson02$ sudo mk
+mkdir             mkfs.btrfs        mkfs.minix        mkmanifest
+mkdiskimage       mkfs.cramfs       mkfs.msdos        mk_modmap
+mkdosfs           mkfs.exfat        mkfs.ntfs         mknod
+mke2fs            mkfs.ext2         mkfs.reiserfs     mkntfs
+mkexfatfs         mkfs.ext3         mkfs.vfat         mkreiserfs
+mkfifo            mkfs.ext4         mkfs.xfs          mksquashfs
+mkfontdir         mkfs.fat          mkhomedir_helper  mkswap
+mkfontscale       mkfs.hfs          mkinitramfs       mktemp
+mkfs              mkfs.hfsplus      mkisofs           mkzftree
+mkfs.bfs          mkfs.jfs          mklost+found      
+user@user-Aspire-A315-56:~/lws/lesson02$ sudo mkdir /myfolder
+user@user-Aspire-A315-56:~/lws/lesson02$ ls
+10  dir1  dir2  dir3
+user@user-Aspire-A315-56:~/lws/lesson02$ ls /
+ bin     etc     lib64        mnt        root   swapfile    usr
+ boot    home    libx32       myfolder   run    sys         var
+ cdrom   lib     lost+found   opt        sbin   timeshift  'Рабочий стол'
+ dev     lib32   media        proc       srv    tmp         Шаблоны
+user@user-Aspire-A315-56:~/lws/lesson02$ touch myfile.txt
+user@user-Aspire-A315-56:~/lws/lesson02$ ls
+10  dir1  dir2  dir3  myfile.txt
+user@user-Aspire-A315-56:~/lws/lesson02$ ll
+итого 24
+drwxrwxr-x 6 user user 4096 окт 20 21:48 ./
+drwxrwxr-x 3 user user 4096 окт 20 21:41 ../
+drwxrwxr-x 3 user user 4096 окт 20 21:42 10/
+drwxrwxr-x 2 user user 4096 окт 20 21:42 dir1/
+drwxrwxr-x 2 user user 4096 окт 20 21:42 dir2/
+drwxrwxr-x 2 user user 4096 окт 20 21:42 dir3/
+-rw-rw-r-- 1 user user    0 окт 20 21:48 myfile.txt
+user@user-Aspire-A315-56:~/lws/lesson02$ date
+Чт 20 окт 2022 21:49:01 +05
+user@user-Aspire-A315-56:~/lws/lesson02$ touch myfile.txt
+user@user-Aspire-A315-56:~/lws/lesson02$ ll
+итого 24
+drwxrwxr-x 6 user user 4096 окт 20 21:48 ./
+drwxrwxr-x 3 user user 4096 окт 20 21:41 ../
+drwxrwxr-x 3 user user 4096 окт 20 21:42 10/
+drwxrwxr-x 2 user user 4096 окт 20 21:42 dir1/
+drwxrwxr-x 2 user user 4096 окт 20 21:42 dir2/
+drwxrwxr-x 2 user user 4096 окт 20 21:42 dir3/
+-rw-rw-r-- 1 user user    0 окт 20 21:49 myfile.txt
+user@user-Aspire-A315-56:~/lws/lesson02$ echo >myfile.txt 
+user@user-Aspire-A315-56:~/lws/lesson02$ cat >myfile3.txt 
+^Z
+[2]+  Остановлен    cat > myfile3.txt
+user@user-Aspire-A315-56:~/lws/lesson02$ cat > myfile3.txt 
+^Z
+[3]+  Остановлен    cat > myfile3.txt
+user@user-Aspire-A315-56:~/lws/lesson02$ tree
+.
+├── 10
+│   └── 20
+│       └── 30
+├── dir1
+├── dir2
+├── dir3
+├── myfile3.txt
+└── myfile.txt
+
+6 directories, 2 files
+user@user-Aspire-A315-56:~/lws/lesson02$ cp myfile.txt dir1/
+user@user-Aspire-A315-56:~/lws/lesson02$ tree
+.
+├── 10
+│   └── 20
+│       └── 30
+├── dir1
+│   └── myfile.txt
+├── dir2
+├── dir3
+├── myfile3.txt
+└── myfile.txt
+
+6 directories, 3 files
+user@user-Aspire-A315-56:~/lws/lesson02$ cp dir1/ dir/2
+cp: не указан -r; пропускается каталог 'dir1/'
+user@user-Aspire-A315-56:~/lws/lesson02$ cp dir1/ dir/2 -r
+cp: невозможно создать каталог 'dir/2': Нет такого файла или каталога
+user@user-Aspire-A315-56:~/lws/lesson02$ tree
+.
+├── 10
+│   └── 20
+│       └── 30
+├── dir1
+│   └── myfile.txt
+├── dir2
+├── dir3
+├── myfile3.txt
+└── myfile.txt
+
+6 directories, 3 files
+user@user-Aspire-A315-56:~/lws/lesson02$ cp dir1/ dir2/ -r
+user@user-Aspire-A315-56:~/lws/lesson02$ tree
+.
+├── 10
+│   └── 20
+│       └── 30
+├── dir1
+│   └── myfile.txt
+├── dir2
+│   └── dir1
+│       └── myfile.txt
+├── dir3
+├── myfile3.txt
+└── myfile.txt
+
+7 directories, 4 files
+user@user-Aspire-A315-56:~/lws/lesson02$ mv *.txt 10/20/
+user@user-Aspire-A315-56:~/lws/lesson02$ tree
+.
+├── 10
+│   └── 20
+│       ├── 30
+│       ├── myfile3.txt
+│       └── myfile.txt
+├── dir1
+│   └── myfile.txt
+├── dir2
+│   └── dir1
+│       └── myfile.txt
+└── dir3
+
+7 directories, 4 files
+user@user-Aspire-A315-56:~/lws/lesson02$ mv 10/dir1/
+mv: после '10/dir1/' пропущен операнд, задающий целевой файл
+По команде «mv --help» можно получить дополнительную информацию.
+user@user-Aspire-A315-56:~/lws/lesson02$ mv 10/ dir1/
+user@user-Aspire-A315-56:~/lws/lesson02$ tree
+.
+├── dir1
+│   ├── 10
+│   │   └── 20
+│   │       ├── 30
+│   │       ├── myfile3.txt
+│   │       └── myfile.txt
+│   └── myfile.txt
+├── dir2
+│   └── dir1
+│       └── myfile.txt
+└── dir3
+
+7 directories, 4 files
+user@user-Aspire-A315-56:~/lws/lesson02$ ll
+итого 20
+drwxrwxr-x 5 user user 4096 окт 20 21:55 ./
+drwxrwxr-x 3 user user 4096 окт 20 21:41 ../
+drwxrwxr-x 3 user user 4096 окт 20 21:55 dir1/
+drwxrwxr-x 3 user user 4096 окт 20 21:53 dir2/
+drwxrwxr-x 2 user user 4096 окт 20 21:42 dir3/
+user@user-Aspire-A315-56:~/lws/lesson02$ touch myfile3.txt
+user@user-Aspire-A315-56:~/lws/lesson02$ mv myfile3.txt myfile33.txt
+user@user-Aspire-A315-56:~/lws/lesson02$ tree
+.
+├── dir1
+│   ├── 10
+│   │   └── 20
+│   │       ├── 30
+│   │       ├── myfile3.txt
+│   │       └── myfile.txt
+│   └── myfile.txt
+├── dir2
+│   └── dir1
+│       └── myfile.txt
+├── dir3
+└── myfile33.txt
+
+7 directories, 5 files
+user@user-Aspire-A315-56:~/lws/lesson02$ rm myfile33.txt 
+user@user-Aspire-A315-56:~/lws/lesson02$ tree
+.
+├── dir1
+│   ├── 10
+│   │   └── 20
+│   │       ├── 30
+│   │       ├── myfile3.txt
+│   │       └── myfile.txt
+│   └── myfile.txt
+├── dir2
+│   └── dir1
+│       └── myfile.txt
+└── dir3
+
+7 directories, 4 files
+user@user-Aspire-A315-56:~/lws/lesson02$ rm dir1/
+rm: невозможно удалить 'dir1/': Это каталог
+user@user-Aspire-A315-56:~/lws/lesson02$ rm dir1/ -r
+user@user-Aspire-A315-56:~/lws/lesson02$ rm d* -r
+user@user-Aspire-A315-56:~/lws/lesson02$ tree
+.
+
+0 directories, 0 files
+user@user-Aspire-A315-56:~/lws/lesson02$ more --help
+
+Использование:
+ more [опции] <файл>...
+
+Фильтр для постраничного пролистывания содержимого файла на экране.
+
+Параметры:
+ -d          показать справку вместо звукового сигнала
+ -f          подсчитывать логические строки, а не строки экрана
+ -l          не останавливаться после символа form feed
+ -c          не прокручивать, показывать текст и очищать остаток строки
+ -p          не прокручивать, очистить экран и показать текст
+ -s          сжать несколько пустых строк в одну
+ -u          suppress underlining
+ -<число>   количество строк в экране
+ +<номер>   отображать файл, начиная с указанного номера строки
+ +/<строка>  отображать файл, начиная с вхождения указанной строки
+
+     --help     показать эту справку
+ -V, --version  показать версию
+
+Для более детальной информации смотрите more(1).
+user@user-Aspire-A315-56:~/lws/lesson02$ man more
+
+[4]+  Остановлен    man more
+user@user-Aspire-A315-56:~/lws/lesson02$ ssh --help
+unknown option -- -
+usage: ssh [-46AaCfGgKkMNnqsTtVvXxYy] [-B bind_interface]
+           [-b bind_address] [-c cipher_spec] [-D [bind_address:]port]
+           [-E log_file] [-e escape_char] [-F configfile] [-I pkcs11]
+           [-i identity_file] [-J [user@]host[:port]] [-L address]
+           [-l login_name] [-m mac_spec] [-O ctl_cmd] [-o option] [-p port]
+           [-Q query_option] [-R address] [-S ctl_path] [-W host:port]
+           [-w local_tun[:remote_tun]] destination [command]
+user@user-Aspire-A315-56:~/lws/lesson02$ whatis more
+more (1)             - file perusal filter for crt viewing
+user@user-Aspire-A315-56:~/lws/lesson02$ cd ~
+user@user-Aspire-A315-56:~$ ls
+ Dockerr                         Postman             Загрузки
+ Documents                       Warpinator          Изображения
+ lws                             web                 Музыка
+ my-app                          workbox             Общедоступные
+ node_modules                    Видео              'Рабочий стол'
+ phpshtorm                       ДЗ_продвинутый_JS   Шаблоны
+"PlayOnLinux's virtual drives"   Документы
+user@user-Aspire-A315-56:~$ cd web
+user@user-Aspire-A315-56:~/web$ ls
+geekbraints  my-app    Pclass   react1  TypeScript
+JSpractice   myShopGb  Pnative  repo
+user@user-Aspire-A315-56:~/web$ cd geekbraints/
+user@user-Aspire-A315-56:~/web/geekbraints(master)$ cd
+user@user-Aspire-A315-56:~$ ls
+ Dockerr                         Postman             Загрузки
+ Documents                       Warpinator          Изображения
+ lws                             web                 Музыка
+ my-app                          workbox             Общедоступные
+ node_modules                    Видео              'Рабочий стол'
+ phpshtorm                       ДЗ_продвинутый_JS   Шаблоны
+"PlayOnLinux's virtual drives"   Документы
+user@user-Aspire-A315-56:~$ cd web/geekbraints/
+user@user-Aspire-A315-56:~/web/geekbraints(master)$ ls
+dz  DZ-2  DZ-3  lessons  lessons_4_hard_JS  lessons_5_React  lessons_6_Linux
+user@user-Aspire-A315-56:~/web/geekbraints(master)$ cd lessons_6_Linux/
+user@user-Aspire-A315-56:~/web/geekbraints/lessons_6_Linux(master)$ ls
+linuxLesson_1.txt  linuxLesson_2.txt
+user@user-Aspire-A315-56:~/web/geekbraints/lessons_6_Linux(master)$ more linuxLesson_2.txt 
+user@user-Aspire-A315-56:~$ #SSH
+user@user-Aspire-A315-56:~$ sudo apt update
+[sudo] пароль для user:            
+Сущ:1 http://archive.canonical.com/ubuntu focal InRelease
+Сущ:2 https://linux.teamviewer.com/deb stable InRelease                        
+Сущ:3 http://deb.anydesk.com all InRelease                                     
+Сущ:4 https://repo.skype.com/deb stable InRelease                              
+Сущ:5 http://archive.ubuntu.com/ubuntu focal InRelease                         
+Пол:6 http://security.ubuntu.com/ubuntu focal-security InRelease [114 kB]      
+Игн:7 https://download.docker.com/linux/ubuntu una InRelease                   
+Пол:8 http://archive.ubuntu.com/ubuntu focal-updates InRelease [114 kB]        
+Ошб:9 https://download.docker.com/linux/ubuntu una Release                     
+  404  Not Found [IP: 52.85.49.85 443]
+Игн:10 http://packages.linuxmint.com una InRelease                             
+Сущ:11 http://packages.linuxmint.com una Release                               
+Сущ:13 http://packages.microsoft.com/repos/code stable InRelease               
+Сущ:14 https://deb.nodesource.com/node_17.x focal InRelease                    
+Пол:15 http://security.ubuntu.com/ubuntu focal-security/main amd64 DEP-11 Metada
+ta [40,8 kB]
+Пол:16 http://archive.ubuntu.com/ubuntu focal-backports InRelease [108 kB]     
+Пол:17 http://security.ubuntu.com/ubuntu focal-security/universe amd64 DEP-11 Me
+tadata [92,8 kB]
+Пол:18 http://security.ubuntu.com/ubuntu focal-security/multiverse amd64 DEP-11 
+--Далее--(16%)
+[5]+  Остановлен    more linuxLesson_2.txt
+user@user-Aspire-A315-56:~/web/geekbraints/lessons_6_Linux(master)$ more +33 -5 linuxLesson_2.txt 
+N: Обновление из этого репозитория нельзя выполнить безопасным способом, поэтому
+ по умолчанию он отключён.
+N: Информацию о создании репозитория и настройках пользователя смотрите в справо
+чной странице apt-secure(8).
+user@user-Aspire-A315-56:~$ sudo apt install openssh-server -y
+Чтение списков пакетов… Готово
+Построение дерева зависимостей       
+Чтение информации о состоянии… Готово
+Будут установлены следующие дополнительные пакеты:
+  ncurses-term openssh-sftp-server ssh-import-id
+Предлагаемые пакеты:
+  molly-guard monkeysphere ssh-askpass
+Следующие НОВЫЕ пакеты будут установлены:
+  ncurses-term openssh-server openssh-sftp-server ssh-import-id
+Обновлено 0 пакетов, установлено 4 новых пакетов, для удаления отмечено 0 пакето
+в, и 0 пакетов не обновлено.
+Необходимо скачать 688 kB архивов.
+После данной операции объём занятого дискового пространства возрастёт на 6 010 k
+B.
+Пол:1 http://archive.ubuntu.com/ubuntu focal/main amd64 ncurses-term all 6.2-0ub
+untu2 [249 kB]
+Пол:2 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 openssh-sftp-ser
+ver amd64 1:8.2p1-4ubuntu0.5 [51,5 kB]
+Пол:3 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 openssh-server a
+md64 1:8.2p1-4ubuntu0.5 [377 kB]
+Пол:4 http://archive.ubuntu.com/ubuntu focal/main amd64 ssh-import-id all 5.10-0
+ubuntu1 [10,0 kB]
+Получено 688 kB за 1с (892 kB/s)           
+Предварительная настройка пакетов …
+Выбор ранее не выбранного пакета ncurses-term.
+(Чтение базы данных … на данный момент установлен 386481 файл и каталог.)
+Подготовка к распаковке …/ncurses-term_6.2-0ubuntu2_all.deb …
+Распаковывается ncurses-term (6.2-0ubuntu2) …
+Выбор ранее не выбранного пакета openssh-sftp-server.
+Подготовка к распаковке …/openssh-sftp-server_1%3a8.2p1-4ubuntu0.5_amd64.deb …
+Распаковывается openssh-sftp-server (1:8.2p1-4ubuntu0.5) …
+Выбор ранее не выбранного пакета openssh-server.
+Подготовка к распаковке …/openssh-server_1%3a8.2p1-4ubuntu0.5_amd64.deb …
+Распаковывается openssh-server (1:8.2p1-4ubuntu0.5) …
+Выбор ранее не выбранного пакета ssh-import-id.
+user@user-Aspire-A315-56:~/web/geekbraints/lessons_6_Linux(master)$ less
+Missing filename ("less --help" for help)
+user@user-Aspire-A315-56:~/web/geekbraints/lessons_6_Linux(master)$ whatis less
+less (1)             - opposite of more
+user@user-Aspire-A315-56:~/web/geekbraints/lessons_6_Linux(master)$ less linuxLesson_2.txt 
+
+[6]+  Остановлен    less linuxLesson_2.txt
+user@user-Aspire-A315-56:~/web/geekbraints/lessons_6_Linux(master)$ less -N -I -p "l" linuxLesson_2.txt 
+
+[7]+  Остановлен    less -N -I -p "l" linuxLesson_2.txt
+user@user-Aspire-A315-56:~/web/geekbraints/lessons_6_Linux(master)$ head
+^Z
+[8]+  Остановлен    head
+user@user-Aspire-A315-56:~/web/geekbraints/lessons_6_Linux(master)$ head --help
+Использование: head [ПАРАМЕТР]… [ФАЙЛ]…
+Печатает первые 10 строк каждого ФАЙЛА на стандартный вывод.
+Если задано несколько ФАЙЛОВ, сначала печатает заголовок с именем файла.
+
+Если ФАЙЛ не задан или задан как -, читает стандартный ввод.
+
+Аргументы, обязательные для длинных параметров, обязательны и для коротких.
+  -c, --bytes=[-]K         напечатать первые K байт каждого файла;
+                           если перед K стоит «-», напечатать все, кроме K
+                           последних байт каждого файла
+  -n, --lines=[-]K         напечатать K строк каждого файла, а не первые 10;
+                           если перед K стоит «-», напечатать все, кроме K
+                           последних строк каждого файла
+  -q, --quiet, --silent    не печатать заголовки с именами файлов
+  -v, --verbose            всегда печатать заголовки с именами файлов
+  -z, --zero-terminated    разделитель строк NUL, а не символ
+                           новой строки
+      --help     показать эту справку и выйти
+      --version  показать информацию о версии и выйти
+
+После K может стоять один из умножающий суффиксов:
+b 512, kB 1000, K 1024, MB 1000*1000, M 1024*1024,
+GB 1000*1000*1000, G 1024*1024*1024 и так далее для T, P, E, Z, Y.
+
+Страница справки по GNU coreutils: <https://www.gnu.org/software/coreutils/>
+Об ошибках в переводе сообщений «head» сообщайте по адресу <gnu@d07.ru>
+Полная документация: <https://www.gnu.org/software/coreutils/head>
+или доступная локально: info '(coreutils) head invocation'
+user@user-Aspire-A315-56:~/web/geekbraints/lessons_6_Linux(master)$ tail --help
+Использование: tail [ПАРАМЕТР]… [ФАЙЛ]…
+Печатает последние 10 строк каждого из ФАЙЛОВ на стандартный вывод.
+Если задано несколько ФАЙЛОВ, сначала печатает заголовок с именем файла.
+
+Если ФАЙЛ не задан или задан как -, читает стандартный ввод.
+
+Аргументы, обязательные для длинных параметров, обязательны и для коротких.
+  -c, --bytes=[+]Н         показать последние Н байт; или укажите -c +Н,
+                           чтобы начать вывод каждого файла с Н-го байта
+  -f, --follow[={name|descriptor}]
+                           выводить поступающие данные по мере роста файла;
+                           при отсутствии параметра используется «descriptor»
+  -F                       эквивалент --follow=name --retry
+  -n, --lines=Н            выводить последние Н строк, а не последние 10;
+                           или используйте -n +Н для вывода, начиная с Н-ной
+      --max-unchanged-stats=Н
+                           c параметром --follow=name, повторно открывать ФАЙЛ,
+                           который не изменялся последние Н (по умолчанию 5)
+                           итераций, чтобы проверить, не был ли он удалён или
+                           переименован (такое обычно бывает при ротации
+                           файлов системных журналов); при использовании
+                           механизма inotify этот параметр не требуется
+      --pid=PID            с параметром -f, прерваться, когда процесс PID
+                           завершает работу
+  -q, --quiet, --silent    не выводить заголовки с именами файлов
+      --retry              продолжать пытаться открыть файл даже когда он
+                           недоступен
+  -s, --sleep-interval=С   с параметром -f, бездействовать между повторениями
+                           примерно С секунд (по умолчанию 1.0); при
+                           использовании механизма inotify и --pid=P,
+                           проверять процесс P, по крайней мере,
+                           каждые С секунд
+  -v, --verbose            всегда выводить заголовки с именами файлов
+  -z, --zero-terminated    разделитель строк NUL, а не символ
+                           новой строки
+      --help     показать эту справку и выйти
+      --version  показать информацию о версии и выйти
+
+После K может стоять один из умножающий суффиксов:
+b 512, kB 1000, K 1024, MB 1000*1000, M 1024*1024,
+GB 1000*1000*1000, G 1024*1024*1024 и так далее для T, P, E, Z, Y.
+
+С параметром --follow (-f), tail по умолчанию следует за дескриптором файла, что
+означает, что даже если файл переименован, tail будет и далее следить за его
+концом. Это поведение, принимаемое по умолчанию, нежелательно, если вы на
+самом деле хотите следить за именем файла, а не за дескриптором
+(например, при ротации файлов системных журналов). В таком случае используйте
+--follow=name. Это заставит tail следовать за указанным файлом, повторно
+открывая его периодически, чтобы узнать, не был ли он удален и заново создан
+какой-то другой программой.
+
+Страница справки по GNU coreutils: <https://www.gnu.org/software/coreutils/>
+Об ошибках в переводе сообщений «tail» сообщайте по адресу <gnu@d07.ru>
+Полная документация: <https://www.gnu.org/software/coreutils/tail>
+или доступная локально: info '(coreutils) tail invocation'
+user@user-Aspire-A315-56:~/web/geekbraints/lessons_6_Linux(master)$ ls
+linuxLesson_1.txt  linuxLesson_2.txt
+user@user-Aspire-A315-56:~/web/geekbraints/lessons_6_Linux(master)$ cd ~
+user@user-Aspire-A315-56:~$ toch logs.txt
+
+Команда «toch» не найдена. Возможно, вы имели в виду:
+
+  command 'touch' from deb coreutils (8.30-3ubuntu2)
+  command 'loch' from deb therion-viewer (5.4.4ds1-5ubuntu1)
+
+Try: sudo apt install <deb name>
+
+user@user-Aspire-A315-56:~$ ls
+ Dockerr                         Postman             Загрузки
+ Documents                       Warpinator          Изображения
+ lws                             web                 Музыка
+ my-app                          workbox             Общедоступные
+ node_modules                    Видео              'Рабочий стол'
+ phpshtorm                       ДЗ_продвинутый_JS   Шаблоны
+"PlayOnLinux's virtual drives"   Документы
+user@user-Aspire-A315-56:~$ tail logs.txt
+tail: невозможно открыть 'logs.txt' для чтения: Нет такого файла или каталога
+user@user-Aspire-A315-56:~$ #nano, vim
+user@user-Aspire-A315-56:~$ nano
+user@user-Aspire-A315-56:~$ ls
+ Dockerr       "PlayOnLinux's virtual drives"   Документы
+ Documents      Postman                         Загрузки
+ lws            Warpinator                      Изображения
+ my-app         web                             Музыка
+ myNewFile      workbox                         Общедоступные
+ node_modules   Видео                          'Рабочий стол'
+ phpshtorm      ДЗ_продвинутый_JS               Шаблоны
+user@user-Aspire-A315-56:~$ nano myNewFile 
+user@user-Aspire-A315-56:~$ more myNewFile 
+234
+5jgjg
+gfmgkdm
+mvm,dmv,m,
+jjhgkjdghksdjhjhad
+sjvlsdjkljdlkj
+user@user-Aspire-A315-56:~$ more myNewFile -B
+::::::::::::::
+myNewFile
+::::::::::::::
+234
+5jgjg
+gfmgkdm
+mvm,dmv,m,
+jjhgkjdghksdjhjhad
+sjvlsdjkljdlkj
+more: выполение команды stat для -B завершилось неудачно: Нет такого файла или каталога
+user@user-Aspire-A315-56:~$ nano myNewFile -B
+user@user-Aspire-A315-56:~$ head myNewFile
+123
+2
+3
+4
+
+
+234
+5jgjg
+gfmgkdm
+mvm,dmv,m,
+user@user-Aspire-A315-56:~$ ls
+ Dockerr      node_modules                    workbox             Музыка
+ Documents    phpshtorm                       Видео               Общедоступные
+ lws         "PlayOnLinux's virtual drives"   ДЗ_продвинутый_JS  'Рабочий стол'
+ my-app       Postman                         Документы           Шаблоны
+ myNewFile    Warpinator                      Загрузки
+ myNewFile~   web                             Изображения
+user@user-Aspire-A315-56:~$ whotis vim
+
+Команда «whotis» не найдена. Возможно, вы имели в виду:
+
+  command 'whois' from deb whois (5.5.6)
+  command 'whatis' from deb man-db (2.9.1-1)
+
+Try: sudo apt install <deb name>
+
+user@user-Aspire-A315-56:~$ whatis vim
+vim (1)              - Vi IMproved (Улучшенный Vi), текстов...
+user@user-Aspire-A315-56:~$ vim
+
+[9]+  Остановлен    vim
+user@user-Aspire-A315-56:~$ vim
+
+[10]+  Остановлен    vim
+user@user-Aspire-A315-56:~$ vim filemy
+user@user-Aspire-A315-56:~$ more filemy
+hgfjgsjlkjsdk
+sjndvldnkvmsmv
+lsdvnlksdnksdmv
+user@user-Aspire-A315-56:~$ vitiutor
+vitiutor: команда не найдена
+user@user-Aspire-A315-56:~$ vitutor
+
+Команда «vitutor» не найдена. Возможно, вы имели в виду:
+
+  command 'vimtutor' from deb vim-runtime (2:8.1.2269-1ubuntu5.9)
+
+Try: sudo apt install <deb name>
+
+user@user-Aspire-A315-56:~$ vimtutor
+user@user-Aspire-A315-56:~$ 
+

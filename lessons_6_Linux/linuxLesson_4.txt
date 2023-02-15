@@ -1,0 +1,1074 @@
+ 1932  cd lws
+ 1933  ll
+ 1934  echo fist line
+ 1935  echo first line > f1
+ 1936  echo first line > f2
+ 1937  echo first line > f3
+ 1938  ll
+ 1939  more f1
+ 1940  more f2
+ 1941  more f3
+ 1942  cat
+ 1943  whatis cat
+ 1944  cat f1
+ 1945  cat f1 f2 f3
+ 1946  cat f*
+ 1947  cat f1 f2 f3 > f_summary
+ 1948  ll
+ 1949  cat > content_from_console.txt
+ 1950  ll
+ 1951  cat content_from_console.txt
+ 1952  cat > content_from_console.txt
+ 1953  ll
+ 1954  cat content_from_console.txt
+ 1955  cat >> content_from_console.txt
+ 1956  ll
+ 1957  cat content_from_console.txt
+ 1958  wc --help
+ 1959  cd ..
+ 1960  ll
+ 1961  ls
+ 1962  cd lws
+ 1963  ls
+ 1964  wc content_from_console.txt 
+ 1965  ls | wc -w
+ 1966  man wc
+ 1967  man wc > wc-help.txt
+ 1968  ll
+ 1969  man wc | head
+ 1970  cat ../text.txt
+ 1971  cat ../text.txt | grep - 'текст' | wc -l
+ 1972  cat ../text.txt | grep -o 'текст' | wc -l
+ 1973  ll
+ 1974  find *.txt
+ 1975  find / -name *.js -type f
+ 1976  find / -name *.js -type f > search_result.txt
+ 1977  find / -name *.js -type f 1> search_result.txt 2>errors.txt
+ 1978  ll
+ 1979  find / -name *.js -type f 1> all_result.txt 2>&1
+ 1980  tail all_result.txt 
+ 1981  whotis top
+ 1982  whatis top
+ 1983  top
+ 1984  top -o
+ 1985  top -o PID
+ 1986  top
+ 1987  htop
+ 1988  df --help
+ 1989  df
+ 1990  df -h
+ 1991  du
+ 1992  whatis du
+ 1993  du -sh
+ 1994  ll
+ 1995  du ~
+ 1996  du -ch *.txt
+ 1997  systemctl
+ 1998  systemctl status
+ 1999  systemctl status ssh
+ 2000  history
+user@user-Aspire-A315-56:~$ 
+
+user@user-Aspire-A315-56:~$ cd
+user@user-Aspire-A315-56:~$ ls
+ Dockerr     get-docker.sh   myNewFile      phpshtorm                       text.txt     workbox             Документы   Изображения    'Пустой документ'
+ Documents   lws             myNewFile~    "PlayOnLinux's virtual drives"   Warpinator   Видео               еучеюече    Музыка         'Рабочий стол'
+ filemy      my-app          node_modules   Postman                         web          ДЗ_продвинутый_JS   Загрузки    Общедоступные   Шаблоны
+user@user-Aspire-A315-56:~$ cd lws
+user@user-Aspire-A315-56:~/lws$ ll
+итого 123256
+drwxrwxr-x  3 user user     4096 ноя 11 11:56 ./
+drwxr-xr-x 51 user user     4096 ноя 11 12:03 ../
+-rw-rw-r--  1 user user 60086474 ноя 10 22:00 all_result.txt
+-rw-rw-r--  1 user user       48 ноя 10 21:47 content_from_console.txt
+-rw-rw-r--  1 user user   135909 ноя 10 21:59 errors.txt
+-rw-rw-r--  1 user user       11 ноя 10 21:42 f1
+-rw-rw-r--  1 user user       11 ноя 10 21:42 f2
+-rw-rw-r--  1 user user       11 ноя 10 21:42 f3
+-rw-rw-r--  1 user user       33 ноя 10 21:44 f_summary
+drwxrwxr-x  2 user user     4096 окт 20 21:58 lesson02/
+-rw-rw-r--  1 user user 65941747 ноя 10 21:59 search_result.txt
+-rw-rw-r--  1 user user       29 ноя 11 11:56 test.txt
+-rw-rw-r--  1 user user     2032 ноя 10 21:53 wc-help.txt
+user@user-Aspire-A315-56:~/lws$ rm *
+rm: невозможно удалить 'lesson02': Это каталог
+user@user-Aspire-A315-56:~/lws$ ll
+итого 12
+drwxrwxr-x  3 user user 4096 ноя 11 12:05 ./
+drwxr-xr-x 51 user user 4096 ноя 11 12:03 ../
+drwxrwxr-x  2 user user 4096 окт 20 21:58 lesson02/
+user@user-Aspire-A315-56:~/lws$ ls
+lesson02
+user@user-Aspire-A315-56:~/lws$ echo fist line
+fist line
+user@user-Aspire-A315-56:~/lws$ echo fist line > f1
+user@user-Aspire-A315-56:~/lws$ echo fist line > f2
+user@user-Aspire-A315-56:~/lws$ echo fist line > f3
+user@user-Aspire-A315-56:~/lws$ more f1
+fist line
+user@user-Aspire-A315-56:~/lws$ more f2
+fist line
+user@user-Aspire-A315-56:~/lws$ more f3
+fist line
+user@user-Aspire-A315-56:~/lws$ whatis cat
+cat (1)              - concatenate files and print on the standard output
+user@user-Aspire-A315-56:~/lws$ cat f1 f2 f3
+fist line
+fist line
+fist line
+user@user-Aspire-A315-56:~/lws$ cat f*
+fist line
+fist line
+fist line
+user@user-Aspire-A315-56:~/lws$ cat f1 f2 f3 > f_sumary
+user@user-Aspire-A315-56:~/lws$ ll
+итого 28
+drwxrwxr-x  3 user user 4096 ноя 11 12:09 ./
+drwxr-xr-x 51 user user 4096 ноя 11 12:03 ../
+-rw-rw-r--  1 user user   10 ноя 11 12:06 f1
+-rw-rw-r--  1 user user   10 ноя 11 12:07 f2
+-rw-rw-r--  1 user user   10 ноя 11 12:07 f3
+-rw-rw-r--  1 user user   30 ноя 11 12:09 f_sumary
+drwxrwxr-x  2 user user 4096 окт 20 21:58 lesson02/
+user@user-Aspire-A315-56:~/lws$ more f_sumary 
+fist line
+fist line
+fist line
+user@user-Aspire-A315-56:~/lws$ cat > content_from.txt
+line1
+line2
+line3
+user@user-Aspire-A315-56:~/lws$ ll
+итого 32
+drwxrwxr-x  3 user user 4096 ноя 11 12:09 ./
+drwxr-xr-x 51 user user 4096 ноя 11 12:03 ../
+-rw-rw-r--  1 user user   18 ноя 11 12:10 content_from.txt
+-rw-rw-r--  1 user user   10 ноя 11 12:06 f1
+-rw-rw-r--  1 user user   10 ноя 11 12:07 f2
+-rw-rw-r--  1 user user   10 ноя 11 12:07 f3
+-rw-rw-r--  1 user user   30 ноя 11 12:09 f_sumary
+drwxrwxr-x  2 user user 4096 окт 20 21:58 lesson02/
+user@user-Aspire-A315-56:~/lws$ more content_from.txt 
+line1
+line2
+line3
+user@user-Aspire-A315-56:~/lws$ 
+user@user-Aspire-A315-56:~/lws$ cat > content_from.txt 
+line4
+line5
+line 6
+user@user-Aspire-A315-56:~/lws$ cat >> content_from.txt 
+line 100
+line 2000
+line 3000
+user@user-Aspire-A315-56:~/lws$ cat > f2
+second line
+user@user-Aspire-A315-56:~/lws$ more f2
+second line
+user@user-Aspire-A315-56:~/lws$ cat > f3
+third line
+user@user-Aspire-A315-56:~/lws$ echo f3
+f3
+user@user-Aspire-A315-56:~/lws$ more f3
+third line
+user@user-Aspire-A315-56:~/lws$ cat f*
+fist line
+second line
+third line
+fist line
+fist line
+fist line
+user@user-Aspire-A315-56:~/lws$ wc --help
+Использование: wc [ПАРАМЕТР]… [ФАЙЛ]…
+       или:    wc [ПАРАМЕТР]… --files0-from=Ф
+Печатает число символов новой строки, слов и байт для каждого ФАЙЛА и
+итоговую строку, если было задано несколько ФАЙЛОВ. Словом считается
+последовательность символов ненулевой длины, отделённая пробельным символом.
+
+Если ФАЙЛ не задан или задан как -, читает стандартный ввод.
+
+Для выбора выводимых счётчиков используются следующие параметры
+(счётчики всегда выводятся в таком порядке: символы новой строки,
+слова, символы, байты, максимальная длина строки):
+  -c, --bytes            напечатать количество байт
+  -m, --chars            напечатать количество символов
+  -l, --lines            напечатать количество новых строк
+      --files0-from=Ф    читать ввод из файлов, имена которых
+                         (завершённые нулем) перечислены в файле Ф;
+                         Если Ф равно -, то читать имена файлов из
+                         стандартного ввода
+  -L, --max-line-length  напечатать максимальную выводимую ширину
+  -w, --words            напечатать количество слов
+      --help     показать эту справку и выйти
+      --version  показать информацию о версии и выйти
+
+Страница справки по GNU coreutils: <https://www.gnu.org/software/coreutils/>
+Об ошибках в переводе сообщений «wc» сообщайте по адресу <gnu@d07.ru>
+Полная документация: <https://www.gnu.org/software/coreutils/wc>
+или доступная локально: info '(coreutils) wc invocation'
+user@user-Aspire-A315-56:~/lws$ ls
+content_from.txt  f1  f2  f3  f_sumary  lesson02
+user@user-Aspire-A315-56:~/lws$ wc content_from.txt 
+ 6 10 48 content_from.txt
+user@user-Aspire-A315-56:~/lws$ wc content_from.txt -l
+6 content_from.txt
+user@user-Aspire-A315-56:~/lws$ wc content_from.txt -w
+10 content_from.txt
+user@user-Aspire-A315-56:~/lws$ wc content_from.txt -c
+48 content_from.txt
+user@user-Aspire-A315-56:~/lws$ ls
+content_from.txt  f1  f2  f3  f_sumary  lesson02
+user@user-Aspire-A315-56:~/lws$ ls > files_list
+user@user-Aspire-A315-56:~/lws$ ls
+content_from.txt  f1  f2  f3  files_list  f_sumary  lesson02
+user@user-Aspire-A315-56:~/lws$ ls | wc -w
+7
+user@user-Aspire-A315-56:~/lws$ man wc
+user@user-Aspire-A315-56:~/lws$ man wc > wc-help.txt
+user@user-Aspire-A315-56:~/lws$ ll
+итого 40
+drwxrwxr-x  3 user user 4096 ноя 11 12:22 ./
+drwxr-xr-x 51 user user 4096 ноя 11 12:03 ../
+-rw-rw-r--  1 user user   48 ноя 11 12:13 content_from.txt
+-rw-rw-r--  1 user user   10 ноя 11 12:06 f1
+-rw-rw-r--  1 user user   12 ноя 11 12:14 f2
+-rw-rw-r--  1 user user   11 ноя 11 12:14 f3
+-rw-rw-r--  1 user user   55 ноя 11 12:19 files_list
+-rw-rw-r--  1 user user   30 ноя 11 12:09 f_sumary
+drwxrwxr-x  2 user user 4096 окт 20 21:58 lesson02/
+-rw-rw-r--  1 user user 2187 ноя 11 12:22 wc-help.txt
+user@user-Aspire-A315-56:~/lws$ man wc | head
+WC(1)                                                                                     User Commands                                                                                     WC(1)
+
+NAME
+       wc - print newline, word, and byte counts for each file
+
+SYNOPSIS
+       wc [OPTION]... [FILE]...
+       wc [OPTION]... --files0-from=F
+
+DESCRIPTION
+user@user-Aspire-A315-56:~/lws$ man wc | head > head-of-wc.txt
+user@user-Aspire-A315-56:~/lws$ ll
+итого 44
+drwxrwxr-x  3 user user 4096 ноя 11 12:23 ./
+drwxr-xr-x 51 user user 4096 ноя 11 12:03 ../
+-rw-rw-r--  1 user user   48 ноя 11 12:13 content_from.txt
+-rw-rw-r--  1 user user   10 ноя 11 12:06 f1
+-rw-rw-r--  1 user user   12 ноя 11 12:14 f2
+-rw-rw-r--  1 user user   11 ноя 11 12:14 f3
+-rw-rw-r--  1 user user   55 ноя 11 12:19 files_list
+-rw-rw-r--  1 user user   30 ноя 11 12:09 f_sumary
+-rw-rw-r--  1 user user  356 ноя 11 12:23 head-of-wc.txt
+drwxrwxr-x  2 user user 4096 окт 20 21:58 lesson02/
+-rw-rw-r--  1 user user 2187 ноя 11 12:22 wc-help.txt
+user@user-Aspire-A315-56:~/lws$ ls
+content_from.txt  f1  f2  f3  files_list  f_sumary  head-of-wc.txt  lesson02  wc-help.txt
+user@user-Aspire-A315-56:~/lws$ cat content_from.txt 
+line4
+line5
+line 6
+line 100
+line 2000
+line 3000
+user@user-Aspire-A315-56:~/lws$ cat content_from.txt | grep -o '0' | wc -l
+8
+user@user-Aspire-A315-56:~/lws$ cat content_from.txt | grep -o '3' | wc -l
+1
+user@user-Aspire-A315-56:~/lws$ 
+user@user-Aspire-A315-56:~/lws$ cat content_from.txt | grep -o '0'
+0
+0
+0
+0
+0
+0
+0
+0
+user@user-Aspire-A315-56:~/lws$ ll
+итого 44
+drwxrwxr-x  3 user user 4096 ноя 11 12:23 ./
+drwxr-xr-x 51 user user 4096 ноя 11 12:03 ../
+-rw-rw-r--  1 user user   48 ноя 11 12:13 content_from.txt
+-rw-rw-r--  1 user user   10 ноя 11 12:06 f1
+-rw-rw-r--  1 user user   12 ноя 11 12:14 f2
+-rw-rw-r--  1 user user   11 ноя 11 12:14 f3
+-rw-rw-r--  1 user user   55 ноя 11 12:19 files_list
+-rw-rw-r--  1 user user   30 ноя 11 12:09 f_sumary
+-rw-rw-r--  1 user user  356 ноя 11 12:23 head-of-wc.txt
+drwxrwxr-x  2 user user 4096 окт 20 21:58 lesson02/
+-rw-rw-r--  1 user user 2187 ноя 11 12:22 wc-help.txt
+user@user-Aspire-A315-56:~/lws$ find *.txt
+content_from.txt
+head-of-wc.txt
+wc-help.txt
+user@user-Aspire-A315-56:~/lws$ find / -name *.py -type f
+/opt/lampp/share/xampp-control-panel/pyinotify.py
+/opt/lampp/share/xampp-control-panel/SimpleGladeApp.py
+/opt/lampp/share/xampp-control-panel/simple-glade-codegen.py
+/opt/lampp/share/xampp-control-panel/xampp-control-panel.py
+find: ‘/opt/lampp/var/mysql/performance_schema’: Отказано в доступе
+find: ‘/opt/lampp/var/mysql/mysql’: Отказано в доступе
+find: ‘/opt/lampp/var/mysql/myFirstBD’: Отказано в доступе
+find: ‘/opt/lampp/var/mysql/phpmyadmin’: Отказано в доступе
+find: ‘/opt/lampp/var/mysql/test’: Отказано в доступе
+find: ‘/opt/lampp/phpmyadmin/tmp/twig’: Отказано в доступе
+find: ‘/opt/containerd’: Отказано в доступе
+find: ‘/root’: Отказано в доступе
+find: ‘/tmp/systemd-private-9276e76c05cd4bdbbc9f82d2b0f63f7e-systemd-timesyncd.service-z04syh’: Отказано в доступе
+find: ‘/tmp/systemd-private-9276e76c05cd4bdbbc9f82d2b0f63f7e-upower.service-QBtfXh’: Отказано в доступе
+find: ‘/tmp/systemd-private-9276e76c05cd4bdbbc9f82d2b0f63f7e-colord.service-fB9Zqg’: Отказано в доступе
+user@user-Aspire-A315-56:~/lws$ find / -name *.py -type f > search_result.txt
+find: ‘/opt/lampp/var/mysql/performance_schema’: Отказано в доступе
+find: ‘/opt/lampp/var/mysql/mysql’: Отказано в доступе
+find: ‘/opt/lampp/var/mysql/myFirstBD’: Отказано в доступе
+find: ‘/opt/lampp/var/mysql/phpmyadmin’: Отказано в доступе
+find: ‘/opt/lampp/var/mysql/test’: Отказано в доступе
+find: ‘/opt/lampp/phpmyadmin/tmp/twig’: Отказано в доступе
+find: ‘/opt/containerd’: Отказано в доступе
+find: ‘/root’: Отказано в доступе
+find: ‘/tmp/systemd-private-9276e76c05cd4bdbbc9f82d2b0f63f7e-systemd-timesyncd.service-z04syh’: Отказано в доступе
+find: ‘/tmp/systemd-private-9276e76c05cd4bdbbc9f82d2b0f63f7e-upower.service-QBtfXh’: Отказано в доступе
+find: ‘/tmp/systemd-private-9276e76c05cd4bdbbc9f82d2b0f63f7e-colord.service-fB9Zqg’: Отказано в доступе
+find: ‘/tmp/systemd-private-9276e76c05cd4bdbbc9f82d2b0f63f7e-systemd-logind.service-huH0Tg’: Отказано в доступе
+find: ‘/tmp/systemd-private-9276e76c05cd4bdbbc9f82d2b0f63f7e-ModemManager.service-KYY2Fg’: Отказано в доступе
+find: ‘/tmp/systemd-private-9276e76c05cd4bdbbc9f82d2b0f63f7e-systemd-resolved.service-2gvm8h’: Отказано в доступе
+find: ‘/run/wpa_supplicant’: Отказано в доступе
+find: ‘/run/containerd’: Отказано в доступе
+find: ‘/run/lightdm’: Отказано в доступе
+find: ‘/run/udisks2’: Отказано в доступе
+find: ‘/run/cups/certs’: Отказано в доступе
+
+user@user-Aspire-A315-56:~/lws$ ll
+итого 52
+drwxrwxr-x  3 user user 4096 ноя 11 12:33 ./
+drwxr-xr-x 51 user user 4096 ноя 11 12:03 ../
+-rw-rw-r--  1 user user   48 ноя 11 12:13 content_from.txt
+-rw-rw-r--  1 user user   10 ноя 11 12:06 f1
+-rw-rw-r--  1 user user   12 ноя 11 12:14 f2
+-rw-rw-r--  1 user user   11 ноя 11 12:14 f3
+-rw-rw-r--  1 user user   55 ноя 11 12:19 files_list
+-rw-rw-r--  1 user user   30 ноя 11 12:09 f_sumary
+-rw-rw-r--  1 user user  356 ноя 11 12:23 head-of-wc.txt
+drwxrwxr-x  2 user user 4096 окт 20 21:58 lesson02/
+-rw-rw-r--  1 user user 5993 ноя 11 12:33 search_result.txt
+-rw-rw-r--  1 user user 2187 ноя 11 12:22 wc-help.txt
+user@user-Aspire-A315-56:~/lws$ head search_result.txt 
+/opt/lampp/share/xampp-control-panel/pyinotify.py
+/opt/lampp/share/xampp-control-panel/SimpleGladeApp.py
+/opt/lampp/share/xampp-control-panel/simple-glade-codegen.py
+/opt/lampp/share/xampp-control-panel/xampp-control-panel.py
+/etc/python2.7/sitecustomize.py
+/etc/python3.8/sitecustomize.py
+/home/user/phpshtorm/bin/restart.py
+/home/user/phpshtorm/bin/printenv.py
+/home/user/.vscode/extensions/ms-azuretools.vscode-docker-1.22.2/resources/python/launcher.py
+/home/user/.nvm/versions/node/v16.13.0/share/doc/node/lldb_commands.py
+user@user-Aspire-A315-56:~/lws$ find / -name *.py -type f 1> search_result.txt 2>errors.txt
+^Z
+[3]+  Остановлен    find / -name *.py -type f > search_result.txt 2> errors.txt
+user@user-Aspire-A315-56:~/lws$ ll
+итого 2596
+drwxrwxr-x  3 user user    4096 ноя 11 12:36 ./
+drwxr-xr-x 51 user user    4096 ноя 11 12:03 ../
+-rw-rw-r--  1 user user      48 ноя 11 12:13 content_from.txt
+-rw-rw-r--  1 user user  107157 ноя 11 12:36 errors.txt
+-rw-rw-r--  1 user user      10 ноя 11 12:06 f1
+-rw-rw-r--  1 user user      12 ноя 11 12:14 f2
+-rw-rw-r--  1 user user      11 ноя 11 12:14 f3
+-rw-rw-r--  1 user user      55 ноя 11 12:19 files_list
+-rw-rw-r--  1 user user      30 ноя 11 12:09 f_sumary
+-rw-rw-r--  1 user user     356 ноя 11 12:23 head-of-wc.txt
+drwxrwxr-x  2 user user    4096 окт 20 21:58 lesson02/
+-rw-rw-r--  1 user user 2500598 ноя 11 12:36 search_result.txt
+-rw-rw-r--  1 user user    2187 ноя 11 12:22 wc-help.txt
+user@user-Aspire-A315-56:~/lws$ head search_result.txt 
+/opt/lampp/share/xampp-control-panel/pyinotify.py
+/opt/lampp/share/xampp-control-panel/SimpleGladeApp.py
+/opt/lampp/share/xampp-control-panel/simple-glade-codegen.py
+/opt/lampp/share/xampp-control-panel/xampp-control-panel.py
+/etc/python2.7/sitecustomize.py
+/etc/python3.8/sitecustomize.py
+/home/user/phpshtorm/bin/restart.py
+/home/user/phpshtorm/bin/printenv.py
+/home/user/.vscode/extensions/ms-azuretools.vscode-docker-1.22.2/resources/python/launcher.py
+/home/user/.nvm/versions/node/v16.13.0/share/doc/node/lldb_commands.py
+user@user-Aspire-A315-56:~/lws$ head errors.txt 
+find: ‘/opt/lampp/var/mysql/performance_schema’: Отказано в доступе
+find: ‘/opt/lampp/var/mysql/mysql’: Отказано в доступе
+find: ‘/opt/lampp/var/mysql/myFirstBD’: Отказано в доступе
+find: ‘/opt/lampp/var/mysql/phpmyadmin’: Отказано в доступе
+find: ‘/opt/lampp/var/mysql/test’: Отказано в доступе
+find: ‘/opt/lampp/phpmyadmin/tmp/twig’: Отказано в доступе
+find: ‘/opt/containerd’: Отказано в доступе
+find: ‘/root’: Отказано в доступе
+find: ‘/tmp/systemd-private-9276e76c05cd4bdbbc9f82d2b0f63f7e-systemd-timesyncd.service-z04syh’: Отказано в доступе
+find: ‘/tmp/systemd-private-9276e76c05cd4bdbbc9f82d2b0f63f7e-upower.service-QBtfXh’: Отказано в доступе
+user@user-Aspire-A315-56:~/lws$ find / -name *.py -type f 1> allResults.txt 2>&1 
+^Z
+[4]+  Остановлен    find / -name *.py -type f > allResults.txt 2>&1
+user@user-Aspire-A315-56:~/lws$ ll
+итого 2700
+drwxrwxr-x  3 user user    4096 ноя 11 12:40 ./
+drwxr-xr-x 51 user user    4096 ноя 11 12:03 ../
+-rw-rw-r--  1 user user  102812 ноя 11 12:40 allResults.txt
+-rw-rw-r--  1 user user      48 ноя 11 12:13 content_from.txt
+-rw-rw-r--  1 user user  107157 ноя 11 12:36 errors.txt
+-rw-rw-r--  1 user user      10 ноя 11 12:06 f1
+-rw-rw-r--  1 user user      12 ноя 11 12:14 f2
+-rw-rw-r--  1 user user      11 ноя 11 12:14 f3
+-rw-rw-r--  1 user user      55 ноя 11 12:19 files_list
+-rw-rw-r--  1 user user      30 ноя 11 12:09 f_sumary
+-rw-rw-r--  1 user user     356 ноя 11 12:23 head-of-wc.txt
+drwxrwxr-x  2 user user    4096 окт 20 21:58 lesson02/
+-rw-rw-r--  1 user user 2500598 ноя 11 12:36 search_result.txt
+-rw-rw-r--  1 user user    2187 ноя 11 12:22 wc-help.txt
+user@user-Aspire-A315-56:~/lws$ tail allResults.txt 
+find: ‘/var/cache/ldconfig’: Отказано в доступе
+find: ‘/var/cache/private’: Отказано в доступе
+find: ‘/var/cache/apt/archives/partial’: Отказано в доступе
+find: ‘/var/cache/cups’: Отказано в доступе
+find: ‘/var/tmp/systemd-private-9276e76c05cd4bdbbc9f82d2b0f63f7e-systemd-resolved.service-o0sFLh’: Отказано в доступе
+find: ‘/var/tmp/systemd-private-9276e76c05cd4bdbbc9f82d2b0f63f7e-colord.service-KimmTg’: Отказано в доступе
+find: ‘/var/tmp/systemd-private-9276e76c05cd4bdbbc9f82d2b0f63f7e-ModemManager.service-jXATuj’: Отказано в доступе
+find: ‘/var/tmp/systemd-private-9276e76c05cd4bdbbc9f82d2b0f63f7e-upower.service-TsvQTh’: Отказано в доступе
+find: ‘/var/tmp/systemd-private-9276e76c05cd4bdbbc9f82d2b0f63f7e-systemd-timesyncd.service-q4AEcj’: Отказано в доступе
+find: ‘/var/tmp/systemd-private-9276e76c05cd4bdbbc9f82d2b0f63f7e-systemd-logind.service-VZQOff’: Отказано в доступе
+user@user-Aspire-A315-56:~/lws$ 
+
+user@user-Aspire-A315-56:~/lws$ whatis top
+top (1)              - display Linux processes
+user@user-Aspire-A315-56:~/lws$ top
+top - 12:57:33 up  1:15,  1 user,  load average: 2,64, 1,63, 1,50
+Tasks: 266 total,   2 running, 260 sleeping,   4 stopped,   0 zombie
+%Cpu(s): 26,3 us,  7,4 sy,  0,0 ni, 66,1 id,  0,0 wa,  0,0 hi,  0,2 si,  0,0 st
+МиБ Mem :  11765,8 total,    390,6 free,   3016,1 used,   8359,1 buff/cache
+МиБ Swap:   2048,0 total,   2041,7 free,      6,2 used.   7728,4 avail Mem 
+
+    PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND                                                                                                                        
+   2581 user      20   0 2995672 323852 117600 S  53,8   2,7  15:34.85 Isolated Web Co                                                                                                                
+   2395 user      20   0 3813652 473792 231792 S  43,5   3,9  14:34.60 firefox-bin                                                                                                                    
+   1225 user      20   0 4114120 202468 109420 R   9,0   1,7   4:17.66 cinnamon                                                                                                                       
+   2660 user      20   0  410264  99592  72700 S   8,0   0,8   2:26.63 RDD Process                                                                                                                    
+    748 root      20   0  737708 133884  88448 S   5,6   1,1   3:27.36 Xorg                                                                                                                           
+    907 user       9 -11 2720288  20328  15448 S   3,0   0,2   1:19.77 pulseaudio                                                                                                                     
+   1968 user      20   0 1077340 339156 147456 S   1,7   2,8   1:32.05 telegram-deskto                                                                                                                
+   2662 user      20   0  333672  43776  32320 S   1,3   0,4   0:18.32 Utility Process                                                                                                                
+   6108 root      20   0       0      0      0 I   1,3   0,0   0:07.66 kworker/0:1-events                                                                                                             
+    700 mysql     20   0 2387556 397528  36304 S   1,0   3,3   0:38.11 mysqld                                                                                                                         
+   4218 root      20   0       0      0      0 I   0,7   0,0   0:08.17 kworker/u8:3-events_unbound                                                                                                    
+   4993 user      20   0  467076  41404  31520 S   0,7   0,3   0:16.50 gnome-terminal-                                                                                                                
+    109 root       0 -20       0      0      0 I   0,3   0,0   0:01.15 kworker/1:1H-events_highpri                                                                                                    
+   1285 user      20   0   36,6g 157144 113776 S   0,3   1,3   0:13.54 skypeforlinux                                                                                                                  
+   2079 user      20   0 2660284 331128 150500 S   0,3   2,7   0:18.53 chromium                                                                                                                       
+   2977 user      20   0 2519716 162576  92264 S   0,3   1,3   0:26.94 Isolated Web Co                                                                                                                
+   4582 user      20   0 2514380 139624  85352 S   0,3   1,2   0:06.40 Isolated Web Co                                                                                                                
+   4585 user      20   0 2431948  93240  71740 S   0,3   0,8   0:03.13 Isolated Web Co                                                                                                                
+   4749 user      20   0 2426252  88128  69412 S   0,3   0,7   0:04.13 Isolated Web Co                                                                                                                
+   7740 user      20   0   12056   3992   3336 R   0,3   0,0   0:00.27 top                                                                                                                            
+   7744 root      20   0       0      0      0 D   0,3   0,0   0:00.26 kworker/u8:1+events_unbound                                                                                                    
+      1 root      20   0  168176  11528   8504 S   0,0   0,1   0:00.87 systemd                                                                                                                        
+      2 root      20   0       0      0      0 S   0,0   0,0   0:00.00 kthreadd                                                                                                                       
+      3 root       0 -20       0      0      0 I   0,0   0,0   0:00.00 rcu_gp                                                                                                                         
+      4 root       0 -20       0      0      0 I   0,0   0,0   0:00.00 rcu_par_gp                                                                                                                     
+      6 root       0 -20       0      0      0 I   0,0   0,0   0:00.00 kworker/0:0H-events_highpri                                                                                                    
+      8 root       0 -20       0      0      0 I   0,0   0,0   0:00.00 mm_percpu_wq                                                                                                                   
+      9 root      20   0       0      0      0 S   0,0   0,0   0:00.34 ksoftirqd/0                                                                                                                    
+     10 root      20   0       0      0      0 I   0,0   0,0   0:06.70 rcu_sched                                                                                                                      
+     11 root      rt   0       0      0      0 S   0,0   0,0   0:00.01 migration/0                                                                                                                    
+     12 root     -51   0       0      0      0 S   0,0   0,0   0:00.00 idle_inject/0                                                                                                                  
+     14 root      20   0       0      0      0 S   0,0   0,0   0:00.00 cpuhp/0                                                                                                                        
+     15 root      20   0       0      0      0 S   0,0   0,0   0:00.00 cpuhp/1                                                                                                                        
+     16 root     -51   0       0      0      0 S   0,0   0,0   0:00.00 idle_inject/1                                                                                                                  
+     17 root      rt   0       0      0      0 S   0,0   0,0   0:00.09 migration/1                                                                                                                    
+     18 root      20   0       0      0      0 S   0,0   0,0   0:00.31 ksoftirqd/1                                                                                                                    
+     20 root       0 -20       0      0      0 I   0,0   0,0   0:00.00 kworker/1:0H-events_highpri                                                                                                    
+     21 root      20   0       0      0      0 S   0,0   0,0   0:00.00 cpuhp/2                                                                                                                        
+     22 root     -51   0       0      0      0 S   0,0   0,0   0:00.00 idle_inject/2                                                                                                                  
+     23 root      rt   0       0      0      0 S   0,0   0,0   0:00.08 migration/2                                                                                                                    
+[5]+  Остановлен    top
+user@user-Aspire-A315-56:~/lws$ htop
+user@user-Aspire-A315-56:~/lws$ df --help
+Использование: df [ПАРАМЕТР]… [ФАЙЛ]…
+Показывает сведения о файловой системе, на которой расположен каждый
+из ФАЙЛОВ, или, по умолчанию, обо всех файловых системах.
+
+Аргументы, обязательные для длинных параметров, обязательны и для коротких.
+  -a, --all               включать фиктивные, дублированные, недоступные
+                          файловые системы
+  -B, --block-size=РАЗМЕР использовать блоки указанного РАЗМЕРА; например,
+                          «-BM» выводит размеры в единицах, равных
+                          1048576 байтам; см. формат РАЗМЕРА далее.
+      --total             выводить общий итог
+  -h, --human-readable    выводить размеры в степени 1024
+                          (например, 1023M)
+  -H, --si                то же, но использовать степень 1000 (например, 1.1Г)
+  -i, --inodes            вывести информацию об индексных дескрипторах, а не
+                          об использовании блоков
+  -k                      аналог --block-size=1K
+  -l, --local             перечислить только локальные файловые системы
+      --no-sync           не вызывать sync перед получением информации об
+                          использовании блоков (по умолчанию)
+      --output[=FIELD_LIST]
+                          при выводе использовать формат FIELD_LIST, или
+                          показать все поля, если значение FIELD_LIST
+                          не указано.
+  -P, --portability       выводить в формате POSIX
+      --sync              вызывать sync перед получением информации об
+                          использовании блоков
+      --total             не учитывать все маловажные для доступного
+                          пространства элементы и показать общий итог
+  -t, --type=ТИП          перечислить только файловые системы указанного ТИПА
+  -T, --print-type        выводить тип файловой системы
+  -x, --exclude-type=ТИП  исключить файловые системы указанного ТИПА
+  -v                      (игнорируется)
+      --help     показать эту справку и выйти
+      --version  показать информацию о версии и выйти
+
+Показывает значения в единицах первого доступного РАЗМЕРА из --block-size,
+и переменных окружения DF_BLOCK_SIZE, BLOCK_SIZE и BLOCKSIZE.
+Иначе, единицей по умолчанию является 1024 байта (или 512, если
+установлена POSIXLY_CORRECT).
+
+РАЗМЕР задаётся целым числом и необязательной единицей изменения
+(пример: 10K это 10*1024). Единицы изменения:
+K, M, G, T, P, E, Z, Y (степень 1024) или KB, MB, … (степень 1000).
+
+Значение FIELD_LIST представляет собой список включаемых колонок,
+перечисляемых через запятую. Возможные имена полей:
+«source», «fstype», «itotal», «iused», «iavail», «ipcent»,
+«size», «used», «avail», «pcent», «file» и «target» (см. также страницу info).
+
+Страница справки по GNU coreutils: <https://www.gnu.org/software/coreutils/>
+Об ошибках в переводе сообщений «df» сообщайте по адресу <gnu@d07.ru>
+Полная документация: <https://www.gnu.org/software/coreutils/df>
+или доступная локально: info '(coreutils) df invocation'
+user@user-Aspire-A315-56:~/lws$ df
+df: /run/user/1000/doc: Операция не позволена
+Файл.система   1K-блоков Использовано  Доступно Использовано% Cмонтировано в
+udev             5976536            0   5976536            0% /dev
+tmpfs            1204824         1664   1203160            1% /run
+/dev/nvme0n1p2 244506940    105272044 126741840           46% /
+tmpfs            6024108        27632   5996476            1% /dev/shm
+tmpfs               5120            4      5116            1% /run/lock
+tmpfs            6024108            0   6024108            0% /sys/fs/cgroup
+/dev/nvme0n1p1    523248         5348    517900            2% /boot/efi
+tmpfs            1204820           96   1204724            1% /run/user/1000
+user@user-Aspire-A315-56:~/lws$ df -h
+df: /run/user/1000/doc: Операция не позволена
+Файл.система   Размер Использовано  Дост Использовано% Cмонтировано в
+udev             5,7G            0  5,7G            0% /dev
+tmpfs            1,2G         1,7M  1,2G            1% /run
+/dev/nvme0n1p2   234G         101G  121G           46% /
+tmpfs            5,8G          27M  5,8G            1% /dev/shm
+tmpfs            5,0M         4,0K  5,0M            1% /run/lock
+tmpfs            5,8G            0  5,8G            0% /sys/fs/cgroup
+/dev/nvme0n1p1   511M         5,3M  506M            2% /boot/efi
+tmpfs            1,2G          96K  1,2G            1% /run/user/1000
+user@user-Aspire-A315-56:~/lws$ du
+4	./lesson02
+2696	.
+user@user-Aspire-A315-56:~/lws$ whatis du
+du (1)               - estimate file space usage
+user@user-Aspire-A315-56:~/lws$ du -sh
+2,7M	.
+user@user-Aspire-A315-56:~/lws$ du ~ -sh
+du: невозможно прочитать каталог '/home/user/Dockerr/mysql/performance_schema': Отказано в доступе
+du: невозможно прочитать каталог '/home/user/Dockerr/mysql/mysql': Отказано в доступе
+du: невозможно прочитать каталог '/home/user/Dockerr/mysql/sys': Отказано в доступе
+du: невозможно прочитать каталог '/home/user/Dockerr/mysql/drupal8': Отказано в доступе
+du: невозможно прочитать каталог '/home/user/workbox/livingjoy/mysql.save/performance_schema': Отказано в доступе
+du: невозможно прочитать каталог '/home/user/workbox/livingjoy/mysql.save/newdb': Отказано в доступе
+du: невозможно прочитать каталог '/home/user/workbox/livingjoy/mysql.save/mysql': Отказано в доступе
+du: невозможно прочитать каталог '/home/user/workbox/livingjoy/mysql.save/sys': Отказано в доступе
+du: невозможно прочитать каталог '/home/user/workbox/livingjoy/mysql.save/drupal8': Отказано в доступе
+32G	/home/user
+user@user-Aspire-A315-56:~/lws$ du -ch *.txt
+104K	allResults.txt
+4,0K	content_from.txt
+108K	errors.txt
+4,0K	head-of-wc.txt
+2,4M	search_result.txt
+4,0K	wc-help.txt
+2,7M	итого
+user@user-Aspire-A315-56:~/lws$ systemctl
+  UNIT                                                                                   LOAD   ACTIVE SUB       DESCRIPTION                                                                  
+  proc-sys-fs-binfmt_misc.automount                                                      loaded active running   Arbitrary Executable File Formats File System Automount Point                
+  sys-devices-pci0000:00-0000:00:02.0-drm-card0-card0\x2deDP\x2d1-intel_backlight.device loaded active plugged   /sys/devices/pci0000:00/0000:00:02.0/drm/card0/card0-eDP-1/intel_backlight   
+  sys-devices-pci0000:00-0000:00:14.0-usb1-1\x2d10-1\x2d10:1.0-bluetooth-hci0.device     loaded active plugged   /sys/devices/pci0000:00/0000:00:14.0/usb1/1-10/1-10:1.0/bluetooth/hci0       
+  sys-devices-pci0000:00-0000:00:14.3-net-wlp0s20f3.device                               loaded active plugged   Killer Wi-Fi 6 AX1650i 160MHz Wireless Network Adapter (201NGW)              
+  sys-devices-pci0000:00-0000:00:1d.0-0000:01:00.0-net-enp1s0.device                     loaded active plugged   RTL8111/8168/8411 PCI Express Gigabit Ethernet Controller                    
+  sys-devices-pci0000:00-0000:00:1d.4-0000:02:00.0-nvme-nvme0-nvme0n1-nvme0n1p1.device   loaded active plugged   HFM256GDJTNI-82A0A EFI\x20System\x20Partition                                
+  sys-devices-pci0000:00-0000:00:1d.4-0000:02:00.0-nvme-nvme0-nvme0n1-nvme0n1p2.device   loaded active plugged   HFM256GDJTNI-82A0A 2                                                         
+  sys-devices-pci0000:00-0000:00:1d.4-0000:02:00.0-nvme-nvme0-nvme0n1.device             loaded active plugged   HFM256GDJTNI-82A0A                                                           
+  sys-devices-pci0000:00-0000:00:1f.3-sound-card0.device                                 loaded active plugged   Smart Sound Technology Audio Controller                                      
+  sys-devices-platform-serial8250-tty-ttyS0.device                                       loaded active plugged   /sys/devices/platform/serial8250/tty/ttyS0                                   
+  sys-devices-platform-serial8250-tty-ttyS1.device                                       loaded active plugged   /sys/devices/platform/serial8250/tty/ttyS1                                   
+  sys-devices-platform-serial8250-tty-ttyS10.device                                      loaded active plugged   /sys/devices/platform/serial8250/tty/ttyS10                                  
+  sys-devices-platform-serial8250-tty-ttyS11.device                                      loaded active plugged   /sys/devices/platform/serial8250/tty/ttyS11                                  
+  sys-devices-platform-serial8250-tty-ttyS12.device                                      loaded active plugged   /sys/devices/platform/serial8250/tty/ttyS12                                  
+  sys-devices-platform-serial8250-tty-ttyS13.device                                      loaded active plugged   /sys/devices/platform/serial8250/tty/ttyS13                                  
+  sys-devices-platform-serial8250-tty-ttyS14.device                                      loaded active plugged   /sys/devices/platform/serial8250/tty/ttyS14                                  
+  sys-devices-platform-serial8250-tty-ttyS15.device                                      loaded active plugged   /sys/devices/platform/serial8250/tty/ttyS15                                  
+  sys-devices-platform-serial8250-tty-ttyS16.device                                      loaded active plugged   /sys/devices/platform/serial8250/tty/ttyS16                                  
+  sys-devices-platform-serial8250-tty-ttyS17.device                                      loaded active plugged   /sys/devices/platform/serial8250/tty/ttyS17                                  
+  sys-devices-platform-serial8250-tty-ttyS18.device                                      loaded active plugged   /sys/devices/platform/serial8250/tty/ttyS18                                  
+  sys-devices-platform-serial8250-tty-ttyS19.device                                      loaded active plugged   /sys/devices/platform/serial8250/tty/ttyS19                                  
+  sys-devices-platform-serial8250-tty-ttyS2.device                                       loaded active plugged   /sys/devices/platform/serial8250/tty/ttyS2                                   
+  sys-devices-platform-serial8250-tty-ttyS20.device                                      loaded active plugged   /sys/devices/platform/serial8250/tty/ttyS20                                  
+  sys-devices-platform-serial8250-tty-ttyS21.device                                      loaded active plugged   /sys/devices/platform/serial8250/tty/ttyS21                                  
+  sys-devices-platform-serial8250-tty-ttyS22.device                                      loaded active plugged   /sys/devices/platform/serial8250/tty/ttyS22                                  
+  sys-devices-platform-serial8250-tty-ttyS23.device                                      loaded active plugged   /sys/devices/platform/serial8250/tty/ttyS23                                  
+  sys-devices-platform-serial8250-tty-ttyS24.device                                      loaded active plugged   /sys/devices/platform/serial8250/tty/ttyS24                                  
+  sys-devices-platform-serial8250-tty-ttyS25.device                                      loaded active plugged   /sys/devices/platform/serial8250/tty/ttyS25                                  
+  sys-devices-platform-serial8250-tty-ttyS26.device                                      loaded active plugged   /sys/devices/platform/serial8250/tty/ttyS26                                  
+  sys-devices-platform-serial8250-tty-ttyS27.device                                      loaded active plugged   /sys/devices/platform/serial8250/tty/ttyS27                                  
+  sys-devices-platform-serial8250-tty-ttyS28.device                                      loaded active plugged   /sys/devices/platform/serial8250/tty/ttyS28                                  
+  sys-devices-platform-serial8250-tty-ttyS29.device                                      loaded active plugged   /sys/devices/platform/serial8250/tty/ttyS29                                  
+  sys-devices-platform-serial8250-tty-ttyS3.device                                       loaded active plugged   /sys/devices/platform/serial8250/tty/ttyS3                                   
+  sys-devices-platform-serial8250-tty-ttyS30.device                                      loaded active plugged   /sys/devices/platform/serial8250/tty/ttyS30                                  
+  sys-devices-platform-serial8250-tty-ttyS31.device                                      loaded active plugged   /sys/devices/platform/serial8250/tty/ttyS31                                  
+  sys-devices-platform-serial8250-tty-ttyS4.device                                       loaded active plugged   /sys/devices/platform/serial8250/tty/ttyS4                                   
+  sys-devices-platform-serial8250-tty-ttyS5.device                                       loaded active plugged   /sys/devices/platform/serial8250/tty/ttyS5                                   
+  sys-devices-platform-serial8250-tty-ttyS6.device                                       loaded active plugged   /sys/devices/platform/serial8250/tty/ttyS6                                   
+  sys-devices-platform-serial8250-tty-ttyS7.device                                       loaded active plugged   /sys/devices/platform/serial8250/tty/ttyS7                                   
+  sys-devices-platform-serial8250-tty-ttyS8.device                                       loaded active plugged   /sys/devices/platform/serial8250/tty/ttyS8                                   
+  sys-devices-platform-serial8250-tty-ttyS9.device                                       loaded active plugged   /sys/devices/platform/serial8250/tty/ttyS9                                   
+  sys-devices-virtual-misc-rfkill.device                                                 loaded active plugged   /sys/devices/virtual/misc/rfkill                                             
+  sys-devices-virtual-tty-ttyprintk.device                                               loaded active plugged   /sys/devices/virtual/tty/ttyprintk                                           
+  sys-module-configfs.device                                                             loaded active plugged   /sys/module/configfs                                                         
+  sys-module-fuse.device                                                                 loaded active plugged   /sys/module/fuse                                                             
+  sys-subsystem-bluetooth-devices-hci0.device                                            loaded active plugged   /sys/subsystem/bluetooth/devices/hci0                                        
+  sys-subsystem-net-devices-enp1s0.device                                                loaded active plugged   RTL8111/8168/8411 PCI Express Gigabit Ethernet Controller                    
+  sys-subsystem-net-devices-wlp0s20f3.device                                             loaded active plugged   Killer Wi-Fi 6 AX1650i 160MHz Wireless Network Adapter (201NGW)              
+  -.mount                                                                                loaded active mounted   Root Mount                                                                   
+  boot-efi.mount                                                                         loaded active mounted   /boot/efi                                                                    
+  dev-hugepages.mount                                                                    loaded active mounted   Huge Pages File System                                                       
+  dev-mqueue.mount                                                                       loaded active mounted   POSIX Message Queue File System                                              
+  proc-sys-fs-binfmt_misc.mount                                                          loaded active mounted   Arbitrary Executable File Formats File System                                
+  run-user-1000-doc.mount                                                                loaded active mounted   /run/user/1000/doc                                                           
+  run-user-1000-gvfs.mount                                                               loaded active mounted   /run/user/1000/gvfs                                                          
+  run-user-1000.mount                                                                    loaded active mounted   /run/user/1000                                                               
+  sys-fs-fuse-connections.mount                                                          loaded active mounted   FUSE Control File System                                                     
+  sys-kernel-config.mount                                                                loaded active mounted   Kernel Configuration File System                                             
+  sys-kernel-debug.mount                                                                 loaded active mounted   Kernel Debug File System                                                     
+  sys-kernel-tracing.mount                                                               loaded active mounted   Kernel Trace File System                                                     
+  acpid.path                                                                             loaded active running   ACPI Events Check                                                            
+  cups.path                                                                              loaded active running   CUPS Scheduler                                                               
+  systemd-ask-password-plymouth.path                                                     loaded active waiting   Forward Password Requests to Plymouth Directory Watch                        
+  systemd-ask-password-wall.path                                                         loaded active waiting   Forward Password Requests to Wall Directory Watch                            
+  init.scope                                                                             loaded active running   System and Service Manager                                                   
+  session-c1.scope                                                                       loaded active running   Session c1 of user user                                                      
+  accounts-daemon.service                                                                loaded active running   Accounts Service                                                             
+  acpid.service                                                                          loaded active running   ACPI event daemon                                                            
+  alsa-restore.service                                                                   loaded active exited    Save/Restore Sound Card State                                                
+  apparmor.service                                                                       loaded active exited    Load AppArmor profiles                                                       
+  avahi-daemon.service                                                                   loaded active running   Avahi mDNS/DNS-SD Stack                                                      
+  blk-availability.service                                                               loaded active exited    Availability of block devices                                                
+  bluetooth.service                                                                      loaded active running   Bluetooth service                                                            
+  colord.service                                                                         loaded active running   Manage, Install and Generate Color Profiles                                  
+  console-setup.service                                                                  loaded active exited    Set console font and keymap                                                  
+  containerd.service                                                                     loaded active running   containerd container runtime                                                 
+  cron.service                                                                           loaded active running   Regular background program processing daemon                                 
+  cups-browsed.service                                                                   loaded active running   Make remote CUPS printers available locally                                  
+  cups.service                                                                           loaded active running   CUPS Scheduler                                                               
+  dbus.service                                                                           loaded active running   D-Bus System Message Bus                                                     
+  finalrd.service                                                                        loaded active exited    Create final runtime dir for shutdown pivot root                             
+  getty@tty1.service                                                                     loaded active running   Getty on tty1                                                                
+  hddtemp.service                                                                        loaded active exited    LSB: disk temperature monitoring daemon                                      
+  ifupdown-pre.service                                                                   loaded active exited    Helper to synchronize boot up for ifupdown                                   
+  irqbalance.service                                                                     loaded active running   irqbalance daemon                                                            
+  kerio-kvc.service                                                                      loaded active exited    LSB: Kerio Control VPN Client                                                
+  kerneloops.service                                                                     loaded active running   Tool to automatically collect and submit kernel crash signatures             
+  keyboard-setup.service                                                                 loaded active exited    Set the console keyboard layout                                              
+  kmod-static-nodes.service                                                              loaded active exited    Create list of static device nodes for the current kernel                    
+  lightdm.service                                                                        loaded active running   Light Display Manager                                                        
+  lm-sensors.service                                                                     loaded active exited    Initialize hardware monitoring sensors                                       
+  lvm2-monitor.service                                                                   loaded active exited    Monitoring of LVM2 mirrors, snapshots etc. using dmeventd or progress polling
+  ModemManager.service                                                                   loaded active running   Modem Manager                                                                
+  mysql.service                                                                          loaded active running   MySQL Community Server                                                       
+  networkd-dispatcher.service                                                            loaded active running   Dispatcher daemon for systemd-networkd                                       
+  networking.service                                                                     loaded active exited    Raise network interfaces                                                     
+  NetworkManager-wait-online.service                                                     loaded active exited    Network Manager Wait Online                                                  
+  NetworkManager.service                                                                 loaded active running   Network Manager                                                              
+  openvpn.service                                                                        loaded active exited    OpenVPN service                                                              
+  polkit.service                                                                         loaded active running   Authorization Manager                                                        
+  rsyslog.service                                                                        loaded active running   System Logging Service                                                       
+  rtkit-daemon.service                                                                   loaded active running   RealtimeKit Scheduling Policy Service                                        
+  setvtrgb.service                                                                       loaded active exited    Set console scheme                                                           
+  ssh.service                                                                            loaded active running   OpenBSD Secure Shell server                                                  
+  strongswan-starter.service                                                             loaded active running   strongSwan IPsec IKEv1/IKEv2 daemon using ipsec.conf                         
+  systemd-backlight@backlight:intel_backlight.service                                    loaded active exited    Load/Save Screen Backlight Brightness of backlight:intel_backlight           
+  systemd-fsck@dev-disk-by\x2duuid-8EF6\x2d4BEE.service                                  loaded active exited    File System Check on /dev/disk/by-uuid/8EF6-4BEE                             
+  systemd-journal-flush.service                                                          loaded active exited    Flush Journal to Persistent Storage                                          
+  systemd-journald.service                                                               loaded active running   Journal Service                                                              
+  systemd-logind.service                                                                 loaded active running   Login Service                                                                
+  systemd-modules-load.service                                                           loaded active exited    Load Kernel Modules                                                          
+  systemd-random-seed.service                                                            loaded active exited    Load/Save Random Seed                                                        
+  systemd-remount-fs.service                                                             loaded active exited    Remount Root and Kernel File Systems                                         
+  systemd-resolved.service                                                               loaded active running   Network Name Resolution                                                      
+  systemd-sysctl.service                                                                 loaded active exited    Apply Kernel Variables                                                       
+  systemd-sysusers.service                                                               loaded active exited    Create System Users                                                          
+  systemd-timesyncd.service                                                              loaded active running   Network Time Synchronization                                                 
+  systemd-tmpfiles-setup-dev.service                                                     loaded active exited    Create Static Device Nodes in /dev                                           
+  systemd-tmpfiles-setup.service                                                         loaded active exited    Create Volatile Files and Directories                                        
+  systemd-udev-trigger.service                                                           loaded active exited    udev Coldplug all Devices                                                    
+  systemd-udevd.service                                                                  loaded active running   udev Kernel Device Manager                                                   
+  systemd-update-utmp.service                                                            loaded active exited    Update UTMP about System Boot/Shutdown                                       
+  systemd-user-sessions.service                                                          loaded active exited    Permit User Sessions                                                         
+  teamviewerd.service                                                                    loaded active running   TeamViewer remote control daemon                                             
+  thermald.service                                                                       loaded active running   Thermal Daemon Service                                                       
+  ubuntu-fan.service                                                                     loaded active exited    Ubuntu FAN network setup                                                     
+  ubuntu-system-adjustments.service                                                      loaded active exited    Ubuntu system adjustments                                                    
+  udisks2.service                                                                        loaded active running   Disk Manager                                                                 
+  ufw.service                                                                            loaded active exited    Uncomplicated firewall                                                       
+  upower.service                                                                         loaded active running   Daemon for power management                                                  
+  user-runtime-dir@1000.service                                                          loaded active exited    User Runtime Directory /run/user/1000                                        
+  user@1000.service                                                                      loaded active running   User Manager for UID 1000                                                    
+  wpa_supplicant.service                                                                 loaded active running   WPA supplicant                                                               
+  xl2tpd.service                                                                         loaded active running   LSB: layer 2 tunelling protocol daemon                                       
+  -.slice                                                                                loaded active active    Root Slice                                                                   
+  system-getty.slice                                                                     loaded active active    system-getty.slice                                                           
+  system-modprobe.slice                                                                  loaded active active    system-modprobe.slice                                                        
+  system-systemd\x2dbacklight.slice                                                      loaded active active    system-systemd\x2dbacklight.slice                                            
+  system-systemd\x2dfsck.slice                                                           loaded active active    system-systemd\x2dfsck.slice                                                 
+  system.slice                                                                           loaded active active    System Slice                                                                 
+  user-1000.slice                                                                        loaded active active    User Slice of UID 1000                                                       
+  user.slice                                                                             loaded active active    User and Session Slice                                                       
+  acpid.socket                                                                           loaded active running   ACPID Listen Socket                                                          
+  avahi-daemon.socket                                                                    loaded active running   Avahi mDNS/DNS-SD Stack Activation Socket                                    
+  cups.socket                                                                            loaded active running   CUPS Scheduler                                                               
+  dbus.socket                                                                            loaded active running   D-Bus System Message Bus Socket                                              
+  dm-event.socket                                                                        loaded active listening Device-mapper event daemon FIFOs                                             
+  lvm2-lvmpolld.socket                                                                   loaded active listening LVM2 poll daemon socket                                                      
+  syslog.socket                                                                          loaded active running   Syslog Socket                                                                
+  systemd-coredump.socket                                                                loaded active listening Process Core Dump Socket                                                     
+  systemd-fsckd.socket                                                                   loaded active listening fsck to fsckd communication Socket                                           
+  systemd-initctl.socket                                                                 loaded active listening initctl Compatibility Named Pipe                                             
+  systemd-journald-audit.socket                                                          loaded active running   Journal Audit Socket                                                         
+  systemd-journald-dev-log.socket                                                        loaded active running   Journal Socket (/dev/log)                                                    
+  systemd-journald.socket                                                                loaded active running   Journal Socket                                                               
+  systemd-rfkill.socket                                                                  loaded active listening Load/Save RF Kill Switch Status /dev/rfkill Watch                            
+  systemd-udevd-control.socket                                                           loaded active running   udev Control Socket                                                          
+  systemd-udevd-kernel.socket                                                            loaded active running   udev Kernel Socket                                                           
+  uuidd.socket                                                                           loaded active listening UUID daemon activation socket                                                
+  swapfile.swap                                                                          loaded active active    /swapfile                                                                    
+  basic.target                                                                           loaded active active    Basic System                                                                 
+  bluetooth.target                                                                       loaded active active    Bluetooth                                                                    
+  cryptsetup.target                                                                      loaded active active    Local Encrypted Volumes                                                      
+  getty.target                                                                           loaded active active    Login Prompts                                                                
+  graphical.target                                                                       loaded active active    Graphical Interface                                                          
+  local-fs-pre.target                                                                    loaded active active    Local File Systems (Pre)                                                     
+  local-fs.target                                                                        loaded active active    Local File Systems                                                           
+  multi-user.target                                                                      loaded active active    Multi-User System                                                            
+  network-online.target                                                                  loaded active active    Network is Online                                                            
+  network.target                                                                         loaded active active    Network                                                                      
+  nss-lookup.target                                                                      loaded active active    Host and Network Name Lookups                                                
+  nss-user-lookup.target                                                                 loaded active active    User and Group Name Lookups                                                  
+  paths.target                                                                           loaded active active    Paths                                                                        
+  remote-fs.target                                                                       loaded active active    Remote File Systems                                                          
+  slices.target                                                                          loaded active active    Slices                                                                       
+  sockets.target                                                                         loaded active active    Sockets                                                                      
+  sound.target                                                                           loaded active active    Sound Card                                                                   
+  swap.target                                                                            loaded active active    Swap                                                                         
+  sysinit.target                                                                         loaded active active    System Initialization                                                        
+  time-set.target                                                                        loaded active active    System Time Set                                                              
+  time-sync.target                                                                       loaded active active    System Time Synchronized                                                     
+  timers.target                                                                          loaded active active    Timers                                                                       
+  anacron.timer                                                                          loaded active waiting   Trigger anacron every hour                                                   
+  apt-daily-upgrade.timer                                                                loaded active waiting   Daily apt upgrade and clean activities                                       
+  apt-daily.timer                                                                        loaded active waiting   Daily apt download activities                                                
+  e2scrub_all.timer                                                                      loaded active waiting   Periodic ext4 Online Metadata Check for All Filesystems                      
+  fstrim.timer                                                                           loaded active waiting   Discard unused blocks once a week                                            
+  fwupd-refresh.timer                                                                    loaded active waiting   Refresh fwupd metadata regularly                                             
+  logrotate.timer                                                                        loaded active waiting   Daily rotation of log files                                                  
+  man-db.timer                                                                           loaded active waiting   Daily man-db regeneration                                                    
+  mintupdate-automation-autoremove.timer                                                 loaded active waiting   Update Manager weekly autoremove                                             
+  mintupdate-automation-upgrade.timer                                                    loaded active waiting   Update Manager automatic upgrades                                            
+  motd-news.timer                                                                        loaded active waiting   Message of the Day                                                           
+  phpsessionclean.timer                                                                  loaded active waiting   Clean PHP session files every 30 mins                                        
+  systemd-tmpfiles-clean.timer                                                           loaded active waiting   Daily Cleanup of Temporary Directories                                       
+
+LOAD   = Reflects whether the unit definition was properly loaded.
+ACTIVE = The high-level unit activation state, i.e. generalization of SUB.
+SUB    = The low-level unit activation state, values depend on unit type.
+
+195 loaded units listed. Pass --all to see loaded but inactive units, too.
+To show all installed unit files use 'systemctl list-unit-files'.
+
+[6]+  Остановлен    systemctl
+user@user-Aspire-A315-56:~/lws$ systemctl | wc -l
+203
+user@user-Aspire-A315-56:~/lws$ 
+
+user@user-Aspire-A315-56:~/lws$ systemctl status
+● user-Aspire-A315-56
+    State: running
+     Jobs: 0 queued
+   Failed: 0 units
+    Since: Fri 2022-11-11 11:41:37 +05; 1h 22min ago
+   CGroup: /
+           ├─user.slice 
+           │ └─user-1000.slice 
+           │   ├─user@1000.service 
+           │   │ ├─gvfs-goa-volume-monitor.service 
+           │   │ │ └─1138 /usr/libexec/gvfs-goa-volume-monitor
+           │   │ ├─xdg-permission-store.service 
+           │   │ │ └─1396 /usr/libexec/xdg-permission-store
+           │   │ ├─xdg-document-portal.service 
+           │   │ │ ├─1390 /usr/libexec/xdg-document-portal
+           │   │ │ └─1413 fusermount -o rw,nosuid,nodev,fsname=portal,auto_unmount,subtype=portal -- /run/user/1000/doc
+           │   │ ├─xdg-desktop-portal.service 
+           │   │ │ ├─1386 /usr/libexec/xdg-desktop-portal
+           │   │ │ ├─1461 sh -c /usr/lib/x86_64-linux-gnu/libproxy/0.4.15/pxgsettings org.gnome.system.proxy org.gnome.system.proxy.http org.gnome.system.proxy.https org.gnome.system.proxy.ftp org.>
+           │   │ │ └─1462 /usr/lib/x86_64-linux-gnu/libproxy/0.4.15/pxgsettings org.gnome.system.proxy org.gnome.system.proxy.http org.gnome.system.proxy.https org.gnome.system.proxy.ftp org.gnome.>
+           │   │ ├─evolution-calendar-factory.service 
+           │   │ │ └─1325 /usr/libexec/evolution-calendar-factory
+           │   │ ├─pulseaudio.service 
+           │   │ │ └─907 /usr/bin/pulseaudio --daemonize=no --log-target=journal
+           │   │ ├─app-flatpak-org.telegram.desktop-1952.scope 
+           │   │ │ ├─1952 /usr/libexec/flatpak-bwrap --args 42 telegram-desktop --
+           │   │ │ ├─1963 /usr/libexec/flatpak-bwrap --args 42 /usr/libexec/flatpak-dbus-proxy --args=44
+           │   │ │ ├─1964 /usr/libexec/flatpak-dbus-proxy --args=44
+           │   │ │ ├─1967 /usr/libexec/flatpak-bwrap --args 42 telegram-desktop --
+           │   │ │ └─1968 telegram-desktop --
+           │   │ ├─gvfs-daemon.service 
+           │   │ │ ├─1008 /usr/libexec/gvfsd
+           │   │ │ ├─1016 /usr/libexec/gvfsd-fuse /run/user/1000/gvfs -f -o big_writes
+           │   │ │ ├─1780 /usr/libexec/gvfsd-trash --spawner :1.7 /org/gtk/gvfs/exec_spaw/0
+           │   │ │ └─7158 /usr/libexec/gvfsd-http --spawner :1.7 /org/gtk/gvfs/exec_spaw/1
+           │   │ ├─evolution-source-registry.service 
+           │   │ │ └─1280 /usr/libexec/evolution-source-registry
+           │   │ ├─flatpak-session-helper.service 
+           │   │ │ ├─1956 /usr/libexec/flatpak-session-helper
+           │   │ │ └─1960 server --sh -n /run/user/1000/.flatpak-helper/pkcs11-flatpak-1956 --provider p11-kit-trust.so pkcs11:model=p11-kit-trust?write-protected=yes
+           │   │ ├─gvfs-udisks2-volume-monitor.service 
+           │   │ │ └─1121 /usr/libexec/gvfs-udisks2-volume-monitor
+           │   │ ├─init.scope 
+           │   │ │ ├─900 /lib/systemd/systemd --user
+           │   │ │ └─901 (sd-pam)
+           │   │ ├─gvfs-gphoto2-volume-monitor.service 
+           │   │ │ └─1190 /usr/libexec/gvfs-gphoto2-volume-monitor
+           │   │ ├─xdg-desktop-portal-gtk.service 
+           │   │ │ └─1417 /usr/libexec/xdg-desktop-portal-gtk
+           │   │ ├─obex.service 
+           │   │ │ └─1336 /usr/lib/bluetooth/obexd
+           │   │ ├─at-spi-dbus-bus.service 
+           │   │ │ ├─1022 /usr/libexec/at-spi-bus-launcher
+           │   │ │ ├─1028 /usr/bin/dbus-daemon --config-file=/usr/share/defaults/at-spi2/accessibility.conf --nofork --print-address 3
+           │   │ │ └─1031 /usr/libexec/at-spi2-registryd --use-gnome-session
+           │   │ ├─apps.slice 
+           │   │ │ └─apps-org.gnome.Terminal.slice 
+           │   │ │   ├─gnome-terminal-server.service 
+           │   │ │   │ └─4993 /usr/libexec/gnome-terminal-server
+           │   │ │   └─vte-spawn-10287cc0-3fdf-4aca-9db1-f03897db5bd4.scope 
+           │   │ │     ├─5000 bash
+           │   │ │     ├─5998 find / -name *.py -type f
+           │   │ │     ├─6072 find / -name *.py -type f
+           │   │ │     ├─6149 find / -name *.py -type f
+           │   │ │     ├─6285 find / -name *.py -type f
+           │   │ │     ├─7740 top
+           │   │ │     ├─7872 systemctl
+           │   │ │     ├─7873 pager
+           │   │ │     ├─7925 systemctl status
+           │   │ │     └─7926 pager
+           │   │ ├─gvfs-metadata.service 
+           │   │ │ └─1787 /usr/libexec/gvfsd-metadata
+           │   │ ├─dbus.service 
+           │   │ │ ├─ 923 /usr/bin/dbus-daemon --session --address=systemd: --nofork --nopidfile --systemd-activation --syslog-only
+           │   │ │ ├─1118 /usr/libexec/dconf-service
+           │   │ │ ├─1142 /usr/libexec/goa-daemon
+           │   │ │ └─1179 /usr/libexec/goa-identity-service
+           │   │ ├─evolution-addressbook-factory.service 
+           │   │ │ └─1345 /usr/libexec/evolution-addressbook-factory
+           │   │ ├─gvfs-mtp-volume-monitor.service 
+           │   │ │ └─1194 /usr/libexec/gvfs-mtp-volume-monitor
+           │   │ └─gvfs-afc-volume-monitor.service 
+           │   │   └─1184 /usr/libexec/gvfs-afc-volume-monitor
+           │   └─session-c1.scope 
+           │     ├─ 895 lightdm --session-child 12 15
+           │     ├─ 908 cinnamon-session --session cinnamon
+           │     ├─ 993 /usr/bin/ssh-agent /usr/bin/im-launch cinnamon-session-cinnamon
+           │     ├─1038 /usr/bin/gnome-keyring-daemon --start --components=secrets
+           │     ├─1048 csd-mouse
+           │     ├─1051 csd-screensaver-proxy
+           │     ├─1055 csd-print-notifications
+           │     ├─1056 csd-automount
+           │     ├─1062 csd-a11y-keyboard
+           │     ├─1063 csd-xsettings
+           │     ├─1065 csd-a11y-settings
+           │     ├─1072 csd-wacom
+           │     ├─1073 csd-housekeeping
+           │     ├─1084 csd-media-keys
+           │     ├─1087 csd-power
+           │     ├─1088 csd-xrandr
+           │     ├─1090 csd-background
+           │     ├─1091 csd-keyboard
+           │     ├─1092 csd-color
+           │     ├─1093 csd-clipboard
+           │     ├─1094 csd-sound
+           │     ├─1106 csd-orientation
+           │     ├─1107 csd-cursor
+           │     ├─1128 /usr/libexec/csd-printer
+           │     ├─1209 cinnamon-launcher
+           │     ├─1225 cinnamon --replace
+           │     ├─1241 /usr/libexec/xapps/sn-watcher/xapp-sn-watcher
+           │     ├─1247 /usr/libexec/evolution-data-server/evolution-alarm-notify
+           │     ├─1248 /usr/lib/caribou/caribou
+           │     ├─1256 nemo-desktop
+           │     ├─1259 nm-applet
+           │     ├─1262 blueberry-obex-agent
+           │     ├─1263 cinnamon-killer-daemon
+           │     ├─1265 /usr/libexec/geoclue-2.0/demos/agent
+           │     ├─1268 /usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1
+           │     ├─1285 /usr/share/skypeforlinux/skypeforlinux --executed-from=/home/user --pid=1272 --enable-crashpad
+           │     ├─1311 /usr/share/skypeforlinux/skypeforlinux --type=zygote --no-zygote-sandbox --enable-crashpad --enable-crashpad
+           │     ├─1312 /usr/share/skypeforlinux/skypeforlinux --type=zygote --enable-crashpad --enable-crashpad
+           │     ├─1315 /usr/share/skypeforlinux/skypeforlinux --type=zygote --enable-crashpad --enable-crashpad
+           │     ├─1369 /usr/share/skypeforlinux/chrome_crashpad_handler --monitor-self-annotation=ptype=crashpad-handler --no-rate-limit --database=/home/user/.config/skypeforlinux/Crashpad --url=>
+           │     ├─1394 /usr/share/skypeforlinux/skypeforlinux --type=gpu-process --enable-crashpad --crashpad-handler-pid=1369 --enable-crash-reporter=e2a6eb7f-0d32-4ba0-adb4-49a61e5b17eb,no_chann>
+           │     ├─1418 /usr/share/skypeforlinux/skypeforlinux --type=utility --utility-sub-type=network.mojom.NetworkService --lang=ru --service-sandbox-type=none --enable-crashpad --crashpad-hand>
+           │     ├─1433 /usr/share/skypeforlinux/skypeforlinux --type=renderer --enable-crashpad --crashpad-handler-pid=1369 --enable-crash-reporter=e2a6eb7f-0d32-4ba0-adb4-49a61e5b17eb,no_channel >
+           │     ├─1821 blueberry-tray
+           │     ├─1829 /bin/sh /usr/lib/blueberry/safechild /usr/sbin/rfkill event
+           │     ├─1830 /usr/sbin/rfkill event
+           │     ├─1844 /usr/share/skypeforlinux/skypeforlinux --type=utility --utility-sub-type=audio.mojom.AudioService --lang=ru --service-sandbox-type=none --enable-crashpad --crashpad-handler->
+           │     ├─1906 mintUpdate
+           │     ├─2028 /usr/bin/python3 /usr/share/system-config-printer/applet.py
+           │     ├─2033 mintreport-tray
+           │     ├─2079 /usr/lib/chromium/chromium --enable-gpu-rasterization --disable-pings --no-pings --enable-crashpad
+           │     ├─2082 /usr/lib/chromium/chrome_crashpad_handler --monitor-self --monitor-self-annotation=ptype=crashpad-handler --database=/home/user/.config/chromium/Crash Reports --annotation=c>
+           │     ├─2084 /usr/lib/chromium/chrome_crashpad_handler --no-periodic-tasks --monitor-self-annotation=ptype=crashpad-handler --database=/home/user/.config/chromium/Crash Reports --annotat>
+           │     ├─2088 /usr/lib/chromium/chromium --type=zygote --no-zygote-sandbox --enable-crashpad --crashpad-handler-pid=2082 --enable-crash-reporter=,for Linux Mint --change-stack-guard-on-fo>
+           │     ├─2089 /usr/lib/chromium/chromium --type=zygote --enable-crashpad --crashpad-handler-pid=2082 --enable-crash-reporter=,for Linux Mint --change-stack-guard-on-fork=enable --enable-c>
+           │     ├─2091 /usr/lib/chromium/chromium --type=zygote --enable-crashpad --crashpad-handler-pid=2082 --enable-crash-reporter=,for Linux Mint --change-stack-guard-on-fork=enable --enable-c>
+           │     ├─2110 /usr/lib/chromium/chromium --type=gpu-process --enable-gpu-rasterization --enable-crashpad --crashpad-handler-pid=2082 --enable-crash-reporter=,for Linux Mint --change-stack>
+           │     ├─2115 /usr/lib/chromium/chromium --type=utility --utility-sub-type=network.mojom.NetworkService --lang=ru --service-sandbox-type=none --enable-crashpad --crashpad-handler-pid=2082>
+           │     ├─2125 /usr/lib/chromium/chromium --type=utility --utility-sub-type=storage.mojom.StorageService --lang=ru --service-sandbox-type=utility --enable-crashpad --crashpad-handler-pid=2>
+           │     ├─2174 /usr/lib/chromium/chromium --type=renderer --enable-crashpad --crashpad-handler-pid=2082 --enable-crash-reporter=,for Linux Mint --display-capture-permissions-policy-allowed>
+           │     ├─2208 /usr/lib/chromium/chromium --type=renderer --enable-crashpad --crashpad-handler-pid=2082 --enable-crash-reporter=,for Linux Mint --extension-process --display-capture-permis>
+           │     ├─2229 /usr/lib/chromium/chromium --type=renderer --enable-crashpad --crashpad-handler-pid=2082 --enable-crash-reporter=,for Linux Mint --extension-process --display-capture-permis>
+           │     ├─2250 /usr/lib/chromium/chromium --type=renderer --enable-crashpad --crashpad-handler-pid=2082 --enable-crash-reporter=,for Linux Mint --extension-process --display-capture-permis>
+           │     ├─2324 /usr/lib/chromium/chromium --type=renderer --enable-crashpad --crashpad-handler-pid=2082 --enable-crash-reporter=,for Linux Mint --display-capture-permissions-policy-allowed>
+           │     ├─2336 /usr/lib/chromium/chromium --type=renderer --enable-crashpad --crashpad-handler-pid=2082 --enable-crash-reporter=,for Linux Mint --display-capture-permissions-policy-allowed>
+           │     ├─2395 /usr/lib/firefox/firefox
+           │     ├─2454 /usr/lib/firefox/firefox-bin -contentproc -parentBuildID 20221104133228 -prefsLen 28649 -prefMapSize 230484 -appDir /usr/lib/firefox/browser {fc4c3942-63db-4a58-8a0a-3e33c37>
+           │     ├─2478 /usr/lib/firefox/firefox-bin -contentproc -childID 1 -isForBrowser -prefsLen 28752 -prefMapSize 230484 -jsInitLen 246704 -parentBuildID 20221104133228 -appDir /usr/lib/firef>
+           │     ├─2535 /usr/lib/firefox/firefox-bin -contentproc -childID 2 -isForBrowser -prefsLen 34060 -prefMapSize 230484 -jsInitLen 246704 -parentBuildID 20221104133228 -appDir /usr/lib/firef>
+           │     ├─2581 /usr/lib/firefox/firefox-bin -contentproc -childID 3 -isForBrowser -prefsLen 34176 -prefMapSize 230484 -jsInitLen 246704 -parentBuildID 20221104133228 -appDir /usr/lib/firef>
+           │     ├─2660 /usr/lib/firefox/firefox-bin -contentproc -parentBuildID 20221104133228 -prefsLen 34314 -prefMapSize 230484 -appDir /usr/lib/firefox/browser {2a4c2347-c48c-4923-95fd-eb78f22>
+           │     ├─2662 /usr/lib/firefox/firefox-bin -contentproc -parentBuildID 20221104133228 -sandboxingKind 1 -prefsLen 34314 -prefMapSize 230484 -appDir /usr/lib/firefox/browser {abb26a48-3984>
+           │     ├─2780 nemo
+           │     ├─2828 xed /home/user/web/geekbraints/lessons_6_Linux/linuxLesson_4.txt
+           │     ├─2977 /usr/lib/firefox/firefox-bin -contentproc -childID 11 -isForBrowser -prefsLen 34314 -prefMapSize 230484 -jsInitLen 246704 -parentBuildID 20221104133228 -appDir /usr/lib/fire>
+           │     ├─3015 /usr/lib/firefox/firefox-bin -contentproc -childID 12 -isForBrowser -prefsLen 34314 -prefMapSize 230484 -jsInitLen 246704 -parentBuildID 20221104133228 -appDir /usr/lib/fire>
+           │     ├─4566 /usr/lib/speech-dispatcher-modules/sd_espeak-ng /etc/speech-dispatcher/modules/espeak-ng.conf
+           │     ├─4572 /usr/lib/speech-dispatcher-modules/sd_generic /etc/speech-dispatcher/modules/mary-generic.conf
+           │     ├─4575 /usr/lib/speech-dispatcher-modules/sd_dummy /etc/speech-dispatcher/modules/dummy.conf
+           │     ├─4578 /usr/bin/speech-dispatcher --spawn --communication-method unix_socket --socket-path /run/user/1000/speech-dispatcher/speechd.sock
+           │     ├─4582 /usr/lib/firefox/firefox-bin -contentproc -childID 19 -isForBrowser -prefsLen 34544 -prefMapSize 230484 -jsInitLen 246704 -parentBuildID 20221104133228 -appDir /usr/lib/fire>
+           │     ├─4585 /usr/lib/firefox/firefox-bin -contentproc -childID 20 -isForBrowser -prefsLen 34544 -prefMapSize 230484 -jsInitLen 246704 -parentBuildID 20221104133228 -appDir /usr/lib/fire>
+           │     ├─4709 /usr/lib/firefox/firefox-bin -contentproc -childID 21 -isForBrowser -prefsLen 34544 -prefMapSize 230484 -jsInitLen 246704 -parentBuildID 20221104133228 -appDir /usr/lib/fire>
+           │     ├─4749 /usr/lib/firefox/firefox-bin -contentproc -childID 22 -isForBrowser -prefsLen 34544 -prefMapSize 230484 -jsInitLen 246704 -parentBuildID 20221104133228 -appDir /usr/lib/fire>
+           │     ├─4796 /usr/lib/firefox/firefox-bin -contentproc -childID 23 -isForBrowser -prefsLen 34544 -prefMapSize 230484 -jsInitLen 246704 -parentBuildID 20221104133228 -appDir /usr/lib/fire>
+           │     ├─4908 /usr/lib/firefox/firefox-bin -contentproc -childID 24 -isForBrowser -prefsLen 34544 -prefMapSize 230484 -jsInitLen 246704 -parentBuildID 20221104133228 -appDir /usr/lib/fire>
+           │     ├─4953 /usr/lib/firefox/firefox-bin -contentproc -childID 25 -isForBrowser -prefsLen 34544 -prefMapSize 230484 -jsInitLen 246704 -parentBuildID 20221104133228 -appDir /usr/lib/fire>
+           │     └─7215 /usr/lib/chromium/chromium --type=renderer --enable-crashpad --crashpad-handler-pid=2082 --enable-crash-reporter=,for Linux Mint --display-capture-permissions-policy-allowed>
+           ├─init.scope 
+           │ └─1 /sbin/init splash
+           └─system.slice 
+             ├─irqbalance.service 
+             │ └─510 /usr/sbin/irqbalance --foreground
+             ├─containerd.service 
+             │ └─630 /usr/bin/containerd
+             ├─systemd-udevd.service 
+             │ └─360 /lib/systemd/systemd-udevd
+             ├─cron.service 
+             │ └─496 /usr/sbin/cron -f
+             ├─thermald.service 
+             │ └─538 /usr/sbin/thermald --systemd --dbus-enable --adaptive
+             ├─polkit.service 
+             │ └─521 /usr/lib/policykit-1/polkitd --no-debug
+             ├─networkd-dispatcher.service 
+             │ └─518 /usr/bin/python3 /usr/bin/networkd-dispatcher --run-startup-triggers
+             ├─rtkit-daemon.service 
+             │ └─919 /usr/libexec/rtkit-daemon
+             ├─bluetooth.service 
+             │ └─832 /usr/lib/bluetooth/bluetoothd
+             ├─xl2tpd.service 
+             │ └─1754 /usr/sbin/xl2tpd
+             ├─accounts-daemon.service 
+             │ └─491 /usr/lib/accountsservice/accounts-daemon
+             ├─wpa_supplicant.service 
+             │ └─542 /sbin/wpa_supplicant -u -s -O /run/wpa_supplicant
+             ├─lightdm.service 
+             │ ├─650 /usr/sbin/lightdm
+             │ └─748 /usr/lib/xorg/Xorg -core :0 -seat seat0 -auth /var/run/lightdm/root/:0 -nolisten tcp vt7 -novtswitch
+             ├─ModemManager.service 
+             │ └─617 /usr/sbin/ModemManager
+             ├─systemd-journald.service 
+             │ └─328 /lib/systemd/systemd-journald
+             ├─ssh.service 
+             │ └─649 sshd: /usr/sbin/sshd -D [listener] 0 of 10-100 startups
+             ├─colord.service 
+             │ └─1210 /usr/libexec/colord
+             ├─NetworkManager.service 
+             │ └─502 /usr/sbin/NetworkManager --no-daemon
+             ├─mysql.service 
+             │ └─700 /usr/sbin/mysqld
+             ├─rsyslog.service 
+             │ └─526 /usr/sbin/rsyslogd -n -iNONE
+             ├─kerneloops.service 
+             │ ├─1731 /usr/sbin/kerneloops --test
+             │ └─1734 /usr/sbin/kerneloops
+             ├─teamviewerd.service 
+             │ └─1737 /opt/teamviewer/tv_bin/teamviewerd -d
+             ├─cups-browsed.service 
+             │ └─612 /usr/sbin/cups-browsed
+             ├─cups.service 
+             │ └─497 /usr/sbin/cupsd -l
+             ├─upower.service 
+             │ └─1113 /usr/lib/upower/upowerd
+             ├─systemd-resolved.service 
+             │ └─464 /lib/systemd/systemd-resolved
+             ├─strongswan-starter.service 
+             │ ├─1717 /usr/lib/ipsec/starter --daemon charon --nofork
+             │ └─1749 /usr/lib/ipsec/charon
+             ├─udisks2.service 
+             │ └─540 /usr/lib/udisks2/udisksd
+             ├─acpid.service 
+             │ └─493 /usr/sbin/acpid
+             ├─dbus.service 
+             │ └─499 /usr/bin/dbus-daemon --system --address=systemd: --nofork --nopidfile --systemd-activation --syslog-only
+             ├─systemd-timesyncd.service 
+             │ └─466 /lib/systemd/systemd-timesyncd
+             ├─system-getty.slice 
+             │ └─getty@tty1.service 
+             │   └─751 /sbin/agetty -o -p -- \u --noclear tty1 linux
+             ├─avahi-daemon.service 
+             │ ├─494 avahi-daemon: running [user-Aspire-A315-56.local]
+             │ └─551 avahi-daemon: chroot helper
+             └─systemd-logind.service 
+               └─536 /lib/systemd/systemd-logind
+
+[7]+  Остановлен    systemctl status
+user@user-Aspire-A315-56:~/lws$ systemctl status ssh
+● ssh.service - OpenBSD Secure Shell server
+     Loaded: loaded (/lib/systemd/system/ssh.service; enabled; vendor preset: enabled)
+     Active: active (running) since Fri 2022-11-11 11:41:38 +05; 1h 22min ago
+       Docs: man:sshd(8)
+             man:sshd_config(5)
+    Process: 626 ExecStartPre=/usr/sbin/sshd -t (code=exited, status=0/SUCCESS)
+   Main PID: 649 (sshd)
+      Tasks: 1 (limit: 14007)
+     Memory: 2.6M
+     CGroup: /system.slice/ssh.service
+             └─649 sshd: /usr/sbin/sshd -D [listener] 0 of 10-100 startups
+
+ноя 11 11:41:38 user-Aspire-A315-56 systemd[1]: Starting OpenBSD Secure Shell server...
+ноя 11 11:41:38 user-Aspire-A315-56 sshd[649]: Server listening on 0.0.0.0 port 22.
+ноя 11 11:41:38 user-Aspire-A315-56 sshd[649]: Server listening on :: port 22.
+ноя 11 11:41:38 user-Aspire-A315-56 systemd[1]: Started OpenBSD Secure Shell server.
+user@user-Aspire-A315-56:~/lws$ systemctl status ssh
+
+

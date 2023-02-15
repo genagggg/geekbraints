@@ -1,0 +1,840 @@
+user@user-Aspire-A315-56:~$ docker --help
+
+Usage:  docker [OPTIONS] COMMAND
+
+A self-sufficient runtime for containers
+
+Options:
+      --config string      Location of client config files (default
+                           "/home/user/.docker")
+  -c, --context string     Name of the context to use to connect to the
+                           daemon (overrides DOCKER_HOST env var and
+                           default context set with "docker context use")
+  -D, --debug              Enable debug mode
+  -H, --host list          Daemon socket(s) to connect to
+  -l, --log-level string   Set the logging level
+                           ("debug"|"info"|"warn"|"error"|"fatal")
+                           (default "info")
+      --tls                Use TLS; implied by --tlsverify
+      --tlscacert string   Trust certs signed only by this CA (default
+                           "/home/user/.docker/ca.pem")
+      --tlscert string     Path to TLS certificate file (default
+                           "/home/user/.docker/cert.pem")
+      --tlskey string      Path to TLS key file (default
+                           "/home/user/.docker/key.pem")
+      --tlsverify          Use TLS and verify the remote
+  -v, --version            Print version information and quit
+
+Management Commands:
+  builder     Manage builds
+  config      Manage Docker configs
+  container   Manage containers
+  context     Manage contexts
+  image       Manage images
+  manifest    Manage Docker image manifests and manifest lists
+  network     Manage networks
+  node        Manage Swarm nodes
+  plugin      Manage plugins
+  secret      Manage Docker secrets
+  service     Manage services
+  stack       Manage Docker stacks
+  swarm       Manage Swarm
+  system      Manage Docker
+  trust       Manage trust on Docker images
+  volume      Manage volumes
+
+Commands:
+  attach      Attach local standard input, output, and error streams to a running container
+  build       Build an image from a Dockerfile
+  commit      Create a new image from a container's changes
+  cp          Copy files/folders between a container and the local filesystem
+  create      Create a new container
+  diff        Inspect changes to files or directories on a container's filesystem
+  events      Get real time events from the server
+  exec        Run a command in a running container
+  export      Export a container's filesystem as a tar archive
+  history     Show the history of an image
+  images      List images
+  import      Import the contents from a tarball to create a filesystem image
+  info        Display system-wide information
+  inspect     Return low-level information on Docker objects
+  kill        Kill one or more running containers
+  load        Load an image from a tar archive or STDIN
+  login       Log in to a Docker registry
+  logout      Log out from a Docker registry
+  logs        Fetch the logs of a container
+  pause       Pause all processes within one or more containers
+  port        List port mappings or a specific mapping for the container
+  ps          List containers
+  pull        Pull an image or a repository from a registry
+  push        Push an image or a repository to a registry
+  rename      Rename a container
+  restart     Restart one or more containers
+  rm          Remove one or more containers
+  rmi         Remove one or more images
+  run         Run a command in a new container
+  save        Save one or more images to a tar archive (streamed to STDOUT by default)
+  search      Search the Docker Hub for images
+  start       Start one or more stopped containers
+  stats       Display a live stream of container(s) resource usage statistics
+  stop        Stop one or more running containers
+  tag         Create a tag TARGET_IMAGE that refers to SOURCE_IMAGE
+  top         Display the running processes of a container
+  unpause     Unpause all processes within one or more containers
+  update      Update configuration of one or more containers
+  version     Show the Docker version information
+  wait        Block until one or more containers stop, then print their exit codes
+
+Run 'docker COMMAND --help' for more information on a command.
+
+To get more help with docker, check out our guides at https://docs.docker.com/go/guides/
+user@user-Aspire-A315-56:~$ docker ps
+CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
+user@user-Aspire-A315-56:~$ docker ps -a
+CONTAINER ID   IMAGE         COMMAND    CREATED        STATUS                    PORTS     NAMES
+6f32c7c765eb   hello-world   "/hello"   14 hours ago   Exited (0) 14 hours ago             thirsty_meitner
+user@user-Aspire-A315-56:~$ docker images
+REPOSITORY        TAG       IMAGE ID       CREATED         SIZE
+<none>            <none>    6553eb7ef320   13 days ago     932MB
+node              latest    cb9aad9080ca   2 weeks ago     994MB
+python            latest    00cd1fb8bdcc   4 weeks ago     932MB
+hello-world       latest    feb5d9fea6a5   14 months ago   13.3kB
+docker/whalesay   latest    6b362a9f73eb   7 years ago     247MB
+user@user-Aspire-A315-56:~$ sudo docker run hello-world
+[sudo] пароль для user:            
+
+Hello from Docker!
+This message shows that your installation appears to be working correctly.
+
+To generate this message, Docker took the following steps:
+ 1. The Docker client contacted the Docker daemon.
+ 2. The Docker daemon pulled the "hello-world" image from the Docker Hub.
+    (amd64)
+ 3. The Docker daemon created a new container from that image which runs the
+    executable that produces the output you are currently reading.
+ 4. The Docker daemon streamed that output to the Docker client, which sent it
+    to your terminal.
+
+To try something more ambitious, you can run an Ubuntu container with:
+ $ docker run -it ubuntu bash
+
+Share images, automate workflows, and more with a free Docker ID:
+ https://hub.docker.com/
+
+For more examples and ideas, visit:
+ https://docs.docker.com/get-started/
+
+user@user-Aspire-A315-56:~$ docker ps
+CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
+user@user-Aspire-A315-56:~$ docker ps -a
+CONTAINER ID   IMAGE         COMMAND    CREATED          STATUS                      PORTS     NAMES
+a502194a93c7   hello-world   "/hello"   56 seconds ago   Exited (0) 55 seconds ago             sad_robinson
+6f32c7c765eb   hello-world   "/hello"   14 hours ago     Exited (0) 14 hours ago               thirsty_meitner
+user@user-Aspire-A315-56:~$ docker images
+REPOSITORY        TAG       IMAGE ID       CREATED         SIZE
+<none>            <none>    6553eb7ef320   13 days ago     932MB
+node              latest    cb9aad9080ca   2 weeks ago     994MB
+python            latest    00cd1fb8bdcc   4 weeks ago     932MB
+hello-world       latest    feb5d9fea6a5   14 months ago   13.3kB
+docker/whalesay   latest    6b362a9f73eb   7 years ago     247MB
+user@user-Aspire-A315-56:~$ sudo docker images
+REPOSITORY        TAG       IMAGE ID       CREATED         SIZE
+<none>            <none>    6553eb7ef320   13 days ago     932MB
+node              latest    cb9aad9080ca   2 weeks ago     994MB
+python            latest    00cd1fb8bdcc   4 weeks ago     932MB
+hello-world       latest    feb5d9fea6a5   14 months ago   13.3kB
+docker/whalesay   latest    6b362a9f73eb   7 years ago     247MB
+user@user-Aspire-A315-56:~$ sudo docker run hello-world
+
+Hello from Docker!
+This message shows that your installation appears to be working correctly.
+
+To generate this message, Docker took the following steps:
+ 1. The Docker client contacted the Docker daemon.
+ 2. The Docker daemon pulled the "hello-world" image from the Docker Hub.
+    (amd64)
+ 3. The Docker daemon created a new container from that image which runs the
+    executable that produces the output you are currently reading.
+ 4. The Docker daemon streamed that output to the Docker client, which sent it
+    to your terminal.
+
+To try something more ambitious, you can run an Ubuntu container with:
+ $ docker run -it ubuntu bash
+
+Share images, automate workflows, and more with a free Docker ID:
+ https://hub.docker.com/
+
+For more examples and ideas, visit:
+ https://docs.docker.com/get-started/
+
+user@user-Aspire-A315-56:~$ docker ps -a
+CONTAINER ID   IMAGE         COMMAND    CREATED         STATUS                     PORTS     NAMES
+d4ee19b44917   hello-world   "/hello"   9 seconds ago   Exited (0) 9 seconds ago             vibrant_diffie
+a502194a93c7   hello-world   "/hello"   2 minutes ago   Exited (0) 2 minutes ago             sad_robinson
+6f32c7c765eb   hello-world   "/hello"   14 hours ago    Exited (0) 14 hours ago              thirsty_meitner
+user@user-Aspire-A315-56:~$ sudo groupadd docker
+groupadd: группа «docker» уже существует
+user@user-Aspire-A315-56:~$ tail /etc/group
+nm-openvpn:x:133:
+user:x:1000:
+sambashare:x:134:user
+docker:x:135:user
+mysql:x:136:
+nx:x:1001:
+fwupd-refresh:x:137:
+user1:x:1002:
+user10:x:1003:
+user1111:x:1004:
+user@user-Aspire-A315-56:~$ sudo service docker restart
+user@user-Aspire-A315-56:~$ newgrp docker
+user@user-Aspire-A315-56:~$ docker run -d -p 80:80 docker/getting-started
+Unable to find image 'docker/getting-started:latest' locally
+latest: Pulling from docker/getting-started
+df9b9388f04a: Pull complete 
+5867cba5fcbd: Pull complete 
+4b639e65cb3b: Pull complete 
+061ed9e2b976: Pull complete 
+bc19f3e8eeb1: Pull complete 
+4071be97c256: Pull complete 
+79b586f1a54b: Pull complete 
+0c9732f525d6: Pull complete 
+Digest: sha256:b558be874169471bd4e65bd6eac8c303b271a7ee8553ba47481b73b2bf597aae
+Status: Downloaded newer image for docker/getting-started:latest
+23910120156b736661614e72e86e9a6e2ef48d74b6d000e53d276ae34ace4ecd
+user@user-Aspire-A315-56:~$ docker ps
+CONTAINER ID   IMAGE                    COMMAND                  CREATED          STATUS          PORTS                               NAMES
+23910120156b   docker/getting-started   "/docker-entrypoint.…"   33 seconds ago   Up 31 seconds   0.0.0.0:80->80/tcp, :::80->80/tcp   gracious_ptolemy
+user@user-Aspire-A315-56:~$ 
+user@user-Aspire-A315-56:~$ 
+user@user-Aspire-A315-56:~$ 
+user@user-Aspire-A315-56:~$ 
+user@user-Aspire-A315-56:~$ docker ps
+CONTAINER ID   IMAGE                    COMMAND                  CREATED         STATUS         PORTS                               NAMES
+23910120156b   docker/getting-started   "/docker-entrypoint.…"   4 minutes ago   Up 4 minutes   0.0.0.0:80->80/tcp, :::80->80/tcp   gracious_ptolemy
+user@user-Aspire-A315-56:~$ docker stop 23910120156b
+23910120156b
+user@user-Aspire-A315-56:~$ docker ps
+CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
+user@user-Aspire-A315-56:~$ docker search nginx
+NAME                                              DESCRIPTION                                     STARS     OFFICIAL   AUTOMATED
+nginx                                             Official build of Nginx.                        17733     [OK]       
+linuxserver/nginx                                 An Nginx container, brought to you by LinuxS…   181                  
+bitnami/nginx                                     Bitnami nginx Docker Image                      143                  [OK]
+ubuntu/nginx                                      Nginx, a high-performance reverse proxy & we…   67                   
+bitnami/nginx-ingress-controller                  Bitnami Docker Image for NGINX Ingress Contr…   22                   [OK]
+rancher/nginx-ingress-controller                                                                  11                   
+ibmcom/nginx-ingress-controller                   Docker Image for IBM Cloud Private-CE (Commu…   4                    
+bitnami/nginx-ldap-auth-daemon                                                                    3                    
+bitnami/nginx-exporter                                                                            3                    
+kasmweb/nginx                                     An Nginx image based off nginx:alpine and in…   3                    
+rancher/nginx                                                                                     2                    
+vmware/nginx                                                                                      2                    
+rancher/nginx-ingress-controller-defaultbackend                                                   2                    
+rapidfort/nginx                                   RapidFort optimized, hardened image for NGINX   2                    
+circleci/nginx                                    This image is for internal use                  2                    
+wallarm/nginx-ingress-controller                  Kubernetes Ingress Controller with Wallarm e…   1                    
+vmware/nginx-photon                                                                               1                    
+bitnami/nginx-intel                                                                               1                    
+rapidfort/nginx-ib                                RapidFort optimized, hardened image for NGIN…   0                    
+ibmcom/nginx-ingress-controller-ppc64le           Docker Image for IBM Cloud Private-CE (Commu…   0                    
+rancher/nginx-conf                                                                                0                    
+rancher/nginx-ssl                                                                                 0                    
+continuumio/nginx-ingress-ws                                                                      0                    
+rancher/nginx-ingress-controller-amd64                                                            0                    
+ibmcom/nginx-ppc64le                              Docker image for nginx-ppc64le                  0                    
+user@user-Aspire-A315-56:~$ docker images
+REPOSITORY               TAG       IMAGE ID       CREATED         SIZE
+<none>                   <none>    6553eb7ef320   13 days ago     932MB
+node                     latest    cb9aad9080ca   2 weeks ago     994MB
+python                   latest    00cd1fb8bdcc   4 weeks ago     932MB
+docker/getting-started   latest    cb90f98fd791   7 months ago    28.8MB
+hello-world              latest    feb5d9fea6a5   14 months ago   13.3kB
+docker/whalesay          latest    6b362a9f73eb   7 years ago     247MB
+user@user-Aspire-A315-56:~$ docker pull nginx
+Using default tag: latest
+latest: Pulling from library/nginx
+a603fa5e3b41: Pull complete 
+c39e1cda007e: Pull complete 
+90cfefba34d7: Pull complete 
+a38226fb7aba: Pull complete 
+62583498bae6: Pull complete 
+9802a2cfdb8d: Pull complete 
+Digest: sha256:e209ac2f37c70c1e0e9873a5f7231e91dcd83fdf1178d8ed36c2ec09974210ba
+Status: Downloaded newer image for nginx:latest
+docker.io/library/nginx:latest
+user@user-Aspire-A315-56:~$ docker images
+REPOSITORY               TAG       IMAGE ID       CREATED         SIZE
+nginx                    latest    88736fe82739   9 days ago      142MB
+<none>                   <none>    6553eb7ef320   13 days ago     932MB
+node                     latest    cb9aad9080ca   2 weeks ago     994MB
+python                   latest    00cd1fb8bdcc   4 weeks ago     932MB
+docker/getting-started   latest    cb90f98fd791   7 months ago    28.8MB
+hello-world              latest    feb5d9fea6a5   14 months ago   13.3kB
+docker/whalesay          latest    6b362a9f73eb   7 years ago     247MB
+user@user-Aspire-A315-56:~$ docker run nginx
+/docker-entrypoint.sh: /docker-entrypoint.d/ is not empty, will attempt to perform configuration
+/docker-entrypoint.sh: Looking for shell scripts in /docker-entrypoint.d/
+/docker-entrypoint.sh: Launching /docker-entrypoint.d/10-listen-on-ipv6-by-default.sh
+10-listen-on-ipv6-by-default.sh: info: Getting the checksum of /etc/nginx/conf.d/default.conf
+10-listen-on-ipv6-by-default.sh: info: Enabled listen on IPv6 in /etc/nginx/conf.d/default.conf
+/docker-entrypoint.sh: Launching /docker-entrypoint.d/20-envsubst-on-templates.sh
+/docker-entrypoint.sh: Launching /docker-entrypoint.d/30-tune-worker-processes.sh
+/docker-entrypoint.sh: Configuration complete; ready for start up
+2022/11/25 07:32:43 [notice] 1#1: using the "epoll" event method
+2022/11/25 07:32:43 [notice] 1#1: nginx/1.23.2
+2022/11/25 07:32:43 [notice] 1#1: built by gcc 10.2.1 20210110 (Debian 10.2.1-6) 
+2022/11/25 07:32:43 [notice] 1#1: OS: Linux 5.4.0-132-generic
+2022/11/25 07:32:43 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 1048576:1048576
+2022/11/25 07:32:43 [notice] 1#1: start worker processes
+2022/11/25 07:32:43 [notice] 1#1: start worker process 28
+2022/11/25 07:32:43 [notice] 1#1: start worker process 29
+2022/11/25 07:32:43 [notice] 1#1: start worker process 30
+2022/11/25 07:32:43 [notice] 1#1: start worker process 31
+^C2022/11/25 07:33:07 [notice] 1#1: signal 2 (SIGINT) received, exiting
+2022/11/25 07:33:07 [notice] 29#29: exiting
+2022/11/25 07:33:07 [notice] 30#30: exiting
+2022/11/25 07:33:07 [notice] 28#28: exiting
+2022/11/25 07:33:07 [notice] 31#31: exiting
+2022/11/25 07:33:07 [notice] 31#31: exit
+2022/11/25 07:33:07 [notice] 30#30: exit
+2022/11/25 07:33:07 [notice] 29#29: exit
+2022/11/25 07:33:07 [notice] 28#28: exit
+2022/11/25 07:33:07 [notice] 1#1: signal 14 (SIGALRM) received
+2022/11/25 07:33:07 [notice] 1#1: signal 17 (SIGCHLD) received from 30
+2022/11/25 07:33:07 [notice] 1#1: worker process 30 exited with code 0
+2022/11/25 07:33:07 [notice] 1#1: signal 29 (SIGIO) received
+2022/11/25 07:33:07 [notice] 1#1: signal 17 (SIGCHLD) received from 28
+2022/11/25 07:33:07 [notice] 1#1: worker process 28 exited with code 0
+2022/11/25 07:33:07 [notice] 1#1: worker process 31 exited with code 0
+2022/11/25 07:33:07 [notice] 1#1: signal 29 (SIGIO) received
+2022/11/25 07:33:07 [notice] 1#1: signal 17 (SIGCHLD) received from 31
+2022/11/25 07:33:07 [notice] 1#1: signal 17 (SIGCHLD) received from 29
+2022/11/25 07:33:07 [notice] 1#1: worker process 29 exited with code 0
+2022/11/25 07:33:07 [notice] 1#1: exit
+user@user-Aspire-A315-56:~$ docker run -d nginx
+95c7b3d069253e1ee0290717d96561684b35d1186179e202e21f88b2c97c9921
+user@user-Aspire-A315-56:~$ 
+user@user-Aspire-A315-56:~$ 
+user@user-Aspire-A315-56:~$ docker ps
+CONTAINER ID   IMAGE     COMMAND                  CREATED          STATUS          PORTS     NAMES
+95c7b3d06925   nginx     "/docker-entrypoint.…"   22 seconds ago   Up 21 seconds   80/tcp    hungry_yonath
+user@user-Aspire-A315-56:~$ docker stop 95c7b3d06925
+95c7b3d06925
+user@user-Aspire-A315-56:~$ docker run -d -p 8123:80 nginx
+2a6bdf72dc727288d3290c3fa168495703486b7a8d2bba026ddb5fdbc5fdea1e
+user@user-Aspire-A315-56:~$ docker ps
+CONTAINER ID   IMAGE     COMMAND                  CREATED          STATUS          PORTS                                   NAMES
+2a6bdf72dc72   nginx     "/docker-entrypoint.…"   15 seconds ago   Up 14 seconds   0.0.0.0:8123->80/tcp, :::8123->80/tcp   sad_saha
+user@user-Aspire-A315-56:~$ docker exec -it sharp_ride /bin/bash
+Error: No such container: sharp_ride
+user@user-Aspire-A315-56:~$ docker exec -it sad_saha /bin/bash
+root@2a6bdf72dc72:/# 
+root@2a6bdf72dc72:/# whoami
+root
+root@2a6bdf72dc72:/# ls
+bin   docker-entrypoint.d   home   media  proc	sbin  tmp
+boot  docker-entrypoint.sh  lib    mnt	  root	srv   usr
+dev   etc		    lib64  opt	  run	sys   var
+root@2a6bdf72dc72:/# find / -name index.html
+find: '/proc/29/map_files': Permission denied
+find: '/proc/30/map_files': Permission denied
+find: '/proc/31/map_files': Permission denied
+find: '/proc/32/map_files': Permission denied
+/usr/share/nginx/html/index.html
+root@2a6bdf72dc72:/# cat /usr/share/nginx/html/index.html
+<!DOCTYPE html>
+<html>
+<head>
+<title>Welcome to nginx!</title>
+<style>
+html { color-scheme: light dark; }
+body { width: 35em; margin: 0 auto;
+font-family: Tahoma, Verdana, Arial, sans-serif; }
+</style>
+</head>
+<body>
+<h1>Welcome to nginx!</h1>
+<p>If you see this page, the nginx web server is successfully installed and
+working. Further configuration is required.</p>
+
+<p>For online documentation and support please refer to
+<a href="http://nginx.org/">nginx.org</a>.<br/>
+Commercial support is available at
+<a href="http://nginx.com/">nginx.com</a>.</p>
+
+<p><em>Thank you for using nginx.</em></p>
+</body>
+</html>
+root@2a6bdf72dc72:/# rm /usr/share/nginx/html/index.html
+root@2a6bdf72dc72:/# cat /usr/share/nginx/html/index.html
+cat: /usr/share/nginx/html/index.html: No such file or directory
+root@2a6bdf72dc72:/# cat > /usr/share/nginx/html/index.html
+<h1> Hi Linux learners </h1>root@2a6bdf72dc72:/# 
+
+user@user-Aspire-A315-56:~$ docker ps
+CONTAINER ID   IMAGE     COMMAND                  CREATED          STATUS          PORTS                                   NAMES
+2a6bdf72dc72   nginx     "/docker-entrypoint.…"   22 minutes ago   Up 22 minutes   0.0.0.0:8123->80/tcp, :::8123->80/tcp   sad_saha
+user@user-Aspire-A315-56:~$ docker stop 2a6bdf72dc72
+2a6bdf72dc72
+user@user-Aspire-A315-56:~$ docker ps
+CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
+user@user-Aspire-A315-56:~$ cd lws
+user@user-Aspire-A315-56:~/lws$ ls
+'}'               done       logs.txt     shift
+ age_check.sh     hello.py  'number='     until_sample.sh
+ burger_cost.sh   lesson02   script1.sh   while_sample.sh
+user@user-Aspire-A315-56:~/lws$ rm *
+rm: невозможно удалить 'lesson02': Это каталог
+user@user-Aspire-A315-56:~/lws$ ls
+lesson02
+user@user-Aspire-A315-56:~/lws$ nano Dockerfile
+user@user-Aspire-A315-56:~/lws$ cat Dockerfile 
+
+FROM ubuntu:latest
+MAINTAINER GB_student
+RUN apt-get update
+RUN apt-get install nginx -y
+VOLUME "/var/www/html"
+EXPOSE 80
+CMD /usr/sbin/nginx -g "daemon off;"
+user@user-Aspire-A315-56:~/lws$ ll
+итого 16
+drwxrw-r--  3 user user   4096 ноя 25 13:02 ./
+drwxr-xr-x 51 user user   4096 ноя 25 11:54 ../
+-rw-rw-r--  1 user docker  160 ноя 25 13:02 Dockerfile
+drwxrw-r--  2 user user   4096 окт 20 21:58 lesson02/
+user@user-Aspire-A315-56:~/lws$ docker images
+REPOSITORY               TAG       IMAGE ID       CREATED         SIZE
+nginx                    latest    88736fe82739   9 days ago      142MB
+<none>                   <none>    6553eb7ef320   13 days ago     932MB
+node                     latest    cb9aad9080ca   2 weeks ago     994MB
+python                   latest    00cd1fb8bdcc   4 weeks ago     932MB
+docker/getting-started   latest    cb90f98fd791   7 months ago    28.8MB
+hello-world              latest    feb5d9fea6a5   14 months ago   13.3kB
+docker/whalesay          latest    6b362a9f73eb   7 years ago     247MB
+user@user-Aspire-A315-56:~/lws$ docker build -t my_nginx_image .
+Sending build context to Docker daemon   2.56kB
+Step 1/7 : FROM ubuntu:latest
+latest: Pulling from library/ubuntu
+e96e057aae67: Pull complete 
+Digest: sha256:4b1d0c4a2d2aaf63b37111f34eb9fa89fa1bf53dd6e4ca954d47caebca4005c2
+Status: Downloaded newer image for ubuntu:latest
+ ---> a8780b506fa4
+Step 2/7 : MAINTAINER GB_student
+ ---> Running in 3aa9cbdb1fd7
+Removing intermediate container 3aa9cbdb1fd7
+ ---> 166aabf92dd7
+Step 3/7 : RUN apt-get update
+ ---> Running in 6a405101ebf2
+Get:1 http://archive.ubuntu.com/ubuntu jammy InRelease [270 kB]
+Get:2 http://security.ubuntu.com/ubuntu jammy-security InRelease [110 kB]
+Get:3 http://archive.ubuntu.com/ubuntu jammy-updates InRelease [114 kB]
+Get:4 http://security.ubuntu.com/ubuntu jammy-security/main amd64 Packages [618 kB]
+Get:5 http://archive.ubuntu.com/ubuntu jammy-backports InRelease [99.8 kB]
+Get:6 http://archive.ubuntu.com/ubuntu jammy/restricted amd64 Packages [164 kB]
+Get:7 http://archive.ubuntu.com/ubuntu jammy/main amd64 Packages [1792 kB]
+Get:8 http://security.ubuntu.com/ubuntu jammy-security/universe amd64 Packages [775 kB]
+Get:9 http://archive.ubuntu.com/ubuntu jammy/universe amd64 Packages [17.5 MB]
+Get:10 http://security.ubuntu.com/ubuntu jammy-security/restricted amd64 Packages [522 kB]
+Get:11 http://security.ubuntu.com/ubuntu jammy-security/multiverse amd64 Packages [4642 B]
+Get:12 http://archive.ubuntu.com/ubuntu jammy/multiverse amd64 Packages [266 kB]
+Get:13 http://archive.ubuntu.com/ubuntu jammy-updates/restricted amd64 Packages [579 kB]
+Get:14 http://archive.ubuntu.com/ubuntu jammy-updates/universe amd64 Packages [956 kB]
+Get:15 http://archive.ubuntu.com/ubuntu jammy-updates/multiverse amd64 Packages [8056 B]
+Get:16 http://archive.ubuntu.com/ubuntu jammy-updates/main amd64 Packages [924 kB]
+Get:17 http://archive.ubuntu.com/ubuntu jammy-backports/main amd64 Packages [3175 B]
+Get:18 http://archive.ubuntu.com/ubuntu jammy-backports/universe amd64 Packages [7275 B]
+Fetched 24.7 MB in 6s (3973 kB/s)
+Reading package lists...
+Removing intermediate container 6a405101ebf2
+ ---> a806871cc752
+Step 4/7 : RUN apt-get install nginx -y
+ ---> Running in 0b357915a2ba
+Reading package lists...
+Building dependency tree...
+Reading state information...
+The following additional packages will be installed:
+  fontconfig-config fonts-dejavu-core iproute2 libatm1 libbpf0 libbrotli1
+  libbsd0 libcap2-bin libdeflate0 libelf1 libexpat1 libfontconfig1
+  libfreetype6 libgd3 libicu70 libjbig0 libjpeg-turbo8 libjpeg8 libmaxminddb0
+  libmd0 libmnl0 libnginx-mod-http-geoip2 libnginx-mod-http-image-filter
+  libnginx-mod-http-xslt-filter libnginx-mod-mail libnginx-mod-stream
+  libnginx-mod-stream-geoip2 libpam-cap libpng16-16 libtiff5 libwebp7 libx11-6
+  libx11-data libxau6 libxcb1 libxdmcp6 libxml2 libxpm4 libxslt1.1
+  libxtables12 nginx-common nginx-core ucf
+Suggested packages:
+  iproute2-doc libgd-tools mmdb-bin fcgiwrap nginx-doc ssl-cert
+The following NEW packages will be installed:
+  fontconfig-config fonts-dejavu-core iproute2 libatm1 libbpf0 libbrotli1
+  libbsd0 libcap2-bin libdeflate0 libelf1 libexpat1 libfontconfig1
+  libfreetype6 libgd3 libicu70 libjbig0 libjpeg-turbo8 libjpeg8 libmaxminddb0
+  libmd0 libmnl0 libnginx-mod-http-geoip2 libnginx-mod-http-image-filter
+  libnginx-mod-http-xslt-filter libnginx-mod-mail libnginx-mod-stream
+  libnginx-mod-stream-geoip2 libpam-cap libpng16-16 libtiff5 libwebp7 libx11-6
+  libx11-data libxau6 libxcb1 libxdmcp6 libxml2 libxpm4 libxslt1.1
+  libxtables12 nginx nginx-common nginx-core ucf
+0 upgraded, 44 newly installed, 0 to remove and 0 not upgraded.
+Need to get 17.5 MB of archives.
+After this operation, 56.4 MB of additional disk space will be used.
+Get:1 http://archive.ubuntu.com/ubuntu jammy/main amd64 libelf1 amd64 0.186-1build1 [51.0 kB]
+Get:2 http://archive.ubuntu.com/ubuntu jammy/main amd64 libbpf0 amd64 1:0.5.0-1 [140 kB]
+Get:3 http://archive.ubuntu.com/ubuntu jammy/main amd64 libmd0 amd64 1.0.4-1build1 [23.0 kB]
+Get:4 http://archive.ubuntu.com/ubuntu jammy/main amd64 libbsd0 amd64 0.11.5-1 [44.8 kB]
+Get:5 http://archive.ubuntu.com/ubuntu jammy/main amd64 libmnl0 amd64 1.0.4-3build2 [13.2 kB]
+Get:6 http://archive.ubuntu.com/ubuntu jammy/main amd64 libxtables12 amd64 1.8.7-1ubuntu5 [31.2 kB]
+Get:7 http://archive.ubuntu.com/ubuntu jammy/main amd64 libcap2-bin amd64 1:2.44-1build3 [26.0 kB]
+Get:8 http://archive.ubuntu.com/ubuntu jammy/main amd64 iproute2 amd64 5.15.0-1ubuntu2 [1070 kB]
+Get:9 http://archive.ubuntu.com/ubuntu jammy/main amd64 libatm1 amd64 1:2.5.1-4build2 [22.8 kB]
+Get:10 http://archive.ubuntu.com/ubuntu jammy-updates/main amd64 libexpat1 amd64 2.4.7-1ubuntu0.2 [91.0 kB]
+Get:11 http://archive.ubuntu.com/ubuntu jammy/main amd64 libicu70 amd64 70.1-2 [10.6 MB]
+Get:12 http://archive.ubuntu.com/ubuntu jammy/main amd64 libpam-cap amd64 1:2.44-1build3 [7932 B]
+Get:13 http://archive.ubuntu.com/ubuntu jammy-updates/main amd64 libxml2 amd64 2.9.13+dfsg-1ubuntu0.1 [763 kB]
+Get:14 http://archive.ubuntu.com/ubuntu jammy/main amd64 ucf all 3.0043 [56.1 kB]
+Get:15 http://archive.ubuntu.com/ubuntu jammy/main amd64 libmaxminddb0 amd64 1.5.2-1build2 [24.7 kB]
+Get:16 http://archive.ubuntu.com/ubuntu jammy/main amd64 libpng16-16 amd64 1.6.37-3build5 [191 kB]
+Get:17 http://archive.ubuntu.com/ubuntu jammy/main amd64 libxau6 amd64 1:1.0.9-1build5 [7634 B]
+Get:18 http://archive.ubuntu.com/ubuntu jammy/main amd64 libxdmcp6 amd64 1:1.1.3-0ubuntu5 [10.9 kB]
+Get:19 http://archive.ubuntu.com/ubuntu jammy/main amd64 libxcb1 amd64 1.14-3ubuntu3 [49.0 kB]
+Get:20 http://archive.ubuntu.com/ubuntu jammy/main amd64 libx11-data all 2:1.7.5-1 [119 kB]
+Get:21 http://archive.ubuntu.com/ubuntu jammy/main amd64 libx11-6 amd64 2:1.7.5-1 [666 kB]
+Get:22 http://archive.ubuntu.com/ubuntu jammy/main amd64 fonts-dejavu-core all 2.37-2build1 [1041 kB]
+Get:23 http://archive.ubuntu.com/ubuntu jammy/main amd64 fontconfig-config all 2.13.1-4.2ubuntu5 [29.1 kB]
+Get:24 http://archive.ubuntu.com/ubuntu jammy/main amd64 libbrotli1 amd64 1.0.9-2build6 [315 kB]
+Get:25 http://archive.ubuntu.com/ubuntu jammy/main amd64 libdeflate0 amd64 1.10-2 [70.9 kB]
+Get:26 http://archive.ubuntu.com/ubuntu jammy-updates/main amd64 libfreetype6 amd64 2.11.1+dfsg-1ubuntu0.1 [389 kB]
+Get:27 http://archive.ubuntu.com/ubuntu jammy/main amd64 libfontconfig1 amd64 2.13.1-4.2ubuntu5 [131 kB]
+Get:28 http://archive.ubuntu.com/ubuntu jammy/main amd64 libjpeg-turbo8 amd64 2.1.2-0ubuntu1 [134 kB]
+Get:29 http://archive.ubuntu.com/ubuntu jammy/main amd64 libjpeg8 amd64 8c-2ubuntu10 [2264 B]
+Get:30 http://archive.ubuntu.com/ubuntu jammy-updates/main amd64 libjbig0 amd64 2.1-3.1ubuntu0.22.04.1 [29.2 kB]
+Get:31 http://archive.ubuntu.com/ubuntu jammy/main amd64 libwebp7 amd64 1.2.2-2 [206 kB]
+Get:32 http://archive.ubuntu.com/ubuntu jammy-updates/main amd64 libtiff5 amd64 4.3.0-6ubuntu0.2 [184 kB]
+Get:33 http://archive.ubuntu.com/ubuntu jammy/main amd64 libxpm4 amd64 1:3.5.12-1build2 [36.2 kB]
+Get:34 http://archive.ubuntu.com/ubuntu jammy/main amd64 libgd3 amd64 2.3.0-2ubuntu2 [129 kB]
+Get:35 http://archive.ubuntu.com/ubuntu jammy-updates/main amd64 nginx-common all 1.18.0-6ubuntu14.3 [40.0 kB]
+Get:36 http://archive.ubuntu.com/ubuntu jammy-updates/main amd64 libnginx-mod-http-geoip2 amd64 1.18.0-6ubuntu14.3 [11.9 kB]
+Get:37 http://archive.ubuntu.com/ubuntu jammy-updates/main amd64 libnginx-mod-http-image-filter amd64 1.18.0-6ubuntu14.3 [15.4 kB]
+Get:38 http://archive.ubuntu.com/ubuntu jammy-updates/main amd64 libxslt1.1 amd64 1.1.34-4ubuntu0.22.04.1 [164 kB]
+Get:39 http://archive.ubuntu.com/ubuntu jammy-updates/main amd64 libnginx-mod-http-xslt-filter amd64 1.18.0-6ubuntu14.3 [13.7 kB]
+Get:40 http://archive.ubuntu.com/ubuntu jammy-updates/main amd64 libnginx-mod-mail amd64 1.18.0-6ubuntu14.3 [45.7 kB]
+Get:41 http://archive.ubuntu.com/ubuntu jammy-updates/main amd64 libnginx-mod-stream amd64 1.18.0-6ubuntu14.3 [72.8 kB]
+Get:42 http://archive.ubuntu.com/ubuntu jammy-updates/main amd64 libnginx-mod-stream-geoip2 amd64 1.18.0-6ubuntu14.3 [10.1 kB]
+Get:43 http://archive.ubuntu.com/ubuntu jammy-updates/main amd64 nginx-core amd64 1.18.0-6ubuntu14.3 [482 kB]
+Get:44 http://archive.ubuntu.com/ubuntu jammy-updates/main amd64 nginx amd64 1.18.0-6ubuntu14.3 [3882 B]
+debconf: delaying package configuration, since apt-utils is not installed
+Fetched 17.5 MB in 3s (5490 kB/s)
+Selecting previously unselected package libelf1:amd64.
+(Reading database ... 4395 files and directories currently installed.)
+Preparing to unpack .../00-libelf1_0.186-1build1_amd64.deb ...
+Unpacking libelf1:amd64 (0.186-1build1) ...
+Selecting previously unselected package libbpf0:amd64.
+Preparing to unpack .../01-libbpf0_1%3a0.5.0-1_amd64.deb ...
+Unpacking libbpf0:amd64 (1:0.5.0-1) ...
+Selecting previously unselected package libmd0:amd64.
+Preparing to unpack .../02-libmd0_1.0.4-1build1_amd64.deb ...
+Unpacking libmd0:amd64 (1.0.4-1build1) ...
+Selecting previously unselected package libbsd0:amd64.
+Preparing to unpack .../03-libbsd0_0.11.5-1_amd64.deb ...
+Unpacking libbsd0:amd64 (0.11.5-1) ...
+Selecting previously unselected package libmnl0:amd64.
+Preparing to unpack .../04-libmnl0_1.0.4-3build2_amd64.deb ...
+Unpacking libmnl0:amd64 (1.0.4-3build2) ...
+Selecting previously unselected package libxtables12:amd64.
+Preparing to unpack .../05-libxtables12_1.8.7-1ubuntu5_amd64.deb ...
+Unpacking libxtables12:amd64 (1.8.7-1ubuntu5) ...
+Selecting previously unselected package libcap2-bin.
+Preparing to unpack .../06-libcap2-bin_1%3a2.44-1build3_amd64.deb ...
+Unpacking libcap2-bin (1:2.44-1build3) ...
+Selecting previously unselected package iproute2.
+Preparing to unpack .../07-iproute2_5.15.0-1ubuntu2_amd64.deb ...
+Unpacking iproute2 (5.15.0-1ubuntu2) ...
+Selecting previously unselected package libatm1:amd64.
+Preparing to unpack .../08-libatm1_1%3a2.5.1-4build2_amd64.deb ...
+Unpacking libatm1:amd64 (1:2.5.1-4build2) ...
+Selecting previously unselected package libexpat1:amd64.
+Preparing to unpack .../09-libexpat1_2.4.7-1ubuntu0.2_amd64.deb ...
+Unpacking libexpat1:amd64 (2.4.7-1ubuntu0.2) ...
+Selecting previously unselected package libicu70:amd64.
+Preparing to unpack .../10-libicu70_70.1-2_amd64.deb ...
+Unpacking libicu70:amd64 (70.1-2) ...
+Selecting previously unselected package libpam-cap:amd64.
+Preparing to unpack .../11-libpam-cap_1%3a2.44-1build3_amd64.deb ...
+Unpacking libpam-cap:amd64 (1:2.44-1build3) ...
+Selecting previously unselected package libxml2:amd64.
+Preparing to unpack .../12-libxml2_2.9.13+dfsg-1ubuntu0.1_amd64.deb ...
+Unpacking libxml2:amd64 (2.9.13+dfsg-1ubuntu0.1) ...
+Selecting previously unselected package ucf.
+Preparing to unpack .../13-ucf_3.0043_all.deb ...
+Moving old data out of the way
+Unpacking ucf (3.0043) ...
+Selecting previously unselected package libmaxminddb0:amd64.
+Preparing to unpack .../14-libmaxminddb0_1.5.2-1build2_amd64.deb ...
+Unpacking libmaxminddb0:amd64 (1.5.2-1build2) ...
+Selecting previously unselected package libpng16-16:amd64.
+Preparing to unpack .../15-libpng16-16_1.6.37-3build5_amd64.deb ...
+Unpacking libpng16-16:amd64 (1.6.37-3build5) ...
+Selecting previously unselected package libxau6:amd64.
+Preparing to unpack .../16-libxau6_1%3a1.0.9-1build5_amd64.deb ...
+Unpacking libxau6:amd64 (1:1.0.9-1build5) ...
+Selecting previously unselected package libxdmcp6:amd64.
+Preparing to unpack .../17-libxdmcp6_1%3a1.1.3-0ubuntu5_amd64.deb ...
+Unpacking libxdmcp6:amd64 (1:1.1.3-0ubuntu5) ...
+Selecting previously unselected package libxcb1:amd64.
+Preparing to unpack .../18-libxcb1_1.14-3ubuntu3_amd64.deb ...
+Unpacking libxcb1:amd64 (1.14-3ubuntu3) ...
+Selecting previously unselected package libx11-data.
+Preparing to unpack .../19-libx11-data_2%3a1.7.5-1_all.deb ...
+Unpacking libx11-data (2:1.7.5-1) ...
+Selecting previously unselected package libx11-6:amd64.
+Preparing to unpack .../20-libx11-6_2%3a1.7.5-1_amd64.deb ...
+Unpacking libx11-6:amd64 (2:1.7.5-1) ...
+Selecting previously unselected package fonts-dejavu-core.
+Preparing to unpack .../21-fonts-dejavu-core_2.37-2build1_all.deb ...
+Unpacking fonts-dejavu-core (2.37-2build1) ...
+Selecting previously unselected package fontconfig-config.
+Preparing to unpack .../22-fontconfig-config_2.13.1-4.2ubuntu5_all.deb ...
+Unpacking fontconfig-config (2.13.1-4.2ubuntu5) ...
+Selecting previously unselected package libbrotli1:amd64.
+Preparing to unpack .../23-libbrotli1_1.0.9-2build6_amd64.deb ...
+Unpacking libbrotli1:amd64 (1.0.9-2build6) ...
+Selecting previously unselected package libdeflate0:amd64.
+Preparing to unpack .../24-libdeflate0_1.10-2_amd64.deb ...
+Unpacking libdeflate0:amd64 (1.10-2) ...
+Selecting previously unselected package libfreetype6:amd64.
+Preparing to unpack .../25-libfreetype6_2.11.1+dfsg-1ubuntu0.1_amd64.deb ...
+Unpacking libfreetype6:amd64 (2.11.1+dfsg-1ubuntu0.1) ...
+Selecting previously unselected package libfontconfig1:amd64.
+Preparing to unpack .../26-libfontconfig1_2.13.1-4.2ubuntu5_amd64.deb ...
+Unpacking libfontconfig1:amd64 (2.13.1-4.2ubuntu5) ...
+Selecting previously unselected package libjpeg-turbo8:amd64.
+Preparing to unpack .../27-libjpeg-turbo8_2.1.2-0ubuntu1_amd64.deb ...
+Unpacking libjpeg-turbo8:amd64 (2.1.2-0ubuntu1) ...
+Selecting previously unselected package libjpeg8:amd64.
+Preparing to unpack .../28-libjpeg8_8c-2ubuntu10_amd64.deb ...
+Unpacking libjpeg8:amd64 (8c-2ubuntu10) ...
+Selecting previously unselected package libjbig0:amd64.
+Preparing to unpack .../29-libjbig0_2.1-3.1ubuntu0.22.04.1_amd64.deb ...
+Unpacking libjbig0:amd64 (2.1-3.1ubuntu0.22.04.1) ...
+Selecting previously unselected package libwebp7:amd64.
+Preparing to unpack .../30-libwebp7_1.2.2-2_amd64.deb ...
+Unpacking libwebp7:amd64 (1.2.2-2) ...
+Selecting previously unselected package libtiff5:amd64.
+Preparing to unpack .../31-libtiff5_4.3.0-6ubuntu0.2_amd64.deb ...
+Unpacking libtiff5:amd64 (4.3.0-6ubuntu0.2) ...
+Selecting previously unselected package libxpm4:amd64.
+Preparing to unpack .../32-libxpm4_1%3a3.5.12-1build2_amd64.deb ...
+Unpacking libxpm4:amd64 (1:3.5.12-1build2) ...
+Selecting previously unselected package libgd3:amd64.
+Preparing to unpack .../33-libgd3_2.3.0-2ubuntu2_amd64.deb ...
+Unpacking libgd3:amd64 (2.3.0-2ubuntu2) ...
+Selecting previously unselected package nginx-common.
+Preparing to unpack .../34-nginx-common_1.18.0-6ubuntu14.3_all.deb ...
+Unpacking nginx-common (1.18.0-6ubuntu14.3) ...
+Selecting previously unselected package libnginx-mod-http-geoip2.
+Preparing to unpack .../35-libnginx-mod-http-geoip2_1.18.0-6ubuntu14.3_amd64.deb ...
+Unpacking libnginx-mod-http-geoip2 (1.18.0-6ubuntu14.3) ...
+Selecting previously unselected package libnginx-mod-http-image-filter.
+Preparing to unpack .../36-libnginx-mod-http-image-filter_1.18.0-6ubuntu14.3_amd64.deb ...
+Unpacking libnginx-mod-http-image-filter (1.18.0-6ubuntu14.3) ...
+Selecting previously unselected package libxslt1.1:amd64.
+Preparing to unpack .../37-libxslt1.1_1.1.34-4ubuntu0.22.04.1_amd64.deb ...
+Unpacking libxslt1.1:amd64 (1.1.34-4ubuntu0.22.04.1) ...
+Selecting previously unselected package libnginx-mod-http-xslt-filter.
+Preparing to unpack .../38-libnginx-mod-http-xslt-filter_1.18.0-6ubuntu14.3_amd64.deb ...
+Unpacking libnginx-mod-http-xslt-filter (1.18.0-6ubuntu14.3) ...
+Selecting previously unselected package libnginx-mod-mail.
+Preparing to unpack .../39-libnginx-mod-mail_1.18.0-6ubuntu14.3_amd64.deb ...
+Unpacking libnginx-mod-mail (1.18.0-6ubuntu14.3) ...
+Selecting previously unselected package libnginx-mod-stream.
+Preparing to unpack .../40-libnginx-mod-stream_1.18.0-6ubuntu14.3_amd64.deb ...
+Unpacking libnginx-mod-stream (1.18.0-6ubuntu14.3) ...
+Selecting previously unselected package libnginx-mod-stream-geoip2.
+Preparing to unpack .../41-libnginx-mod-stream-geoip2_1.18.0-6ubuntu14.3_amd64.deb ...
+Unpacking libnginx-mod-stream-geoip2 (1.18.0-6ubuntu14.3) ...
+Selecting previously unselected package nginx-core.
+Preparing to unpack .../42-nginx-core_1.18.0-6ubuntu14.3_amd64.deb ...
+Unpacking nginx-core (1.18.0-6ubuntu14.3) ...
+Selecting previously unselected package nginx.
+Preparing to unpack .../43-nginx_1.18.0-6ubuntu14.3_amd64.deb ...
+Unpacking nginx (1.18.0-6ubuntu14.3) ...
+Setting up libexpat1:amd64 (2.4.7-1ubuntu0.2) ...
+Setting up libxau6:amd64 (1:1.0.9-1build5) ...
+Setting up libmaxminddb0:amd64 (1.5.2-1build2) ...
+Setting up libbrotli1:amd64 (1.0.9-2build6) ...
+Setting up libdeflate0:amd64 (1.10-2) ...
+Setting up nginx-common (1.18.0-6ubuntu14.3) ...
+debconf: unable to initialize frontend: Dialog
+debconf: (TERM is not set, so the dialog frontend is not usable.)
+debconf: falling back to frontend: Readline
+debconf: unable to initialize frontend: Readline
+debconf: (Can't locate Term/ReadLine.pm in @INC (you may need to install the Term::ReadLine module) (@INC contains: /etc/perl /usr/local/lib/x86_64-linux-gnu/perl/5.34.0 /usr/local/share/perl/5.34.0 /usr/lib/x86_64-linux-gnu/perl5/5.34 /usr/share/perl5 /usr/lib/x86_64-linux-gnu/perl-base /usr/lib/x86_64-linux-gnu/perl/5.34 /usr/share/perl/5.34 /usr/local/lib/site_perl) at /usr/share/perl5/Debconf/FrontEnd/Readline.pm line 7.)
+debconf: falling back to frontend: Teletype
+Setting up libatm1:amd64 (1:2.5.1-4build2) ...
+Setting up libjbig0:amd64 (2.1-3.1ubuntu0.22.04.1) ...
+Setting up libcap2-bin (1:2.44-1build3) ...
+Setting up libx11-data (2:1.7.5-1) ...
+Setting up libpng16-16:amd64 (1.6.37-3build5) ...
+Setting up libmnl0:amd64 (1.0.4-3build2) ...
+Setting up fonts-dejavu-core (2.37-2build1) ...
+Setting up ucf (3.0043) ...
+debconf: unable to initialize frontend: Dialog
+debconf: (TERM is not set, so the dialog frontend is not usable.)
+debconf: falling back to frontend: Readline
+debconf: unable to initialize frontend: Readline
+debconf: (Can't locate Term/ReadLine.pm in @INC (you may need to install the Term::ReadLine module) (@INC contains: /etc/perl /usr/local/lib/x86_64-linux-gnu/perl/5.34.0 /usr/local/share/perl/5.34.0 /usr/lib/x86_64-linux-gnu/perl5/5.34 /usr/share/perl5 /usr/lib/x86_64-linux-gnu/perl-base /usr/lib/x86_64-linux-gnu/perl/5.34 /usr/share/perl/5.34 /usr/local/lib/site_perl) at /usr/share/perl5/Debconf/FrontEnd/Readline.pm line 7.)
+debconf: falling back to frontend: Teletype
+Setting up libjpeg-turbo8:amd64 (2.1.2-0ubuntu1) ...
+Setting up libxtables12:amd64 (1.8.7-1ubuntu5) ...
+Setting up libwebp7:amd64 (1.2.2-2) ...
+Setting up libmd0:amd64 (1.0.4-1build1) ...
+Setting up libnginx-mod-http-geoip2 (1.18.0-6ubuntu14.3) ...
+Setting up libbsd0:amd64 (0.11.5-1) ...
+Setting up libelf1:amd64 (0.186-1build1) ...
+Setting up libpam-cap:amd64 (1:2.44-1build3) ...
+debconf: unable to initialize frontend: Dialog
+debconf: (TERM is not set, so the dialog frontend is not usable.)
+debconf: falling back to frontend: Readline
+debconf: unable to initialize frontend: Readline
+debconf: (Can't locate Term/ReadLine.pm in @INC (you may need to install the Term::ReadLine module) (@INC contains: /etc/perl /usr/local/lib/x86_64-linux-gnu/perl/5.34.0 /usr/local/share/perl/5.34.0 /usr/lib/x86_64-linux-gnu/perl5/5.34 /usr/share/perl5 /usr/lib/x86_64-linux-gnu/perl-base /usr/lib/x86_64-linux-gnu/perl/5.34 /usr/share/perl/5.34 /usr/local/lib/site_perl) at /usr/share/perl5/Debconf/FrontEnd/Readline.pm line 7.)
+debconf: falling back to frontend: Teletype
+Setting up libicu70:amd64 (70.1-2) ...
+Setting up libjpeg8:amd64 (8c-2ubuntu10) ...
+Setting up libnginx-mod-mail (1.18.0-6ubuntu14.3) ...
+Setting up libxdmcp6:amd64 (1:1.1.3-0ubuntu5) ...
+Setting up libxcb1:amd64 (1.14-3ubuntu3) ...
+Setting up fontconfig-config (2.13.1-4.2ubuntu5) ...
+Setting up libnginx-mod-stream (1.18.0-6ubuntu14.3) ...
+Setting up libfreetype6:amd64 (2.11.1+dfsg-1ubuntu0.1) ...
+Setting up libx11-6:amd64 (2:1.7.5-1) ...
+Setting up libtiff5:amd64 (4.3.0-6ubuntu0.2) ...
+Setting up libfontconfig1:amd64 (2.13.1-4.2ubuntu5) ...
+Setting up libbpf0:amd64 (1:0.5.0-1) ...
+Setting up libnginx-mod-stream-geoip2 (1.18.0-6ubuntu14.3) ...
+Setting up libxml2:amd64 (2.9.13+dfsg-1ubuntu0.1) ...
+Setting up libxpm4:amd64 (1:3.5.12-1build2) ...
+Setting up iproute2 (5.15.0-1ubuntu2) ...
+debconf: unable to initialize frontend: Dialog
+debconf: (TERM is not set, so the dialog frontend is not usable.)
+debconf: falling back to frontend: Readline
+debconf: unable to initialize frontend: Readline
+debconf: (Can't locate Term/ReadLine.pm in @INC (you may need to install the Term::ReadLine module) (@INC contains: /etc/perl /usr/local/lib/x86_64-linux-gnu/perl/5.34.0 /usr/local/share/perl/5.34.0 /usr/lib/x86_64-linux-gnu/perl5/5.34 /usr/share/perl5 /usr/lib/x86_64-linux-gnu/perl-base /usr/lib/x86_64-linux-gnu/perl/5.34 /usr/share/perl/5.34 /usr/local/lib/site_perl) at /usr/share/perl5/Debconf/FrontEnd/Readline.pm line 7.)
+debconf: falling back to frontend: Teletype
+Setting up libgd3:amd64 (2.3.0-2ubuntu2) ...
+Setting up libxslt1.1:amd64 (1.1.34-4ubuntu0.22.04.1) ...
+Setting up libnginx-mod-http-image-filter (1.18.0-6ubuntu14.3) ...
+Setting up libnginx-mod-http-xslt-filter (1.18.0-6ubuntu14.3) ...
+Setting up nginx-core (1.18.0-6ubuntu14.3) ...
+invoke-rc.d: could not determine current runlevel
+invoke-rc.d: policy-rc.d denied execution of start.
+Setting up nginx (1.18.0-6ubuntu14.3) ...
+Processing triggers for libc-bin (2.35-0ubuntu3.1) ...
+Removing intermediate container 0b357915a2ba
+ ---> 158b48de7d79
+Step 5/7 : VOLUME "/var/www/html"
+ ---> Running in d15a636e32c4
+Removing intermediate container d15a636e32c4
+ ---> ee4272a4849d
+Step 6/7 : EXPOSE 80
+ ---> Running in 102aad1be40c
+Removing intermediate container 102aad1be40c
+ ---> 5a3b407fcace
+Step 7/7 : CMD /usr/sbin/nginx -g "daemon off;"
+ ---> Running in d40767a946b7
+Removing intermediate container d40767a946b7
+ ---> 8ee010282275
+Successfully built 8ee010282275
+Successfully tagged my_nginx_image:latest
+user@user-Aspire-A315-56:~/lws$ docker images
+REPOSITORY               TAG       IMAGE ID       CREATED          SIZE
+my_nginx_image           latest    8ee010282275   30 seconds ago   173MB
+nginx                    latest    88736fe82739   9 days ago       142MB
+<none>                   <none>    6553eb7ef320   13 days ago      932MB
+node                     latest    cb9aad9080ca   2 weeks ago      994MB
+ubuntu                   latest    a8780b506fa4   3 weeks ago      77.8MB
+python                   latest    00cd1fb8bdcc   4 weeks ago      932MB
+docker/getting-started   latest    cb90f98fd791   7 months ago     28.8MB
+hello-world              latest    feb5d9fea6a5   14 months ago    13.3kB
+docker/whalesay          latest    6b362a9f73eb   7 years ago      247MB
+user@user-Aspire-A315-56:~/lws$ ll
+итого 16
+drwxrw-r--  3 user user   4096 ноя 25 13:02 ./
+drwxr-xr-x 51 user user   4096 ноя 25 11:54 ../
+-rw-rw-r--  1 user docker  160 ноя 25 13:02 Dockerfile
+drwxrw-r--  2 user user   4096 окт 20 21:58 lesson02/
+user@user-Aspire-A315-56:~/lws$ docker run -d -p 9000:80 my_nginx_image
+d7b85714023feff30fb5016bf62565169160ef07820c0065bc9b1b39673e7351
+user@user-Aspire-A315-56:~/lws$ docker ps
+CONTAINER ID   IMAGE            COMMAND                  CREATED         STATUS         PORTS                                   NAMES
+d7b85714023f   my_nginx_image   "/bin/sh -c '/usr/sb…"   9 seconds ago   Up 8 seconds   0.0.0.0:9000->80/tcp, :::9000->80/tcp   elated_hawking
+user@user-Aspire-A315-56:~/lws$ docker ps -a
+CONTAINER ID   IMAGE                    COMMAND                  CREATED          STATUS                      PORTS                                   NAMES
+d7b85714023f   my_nginx_image           "/bin/sh -c '/usr/sb…"   19 seconds ago   Up 18 seconds               0.0.0.0:9000->80/tcp, :::9000->80/tcp   elated_hawking
+2a6bdf72dc72   nginx                    "/docker-entrypoint.…"   35 minutes ago   Exited (0) 12 minutes ago                                           sad_saha
+95c7b3d06925   nginx                    "/docker-entrypoint.…"   37 minutes ago   Exited (0) 36 minutes ago                                           hungry_yonath
+d983c3dc4c63   nginx                    "/docker-entrypoint.…"   38 minutes ago   Exited (0) 37 minutes ago                                           hungry_hugle
+23910120156b   docker/getting-started   "/docker-entrypoint.…"   45 minutes ago   Exited (0) 40 minutes ago                                           gracious_ptolemy
+d4ee19b44917   hello-world              "/hello"                 53 minutes ago   Exited (0) 53 minutes ago                                           vibrant_diffie
+a502194a93c7   hello-world              "/hello"                 55 minutes ago   Exited (0) 55 minutes ago                                           sad_robinson
+6f32c7c765eb   hello-world              "/hello"                 15 hours ago     Exited (0) 15 hours ago                                             thirsty_meitner
+user@user-Aspire-A315-56:~/lws$ docker stop 6f32c7c765eb
+6f32c7c765eb
+user@user-Aspire-A315-56:~/lws$ docker rm 6f32c7c765eb
+6f32c7c765eb
+user@user-Aspire-A315-56:~/lws$ docker ps -aq
+d7b85714023f
+2a6bdf72dc72
+95c7b3d06925
+d983c3dc4c63
+23910120156b
+d4ee19b44917
+a502194a93c7
+user@user-Aspire-A315-56:~/lws$ docker rm $(docker ps -aq)
+2a6bdf72dc72
+95c7b3d06925
+d983c3dc4c63
+23910120156b
+d4ee19b44917
+a502194a93c7
+Error response from daemon: You cannot remove a running container d7b85714023feff30fb5016bf62565169160ef07820c0065bc9b1b39673e7351. Stop the container before attempting removal or force remove
+user@user-Aspire-A315-56:~/lws$ docker stop $(docker ps -aq)
+d7b85714023f
+user@user-Aspire-A315-56:~/lws$ docker rm $(docker ps -aq)
+d7b85714023f
+user@user-Aspire-A315-56:~/lws$ docker ps -a
+CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
+user@user-Aspire-A315-56:~/lws$ docker images
+REPOSITORY               TAG       IMAGE ID       CREATED         SIZE
+my_nginx_image           latest    8ee010282275   7 minutes ago   173MB
+nginx                    latest    88736fe82739   9 days ago      142MB
+<none>                   <none>    6553eb7ef320   13 days ago     932MB
+node                     latest    cb9aad9080ca   2 weeks ago     994MB
+ubuntu                   latest    a8780b506fa4   3 weeks ago     77.8MB
+python                   latest    00cd1fb8bdcc   4 weeks ago     932MB
+docker/getting-started   latest    cb90f98fd791   7 months ago    28.8MB
+hello-world              latest    feb5d9fea6a5   14 months ago   13.3kB
+docker/whalesay          latest    6b362a9f73eb   7 years ago     247MB
+user@user-Aspire-A315-56:~/lws$ docker rmi ^C
+user@user-Aspire-A315-56:~/lws$ docker images 8ee010282275
+REPOSITORY   TAG       IMAGE ID   CREATED   SIZE
+user@user-Aspire-A315-56:~/lws$ docker rmi 8ee010282275
+Untagged: my_nginx_image:latest
+Deleted: sha256:8ee010282275dcd0f76181fc40c5634ec58ccbf6ec94713f451b4b35a323a338
+Deleted: sha256:5a3b407fcacefdfdf34647788bf15292e2f90dd2d4f9e9257630e2de6ccf5241
+Deleted: sha256:ee4272a4849d7b8b6fd760dbc9754eba7eb262de50f6ac442a543458c6ebad78
+Deleted: sha256:158b48de7d798bb14ecfc334acbdf8fa3050fd2602086ff5a9e4a2a791ec1788
+Deleted: sha256:9fe5806349b9e4678e2a56415a07ad73512f1c1b4d6ad5e948bcad605058d475
+Deleted: sha256:a806871cc752b71328d10b7bba772eb1fadca575f2826a5e401b084884bd3346
+Deleted: sha256:35ac7df4c312dacde55d1553271f45fdbe816b35b4af438ca8d5142d0c819f49
+Deleted: sha256:166aabf92dd7a515ff48630df617f3b7d073c41b426f53b2ce4f798140fc595d
+user@user-Aspire-A315-56:~/lws$ docker images
+REPOSITORY               TAG       IMAGE ID       CREATED         SIZE
+nginx                    latest    88736fe82739   9 days ago      142MB
+<none>                   <none>    6553eb7ef320   13 days ago     932MB
+node                     latest    cb9aad9080ca   2 weeks ago     994MB
+ubuntu                   latest    a8780b506fa4   3 weeks ago     77.8MB
+python                   latest    00cd1fb8bdcc   4 weeks ago     932MB
+docker/getting-started   latest    cb90f98fd791   7 months ago    28.8MB
+hello-world              latest    feb5d9fea6a5   14 months ago   13.3kB
+docker/whalesay          latest    6b362a9f73eb   7 years ago     247MB
+user@user-Aspire-A315-56:~/lws$ 
+
+

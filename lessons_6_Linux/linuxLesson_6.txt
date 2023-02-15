@@ -1,0 +1,1380 @@
+user@user-Aspire-A315-56:~$ #Bash
+user@user-Aspire-A315-56:~$ ls
+ Dockerr     get-docker.sh   myNewFile      phpshtorm                       text.txt     workbox             Документы   Изображения    'Пустой документ'
+ Documents   lws             myNewFile~    "PlayOnLinux's virtual drives"   Warpinator   Видео               еучеюече    Музыка         'Рабочий стол'
+ filemy      my-app          node_modules   Postman                         web          ДЗ_продвинутый_JS   Загрузки    Общедоступные   Шаблоны
+user@user-Aspire-A315-56:~$ cd lws
+user@user-Aspire-A315-56:~/lws$ ll
+итого 12
+drwxrw-r--  3 user user 4096 ноя 14 22:18 ./
+drwxr-xr-x 51 user user 4096 ноя 20 17:58 ../
+-rw-rwxr--  1 user user    0 ноя 14 22:18 file1*
+-rw-rw-r--  1 user user    0 ноя 14 22:18 file2
+-rw-rw-r--  1 user user    0 ноя 14 22:18 file3
+drwxrw-r--  2 user user 4096 окт 20 21:58 lesson02/
+user@user-Aspire-A315-56:~/lws$ rm *
+rm: невозможно удалить 'lesson02': Это каталог
+user@user-Aspire-A315-56:~/lws$ ll
+итого 12
+drwxrw-r--  3 user user 4096 ноя 20 18:16 ./
+drwxr-xr-x 51 user user 4096 ноя 20 17:58 ../
+drwxrw-r--  2 user user 4096 окт 20 21:58 lesson02/
+user@user-Aspire-A315-56:~/lws$ nano script1.sh
+user@user-Aspire-A315-56:~/lws$ cat script1.sh 
+
+#!/bin/bash
+echo It works! #code comment sample...
+
+user@user-Aspire-A315-56:~/lws$ bash script1.sh 
+It works!
+user@user-Aspire-A315-56:~/lws$ nano script1.sh 
+user@user-Aspire-A315-56:~/lws$ ls
+lesson02  script1.sh
+user@user-Aspire-A315-56:~/lws$ cat script1.sh 
+
+#!/bin/bash
+echo It works! #code comment sample...
+echo "working directory:" $(pwd)
+echo "user name: " $USER
+echo "OS: " $(uname)
+user@user-Aspire-A315-56:~/lws$ bash script1.sh 
+It works!
+working directory: /home/user/lws
+user name:  user
+OS:  Linux
+user@user-Aspire-A315-56:~/lws$ uname
+Linux
+user@user-Aspire-A315-56:~/lws$ ll
+итого 16
+drwxrw-r--  3 user user 4096 ноя 20 18:25 ./
+drwxr-xr-x 51 user user 4096 ноя 20 17:58 ../
+drwxrw-r--  2 user user 4096 окт 20 21:58 lesson02/
+-rw-rw-r--  1 user user  131 ноя 20 18:25 script1.sh
+user@user-Aspire-A315-56:~/lws$ chmod u+x script1.sh 
+user@user-Aspire-A315-56:~/lws$ ll
+итого 16
+drwxrw-r--  3 user user 4096 ноя 20 18:25 ./
+drwxr-xr-x 51 user user 4096 ноя 20 17:58 ../
+drwxrw-r--  2 user user 4096 окт 20 21:58 lesson02/
+-rwxrw-r--  1 user user  131 ноя 20 18:25 script1.sh*
+user@user-Aspire-A315-56:~/lws$ script1.sh
+script1.sh: команда не найдена
+user@user-Aspire-A315-56:~/lws$ ./script1.sh 
+It works!
+working directory: /home/user/lws
+user name:  user
+OS:  Linux
+user@user-Aspire-A315-56:~/lws$ /home/user/lws/script1.sh 
+It works!
+working directory: /home/user/lws
+user name:  user
+OS:  Linux
+user@user-Aspire-A315-56:~/lws$ ~/lws/script1.sh 
+It works!
+working directory: /home/user/lws
+user name:  user
+OS:  Linux
+user@user-Aspire-A315-56:~/lws$ nano hello.py
+user@user-Aspire-A315-56:~/lws$ ll
+итого 20
+drwxrw-r--  3 user user 4096 ноя 20 18:35 ./
+drwxr-xr-x 51 user user 4096 ноя 20 17:58 ../
+-rw-rw-r--  1 user user   41 ноя 20 18:35 hello.py
+drwxrw-r--  2 user user 4096 окт 20 21:58 lesson02/
+-rwxrw-r--  1 user user  131 ноя 20 18:25 script1.sh*
+user@user-Aspire-A315-56:~/lws$ cat hello.py 
+
+#! /usr/bin/python
+print "hello world";
+user@user-Aspire-A315-56:~/lws$ chmod u+x hello.py 
+user@user-Aspire-A315-56:~/lws$ ll
+итого 20
+drwxrw-r--  3 user user 4096 ноя 20 18:35 ./
+drwxr-xr-x 51 user user 4096 ноя 20 17:58 ../
+-rwxrw-r--  1 user user   41 ноя 20 18:35 hello.py*
+drwxrw-r--  2 user user 4096 окт 20 21:58 lesson02/
+-rwxrw-r--  1 user user  131 ноя 20 18:25 script1.sh*
+user@user-Aspire-A315-56:~/lws$ ./hello.py 
+Error: no such file "hello world"
+user@user-Aspire-A315-56:~/lws$ nano hello.py
+user@user-Aspire-A315-56:~/lws$ ./hello.py 
+Error: no such file "hello world"
+user@user-Aspire-A315-56:~/lws$ ll
+итого 20
+drwxrw-r--  3 user user 4096 ноя 20 18:39 ./
+drwxr-xr-x 51 user user 4096 ноя 20 17:58 ../
+-rwxrw-r--  1 user user   37 ноя 20 18:39 hello.py*
+drwxrw-r--  2 user user 4096 окт 20 21:58 lesson02/
+-rwxrw-r--  1 user user  131 ноя 20 18:25 script1.sh*
+user@user-Aspire-A315-56:~/lws$ whereis bash
+bash: /usr/bin/bash /etc/bash.bashrc /usr/share/man/man1/bash.1.gz
+user@user-Aspire-A315-56:~/lws$ whereis python
+python: /usr/bin/python2.7 /usr/bin/python3.8 /usr/lib/python3.9 /usr/lib/python2.7 /usr/lib/python3.8 /etc/python2.7 /etc/python3.8 /usr/local/lib/python2.7 /usr/local/lib/python3.8 /usr/include/python3.8 /usr/share/python
+user@user-Aspire-A315-56:~/lws$ ^C
+user@user-Aspire-A315-56:~/lws$ nano hello.py
+user@user-Aspire-A315-56:~/lws$ ./hello.py 
+Error: no such file "hello world"
+user@user-Aspire-A315-56:~/lws$ cat hello.py 
+
+#! /usr/share/python 
+print "hello world";
+user@user-Aspire-A315-56:~/lws$ nano hello.py
+user@user-Aspire-A315-56:~/lws$ ./hello.py 
+./hello.py: строка 3: синтаксическая ошибка рядом с неожиданным маркером «"hello world)"»
+./hello.py: строка 3: `print ("hello world)";'
+user@user-Aspire-A315-56:~/lws$ nano hello.py
+user@user-Aspire-A315-56:~/lws$ ./hello.py 
+./hello.py: строка 3: синтаксическая ошибка рядом с неожиданным маркером «"hello world"»
+./hello.py: строка 3: `print ("hello world");'
+user@user-Aspire-A315-56:~/lws$ nano hello.py
+user@user-Aspire-A315-56:~/lws$ ./hello.py 
+./hello.py: строка 3: синтаксическая ошибка рядом с неожиданным маркером «"hello world"»
+./hello.py: строка 3: `print("hello world");'
+user@user-Aspire-A315-56:~/lws$ sudo useradd -s /bin/bash user1111
+[sudo] пароль для user:            
+user@user-Aspire-A315-56:~/lws$ cat /etc/passwd
+root:x:0:0:root:/root:/bin/bash
+daemon:x:1:1:daemon:/usr/sbin:/usr/sbin/nologin
+bin:x:2:2:bin:/bin:/usr/sbin/nologin
+sys:x:3:3:sys:/dev:/usr/sbin/nologin
+sync:x:4:65534:sync:/bin:/bin/sync
+games:x:5:60:games:/usr/games:/usr/sbin/nologin
+man:x:6:12:man:/var/cache/man:/usr/sbin/nologin
+lp:x:7:7:lp:/var/spool/lpd:/usr/sbin/nologin
+mail:x:8:8:mail:/var/mail:/usr/sbin/nologin
+news:x:9:9:news:/var/spool/news:/usr/sbin/nologin
+uucp:x:10:10:uucp:/var/spool/uucp:/usr/sbin/nologin
+proxy:x:13:13:proxy:/bin:/usr/sbin/nologin
+www-data:x:33:33:www-data:/var/www:/usr/sbin/nologin
+backup:x:34:34:backup:/var/backups:/usr/sbin/nologin
+list:x:38:38:Mailing List Manager:/var/list:/usr/sbin/nologin
+irc:x:39:39:ircd:/var/run/ircd:/usr/sbin/nologin
+gnats:x:41:41:Gnats Bug-Reporting System (admin):/var/lib/gnats:/usr/sbin/nologin
+nobody:x:65534:65534:nobody:/nonexistent:/usr/sbin/nologin
+systemd-network:x:100:102:systemd Network Management,,,:/run/systemd:/usr/sbin/nologin
+systemd-resolve:x:101:103:systemd Resolver,,,:/run/systemd:/usr/sbin/nologin
+systemd-timesync:x:102:104:systemd Time Synchronization,,,:/run/systemd:/usr/sbin/nologin
+messagebus:x:103:106::/nonexistent:/usr/sbin/nologin
+syslog:x:104:110::/home/syslog:/usr/sbin/nologin
+_apt:x:105:65534::/nonexistent:/usr/sbin/nologin
+tss:x:106:111:TPM software stack,,,:/var/lib/tpm:/bin/false
+rtkit:x:107:112:RealtimeKit,,,:/proc:/usr/sbin/nologin
+systemd-coredump:x:108:113:systemd Core Dumper,,,:/run/systemd:/usr/sbin/nologin
+kernoops:x:109:65534:Kernel Oops Tracking Daemon,,,:/:/usr/sbin/nologin
+uuidd:x:110:118::/run/uuidd:/usr/sbin/nologin
+cups-pk-helper:x:111:114:user for cups-pk-helper service,,,:/home/cups-pk-helper:/usr/sbin/nologin
+tcpdump:x:112:120::/nonexistent:/usr/sbin/nologin
+geoclue:x:113:122::/var/lib/geoclue:/usr/sbin/nologin
+avahi-autoipd:x:114:123:Avahi autoip daemon,,,:/var/lib/avahi-autoipd:/usr/sbin/nologin
+usbmux:x:115:46:usbmux daemon,,,:/var/lib/usbmux:/usr/sbin/nologin
+dnsmasq:x:116:65534:dnsmasq,,,:/var/lib/misc:/usr/sbin/nologin
+_flatpak:x:117:125:Flatpak system-wide installation helper,,,:/nonexistent:/usr/sbin/nologin
+avahi:x:118:126:Avahi mDNS daemon,,,:/var/run/avahi-daemon:/usr/sbin/nologin
+saned:x:119:127::/var/lib/saned:/usr/sbin/nologin
+lightdm:x:120:128:Light Display Manager:/var/lib/lightdm:/bin/false
+colord:x:121:130:colord colour management daemon,,,:/var/lib/colord:/usr/sbin/nologin
+pulse:x:122:131:PulseAudio daemon,,,:/var/run/pulse:/usr/sbin/nologin
+speech-dispatcher:x:123:29:Speech Dispatcher,,,:/run/speech-dispatcher:/bin/false
+nm-openvpn:x:124:133:NetworkManager OpenVPN,,,:/var/lib/openvpn/chroot:/usr/sbin/nologin
+hplip:x:125:7:HPLIP system user,,,:/run/hplip:/bin/false
+user:x:1000:1000:user,,,:/home/user:/bin/bash
+strongswan:x:126:65534::/var/lib/strongswan:/usr/sbin/nologin
+sshd:x:127:65534::/run/sshd:/usr/sbin/nologin
+mysql:x:128:136:MySQL Server,,,:/nonexistent:/bin/false
+nx:x:129:1001::/var/NX/nx:/etc/NX/nxserver
+fwupd-refresh:x:130:137:fwupd-refresh user,,,:/run/systemd:/usr/sbin/nologin
+user1:x:1001:1002::/home/user1:/bin/bash
+user10:x:1002:1003:,,,:/home/user10:/bin/bash
+user1111:x:1003:1004::/home/user1111:/bin/bash
+user@user-Aspire-A315-56:~/lws$ 
+user@user-Aspire-A315-56:~/lws$ 
+user@user-Aspire-A315-56:~/lws$ 
+user@user-Aspire-A315-56:~/lws$ ps
+    PID TTY          TIME CMD
+   3882 pts/0    00:00:00 bash
+   6549 pts/0    00:00:00 ps
+user@user-Aspire-A315-56:~/lws$ echo $0
+bash
+user@user-Aspire-A315-56:~/lws$ echo $SHELL
+/bin/bash
+user@user-Aspire-A315-56:~/lws$ cat /etc/shells 
+# /etc/shells: valid login shells
+/bin/sh
+/bin/bash
+/usr/bin/bash
+/bin/rbash
+/usr/bin/rbash
+/bin/dash
+/usr/bin/dash
+user@user-Aspire-A315-56:~/lws$ 
+user@user-Aspire-A315-56:~/lws$ 
+user@user-Aspire-A315-56:~/lws$ 
+user@user-Aspire-A315-56:~/lws$ 
+user@user-Aspire-A315-56:~/lws$ nano age_check.sh
+user@user-Aspire-A315-56:~/lws$ cat age_check.sh 
+
+#!/bin/bash
+if [$1 == 18]; then
+echo "Предьявите документы"
+elif [$1 -lt 18]; then
+echo "Извините. Вход только для взрослых"
+elif [$1 -gt 18]; then
+echo "Добро пожаловать"
+fi
+user@user-Aspire-A315-56:~/lws$ chmod u+x age_check.sh 
+user@user-Aspire-A315-56:~/lws$ ll
+итого 24
+drwxrw-r--  3 user user 4096 ноя 20 18:55 ./
+drwxr-xr-x 51 user user 4096 ноя 20 17:58 ../
+-rwxrw-r--  1 user user  239 ноя 20 18:55 age_check.sh*
+-rwxrw-r--  1 user user   45 ноя 20 18:44 hello.py*
+drwxrw-r--  2 user user 4096 окт 20 21:58 lesson02/
+-rwxrw-r--  1 user user  131 ноя 20 18:25 script1.sh*
+user@user-Aspire-A315-56:~/lws$ ./age_check.sh 
+./age_check.sh: строка 3: [: отсутствует символ «]»
+./age_check.sh: строка 5: [: отсутствует символ «]»
+./age_check.sh: строка 7: [: отсутствует символ «]»
+user@user-Aspire-A315-56:~/lws$ ./age_check.sh 12
+./age_check.sh: строка 3: [12: команда не найдена
+./age_check.sh: строка 5: [12: команда не найдена
+./age_check.sh: строка 7: [12: команда не найдена
+user@user-Aspire-A315-56:~/lws$ nano age_check.sh
+user@user-Aspire-A315-56:~/lws$ ./age_check.sh 12
+Извините. Вход только для взрослых
+user@user-Aspire-A315-56:~/lws$ ./age_check.sh 50
+Добро пожаловать
+user@user-Aspire-A315-56:~/lws$ ./age_check.sh 18
+Предьявите документы
+user@user-Aspire-A315-56:~/lws$ # case
+user@user-Aspire-A315-56:~/lws$ nano burger_cost.sh
+user@user-Aspire-A315-56:~/lws$ cat burger_cost.sh 
+
+#!/bin/bash
+case $1 in
+10)
+echo "Дайте два!"
+;;
+100)
+echo "Хорошо, спасибо"
+;;
+50 | 60)
+echo "Колу со льдом, пожалуйста!"
+;;
+*)
+echo "Что, простите?"
+;;
+esac
+user@user-Aspire-A315-56:~/lws$ chmod u+x burger_cost.sh 
+user@user-Aspire-A315-56:~/lws$ ll
+итого 28
+drwxrw-r--  3 user user 4096 ноя 20 19:17 ./
+drwxr-xr-x 51 user user 4096 ноя 20 17:58 ../
+-rwxrw-r--  1 user user  245 ноя 20 18:58 age_check.sh*
+-rwxrw-r--  1 user user  212 ноя 20 19:17 burger_cost.sh*
+-rwxrw-r--  1 user user   45 ноя 20 18:44 hello.py*
+drwxrw-r--  2 user user 4096 окт 20 21:58 lesson02/
+-rwxrw-r--  1 user user  131 ноя 20 18:25 script1.sh*
+user@user-Aspire-A315-56:~/lws$ ./burger_cost.sh 10
+Дайте два!
+user@user-Aspire-A315-56:~/lws$ ./burger_cost.sh 100
+Хорошо, спасибо
+user@user-Aspire-A315-56:~/lws$ ./burger_cost.sh 60
+Колу со льдом, пожалуйста!
+user@user-Aspire-A315-56:~/lws$ ./burger_cost.sh 6
+Что, простите?
+user@user-Aspire-A315-56:~/lws$ for n in {1..4}; do echo $n "Linux - одна из самых безопасных ОС"; done
+1 Linux - одна из самых безопасных ОС
+2 Linux - одна из самых безопасных ОС
+3 Linux - одна из самых безопасных ОС
+4 Linux - одна из самых безопасных ОС
+user@user-Aspire-A315-56:~/lws$ function run() {
+> number=$1
+> shift
+> for n in $(seg $number); do
+> $@
+> done
+> }
+user@user-Aspire-A315-56:~/lws$ run 4 echo "hi from bash function"
+
+Команда «seg» не найдена. Возможно, вы имели в виду:
+
+  command 'sem' from deb parallel (20161222-1.1)
+  command 'sed' from deb sed (4.7-1)
+  command 'srg' from deb srg (1.3.6-2ubuntu1)
+  command 'sng' from deb sng (1.1.0-3)
+  command 'see' from deb mime-support (3.64ubuntu1)
+  command 'sec' from deb sec (2.8.2-1)
+  command 'leg' from deb peg (0.1.18-1)
+  command 'sen' from deb sen (0.6.1-0.1)
+  command 'geg' from deb geg (2.0.9-3)
+  command 'seq' from deb coreutils (8.30-3ubuntu2)
+  command 'stg' from deb stgit (0.19-1)
+  command 'peg' from deb peg (0.1.18-1)
+  command 'eg' from deb easygit (0.99-2)
+  command 'sg' from deb login (1:4.8.1-1ubuntu5.20.04.2)
+
+Try: sudo apt install <deb name>
+
+user@user-Aspire-A315-56:~/lws$ user@user-Aspire-A315-56:~/lws$ function run() {
+bash: синтаксическая ошибка рядом с неожиданным маркером «(»
+user@user-Aspire-A315-56:~/lws$ > number=$1
+user@user-Aspire-A315-56:~/lws$ > shift
+user@user-Aspire-A315-56:~/lws$ > for n in $(seg $number); do
+bash: синтаксическая ошибка рядом с неожиданным маркером «do»
+user@user-Aspire-A315-56:~/lws$ > $@
+bash: $@: неоднозначное перенаправление
+user@user-Aspire-A315-56:~/lws$ > done
+user@user-Aspire-A315-56:~/lws$ > }
+user@user-Aspire-A315-56:~/lws$ function run() { number=$1; shift; for n in $(seq $number); do $@; done; }
+user@user-Aspire-A315-56:~/lws$ run 4 echo "hi from bash function"
+hi from bash function
+hi from bash function
+hi from bash function
+hi from bash function
+user@user-Aspire-A315-56:~/lws$ run 2 echo "hi from bash function"
+hi from bash function
+hi from bash function
+user@user-Aspire-A315-56:~/lws$ nano while_sample.sh
+user@user-Aspire-A315-56:~/lws$ ll
+итого 32
+drwxrw-r--  3 user user 4096 ноя 20 19:36  ./
+drwxr-xr-x 51 user user 4096 ноя 20 17:58  ../
+-rw-rw-r--  1 user user    0 ноя 20 19:33 '}'
+-rwxrw-r--  1 user user  245 ноя 20 18:58  age_check.sh*
+-rwxrw-r--  1 user user  212 ноя 20 19:17  burger_cost.sh*
+-rw-rw-r--  1 user user    0 ноя 20 19:31  done
+-rwxrw-r--  1 user user   45 ноя 20 18:44  hello.py*
+drwxrw-r--  2 user user 4096 окт 20 21:58  lesson02/
+-rw-rw-r--  1 user user    0 ноя 20 19:31 'number='
+-rwxrw-r--  1 user user  131 ноя 20 18:25  script1.sh*
+-rw-rw-r--  1 user user    0 ноя 20 19:31  shift
+-rw-rw-r--  1 user user   69 ноя 20 19:36  while_sample.sh
+user@user-Aspire-A315-56:~/lws$ chmod u+x while_sample.sh 
+user@user-Aspire-A315-56:~/lws$ ll
+итого 32
+drwxrw-r--  3 user user 4096 ноя 20 19:36  ./
+drwxr-xr-x 51 user user 4096 ноя 20 17:58  ../
+-rw-rw-r--  1 user user    0 ноя 20 19:33 '}'
+-rwxrw-r--  1 user user  245 ноя 20 18:58  age_check.sh*
+-rwxrw-r--  1 user user  212 ноя 20 19:17  burger_cost.sh*
+-rw-rw-r--  1 user user    0 ноя 20 19:31  done
+-rwxrw-r--  1 user user   45 ноя 20 18:44  hello.py*
+drwxrw-r--  2 user user 4096 окт 20 21:58  lesson02/
+-rw-rw-r--  1 user user    0 ноя 20 19:31 'number='
+-rwxrw-r--  1 user user  131 ноя 20 18:25  script1.sh*
+-rw-rw-r--  1 user user    0 ноя 20 19:31  shift
+-rwxrw-r--  1 user user   69 ноя 20 19:36  while_sample.sh*
+user@user-Aspire-A315-56:~/lws$ cat while_sample.sh 
+
+#!/bin/bash
+y=1
+while [ $y -lt 10 ]
+do
+echo $y
+y=$(( $y + 1 ))
+done
+user@user-Aspire-A315-56:~/lws$ ./while_sample.sh 
+1
+2
+3
+4
+5
+6
+7
+8
+9
+user@user-Aspire-A315-56:~/lws$ nano until_sample.sh
+user@user-Aspire-A315-56:~/lws$ ll
+итого 36
+drwxrw-r--  3 user user 4096 ноя 20 19:44  ./
+drwxr-xr-x 51 user user 4096 ноя 20 17:58  ../
+-rw-rw-r--  1 user user    0 ноя 20 19:33 '}'
+-rwxrw-r--  1 user user  245 ноя 20 18:58  age_check.sh*
+-rwxrw-r--  1 user user  212 ноя 20 19:17  burger_cost.sh*
+-rw-rw-r--  1 user user    0 ноя 20 19:31  done
+-rwxrw-r--  1 user user   45 ноя 20 18:44  hello.py*
+drwxrw-r--  2 user user 4096 окт 20 21:58  lesson02/
+-rw-rw-r--  1 user user    0 ноя 20 19:31 'number='
+-rwxrw-r--  1 user user  131 ноя 20 18:25  script1.sh*
+-rw-rw-r--  1 user user    0 ноя 20 19:31  shift
+-rw-rw-r--  1 user user  114 ноя 20 19:44  until_sample.sh
+-rwxrw-r--  1 user user   69 ноя 20 19:36  while_sample.sh*
+user@user-Aspire-A315-56:~/lws$ chmod u+x until_sample.sh 
+user@user-Aspire-A315-56:~/lws$ cat until_sample.sh 
+
+#!/bin/bush
+POINTER=20
+until [ $POINTER -lt 10 ]
+do
+echo POINTER $POINTER
+let POINTER-=1 #POINTER=POINTER-1
+done
+user@user-Aspire-A315-56:~/lws$ ./until_sample.sh 
+POINTER 20
+POINTER 19
+POINTER 18
+POINTER 17
+POINTER 16
+POINTER 15
+POINTER 14
+POINTER 13
+POINTER 12
+POINTER 11
+POINTER 10
+user@user-Aspire-A315-56:~/lws$ 
+user@user-Aspire-A315-56:~/lws$ # Cron
+user@user-Aspire-A315-56:~/lws$ systemctl status cron
+● cron.service - Regular background program processing daemon
+     Loaded: loaded (/lib/systemd/system/cron.service; enabled; vendor preset: enabled)
+     Active: active (running) since Sun 2022-11-20 17:58:08 +05; 1h 54min ago
+       Docs: man:cron(8)
+   Main PID: 507 (cron)
+      Tasks: 1 (limit: 14007)
+     Memory: 5.0G
+     CGroup: /system.slice/cron.service
+             └─507 /usr/sbin/cron -f
+
+ноя 20 19:09:01 user-Aspire-A315-56 CRON[6849]: pam_unix(cron:session): session opened for user root by (uid=0)
+ноя 20 19:09:01 user-Aspire-A315-56 CRON[6849]: pam_unix(cron:session): session closed for user root
+ноя 20 19:17:01 user-Aspire-A315-56 CRON[6978]: pam_unix(cron:session): session opened for user root by (uid=0)
+ноя 20 19:17:01 user-Aspire-A315-56 CRON[6978]: pam_unix(cron:session): session closed for user root
+ноя 20 19:30:01 user-Aspire-A315-56 CRON[7910]: pam_unix(cron:session): session opened for user root by (uid=0)
+ноя 20 19:30:01 user-Aspire-A315-56 CRON[7911]: (root) CMD ([ -x /etc/init.d/anacron ] && if [ ! -d /run/systemd/system ]; then /usr/sbin/invoke-rc.d anacron st>
+ноя 20 19:30:01 user-Aspire-A315-56 CRON[7910]: pam_unix(cron:session): session closed for user root
+ноя 20 19:39:01 user-Aspire-A315-56 CRON[8221]: pam_unix(cron:session): session opened for user root by (uid=0)
+ноя 20 19:39:01 user-Aspire-A315-56 CRON[8222]: (root) CMD (  [ -x /usr/lib/php/sessionclean ] && if [ ! -d /run/systemd/system ]; then /usr/lib/php/sessionclea>
+ноя 20 19:39:01 user-Aspire-A315-56 CRON[8221]: pam_unix(cron:session): session closed for user root
+
+[1]+  Остановлен    systemctl status cron
+user@user-Aspire-A315-56:~/lws$ systemctl status mysql
+● mysql.service - MySQL Community Server
+     Loaded: loaded (/lib/systemd/system/mysql.service; enabled; vendor preset: enabled)
+     Active: active (running) since Sun 2022-11-20 17:58:09 +05; 1h 54min ago
+    Process: 664 ExecStartPre=/usr/share/mysql/mysql-systemd-start pre (code=exited, status=0/SUCCESS)
+   Main PID: 750 (mysqld)
+     Status: "Server is operational"
+      Tasks: 38 (limit: 14007)
+     Memory: 453.0M
+     CGroup: /system.slice/mysql.service
+             └─750 /usr/sbin/mysqld
+
+ноя 20 17:58:08 user-Aspire-A315-56 systemd[1]: Starting MySQL Community Server...
+ноя 20 17:58:09 user-Aspire-A315-56 systemd[1]: Started MySQL Community Server.
+user@user-Aspire-A315-56:~/lws$ crontab --help
+crontab: неверный ключ — «-»
+crontab: usage error: unrecognized option
+usage:	crontab [-u user] file
+	crontab [ -u user ] [ -i ] { -e | -l | -r }
+		(default operation is replace, per 1003.2)
+	-e	(edit user's crontab)
+	-l	(list user's crontab)
+	-r	(delete user's crontab)
+	-i	(prompt before deleting user's crontab)
+user@user-Aspire-A315-56:~/lws$ crontab -l
+no crontab for user
+user@user-Aspire-A315-56:~/lws$ crontab -e
+no crontab for user - using an empty one
+
+crontab: installing new crontab
+user@user-Aspire-A315-56:~/lws$ crontab -l
+
+
+ * * * * * echo "Hi there! It's $date >> ~/lws/logs.txt
+user@user-Aspire-A315-56:~/lws$ ll
+итого 36
+drwxrw-r--  3 user user 4096 ноя 20 19:44  ./
+drwxr-xr-x 51 user user 4096 ноя 20 17:58  ../
+-rw-rw-r--  1 user user    0 ноя 20 19:33 '}'
+-rwxrw-r--  1 user user  245 ноя 20 18:58  age_check.sh*
+-rwxrw-r--  1 user user  212 ноя 20 19:17  burger_cost.sh*
+-rw-rw-r--  1 user user    0 ноя 20 19:31  done
+-rwxrw-r--  1 user user   45 ноя 20 18:44  hello.py*
+drwxrw-r--  2 user user 4096 окт 20 21:58  lesson02/
+-rw-rw-r--  1 user user    0 ноя 20 19:31 'number='
+-rwxrw-r--  1 user user  131 ноя 20 18:25  script1.sh*
+-rw-rw-r--  1 user user    0 ноя 20 19:31  shift
+-rwxrw-r--  1 user user  114 ноя 20 19:44  until_sample.sh*
+-rwxrw-r--  1 user user   69 ноя 20 19:36  while_sample.sh*
+user@user-Aspire-A315-56:~/lws$ echo 'll' logs.txt
+ll logs.txt
+user@user-Aspire-A315-56:~/lws$ ll
+итого 36
+drwxrw-r--  3 user user 4096 ноя 20 19:44  ./
+drwxr-xr-x 51 user user 4096 ноя 20 17:58  ../
+-rw-rw-r--  1 user user    0 ноя 20 19:33 '}'
+-rwxrw-r--  1 user user  245 ноя 20 18:58  age_check.sh*
+-rwxrw-r--  1 user user  212 ноя 20 19:17  burger_cost.sh*
+-rw-rw-r--  1 user user    0 ноя 20 19:31  done
+-rwxrw-r--  1 user user   45 ноя 20 18:44  hello.py*
+drwxrw-r--  2 user user 4096 окт 20 21:58  lesson02/
+-rw-rw-r--  1 user user    0 ноя 20 19:31 'number='
+-rwxrw-r--  1 user user  131 ноя 20 18:25  script1.sh*
+-rw-rw-r--  1 user user    0 ноя 20 19:31  shift
+-rwxrw-r--  1 user user  114 ноя 20 19:44  until_sample.sh*
+-rwxrw-r--  1 user user   69 ноя 20 19:36  while_sample.sh*
+user@user-Aspire-A315-56:~/lws$ echo 'll' >> logs.txt
+user@user-Aspire-A315-56:~/lws$ ll
+итого 40
+drwxrw-r--  3 user user 4096 ноя 20 20:05  ./
+drwxr-xr-x 51 user user 4096 ноя 20 17:58  ../
+-rw-rw-r--  1 user user    0 ноя 20 19:33 '}'
+-rwxrw-r--  1 user user  245 ноя 20 18:58  age_check.sh*
+-rwxrw-r--  1 user user  212 ноя 20 19:17  burger_cost.sh*
+-rw-rw-r--  1 user user    0 ноя 20 19:31  done
+-rwxrw-r--  1 user user   45 ноя 20 18:44  hello.py*
+drwxrw-r--  2 user user 4096 окт 20 21:58  lesson02/
+-rw-rw-r--  1 user user    3 ноя 20 20:05  logs.txt
+-rw-rw-r--  1 user user    0 ноя 20 19:31 'number='
+-rwxrw-r--  1 user user  131 ноя 20 18:25  script1.sh*
+-rw-rw-r--  1 user user    0 ноя 20 19:31  shift
+-rwxrw-r--  1 user user  114 ноя 20 19:44  until_sample.sh*
+-rwxrw-r--  1 user user   69 ноя 20 19:36  while_sample.sh*
+user@user-Aspire-A315-56:~/lws$ cat logs.txt 
+ll
+user@user-Aspire-A315-56:~/lws$ crontab -e
+
+crontab: installing new crontab
+user@user-Aspire-A315-56:~/lws$ crontab -l
+
+
+ * * * * * echo "Hi there! It's $date" >> ~/lws/logs.txt
+user@user-Aspire-A315-56:~/lws$ cat logs.txt 
+ll
+Hi there! It's 
+Hi there! It's 
+Hi there! It's 
+Hi there! It's 
+user@user-Aspire-A315-56:~/lws$ ls /var/spool/cron/crontabs/
+ls: невозможно открыть каталог '/var/spool/cron/crontabs/': Отказано в доступе
+user@user-Aspire-A315-56:~/lws$ sudo ls /var/spool/cron/crontabs/
+[sudo] пароль для user:            
+user
+user@user-Aspire-A315-56:~/lws$ sudo cat /var/spool/cron/crontabs/user
+# DO NOT EDIT THIS FILE - edit the master and reinstall.
+# (/tmp/crontab.xFTeM8/crontab installed on Sun Nov 20 20:07:12 2022)
+# (Cron version -- $Id: crontab.c,v 2.13 1994/01/17 03:20:37 vixie Exp $)
+
+
+ * * * * * echo "Hi there! It's $date" >> ~/lws/logs.txt
+user@user-Aspire-A315-56:~/lws$ crontab -e
+
+crontab: installing new crontab
+user@user-Aspire-A315-56:~/lws$ cat /etc/crontab
+# /etc/crontab: system-wide crontab
+# Unlike any other crontab you don't have to run the `crontab'
+# command to install the new version when you edit this file
+# and files in /etc/cron.d. These files also have username fields,
+# that none of the other crontabs do.
+
+SHELL=/bin/sh
+PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
+
+# Example of job definition:
+# .---------------- minute (0 - 59)
+# |  .------------- hour (0 - 23)
+# |  |  .---------- day of month (1 - 31)
+# |  |  |  .------- month (1 - 12) OR jan,feb,mar,apr ...
+# |  |  |  |  .---- day of week (0 - 6) (Sunday=0 or 7) OR sun,mon,tue,wed,thu,fri,sat
+# |  |  |  |  |
+# *  *  *  *  * user-name command to be executed
+17 *	* * *	root    cd / && run-parts --report /etc/cron.hourly
+25 6	* * *	root	test -x /usr/sbin/anacron || ( cd / && run-parts --report /etc/cron.daily )
+47 6	* * 7	root	test -x /usr/sbin/anacron || ( cd / && run-parts --report /etc/cron.weekly )
+52 6	1 * *	root	test -x /usr/sbin/anacron || ( cd / && run-parts --report /etc/cron.monthly )
+#
+user@user-Aspire-A315-56:~/lws$ sudo find . -type d -name "cron*"
+user@user-Aspire-A315-56:~/lws$ cd /etc
+user@user-Aspire-A315-56:/etc$ sudo find . -type d -name "cron*"
+./cron.d
+./cron.daily
+./cron.monthly
+./cron.weekly
+./cron.hourly
+user@user-Aspire-A315-56:/etc$ grep cron /var/log/syslog
+Nov  8 00:17:01 user-Aspire-A315-56 CRON[10486]: (root) CMD (   cd / && run-parts --report /etc/cron.hourly)
+Nov  8 00:32:42 user-Aspire-A315-56 systemd[1]: anacron.timer: Succeeded.
+Nov  8 00:32:42 user-Aspire-A315-56 systemd[1]: Stopped Trigger anacron every hour.
+Nov  8 11:45:05 user-Aspire-A315-56 cron[511]: (CRON) INFO (pidfile fd = 3)
+Nov  8 11:45:05 user-Aspire-A315-56 cron[511]: (CRON) INFO (Running @reboot jobs)
+Nov  8 11:45:05 user-Aspire-A315-56 systemd[1]: Started Trigger anacron every hour.
+Nov  8 11:45:05 user-Aspire-A315-56 systemd[1]: Condition check resulted in Run anacron jobs being skipped.
+Nov  8 11:49:46 user-Aspire-A315-56 systemd[1]: Condition check resulted in Run anacron jobs being skipped.
+Nov  8 12:00:49 user-Aspire-A315-56 crontab[4452]: (root) LIST (root)
+Nov  8 12:00:49 user-Aspire-A315-56 crontab[4453]: (root) LIST (root)
+Nov  8 12:17:01 user-Aspire-A315-56 CRON[5026]: (root) CMD (   cd / && run-parts --report /etc/cron.hourly)
+Nov  8 12:30:01 user-Aspire-A315-56 CRON[5473]: (root) CMD ([ -x /etc/init.d/anacron ] && if [ ! -d /run/systemd/system ]; then /usr/sbin/invoke-rc.d anacron start >/dev/null; fi)
+Nov  8 12:33:21 user-Aspire-A315-56 systemd[1]: Condition check resulted in Run anacron jobs being skipped.
+Nov  8 13:00:01 user-Aspire-A315-56 crontab[6448]: (root) LIST (root)
+Nov  8 13:00:01 user-Aspire-A315-56 crontab[6449]: (root) LIST (root)
+Nov  8 13:17:02 user-Aspire-A315-56 CRON[7255]: (root) CMD (   cd / && run-parts --report /etc/cron.hourly)
+Nov  8 13:30:01 user-Aspire-A315-56 CRON[8189]: (root) CMD ([ -x /etc/init.d/anacron ] && if [ ! -d /run/systemd/system ]; then /usr/sbin/invoke-rc.d anacron start >/dev/null; fi)
+Nov  8 13:34:33 user-Aspire-A315-56 systemd[1]: Started Run anacron jobs.
+Nov  8 13:34:33 user-Aspire-A315-56 anacron[8313]: Anacron 2.3 started on 2022-11-08
+Nov  8 13:34:33 user-Aspire-A315-56 anacron[8313]: Will run job `cron.daily' in 5 min.
+Nov  8 13:34:33 user-Aspire-A315-56 anacron[8313]: Will run job `cron.weekly' in 10 min.
+Nov  8 13:34:33 user-Aspire-A315-56 anacron[8313]: Jobs will be executed sequentially
+Nov  8 13:39:33 user-Aspire-A315-56 anacron[8313]: Job `cron.daily' started
+Nov  8 13:39:33 user-Aspire-A315-56 anacron[9771]: Updated timestamp for job `cron.daily' to 2022-11-08
+Nov  8 13:39:51 user-Aspire-A315-56 anacron[8313]: Job `cron.daily' terminated
+Nov  8 13:44:33 user-Aspire-A315-56 anacron[8313]: Job `cron.weekly' started
+Nov  8 13:44:33 user-Aspire-A315-56 anacron[10094]: Updated timestamp for job `cron.weekly' to 2022-11-08
+Nov  8 13:44:33 user-Aspire-A315-56 anacron[8313]: Job `cron.weekly' terminated
+Nov  8 13:44:33 user-Aspire-A315-56 systemd[1]: anacron.service: Succeeded.
+Nov  8 13:44:33 user-Aspire-A315-56 anacron[8313]: Normal exit (2 jobs run)
+Nov  8 14:00:01 user-Aspire-A315-56 crontab[11152]: (root) LIST (root)
+Nov  8 14:00:01 user-Aspire-A315-56 crontab[11153]: (root) LIST (root)
+Nov  8 14:17:01 user-Aspire-A315-56 CRON[11406]: (root) CMD (   cd / && run-parts --report /etc/cron.hourly)
+Nov  8 14:30:01 user-Aspire-A315-56 CRON[11506]: (root) CMD ([ -x /etc/init.d/anacron ] && if [ ! -d /run/systemd/system ]; then /usr/sbin/invoke-rc.d anacron start >/dev/null; fi)
+Nov  8 14:33:39 user-Aspire-A315-56 systemd[1]: Started Run anacron jobs.
+Nov  8 14:33:39 user-Aspire-A315-56 anacron[11533]: Anacron 2.3 started on 2022-11-08
+Nov  8 14:33:39 user-Aspire-A315-56 anacron[11533]: Normal exit (0 jobs run)
+Nov  8 14:33:39 user-Aspire-A315-56 systemd[1]: anacron.service: Succeeded.
+Nov  8 15:00:01 user-Aspire-A315-56 crontab[11878]: (root) LIST (root)
+Nov  8 15:00:01 user-Aspire-A315-56 crontab[11879]: (root) LIST (root)
+Nov  8 15:17:01 user-Aspire-A315-56 CRON[12084]: (root) CMD (   cd / && run-parts --report /etc/cron.hourly)
+Nov  8 15:30:01 user-Aspire-A315-56 CRON[12557]: (root) CMD ([ -x /etc/init.d/anacron ] && if [ ! -d /run/systemd/system ]; then /usr/sbin/invoke-rc.d anacron start >/dev/null; fi)
+Nov  8 15:34:18 user-Aspire-A315-56 systemd[1]: Started Run anacron jobs.
+Nov  8 15:34:18 user-Aspire-A315-56 anacron[12675]: Anacron 2.3 started on 2022-11-08
+Nov  8 15:34:18 user-Aspire-A315-56 anacron[12675]: Normal exit (0 jobs run)
+Nov  8 15:34:18 user-Aspire-A315-56 systemd[1]: anacron.service: Succeeded.
+Nov  8 16:00:01 user-Aspire-A315-56 crontab[14177]: (root) LIST (root)
+Nov  8 16:00:01 user-Aspire-A315-56 crontab[14178]: (root) LIST (root)
+Nov  8 16:17:01 user-Aspire-A315-56 CRON[14638]: (root) CMD (   cd / && run-parts --report /etc/cron.hourly)
+Nov  8 16:30:01 user-Aspire-A315-56 CRON[14926]: (root) CMD ([ -x /etc/init.d/anacron ] && if [ ! -d /run/systemd/system ]; then /usr/sbin/invoke-rc.d anacron start >/dev/null; fi)
+Nov  8 16:34:46 user-Aspire-A315-56 systemd[1]: Condition check resulted in Run anacron jobs being skipped.
+Nov  8 17:00:01 user-Aspire-A315-56 crontab[16280]: (root) LIST (root)
+Nov  8 17:00:01 user-Aspire-A315-56 crontab[16281]: (root) LIST (root)
+Nov  8 17:17:01 user-Aspire-A315-56 CRON[16776]: (root) CMD (   cd / && run-parts --report /etc/cron.hourly)
+Nov  8 17:30:01 user-Aspire-A315-56 CRON[17101]: (root) CMD ([ -x /etc/init.d/anacron ] && if [ ! -d /run/systemd/system ]; then /usr/sbin/invoke-rc.d anacron start >/dev/null; fi)
+Nov  8 17:34:34 user-Aspire-A315-56 systemd[1]: Started Run anacron jobs.
+Nov  8 17:34:34 user-Aspire-A315-56 anacron[17193]: Anacron 2.3 started on 2022-11-08
+Nov  8 17:34:34 user-Aspire-A315-56 anacron[17193]: Normal exit (0 jobs run)
+Nov  8 17:34:34 user-Aspire-A315-56 systemd[1]: anacron.service: Succeeded.
+Nov  8 18:00:01 user-Aspire-A315-56 crontab[18635]: (root) LIST (root)
+Nov  8 18:00:01 user-Aspire-A315-56 crontab[18636]: (root) LIST (root)
+Nov  8 18:17:01 user-Aspire-A315-56 CRON[19178]: (root) CMD (   cd / && run-parts --report /etc/cron.hourly)
+Nov  8 18:30:01 user-Aspire-A315-56 CRON[19700]: (root) CMD ([ -x /etc/init.d/anacron ] && if [ ! -d /run/systemd/system ]; then /usr/sbin/invoke-rc.d anacron start >/dev/null; fi)
+Nov  8 18:33:07 user-Aspire-A315-56 systemd[1]: Started Run anacron jobs.
+Nov  8 18:33:07 user-Aspire-A315-56 systemd[1]: anacron.service: Succeeded.
+Nov  8 18:33:07 user-Aspire-A315-56 anacron[19746]: Anacron 2.3 started on 2022-11-08
+Nov  8 18:33:07 user-Aspire-A315-56 anacron[19746]: Normal exit (0 jobs run)
+Nov  8 19:00:01 user-Aspire-A315-56 crontab[20261]: (root) LIST (root)
+Nov  8 19:00:01 user-Aspire-A315-56 crontab[20262]: (root) LIST (root)
+Nov  8 19:17:01 user-Aspire-A315-56 CRON[21239]: (root) CMD (   cd / && run-parts --report /etc/cron.hourly)
+Nov  8 19:30:01 user-Aspire-A315-56 CRON[22029]: (root) CMD ([ -x /etc/init.d/anacron ] && if [ ! -d /run/systemd/system ]; then /usr/sbin/invoke-rc.d anacron start >/dev/null; fi)
+Nov  8 19:32:37 user-Aspire-A315-56 systemd[1]: Condition check resulted in Run anacron jobs being skipped.
+Nov  8 20:00:02 user-Aspire-A315-56 crontab[35010]: (root) LIST (root)
+Nov  8 20:00:02 user-Aspire-A315-56 crontab[35011]: (root) LIST (root)
+Nov  8 20:17:01 user-Aspire-A315-56 CRON[43097]: (root) CMD (   cd / && run-parts --report /etc/cron.hourly)
+Nov  8 20:30:01 user-Aspire-A315-56 CRON[49568]: (root) CMD ([ -x /etc/init.d/anacron ] && if [ ! -d /run/systemd/system ]; then /usr/sbin/invoke-rc.d anacron start >/dev/null; fi)
+Nov  8 20:34:46 user-Aspire-A315-56 systemd[1]: Condition check resulted in Run anacron jobs being skipped.
+Nov  8 21:00:01 user-Aspire-A315-56 crontab[53923]: (root) LIST (root)
+Nov  8 21:00:01 user-Aspire-A315-56 crontab[53924]: (root) LIST (root)
+Nov  8 21:17:01 user-Aspire-A315-56 CRON[54290]: (root) CMD (   cd / && run-parts --report /etc/cron.hourly)
+Nov  8 21:28:31 user-Aspire-A315-56 systemd[1]: anacron.timer: Succeeded.
+Nov  8 21:28:31 user-Aspire-A315-56 systemd[1]: Stopped Trigger anacron every hour.
+Nov  9 11:48:10 user-Aspire-A315-56 systemd[1]: Started Trigger anacron every hour.
+Nov  9 11:48:10 user-Aspire-A315-56 cron[508]: (CRON) INFO (pidfile fd = 3)
+Nov  9 11:48:10 user-Aspire-A315-56 cron[508]: (CRON) INFO (Running @reboot jobs)
+Nov  9 11:48:10 user-Aspire-A315-56 systemd[1]: Condition check resulted in Run anacron jobs being skipped.
+Nov  9 11:48:27 user-Aspire-A315-56 systemd[1]: Condition check resulted in Run anacron jobs being skipped.
+Nov  9 12:00:50 user-Aspire-A315-56 crontab[4151]: (root) LIST (root)
+Nov  9 12:00:50 user-Aspire-A315-56 crontab[4152]: (root) LIST (root)
+Nov  9 12:17:01 user-Aspire-A315-56 CRON[12994]: (root) CMD (   cd / && run-parts --report /etc/cron.hourly)
+Nov  9 12:30:01 user-Aspire-A315-56 CRON[14082]: (root) CMD ([ -x /etc/init.d/anacron ] && if [ ! -d /run/systemd/system ]; then /usr/sbin/invoke-rc.d anacron start >/dev/null; fi)
+Nov  9 12:30:57 user-Aspire-A315-56 systemd[1]: Condition check resulted in Run anacron jobs being skipped.
+Nov  9 13:00:01 user-Aspire-A315-56 crontab[14762]: (root) LIST (root)
+Nov  9 13:00:01 user-Aspire-A315-56 crontab[14763]: (root) LIST (root)
+Nov  9 13:17:01 user-Aspire-A315-56 CRON[15132]: (root) CMD (   cd / && run-parts --report /etc/cron.hourly)
+Nov  9 13:30:01 user-Aspire-A315-56 CRON[16852]: (root) CMD ([ -x /etc/init.d/anacron ] && if [ ! -d /run/systemd/system ]; then /usr/sbin/invoke-rc.d anacron start >/dev/null; fi)
+Nov  9 13:31:57 user-Aspire-A315-56 systemd[1]: Started Run anacron jobs.
+Nov  9 13:31:57 user-Aspire-A315-56 anacron[16912]: Anacron 2.3 started on 2022-11-09
+Nov  9 13:31:57 user-Aspire-A315-56 anacron[16912]: Will run job `cron.daily' in 5 min.
+Nov  9 13:31:57 user-Aspire-A315-56 anacron[16912]: Will run job `cron.monthly' in 15 min.
+Nov  9 13:31:57 user-Aspire-A315-56 anacron[16912]: Jobs will be executed sequentially
+Nov  9 13:36:57 user-Aspire-A315-56 anacron[16912]: Job `cron.daily' started
+Nov  9 13:36:57 user-Aspire-A315-56 anacron[16982]: Updated timestamp for job `cron.daily' to 2022-11-09
+Nov  9 13:37:08 user-Aspire-A315-56 anacron[16912]: Job `cron.daily' terminated
+Nov  9 13:46:57 user-Aspire-A315-56 anacron[16912]: Job `cron.monthly' started
+Nov  9 13:46:57 user-Aspire-A315-56 anacron[16912]: Job `cron.monthly' terminated
+Nov  9 13:46:57 user-Aspire-A315-56 anacron[16912]: Normal exit (2 jobs run)
+Nov  9 13:46:57 user-Aspire-A315-56 systemd[1]: anacron.service: Killing process 17347 (anacron) with signal SIGKILL.
+Nov  9 13:46:57 user-Aspire-A315-56 systemd[1]: anacron.service: Killing process 17347 (anacron) with signal SIGKILL.
+Nov  9 13:46:57 user-Aspire-A315-56 systemd[1]: anacron.service: Succeeded.
+Nov  9 14:00:01 user-Aspire-A315-56 crontab[18334]: (root) LIST (root)
+Nov  9 14:00:01 user-Aspire-A315-56 crontab[18335]: (root) LIST (root)
+Nov  9 14:17:02 user-Aspire-A315-56 CRON[18570]: (root) CMD (   cd / && run-parts --report /etc/cron.hourly)
+Nov  9 14:30:01 user-Aspire-A315-56 CRON[18767]: (root) CMD ([ -x /etc/init.d/anacron ] && if [ ! -d /run/systemd/system ]; then /usr/sbin/invoke-rc.d anacron start >/dev/null; fi)
+Nov  9 14:34:57 user-Aspire-A315-56 systemd[1]: Started Run anacron jobs.
+Nov  9 14:34:57 user-Aspire-A315-56 anacron[18810]: Anacron 2.3 started on 2022-11-09
+Nov  9 14:34:57 user-Aspire-A315-56 anacron[18810]: Normal exit (0 jobs run)
+Nov  9 14:34:57 user-Aspire-A315-56 systemd[1]: anacron.service: Succeeded.
+Nov  9 15:00:01 user-Aspire-A315-56 crontab[19135]: (root) LIST (root)
+Nov  9 15:00:01 user-Aspire-A315-56 crontab[19136]: (root) LIST (root)
+Nov  9 15:17:01 user-Aspire-A315-56 CRON[19345]: (root) CMD (   cd / && run-parts --report /etc/cron.hourly)
+Nov  9 15:30:01 user-Aspire-A315-56 CRON[19667]: (root) CMD ([ -x /etc/init.d/anacron ] && if [ ! -d /run/systemd/system ]; then /usr/sbin/invoke-rc.d anacron start >/dev/null; fi)
+Nov  9 15:33:26 user-Aspire-A315-56 systemd[1]: Condition check resulted in Run anacron jobs being skipped.
+Nov  9 16:00:01 user-Aspire-A315-56 crontab[20977]: (root) LIST (root)
+Nov  9 16:00:01 user-Aspire-A315-56 crontab[20978]: (root) LIST (root)
+Nov  9 16:17:01 user-Aspire-A315-56 CRON[21308]: (root) CMD (   cd / && run-parts --report /etc/cron.hourly)
+Nov  9 16:30:01 user-Aspire-A315-56 CRON[21524]: (root) CMD ([ -x /etc/init.d/anacron ] && if [ ! -d /run/systemd/system ]; then /usr/sbin/invoke-rc.d anacron start >/dev/null; fi)
+Nov  9 16:34:57 user-Aspire-A315-56 systemd[1]: Started Run anacron jobs.
+Nov  9 16:34:57 user-Aspire-A315-56 anacron[21619]: Anacron 2.3 started on 2022-11-09
+Nov  9 16:34:57 user-Aspire-A315-56 systemd[1]: anacron.service: Succeeded.
+Nov  9 16:34:57 user-Aspire-A315-56 anacron[21619]: Normal exit (0 jobs run)
+Nov  9 17:00:01 user-Aspire-A315-56 crontab[22414]: (root) LIST (root)
+Nov  9 17:00:01 user-Aspire-A315-56 crontab[22415]: (root) LIST (root)
+Nov  9 17:17:01 user-Aspire-A315-56 CRON[22710]: (root) CMD (   cd / && run-parts --report /etc/cron.hourly)
+Nov  9 17:30:01 user-Aspire-A315-56 CRON[23003]: (root) CMD ([ -x /etc/init.d/anacron ] && if [ ! -d /run/systemd/system ]; then /usr/sbin/invoke-rc.d anacron start >/dev/null; fi)
+Nov  9 17:33:57 user-Aspire-A315-56 systemd[1]: Started Run anacron jobs.
+Nov  9 17:33:57 user-Aspire-A315-56 anacron[23036]: Anacron 2.3 started on 2022-11-09
+Nov  9 17:33:57 user-Aspire-A315-56 systemd[1]: anacron.service: Succeeded.
+Nov  9 17:33:57 user-Aspire-A315-56 anacron[23036]: Normal exit (0 jobs run)
+Nov  9 18:00:01 user-Aspire-A315-56 crontab[24351]: (root) LIST (root)
+Nov  9 18:00:01 user-Aspire-A315-56 crontab[24352]: (root) LIST (root)
+Nov  9 18:17:01 user-Aspire-A315-56 CRON[24605]: (root) CMD (   cd / && run-parts --report /etc/cron.hourly)
+Nov  9 18:30:01 user-Aspire-A315-56 CRON[25489]: (root) CMD ([ -x /etc/init.d/anacron ] && if [ ! -d /run/systemd/system ]; then /usr/sbin/invoke-rc.d anacron start >/dev/null; fi)
+Nov  9 18:31:57 user-Aspire-A315-56 systemd[1]: Condition check resulted in Run anacron jobs being skipped.
+Nov  9 19:00:01 user-Aspire-A315-56 crontab[26044]: (root) LIST (root)
+Nov  9 19:00:01 user-Aspire-A315-56 crontab[26045]: (root) LIST (root)
+Nov  9 19:17:01 user-Aspire-A315-56 CRON[28058]: (root) CMD (   cd / && run-parts --report /etc/cron.hourly)
+Nov  9 19:30:01 user-Aspire-A315-56 CRON[28472]: (root) CMD ([ -x /etc/init.d/anacron ] && if [ ! -d /run/systemd/system ]; then /usr/sbin/invoke-rc.d anacron start >/dev/null; fi)
+Nov  9 19:32:37 user-Aspire-A315-56 systemd[1]: Condition check resulted in Run anacron jobs being skipped.
+Nov  9 20:00:01 user-Aspire-A315-56 crontab[30599]: (root) LIST (root)
+Nov  9 20:00:01 user-Aspire-A315-56 crontab[30600]: (root) LIST (root)
+Nov  9 20:17:01 user-Aspire-A315-56 CRON[33544]: (root) CMD (   cd / && run-parts --report /etc/cron.hourly)
+Nov  9 20:30:01 user-Aspire-A315-56 CRON[36042]: (root) CMD ([ -x /etc/init.d/anacron ] && if [ ! -d /run/systemd/system ]; then /usr/sbin/invoke-rc.d anacron start >/dev/null; fi)
+Nov  9 20:31:52 user-Aspire-A315-56 systemd[1]: Condition check resulted in Run anacron jobs being skipped.
+Nov  9 21:00:01 user-Aspire-A315-56 crontab[38590]: (root) LIST (root)
+Nov  9 21:00:01 user-Aspire-A315-56 crontab[38591]: (root) LIST (root)
+Nov  9 21:09:30 user-Aspire-A315-56 systemd[1]: anacron.timer: Succeeded.
+Nov  9 21:09:30 user-Aspire-A315-56 systemd[1]: Stopped Trigger anacron every hour.
+Nov  9 21:09:49 user-Aspire-A315-56 cron[491]: (CRON) INFO (pidfile fd = 3)
+Nov  9 21:09:49 user-Aspire-A315-56 systemd[1]: Started Trigger anacron every hour.
+Nov  9 21:09:49 user-Aspire-A315-56 anacron[489]: Anacron 2.3 started on 2022-11-09
+Nov  9 21:09:49 user-Aspire-A315-56 cron[491]: (CRON) INFO (Running @reboot jobs)
+Nov  9 21:09:49 user-Aspire-A315-56 anacron[489]: Normal exit (0 jobs run)
+Nov  9 21:09:49 user-Aspire-A315-56 systemd[1]: Started Run anacron jobs.
+Nov  9 21:09:49 user-Aspire-A315-56 systemd[1]: anacron.service: Succeeded.
+Nov  9 21:11:32 user-Aspire-A315-56 systemd[1]: anacron.timer: Succeeded.
+Nov  9 21:11:32 user-Aspire-A315-56 systemd[1]: Stopped Trigger anacron every hour.
+Nov 10 11:46:58 user-Aspire-A315-56 cron[509]: (CRON) INFO (pidfile fd = 3)
+Nov 10 11:46:58 user-Aspire-A315-56 cron[509]: (CRON) INFO (Running @reboot jobs)
+Nov 10 11:46:58 user-Aspire-A315-56 systemd[1]: Started Trigger anacron every hour.
+Nov 10 11:46:58 user-Aspire-A315-56 systemd[1]: Condition check resulted in Run anacron jobs being skipped.
+Nov 10 11:49:10 user-Aspire-A315-56 systemd[1]: Condition check resulted in Run anacron jobs being skipped.
+Nov 10 12:00:55 user-Aspire-A315-56 crontab[4785]: (root) LIST (root)
+Nov 10 12:00:55 user-Aspire-A315-56 crontab[4786]: (root) LIST (root)
+Nov 10 12:17:01 user-Aspire-A315-56 CRON[5683]: (root) CMD (   cd / && run-parts --report /etc/cron.hourly)
+Nov 10 12:30:01 user-Aspire-A315-56 CRON[5965]: (root) CMD ([ -x /etc/init.d/anacron ] && if [ ! -d /run/systemd/system ]; then /usr/sbin/invoke-rc.d anacron start >/dev/null; fi)
+Nov 10 12:30:48 user-Aspire-A315-56 systemd[1]: Started Run anacron jobs.
+Nov 10 12:30:48 user-Aspire-A315-56 anacron[5977]: Anacron 2.3 started on 2022-11-10
+Nov 10 12:30:48 user-Aspire-A315-56 anacron[5977]: Will run job `cron.daily' in 5 min.
+Nov 10 12:30:48 user-Aspire-A315-56 anacron[5977]: Jobs will be executed sequentially
+Nov 10 12:35:48 user-Aspire-A315-56 anacron[5977]: Job `cron.daily' started
+Nov 10 12:35:48 user-Aspire-A315-56 anacron[6040]: Updated timestamp for job `cron.daily' to 2022-11-10
+Nov 10 12:36:01 user-Aspire-A315-56 anacron[5977]: Job `cron.daily' terminated
+Nov 10 12:36:01 user-Aspire-A315-56 anacron[5977]: Normal exit (1 job run)
+Nov 10 12:36:01 user-Aspire-A315-56 systemd[1]: anacron.service: Succeeded.
+Nov 10 13:00:01 user-Aspire-A315-56 crontab[8478]: (root) LIST (root)
+Nov 10 13:00:01 user-Aspire-A315-56 crontab[8479]: (root) LIST (root)
+Nov 10 13:17:01 user-Aspire-A315-56 CRON[11340]: (root) CMD (   cd / && run-parts --report /etc/cron.hourly)
+Nov 10 13:30:01 user-Aspire-A315-56 CRON[11918]: (root) CMD ([ -x /etc/init.d/anacron ] && if [ ! -d /run/systemd/system ]; then /usr/sbin/invoke-rc.d anacron start >/dev/null; fi)
+Nov 10 13:32:52 user-Aspire-A315-56 systemd[1]: Started Run anacron jobs.
+Nov 10 13:32:52 user-Aspire-A315-56 anacron[11982]: Anacron 2.3 started on 2022-11-10
+Nov 10 13:32:52 user-Aspire-A315-56 anacron[11982]: Normal exit (0 jobs run)
+Nov 10 13:32:52 user-Aspire-A315-56 systemd[1]: anacron.service: Succeeded.
+Nov 10 14:00:01 user-Aspire-A315-56 crontab[14246]: (root) LIST (root)
+Nov 10 14:00:01 user-Aspire-A315-56 crontab[14247]: (root) LIST (root)
+Nov 10 14:17:01 user-Aspire-A315-56 CRON[14524]: (root) CMD (   cd / && run-parts --report /etc/cron.hourly)
+Nov 10 14:30:01 user-Aspire-A315-56 CRON[14670]: (root) CMD ([ -x /etc/init.d/anacron ] && if [ ! -d /run/systemd/system ]; then /usr/sbin/invoke-rc.d anacron start >/dev/null; fi)
+Nov 10 14:33:58 user-Aspire-A315-56 systemd[1]: Condition check resulted in Run anacron jobs being skipped.
+Nov 10 15:00:01 user-Aspire-A315-56 crontab[15033]: (root) LIST (root)
+Nov 10 15:00:01 user-Aspire-A315-56 crontab[15034]: (root) LIST (root)
+Nov 10 15:17:01 user-Aspire-A315-56 CRON[15317]: (root) CMD (   cd / && run-parts --report /etc/cron.hourly)
+Nov 10 15:30:01 user-Aspire-A315-56 CRON[15762]: (root) CMD ([ -x /etc/init.d/anacron ] && if [ ! -d /run/systemd/system ]; then /usr/sbin/invoke-rc.d anacron start >/dev/null; fi)
+Nov 10 15:31:25 user-Aspire-A315-56 systemd[1]: Started Run anacron jobs.
+Nov 10 15:31:25 user-Aspire-A315-56 anacron[15775]: Anacron 2.3 started on 2022-11-10
+Nov 10 15:31:25 user-Aspire-A315-56 anacron[15775]: Normal exit (0 jobs run)
+Nov 10 15:31:25 user-Aspire-A315-56 systemd[1]: anacron.service: Succeeded.
+Nov 10 16:00:01 user-Aspire-A315-56 crontab[17136]: (root) LIST (root)
+Nov 10 16:00:01 user-Aspire-A315-56 crontab[17137]: (root) LIST (root)
+Nov 10 16:17:01 user-Aspire-A315-56 CRON[17419]: (root) CMD (   cd / && run-parts --report /etc/cron.hourly)
+Nov 10 16:30:01 user-Aspire-A315-56 CRON[17601]: (root) CMD ([ -x /etc/init.d/anacron ] && if [ ! -d /run/systemd/system ]; then /usr/sbin/invoke-rc.d anacron start >/dev/null; fi)
+Nov 10 16:32:52 user-Aspire-A315-56 systemd[1]: Started Run anacron jobs.
+Nov 10 16:32:52 user-Aspire-A315-56 anacron[17639]: Anacron 2.3 started on 2022-11-10
+Nov 10 16:32:52 user-Aspire-A315-56 anacron[17639]: Normal exit (0 jobs run)
+Nov 10 16:32:52 user-Aspire-A315-56 systemd[1]: anacron.service: Succeeded.
+Nov 10 17:00:01 user-Aspire-A315-56 crontab[18110]: (root) LIST (root)
+Nov 10 17:00:01 user-Aspire-A315-56 crontab[18111]: (root) LIST (root)
+Nov 10 17:17:01 user-Aspire-A315-56 CRON[18626]: (root) CMD (   cd / && run-parts --report /etc/cron.hourly)
+Nov 10 17:30:01 user-Aspire-A315-56 CRON[18943]: (root) CMD ([ -x /etc/init.d/anacron ] && if [ ! -d /run/systemd/system ]; then /usr/sbin/invoke-rc.d anacron start >/dev/null; fi)
+Nov 10 17:33:52 user-Aspire-A315-56 systemd[1]: Condition check resulted in Run anacron jobs being skipped.
+Nov 10 18:00:01 user-Aspire-A315-56 crontab[20193]: (root) LIST (root)
+Nov 10 18:00:01 user-Aspire-A315-56 crontab[20194]: (root) LIST (root)
+Nov 10 18:17:01 user-Aspire-A315-56 CRON[20490]: (root) CMD (   cd / && run-parts --report /etc/cron.hourly)
+Nov 10 18:30:01 user-Aspire-A315-56 CRON[20628]: (root) CMD ([ -x /etc/init.d/anacron ] && if [ ! -d /run/systemd/system ]; then /usr/sbin/invoke-rc.d anacron start >/dev/null; fi)
+Nov 10 18:30:21 user-Aspire-A315-56 systemd[1]: Started Run anacron jobs.
+Nov 10 18:30:21 user-Aspire-A315-56 anacron[20631]: Anacron 2.3 started on 2022-11-10
+Nov 10 18:30:21 user-Aspire-A315-56 anacron[20631]: Normal exit (0 jobs run)
+Nov 10 18:30:21 user-Aspire-A315-56 systemd[1]: anacron.service: Succeeded.
+Nov 10 19:00:01 user-Aspire-A315-56 crontab[21959]: (root) LIST (root)
+Nov 10 19:00:01 user-Aspire-A315-56 crontab[21960]: (root) LIST (root)
+Nov 10 19:17:01 user-Aspire-A315-56 CRON[22457]: (root) CMD (   cd / && run-parts --report /etc/cron.hourly)
+Nov 10 19:30:01 user-Aspire-A315-56 CRON[22794]: (root) CMD ([ -x /etc/init.d/anacron ] && if [ ! -d /run/systemd/system ]; then /usr/sbin/invoke-rc.d anacron start >/dev/null; fi)
+Nov 10 19:33:52 user-Aspire-A315-56 systemd[1]: Condition check resulted in Run anacron jobs being skipped.
+Nov 10 20:00:02 user-Aspire-A315-56 crontab[24716]: (root) LIST (root)
+Nov 10 20:00:02 user-Aspire-A315-56 crontab[24717]: (root) LIST (root)
+Nov 10 20:17:01 user-Aspire-A315-56 CRON[24991]: (root) CMD (   cd / && run-parts --report /etc/cron.hourly)
+Nov 10 20:30:01 user-Aspire-A315-56 CRON[25160]: (root) CMD ([ -x /etc/init.d/anacron ] && if [ ! -d /run/systemd/system ]; then /usr/sbin/invoke-rc.d anacron start >/dev/null; fi)
+Nov 10 20:32:52 user-Aspire-A315-56 systemd[1]: Condition check resulted in Run anacron jobs being skipped.
+Nov 10 21:00:01 user-Aspire-A315-56 crontab[26417]: (root) LIST (root)
+Nov 10 21:00:01 user-Aspire-A315-56 crontab[26418]: (root) LIST (root)
+Nov 10 21:17:01 user-Aspire-A315-56 CRON[27251]: (root) CMD (   cd / && run-parts --report /etc/cron.hourly)
+Nov 10 21:30:01 user-Aspire-A315-56 CRON[27354]: (root) CMD ([ -x /etc/init.d/anacron ] && if [ ! -d /run/systemd/system ]; then /usr/sbin/invoke-rc.d anacron start >/dev/null; fi)
+Nov 10 21:32:16 user-Aspire-A315-56 systemd[1]: Started Run anacron jobs.
+Nov 10 21:32:16 user-Aspire-A315-56 systemd[1]: anacron.service: Succeeded.
+Nov 10 21:32:16 user-Aspire-A315-56 anacron[27363]: Anacron 2.3 started on 2022-11-10
+Nov 10 21:32:16 user-Aspire-A315-56 anacron[27363]: Normal exit (0 jobs run)
+Nov 10 22:00:01 user-Aspire-A315-56 crontab[28845]: (root) LIST (root)
+Nov 10 22:00:01 user-Aspire-A315-56 crontab[28846]: (root) LIST (root)
+Nov 10 22:17:01 user-Aspire-A315-56 CRON[29318]: (root) CMD (   cd / && run-parts --report /etc/cron.hourly)
+Nov 10 22:30:01 user-Aspire-A315-56 CRON[29497]: (root) CMD ([ -x /etc/init.d/anacron ] && if [ ! -d /run/systemd/system ]; then /usr/sbin/invoke-rc.d anacron start >/dev/null; fi)
+Nov 10 22:30:43 user-Aspire-A315-56 systemd[1]: Condition check resulted in Run anacron jobs being skipped.
+Nov 10 22:47:50 user-Aspire-A315-56 systemd[1]: anacron.timer: Succeeded.
+Nov 10 22:47:50 user-Aspire-A315-56 systemd[1]: Stopped Trigger anacron every hour.
+Nov 11 11:41:38 user-Aspire-A315-56 systemd[1]: Started Trigger anacron every hour.
+Nov 11 11:41:38 user-Aspire-A315-56 systemd[1]: Condition check resulted in Run anacron jobs being skipped.
+Nov 11 11:41:38 user-Aspire-A315-56 cron[496]: (CRON) INFO (pidfile fd = 3)
+Nov 11 11:41:38 user-Aspire-A315-56 cron[496]: (CRON) INFO (Running @reboot jobs)
+Nov 11 11:42:41 user-Aspire-A315-56 systemd[1]: Condition check resulted in Run anacron jobs being skipped.
+Nov 11 12:00:52 user-Aspire-A315-56 crontab[4830]: (root) LIST (root)
+Nov 11 12:00:52 user-Aspire-A315-56 crontab[4831]: (root) LIST (root)
+Nov 11 12:17:01 user-Aspire-A315-56 CRON[5602]: (root) CMD (   cd / && run-parts --report /etc/cron.hourly)
+Nov 11 12:30:01 user-Aspire-A315-56 CRON[5987]: (root) CMD ([ -x /etc/init.d/anacron ] && if [ ! -d /run/systemd/system ]; then /usr/sbin/invoke-rc.d anacron start >/dev/null; fi)
+Nov 11 12:33:26 user-Aspire-A315-56 systemd[1]: Condition check resulted in Run anacron jobs being skipped.
+Nov 11 13:00:01 user-Aspire-A315-56 crontab[7841]: (root) LIST (root)
+Nov 11 13:00:01 user-Aspire-A315-56 crontab[7842]: (root) LIST (root)
+Nov 11 13:17:01 user-Aspire-A315-56 CRON[9254]: (root) CMD (   cd / && run-parts --report /etc/cron.hourly)
+Nov 11 13:30:01 user-Aspire-A315-56 CRON[9936]: (root) CMD ([ -x /etc/init.d/anacron ] && if [ ! -d /run/systemd/system ]; then /usr/sbin/invoke-rc.d anacron start >/dev/null; fi)
+Nov 11 13:30:26 user-Aspire-A315-56 systemd[1]: Started Run anacron jobs.
+Nov 11 13:30:26 user-Aspire-A315-56 anacron[9992]: Anacron 2.3 started on 2022-11-11
+Nov 11 13:30:26 user-Aspire-A315-56 anacron[9992]: Will run job `cron.daily' in 5 min.
+Nov 11 13:30:26 user-Aspire-A315-56 anacron[9992]: Jobs will be executed sequentially
+Nov 11 13:35:26 user-Aspire-A315-56 anacron[9992]: Job `cron.daily' started
+Nov 11 13:35:26 user-Aspire-A315-56 anacron[10223]: Updated timestamp for job `cron.daily' to 2022-11-11
+Nov 11 13:35:34 user-Aspire-A315-56 anacron[9992]: Job `cron.daily' terminated
+Nov 11 13:35:34 user-Aspire-A315-56 anacron[9992]: Normal exit (1 job run)
+Nov 11 13:35:34 user-Aspire-A315-56 systemd[1]: anacron.service: Succeeded.
+Nov 11 14:00:01 user-Aspire-A315-56 crontab[11889]: (root) LIST (root)
+Nov 11 14:00:01 user-Aspire-A315-56 crontab[11890]: (root) LIST (root)
+Nov 11 14:17:01 user-Aspire-A315-56 CRON[12084]: (root) CMD (   cd / && run-parts --report /etc/cron.hourly)
+Nov 11 14:30:01 user-Aspire-A315-56 CRON[12174]: (root) CMD ([ -x /etc/init.d/anacron ] && if [ ! -d /run/systemd/system ]; then /usr/sbin/invoke-rc.d anacron start >/dev/null; fi)
+Nov 11 14:34:26 user-Aspire-A315-56 systemd[1]: Condition check resulted in Run anacron jobs being skipped.
+Nov 11 15:00:02 user-Aspire-A315-56 crontab[12714]: (root) LIST (root)
+Nov 11 15:00:02 user-Aspire-A315-56 crontab[12715]: (root) LIST (root)
+Nov 11 15:17:01 user-Aspire-A315-56 CRON[13873]: (root) CMD (   cd / && run-parts --report /etc/cron.hourly)
+Nov 11 15:30:01 user-Aspire-A315-56 CRON[14055]: (root) CMD ([ -x /etc/init.d/anacron ] && if [ ! -d /run/systemd/system ]; then /usr/sbin/invoke-rc.d anacron start >/dev/null; fi)
+Nov 11 15:31:00 user-Aspire-A315-56 systemd[1]: Started Run anacron jobs.
+Nov 11 15:31:00 user-Aspire-A315-56 anacron[14063]: Anacron 2.3 started on 2022-11-11
+Nov 11 15:31:00 user-Aspire-A315-56 anacron[14063]: Normal exit (0 jobs run)
+Nov 11 15:31:00 user-Aspire-A315-56 systemd[1]: anacron.service: Succeeded.
+Nov 11 16:00:01 user-Aspire-A315-56 crontab[15487]: (root) LIST (root)
+Nov 11 16:00:01 user-Aspire-A315-56 crontab[15488]: (root) LIST (root)
+Nov 11 16:17:01 user-Aspire-A315-56 CRON[15982]: (root) CMD (   cd / && run-parts --report /etc/cron.hourly)
+Nov 11 16:30:01 user-Aspire-A315-56 CRON[16817]: (root) CMD ([ -x /etc/init.d/anacron ] && if [ ! -d /run/systemd/system ]; then /usr/sbin/invoke-rc.d anacron start >/dev/null; fi)
+Nov 11 16:30:50 user-Aspire-A315-56 systemd[1]: Started Run anacron jobs.
+Nov 11 16:30:50 user-Aspire-A315-56 systemd[1]: anacron.service: Succeeded.
+Nov 11 16:30:50 user-Aspire-A315-56 anacron[16822]: Anacron 2.3 started on 2022-11-11
+Nov 11 16:30:50 user-Aspire-A315-56 anacron[16822]: Normal exit (0 jobs run)
+Nov 11 17:00:01 user-Aspire-A315-56 crontab[17978]: (root) LIST (root)
+Nov 11 17:00:01 user-Aspire-A315-56 crontab[17979]: (root) LIST (root)
+Nov 11 17:17:01 user-Aspire-A315-56 CRON[18292]: (root) CMD (   cd / && run-parts --report /etc/cron.hourly)
+Nov 11 17:30:01 user-Aspire-A315-56 CRON[18541]: (root) CMD ([ -x /etc/init.d/anacron ] && if [ ! -d /run/systemd/system ]; then /usr/sbin/invoke-rc.d anacron start >/dev/null; fi)
+Nov 11 17:30:26 user-Aspire-A315-56 systemd[1]: Condition check resulted in Run anacron jobs being skipped.
+Nov 11 18:00:01 user-Aspire-A315-56 crontab[20029]: (root) LIST (root)
+Nov 11 18:00:01 user-Aspire-A315-56 crontab[20030]: (root) LIST (root)
+Nov 11 18:17:01 user-Aspire-A315-56 CRON[20573]: (root) CMD (   cd / && run-parts --report /etc/cron.hourly)
+Nov 11 18:30:01 user-Aspire-A315-56 CRON[20944]: (root) CMD ([ -x /etc/init.d/anacron ] && if [ ! -d /run/systemd/system ]; then /usr/sbin/invoke-rc.d anacron start >/dev/null; fi)
+Nov 11 18:30:16 user-Aspire-A315-56 systemd[1]: Condition check resulted in Run anacron jobs being skipped.
+Nov 11 19:00:01 user-Aspire-A315-56 crontab[21621]: (root) LIST (root)
+Nov 11 19:00:01 user-Aspire-A315-56 crontab[21622]: (root) LIST (root)
+Nov 11 19:17:01 user-Aspire-A315-56 CRON[21942]: (root) CMD (   cd / && run-parts --report /etc/cron.hourly)
+Nov 11 19:30:01 user-Aspire-A315-56 CRON[24850]: (root) CMD ([ -x /etc/init.d/anacron ] && if [ ! -d /run/systemd/system ]; then /usr/sbin/invoke-rc.d anacron start >/dev/null; fi)
+Nov 11 19:31:26 user-Aspire-A315-56 systemd[1]: Condition check resulted in Run anacron jobs being skipped.
+Nov 11 20:00:01 user-Aspire-A315-56 crontab[31312]: (root) LIST (root)
+Nov 11 20:00:01 user-Aspire-A315-56 crontab[31313]: (root) LIST (root)
+Nov 11 20:17:01 user-Aspire-A315-56 CRON[33139]: (root) CMD (   cd / && run-parts --report /etc/cron.hourly)
+Nov 11 20:30:01 user-Aspire-A315-56 CRON[34995]: (root) CMD ([ -x /etc/init.d/anacron ] && if [ ! -d /run/systemd/system ]; then /usr/sbin/invoke-rc.d anacron start >/dev/null; fi)
+Nov 11 20:34:26 user-Aspire-A315-56 systemd[1]: Started Run anacron jobs.
+Nov 11 20:34:26 user-Aspire-A315-56 anacron[35198]: Anacron 2.3 started on 2022-11-11
+Nov 11 20:34:26 user-Aspire-A315-56 systemd[1]: anacron.service: Succeeded.
+Nov 11 20:34:26 user-Aspire-A315-56 anacron[35198]: Normal exit (0 jobs run)
+Nov 11 21:00:02 user-Aspire-A315-56 crontab[36255]: (root) LIST (root)
+Nov 11 21:00:02 user-Aspire-A315-56 crontab[36256]: (root) LIST (root)
+Nov 11 21:17:01 user-Aspire-A315-56 CRON[36463]: (root) CMD (   cd / && run-parts --report /etc/cron.hourly)
+Nov 11 21:30:01 user-Aspire-A315-56 CRON[36632]: (root) CMD ([ -x /etc/init.d/anacron ] && if [ ! -d /run/systemd/system ]; then /usr/sbin/invoke-rc.d anacron start >/dev/null; fi)
+Nov 11 21:34:26 user-Aspire-A315-56 systemd[1]: Started Run anacron jobs.
+Nov 11 21:34:26 user-Aspire-A315-56 systemd[1]: anacron.service: Succeeded.
+Nov 11 21:34:26 user-Aspire-A315-56 anacron[36650]: Anacron 2.3 started on 2022-11-11
+Nov 11 21:34:26 user-Aspire-A315-56 anacron[36650]: Normal exit (0 jobs run)
+Nov 11 21:53:01 user-Aspire-A315-56 systemd[1]: anacron.timer: Succeeded.
+Nov 11 21:53:01 user-Aspire-A315-56 systemd[1]: Stopped Trigger anacron every hour.
+Nov 14 11:49:33 user-Aspire-A315-56 cron[503]: (CRON) INFO (pidfile fd = 3)
+Nov 14 11:49:33 user-Aspire-A315-56 systemd[1]: Started Trigger anacron every hour.
+Nov 14 11:49:33 user-Aspire-A315-56 cron[503]: (CRON) INFO (Running @reboot jobs)
+Nov 14 11:49:34 user-Aspire-A315-56 systemd[1]: Condition check resulted in Run anacron jobs being skipped.
+Nov 14 11:52:52 user-Aspire-A315-56 systemd[1]: Condition check resulted in Run anacron jobs being skipped.
+Nov 14 12:01:00 user-Aspire-A315-56 crontab[4485]: (root) LIST (root)
+Nov 14 12:01:00 user-Aspire-A315-56 crontab[4486]: (root) LIST (root)
+Nov 14 12:17:01 user-Aspire-A315-56 CRON[5720]: (root) CMD (   cd / && run-parts --report /etc/cron.hourly)
+Nov 14 12:30:01 user-Aspire-A315-56 CRON[6833]: (root) CMD ([ -x /etc/init.d/anacron ] && if [ ! -d /run/systemd/system ]; then /usr/sbin/invoke-rc.d anacron start >/dev/null; fi)
+Nov 14 12:33:28 user-Aspire-A315-56 systemd[1]: Condition check resulted in Run anacron jobs being skipped.
+Nov 14 13:00:01 user-Aspire-A315-56 crontab[8942]: (root) LIST (root)
+Nov 14 13:00:01 user-Aspire-A315-56 crontab[8943]: (root) LIST (root)
+Nov 14 13:17:01 user-Aspire-A315-56 CRON[9261]: (root) CMD (   cd / && run-parts --report /etc/cron.hourly)
+Nov 14 13:30:01 user-Aspire-A315-56 CRON[9980]: (root) CMD ([ -x /etc/init.d/anacron ] && if [ ! -d /run/systemd/system ]; then /usr/sbin/invoke-rc.d anacron start >/dev/null; fi)
+Nov 14 13:30:58 user-Aspire-A315-56 systemd[1]: Condition check resulted in Run anacron jobs being skipped.
+Nov 14 14:00:01 user-Aspire-A315-56 crontab[11540]: (root) LIST (root)
+Nov 14 14:00:01 user-Aspire-A315-56 crontab[11541]: (root) LIST (root)
+Nov 14 14:17:01 user-Aspire-A315-56 CRON[12609]: (root) CMD (   cd / && run-parts --report /etc/cron.hourly)
+Nov 14 14:30:01 user-Aspire-A315-56 CRON[12752]: (root) CMD ([ -x /etc/init.d/anacron ] && if [ ! -d /run/systemd/system ]; then /usr/sbin/invoke-rc.d anacron start >/dev/null; fi)
+Nov 14 14:31:28 user-Aspire-A315-56 systemd[1]: Started Run anacron jobs.
+Nov 14 14:31:28 user-Aspire-A315-56 anacron[12762]: Anacron 2.3 started on 2022-11-14
+Nov 14 14:31:28 user-Aspire-A315-56 anacron[12762]: Will run job `cron.daily' in 5 min.
+Nov 14 14:31:28 user-Aspire-A315-56 anacron[12762]: Jobs will be executed sequentially
+Nov 14 14:36:28 user-Aspire-A315-56 anacron[12762]: Job `cron.daily' started
+Nov 14 14:36:28 user-Aspire-A315-56 anacron[12826]: Updated timestamp for job `cron.daily' to 2022-11-14
+Nov 14 14:36:39 user-Aspire-A315-56 anacron[12762]: Job `cron.daily' terminated
+Nov 14 14:36:39 user-Aspire-A315-56 anacron[12762]: Normal exit (1 job run)
+Nov 14 14:36:39 user-Aspire-A315-56 systemd[1]: anacron.service: Succeeded.
+Nov 14 15:00:01 user-Aspire-A315-56 crontab[13269]: (root) LIST (root)
+Nov 14 15:00:01 user-Aspire-A315-56 crontab[13270]: (root) LIST (root)
+Nov 14 15:17:01 user-Aspire-A315-56 CRON[13559]: (root) CMD (   cd / && run-parts --report /etc/cron.hourly)
+Nov 14 15:30:01 user-Aspire-A315-56 CRON[14025]: (root) CMD ([ -x /etc/init.d/anacron ] && if [ ! -d /run/systemd/system ]; then /usr/sbin/invoke-rc.d anacron start >/dev/null; fi)
+Nov 14 15:32:56 user-Aspire-A315-56 systemd[1]: Started Run anacron jobs.
+Nov 14 15:32:56 user-Aspire-A315-56 anacron[14140]: Anacron 2.3 started on 2022-11-14
+Nov 14 15:32:56 user-Aspire-A315-56 anacron[14140]: Normal exit (0 jobs run)
+Nov 14 15:32:56 user-Aspire-A315-56 systemd[1]: anacron.service: Succeeded.
+Nov 14 16:00:01 user-Aspire-A315-56 crontab[15483]: (root) LIST (root)
+Nov 14 16:00:01 user-Aspire-A315-56 crontab[15484]: (root) LIST (root)
+Nov 14 16:17:01 user-Aspire-A315-56 CRON[17939]: (root) CMD (   cd / && run-parts --report /etc/cron.hourly)
+Nov 14 16:30:01 user-Aspire-A315-56 CRON[18165]: (root) CMD ([ -x /etc/init.d/anacron ] && if [ ! -d /run/systemd/system ]; then /usr/sbin/invoke-rc.d anacron start >/dev/null; fi)
+Nov 14 16:34:46 user-Aspire-A315-56 systemd[1]: Condition check resulted in Run anacron jobs being skipped.
+Nov 14 17:00:01 user-Aspire-A315-56 crontab[19176]: (root) LIST (root)
+Nov 14 17:00:01 user-Aspire-A315-56 crontab[19177]: (root) LIST (root)
+Nov 14 17:17:01 user-Aspire-A315-56 CRON[19613]: (root) CMD (   cd / && run-parts --report /etc/cron.hourly)
+Nov 14 17:30:01 user-Aspire-A315-56 CRON[19833]: (root) CMD ([ -x /etc/init.d/anacron ] && if [ ! -d /run/systemd/system ]; then /usr/sbin/invoke-rc.d anacron start >/dev/null; fi)
+Nov 14 17:32:28 user-Aspire-A315-56 systemd[1]: Started Run anacron jobs.
+Nov 14 17:32:28 user-Aspire-A315-56 anacron[19852]: Anacron 2.3 started on 2022-11-14
+Nov 14 17:32:28 user-Aspire-A315-56 systemd[1]: anacron.service: Succeeded.
+Nov 14 17:32:28 user-Aspire-A315-56 anacron[19852]: Normal exit (0 jobs run)
+Nov 14 18:00:01 user-Aspire-A315-56 crontab[20375]: (root) LIST (root)
+Nov 14 18:00:01 user-Aspire-A315-56 crontab[20376]: (root) LIST (root)
+Nov 14 18:17:01 user-Aspire-A315-56 CRON[21678]: (root) CMD (   cd / && run-parts --report /etc/cron.hourly)
+Nov 14 18:30:01 user-Aspire-A315-56 CRON[22166]: (root) CMD ([ -x /etc/init.d/anacron ] && if [ ! -d /run/systemd/system ]; then /usr/sbin/invoke-rc.d anacron start >/dev/null; fi)
+Nov 14 18:33:58 user-Aspire-A315-56 systemd[1]: Started Run anacron jobs.
+Nov 14 18:33:58 user-Aspire-A315-56 systemd[1]: anacron.service: Succeeded.
+Nov 14 18:33:58 user-Aspire-A315-56 anacron[22203]: Anacron 2.3 started on 2022-11-14
+Nov 14 18:33:58 user-Aspire-A315-56 anacron[22203]: Normal exit (0 jobs run)
+Nov 14 19:00:01 user-Aspire-A315-56 crontab[22917]: (root) LIST (root)
+Nov 14 19:00:01 user-Aspire-A315-56 crontab[22918]: (root) LIST (root)
+Nov 14 19:17:01 user-Aspire-A315-56 CRON[23289]: (root) CMD (   cd / && run-parts --report /etc/cron.hourly)
+Nov 14 19:30:01 user-Aspire-A315-56 CRON[23565]: (root) CMD ([ -x /etc/init.d/anacron ] && if [ ! -d /run/systemd/system ]; then /usr/sbin/invoke-rc.d anacron start >/dev/null; fi)
+Nov 14 19:32:31 user-Aspire-A315-56 systemd[1]: Condition check resulted in Run anacron jobs being skipped.
+Nov 14 20:00:01 user-Aspire-A315-56 crontab[24597]: (root) LIST (root)
+Nov 14 20:00:01 user-Aspire-A315-56 crontab[24598]: (root) LIST (root)
+Nov 14 20:17:01 user-Aspire-A315-56 CRON[26185]: (root) CMD (   cd / && run-parts --report /etc/cron.hourly)
+Nov 14 20:30:01 user-Aspire-A315-56 CRON[26735]: (root) CMD ([ -x /etc/init.d/anacron ] && if [ ! -d /run/systemd/system ]; then /usr/sbin/invoke-rc.d anacron start >/dev/null; fi)
+Nov 14 20:31:58 user-Aspire-A315-56 systemd[1]: Started Run anacron jobs.
+Nov 14 20:31:58 user-Aspire-A315-56 anacron[26989]: Anacron 2.3 started on 2022-11-14
+Nov 14 20:31:58 user-Aspire-A315-56 anacron[26989]: Normal exit (0 jobs run)
+Nov 14 20:31:58 user-Aspire-A315-56 systemd[1]: anacron.service: Succeeded.
+Nov 14 21:00:02 user-Aspire-A315-56 crontab[28750]: (root) LIST (root)
+Nov 14 21:00:02 user-Aspire-A315-56 crontab[28751]: (root) LIST (root)
+Nov 14 21:17:01 user-Aspire-A315-56 CRON[29519]: (root) CMD (   cd / && run-parts --report /etc/cron.hourly)
+Nov 14 21:30:01 user-Aspire-A315-56 CRON[29596]: (root) CMD ([ -x /etc/init.d/anacron ] && if [ ! -d /run/systemd/system ]; then /usr/sbin/invoke-rc.d anacron start >/dev/null; fi)
+Nov 14 21:33:58 user-Aspire-A315-56 systemd[1]: Condition check resulted in Run anacron jobs being skipped.
+Nov 14 22:00:01 user-Aspire-A315-56 crontab[30426]: (root) LIST (root)
+Nov 14 22:00:01 user-Aspire-A315-56 crontab[30427]: (root) LIST (root)
+Nov 14 22:17:01 user-Aspire-A315-56 CRON[31529]: (root) CMD (   cd / && run-parts --report /etc/cron.hourly)
+Nov 14 22:30:01 user-Aspire-A315-56 CRON[31773]: (root) CMD ([ -x /etc/init.d/anacron ] && if [ ! -d /run/systemd/system ]; then /usr/sbin/invoke-rc.d anacron start >/dev/null; fi)
+Nov 14 22:30:58 user-Aspire-A315-56 systemd[1]: Started Run anacron jobs.
+Nov 14 22:30:58 user-Aspire-A315-56 anacron[31779]: Anacron 2.3 started on 2022-11-14
+Nov 14 22:30:58 user-Aspire-A315-56 systemd[1]: anacron.service: Succeeded.
+Nov 14 22:30:58 user-Aspire-A315-56 anacron[31779]: Normal exit (0 jobs run)
+Nov 14 22:34:43 user-Aspire-A315-56 systemd[1]: anacron.timer: Succeeded.
+Nov 14 22:34:43 user-Aspire-A315-56 systemd[1]: Stopped Trigger anacron every hour.
+Nov 15 11:47:54 user-Aspire-A315-56 systemd[1]: Started Trigger anacron every hour.
+Nov 15 11:47:54 user-Aspire-A315-56 systemd[1]: Condition check resulted in Run anacron jobs being skipped.
+Nov 15 11:47:54 user-Aspire-A315-56 cron[508]: (CRON) INFO (pidfile fd = 3)
+Nov 15 11:47:54 user-Aspire-A315-56 cron[508]: (CRON) INFO (Running @reboot jobs)
+Nov 15 11:48:57 user-Aspire-A315-56 systemd[1]: Condition check resulted in Run anacron jobs being skipped.
+Nov 15 12:00:45 user-Aspire-A315-56 crontab[4603]: (root) LIST (root)
+Nov 15 12:00:45 user-Aspire-A315-56 crontab[4604]: (root) LIST (root)
+Nov 15 12:17:01 user-Aspire-A315-56 CRON[6767]: (root) CMD (   cd / && run-parts --report /etc/cron.hourly)
+Nov 15 12:30:01 user-Aspire-A315-56 CRON[9948]: (root) CMD ([ -x /etc/init.d/anacron ] && if [ ! -d /run/systemd/system ]; then /usr/sbin/invoke-rc.d anacron start >/dev/null; fi)
+Nov 15 12:34:09 user-Aspire-A315-56 systemd[1]: Started Run anacron jobs.
+Nov 15 12:34:09 user-Aspire-A315-56 anacron[11059]: Anacron 2.3 started on 2022-11-15
+Nov 15 12:34:09 user-Aspire-A315-56 anacron[11059]: Will run job `cron.daily' in 5 min.
+Nov 15 12:34:09 user-Aspire-A315-56 anacron[11059]: Will run job `cron.weekly' in 10 min.
+Nov 15 12:34:09 user-Aspire-A315-56 anacron[11059]: Jobs will be executed sequentially
+Nov 15 12:39:09 user-Aspire-A315-56 anacron[11059]: Job `cron.daily' started
+Nov 15 12:39:09 user-Aspire-A315-56 anacron[11433]: Updated timestamp for job `cron.daily' to 2022-11-15
+Nov 15 12:39:21 user-Aspire-A315-56 anacron[11059]: Job `cron.daily' terminated
+Nov 15 12:44:09 user-Aspire-A315-56 anacron[11059]: Job `cron.weekly' started
+Nov 15 12:44:09 user-Aspire-A315-56 anacron[11697]: Updated timestamp for job `cron.weekly' to 2022-11-15
+Nov 15 12:44:09 user-Aspire-A315-56 anacron[11059]: Job `cron.weekly' terminated
+Nov 15 12:44:09 user-Aspire-A315-56 systemd[1]: anacron.service: Succeeded.
+Nov 15 12:44:09 user-Aspire-A315-56 anacron[11059]: Normal exit (2 jobs run)
+Nov 15 13:00:02 user-Aspire-A315-56 crontab[12169]: (root) LIST (root)
+Nov 15 13:00:02 user-Aspire-A315-56 crontab[12170]: (root) LIST (root)
+Nov 15 13:17:01 user-Aspire-A315-56 CRON[13285]: (root) CMD (   cd / && run-parts --report /etc/cron.hourly)
+Nov 15 13:30:01 user-Aspire-A315-56 CRON[13554]: (root) CMD ([ -x /etc/init.d/anacron ] && if [ ! -d /run/systemd/system ]; then /usr/sbin/invoke-rc.d anacron start >/dev/null; fi)
+Nov 15 13:31:30 user-Aspire-A315-56 systemd[1]: Started Run anacron jobs.
+Nov 15 13:31:30 user-Aspire-A315-56 anacron[13570]: Anacron 2.3 started on 2022-11-15
+Nov 15 13:31:30 user-Aspire-A315-56 anacron[13570]: Normal exit (0 jobs run)
+Nov 15 13:31:30 user-Aspire-A315-56 systemd[1]: anacron.service: Succeeded.
+Nov 15 14:00:01 user-Aspire-A315-56 crontab[16234]: (root) LIST (root)
+Nov 15 14:00:01 user-Aspire-A315-56 crontab[16235]: (root) LIST (root)
+Nov 15 14:17:01 user-Aspire-A315-56 CRON[17269]: (root) CMD (   cd / && run-parts --report /etc/cron.hourly)
+Nov 15 14:30:01 user-Aspire-A315-56 CRON[17429]: (root) CMD ([ -x /etc/init.d/anacron ] && if [ ! -d /run/systemd/system ]; then /usr/sbin/invoke-rc.d anacron start >/dev/null; fi)
+Nov 15 14:34:45 user-Aspire-A315-56 systemd[1]: Condition check resulted in Run anacron jobs being skipped.
+Nov 15 15:00:01 user-Aspire-A315-56 crontab[17728]: (root) LIST (root)
+Nov 15 15:00:01 user-Aspire-A315-56 crontab[17729]: (root) LIST (root)
+Nov 15 15:17:01 user-Aspire-A315-56 CRON[18152]: (root) CMD (   cd / && run-parts --report /etc/cron.hourly)
+Nov 15 15:30:01 user-Aspire-A315-56 CRON[19116]: (root) CMD ([ -x /etc/init.d/anacron ] && if [ ! -d /run/systemd/system ]; then /usr/sbin/invoke-rc.d anacron start >/dev/null; fi)
+Nov 15 15:31:45 user-Aspire-A315-56 systemd[1]: Started Run anacron jobs.
+Nov 15 15:31:45 user-Aspire-A315-56 anacron[19240]: Anacron 2.3 started on 2022-11-15
+Nov 15 15:31:45 user-Aspire-A315-56 anacron[19240]: Normal exit (0 jobs run)
+Nov 15 15:31:45 user-Aspire-A315-56 systemd[1]: anacron.service: Succeeded.
+Nov 15 16:00:01 user-Aspire-A315-56 crontab[21189]: (root) LIST (root)
+Nov 15 16:00:01 user-Aspire-A315-56 crontab[21190]: (root) LIST (root)
+Nov 15 16:17:01 user-Aspire-A315-56 CRON[21664]: (root) CMD (   cd / && run-parts --report /etc/cron.hourly)
+Nov 15 16:30:01 user-Aspire-A315-56 CRON[21839]: (root) CMD ([ -x /etc/init.d/anacron ] && if [ ! -d /run/systemd/system ]; then /usr/sbin/invoke-rc.d anacron start >/dev/null; fi)
+Nov 15 16:35:35 user-Aspire-A315-56 systemd[1]: Started Run anacron jobs.
+Nov 15 16:35:35 user-Aspire-A315-56 systemd[1]: anacron.service: Succeeded.
+Nov 15 16:35:35 user-Aspire-A315-56 anacron[21947]: Anacron 2.3 started on 2022-11-15
+Nov 15 16:35:35 user-Aspire-A315-56 anacron[21947]: Normal exit (0 jobs run)
+Nov 15 17:00:01 user-Aspire-A315-56 crontab[22386]: (root) LIST (root)
+Nov 15 17:00:01 user-Aspire-A315-56 crontab[22387]: (root) LIST (root)
+Nov 15 17:17:01 user-Aspire-A315-56 CRON[22723]: (root) CMD (   cd / && run-parts --report /etc/cron.hourly)
+Nov 15 17:30:01 user-Aspire-A315-56 CRON[23155]: (root) CMD ([ -x /etc/init.d/anacron ] && if [ ! -d /run/systemd/system ]; then /usr/sbin/invoke-rc.d anacron start >/dev/null; fi)
+Nov 15 17:31:35 user-Aspire-A315-56 systemd[1]: Condition check resulted in Run anacron jobs being skipped.
+Nov 15 18:00:01 user-Aspire-A315-56 crontab[24697]: (root) LIST (root)
+Nov 15 18:00:01 user-Aspire-A315-56 crontab[24698]: (root) LIST (root)
+Nov 15 18:17:01 user-Aspire-A315-56 CRON[25073]: (root) CMD (   cd / && run-parts --report /etc/cron.hourly)
+Nov 15 18:30:01 user-Aspire-A315-56 CRON[25276]: (root) CMD ([ -x /etc/init.d/anacron ] && if [ ! -d /run/systemd/system ]; then /usr/sbin/invoke-rc.d anacron start >/dev/null; fi)
+Nov 15 18:32:17 user-Aspire-A315-56 systemd[1]: Condition check resulted in Run anacron jobs being skipped.
+Nov 15 19:00:02 user-Aspire-A315-56 crontab[27113]: (root) LIST (root)
+Nov 15 19:00:02 user-Aspire-A315-56 crontab[27114]: (root) LIST (root)
+Nov 15 19:17:01 user-Aspire-A315-56 CRON[28267]: (root) CMD (   cd / && run-parts --report /etc/cron.hourly)
+Nov 15 19:30:01 user-Aspire-A315-56 CRON[28766]: (root) CMD ([ -x /etc/init.d/anacron ] && if [ ! -d /run/systemd/system ]; then /usr/sbin/invoke-rc.d anacron start >/dev/null; fi)
+Nov 15 19:34:35 user-Aspire-A315-56 systemd[1]: Started Run anacron jobs.
+Nov 15 19:34:35 user-Aspire-A315-56 anacron[28906]: Anacron 2.3 started on 2022-11-15
+Nov 15 19:34:35 user-Aspire-A315-56 anacron[28906]: Normal exit (0 jobs run)
+Nov 15 19:34:35 user-Aspire-A315-56 systemd[1]: anacron.service: Succeeded.
+Nov 15 20:00:01 user-Aspire-A315-56 crontab[30201]: (root) LIST (root)
+Nov 15 20:00:01 user-Aspire-A315-56 crontab[30202]: (root) LIST (root)
+Nov 15 20:17:01 user-Aspire-A315-56 CRON[30794]: (root) CMD (   cd / && run-parts --report /etc/cron.hourly)
+Nov 15 20:30:01 user-Aspire-A315-56 CRON[31217]: (root) CMD ([ -x /etc/init.d/anacron ] && if [ ! -d /run/systemd/system ]; then /usr/sbin/invoke-rc.d anacron start >/dev/null; fi)
+Nov 15 20:34:34 user-Aspire-A315-56 systemd[1]: Started Run anacron jobs.
+Nov 15 20:34:34 user-Aspire-A315-56 anacron[31279]: Anacron 2.3 started on 2022-11-15
+Nov 15 20:34:34 user-Aspire-A315-56 anacron[31279]: Normal exit (0 jobs run)
+Nov 15 20:34:34 user-Aspire-A315-56 systemd[1]: anacron.service: Succeeded.
+Nov 15 21:00:01 user-Aspire-A315-56 crontab[44954]: (root) LIST (root)
+Nov 15 21:00:01 user-Aspire-A315-56 crontab[44955]: (root) LIST (root)
+Nov 15 21:15:34 user-Aspire-A315-56 systemd[1]: anacron.timer: Succeeded.
+Nov 15 21:15:34 user-Aspire-A315-56 systemd[1]: Stopped Trigger anacron every hour.
+Nov 16 11:47:24 user-Aspire-A315-56 systemd[1]: Started Trigger anacron every hour.
+Nov 16 11:47:24 user-Aspire-A315-56 systemd[1]: Condition check resulted in Run anacron jobs being skipped.
+Nov 16 11:47:24 user-Aspire-A315-56 cron[526]: (CRON) INFO (pidfile fd = 3)
+Nov 16 11:47:24 user-Aspire-A315-56 cron[526]: (CRON) INFO (Running @reboot jobs)
+Nov 16 11:50:28 user-Aspire-A315-56 systemd[1]: Condition check resulted in Run anacron jobs being skipped.
+Nov 16 12:00:59 user-Aspire-A315-56 crontab[6108]: (root) LIST (root)
+Nov 16 12:00:59 user-Aspire-A315-56 crontab[6109]: (root) LIST (root)
+Nov 16 12:17:02 user-Aspire-A315-56 CRON[6956]: (root) CMD (   cd / && run-parts --report /etc/cron.hourly)
+Nov 16 12:30:01 user-Aspire-A315-56 CRON[7432]: (root) CMD ([ -x /etc/init.d/anacron ] && if [ ! -d /run/systemd/system ]; then /usr/sbin/invoke-rc.d anacron start >/dev/null; fi)
+Nov 16 12:35:16 user-Aspire-A315-56 systemd[1]: Condition check resulted in Run anacron jobs being skipped.
+Nov 16 13:00:01 user-Aspire-A315-56 crontab[9121]: (root) LIST (root)
+Nov 16 13:00:01 user-Aspire-A315-56 crontab[9122]: (root) LIST (root)
+Nov 16 13:17:01 user-Aspire-A315-56 CRON[9735]: (root) CMD (   cd / && run-parts --report /etc/cron.hourly)
+Nov 16 13:30:01 user-Aspire-A315-56 CRON[9936]: (root) CMD ([ -x /etc/init.d/anacron ] && if [ ! -d /run/systemd/system ]; then /usr/sbin/invoke-rc.d anacron start >/dev/null; fi)
+Nov 16 13:34:16 user-Aspire-A315-56 systemd[1]: Started Run anacron jobs.
+Nov 16 13:34:16 user-Aspire-A315-56 anacron[9996]: Anacron 2.3 started on 2022-11-16
+Nov 16 13:34:16 user-Aspire-A315-56 anacron[9996]: Will run job `cron.daily' in 5 min.
+Nov 16 13:34:16 user-Aspire-A315-56 anacron[9996]: Jobs will be executed sequentially
+Nov 16 13:39:16 user-Aspire-A315-56 anacron[9996]: Job `cron.daily' started
+Nov 16 13:39:16 user-Aspire-A315-56 anacron[10142]: Updated timestamp for job `cron.daily' to 2022-11-16
+Nov 16 13:39:33 user-Aspire-A315-56 anacron[9996]: Job `cron.daily' terminated
+Nov 16 13:39:33 user-Aspire-A315-56 anacron[9996]: Normal exit (1 job run)
+Nov 16 13:39:33 user-Aspire-A315-56 systemd[1]: anacron.service: Succeeded.
+Nov 16 14:00:01 user-Aspire-A315-56 crontab[12139]: (root) LIST (root)
+Nov 16 14:00:01 user-Aspire-A315-56 crontab[12140]: (root) LIST (root)
+Nov 16 14:17:01 user-Aspire-A315-56 CRON[12395]: (root) CMD (   cd / && run-parts --report /etc/cron.hourly)
+Nov 16 14:30:01 user-Aspire-A315-56 CRON[12567]: (root) CMD ([ -x /etc/init.d/anacron ] && if [ ! -d /run/systemd/system ]; then /usr/sbin/invoke-rc.d anacron start >/dev/null; fi)
+Nov 16 14:33:55 user-Aspire-A315-56 systemd[1]: Started Run anacron jobs.
+Nov 16 14:33:55 user-Aspire-A315-56 anacron[12593]: Anacron 2.3 started on 2022-11-16
+Nov 16 14:33:55 user-Aspire-A315-56 anacron[12593]: Normal exit (0 jobs run)
+Nov 16 14:33:55 user-Aspire-A315-56 systemd[1]: anacron.service: Succeeded.
+Nov 16 15:00:01 user-Aspire-A315-56 crontab[12941]: (root) LIST (root)
+Nov 16 15:00:01 user-Aspire-A315-56 crontab[12942]: (root) LIST (root)
+Nov 16 15:17:01 user-Aspire-A315-56 CRON[14174]: (root) CMD (   cd / && run-parts --report /etc/cron.hourly)
+Nov 16 15:30:01 user-Aspire-A315-56 CRON[14284]: (root) CMD ([ -x /etc/init.d/anacron ] && if [ ! -d /run/systemd/system ]; then /usr/sbin/invoke-rc.d anacron start >/dev/null; fi)
+Nov 16 15:35:16 user-Aspire-A315-56 systemd[1]: Started Run anacron jobs.
+Nov 16 15:35:16 user-Aspire-A315-56 systemd[1]: anacron.service: Succeeded.
+Nov 16 15:35:16 user-Aspire-A315-56 anacron[14314]: Anacron 2.3 started on 2022-11-16
+Nov 16 15:35:16 user-Aspire-A315-56 anacron[14314]: Normal exit (0 jobs run)
+Nov 16 16:00:01 user-Aspire-A315-56 crontab[15598]: (root) LIST (root)
+Nov 16 16:00:01 user-Aspire-A315-56 crontab[15599]: (root) LIST (root)
+Nov 16 16:17:01 user-Aspire-A315-56 CRON[15941]: (root) CMD (   cd / && run-parts --report /etc/cron.hourly)
+Nov 16 16:30:01 user-Aspire-A315-56 CRON[16133]: (root) CMD ([ -x /etc/init.d/anacron ] && if [ ! -d /run/systemd/system ]; then /usr/sbin/invoke-rc.d anacron start >/dev/null; fi)
+Nov 16 16:32:35 user-Aspire-A315-56 systemd[1]: Condition check resulted in Run anacron jobs being skipped.
+Nov 16 17:00:01 user-Aspire-A315-56 crontab[17228]: (root) LIST (root)
+Nov 16 17:00:01 user-Aspire-A315-56 crontab[17229]: (root) LIST (root)
+Nov 16 17:17:01 user-Aspire-A315-56 CRON[17727]: (root) CMD (   cd / && run-parts --report /etc/cron.hourly)
+Nov 16 17:30:01 user-Aspire-A315-56 CRON[17830]: (root) CMD ([ -x /etc/init.d/anacron ] && if [ ! -d /run/systemd/system ]; then /usr/sbin/invoke-rc.d anacron start >/dev/null; fi)
+Nov 16 17:32:36 user-Aspire-A315-56 systemd[1]: Condition check resulted in Run anacron jobs being skipped.
+Nov 16 18:00:01 user-Aspire-A315-56 crontab[19199]: (root) LIST (root)
+Nov 16 18:00:01 user-Aspire-A315-56 crontab[19200]: (root) LIST (root)
+Nov 16 18:17:01 user-Aspire-A315-56 CRON[19604]: (root) CMD (   cd / && run-parts --report /etc/cron.hourly)
+Nov 16 18:30:01 user-Aspire-A315-56 CRON[19906]: (root) CMD ([ -x /etc/init.d/anacron ] && if [ ! -d /run/systemd/system ]; then /usr/sbin/invoke-rc.d anacron start >/dev/null; fi)
+Nov 16 18:32:14 user-Aspire-A315-56 systemd[1]: Started Run anacron jobs.
+Nov 16 18:32:14 user-Aspire-A315-56 anacron[19927]: Anacron 2.3 started on 2022-11-16
+Nov 16 18:32:14 user-Aspire-A315-56 anacron[19927]: Normal exit (0 jobs run)
+Nov 16 18:32:14 user-Aspire-A315-56 systemd[1]: anacron.service: Succeeded.
+Nov 16 19:00:01 user-Aspire-A315-56 crontab[20349]: (root) LIST (root)
+Nov 16 19:00:01 user-Aspire-A315-56 crontab[20350]: (root) LIST (root)
+Nov 16 19:17:01 user-Aspire-A315-56 CRON[21767]: (root) CMD (   cd / && run-parts --report /etc/cron.hourly)
+Nov 16 19:30:01 user-Aspire-A315-56 CRON[22320]: (root) CMD ([ -x /etc/init.d/anacron ] && if [ ! -d /run/systemd/system ]; then /usr/sbin/invoke-rc.d anacron start >/dev/null; fi)
+Nov 16 19:32:36 user-Aspire-A315-56 systemd[1]: Condition check resulted in Run anacron jobs being skipped.
+Nov 16 20:00:02 user-Aspire-A315-56 crontab[23618]: (root) LIST (root)
+Nov 16 20:00:02 user-Aspire-A315-56 crontab[23619]: (root) LIST (root)
+Nov 16 20:17:01 user-Aspire-A315-56 CRON[25130]: (root) CMD (   cd / && run-parts --report /etc/cron.hourly)
+Nov 16 20:30:01 user-Aspire-A315-56 CRON[27108]: (root) CMD ([ -x /etc/init.d/anacron ] && if [ ! -d /run/systemd/system ]; then /usr/sbin/invoke-rc.d anacron start >/dev/null; fi)
+Nov 16 20:33:16 user-Aspire-A315-56 systemd[1]: Condition check resulted in Run anacron jobs being skipped.
+Nov 16 21:00:01 user-Aspire-A315-56 crontab[28380]: (root) LIST (root)
+Nov 16 21:00:01 user-Aspire-A315-56 crontab[28381]: (root) LIST (root)
+Nov 16 21:06:11 user-Aspire-A315-56 systemd[1]: anacron.timer: Succeeded.
+Nov 16 21:06:11 user-Aspire-A315-56 systemd[1]: Stopped Trigger anacron every hour.
+Nov 17 11:47:42 user-Aspire-A315-56 systemd[1]: Started Trigger anacron every hour.
+Nov 17 11:47:42 user-Aspire-A315-56 systemd[1]: Condition check resulted in Run anacron jobs being skipped.
+Nov 17 11:47:42 user-Aspire-A315-56 cron[550]: (CRON) INFO (pidfile fd = 3)
+Nov 17 11:47:42 user-Aspire-A315-56 cron[550]: (CRON) INFO (Running @reboot jobs)
+Nov 17 11:51:06 user-Aspire-A315-56 systemd[1]: Started Run anacron jobs.
+Nov 17 11:51:06 user-Aspire-A315-56 anacron[2686]: Anacron 2.3 started on 2022-11-17
+Nov 17 11:51:06 user-Aspire-A315-56 anacron[2686]: Will run job `cron.daily' in 5 min.
+Nov 17 11:51:06 user-Aspire-A315-56 anacron[2686]: Jobs will be executed sequentially
+Nov 17 11:56:06 user-Aspire-A315-56 anacron[2686]: Job `cron.daily' started
+Nov 17 11:56:06 user-Aspire-A315-56 anacron[3589]: Updated timestamp for job `cron.daily' to 2022-11-17
+Nov 17 11:56:30 user-Aspire-A315-56 anacron[2686]: Job `cron.daily' terminated
+Nov 17 11:56:30 user-Aspire-A315-56 anacron[2686]: Normal exit (1 job run)
+Nov 17 11:56:30 user-Aspire-A315-56 systemd[1]: anacron.service: Succeeded.
+Nov 17 12:00:50 user-Aspire-A315-56 crontab[4948]: (root) LIST (root)
+Nov 17 12:00:50 user-Aspire-A315-56 crontab[4949]: (root) LIST (root)
+Nov 17 12:17:01 user-Aspire-A315-56 CRON[7347]: (root) CMD (   cd / && run-parts --report /etc/cron.hourly)
+Nov 17 12:30:01 user-Aspire-A315-56 CRON[7804]: (root) CMD ([ -x /etc/init.d/anacron ] && if [ ! -d /run/systemd/system ]; then /usr/sbin/invoke-rc.d anacron start >/dev/null; fi)
+Nov 17 12:31:44 user-Aspire-A315-56 systemd[1]: Started Run anacron jobs.
+Nov 17 12:31:44 user-Aspire-A315-56 anacron[7817]: Anacron 2.3 started on 2022-11-17
+Nov 17 12:31:44 user-Aspire-A315-56 anacron[7817]: Normal exit (0 jobs run)
+Nov 17 12:31:44 user-Aspire-A315-56 systemd[1]: anacron.service: Succeeded.
+Nov 17 13:00:01 user-Aspire-A315-56 crontab[8973]: (root) LIST (root)
+Nov 17 13:00:01 user-Aspire-A315-56 crontab[8974]: (root) LIST (root)
+Nov 17 13:17:01 user-Aspire-A315-56 CRON[10300]: (root) CMD (   cd / && run-parts --report /etc/cron.hourly)
+Nov 17 13:30:01 user-Aspire-A315-56 CRON[11122]: (root) CMD ([ -x /etc/init.d/anacron ] && if [ ! -d /run/systemd/system ]; then /usr/sbin/invoke-rc.d anacron start >/dev/null; fi)
+Nov 17 13:30:44 user-Aspire-A315-56 systemd[1]: Started Run anacron jobs.
+Nov 17 13:30:44 user-Aspire-A315-56 anacron[11126]: Anacron 2.3 started on 2022-11-17
+Nov 17 13:30:44 user-Aspire-A315-56 anacron[11126]: Normal exit (0 jobs run)
+Nov 17 13:30:44 user-Aspire-A315-56 systemd[1]: anacron.service: Succeeded.
+Nov 17 14:00:01 user-Aspire-A315-56 crontab[14547]: (root) LIST (root)
+Nov 17 14:00:01 user-Aspire-A315-56 crontab[14548]: (root) LIST (root)
+Nov 17 14:17:01 user-Aspire-A315-56 CRON[14893]: (root) CMD (   cd / && run-parts --report /etc/cron.hourly)
+Nov 17 14:30:01 user-Aspire-A315-56 CRON[15074]: (root) CMD ([ -x /etc/init.d/anacron ] && if [ ! -d /run/systemd/system ]; then /usr/sbin/invoke-rc.d anacron start >/dev/null; fi)
+Nov 17 14:33:06 user-Aspire-A315-56 systemd[1]: Condition check resulted in Run anacron jobs being skipped.
+Nov 17 15:00:01 user-Aspire-A315-56 crontab[15552]: (root) LIST (root)
+Nov 17 15:00:01 user-Aspire-A315-56 crontab[15553]: (root) LIST (root)
+Nov 17 15:17:01 user-Aspire-A315-56 CRON[16159]: (root) CMD (   cd / && run-parts --report /etc/cron.hourly)
+Nov 17 15:30:01 user-Aspire-A315-56 CRON[17630]: (root) CMD ([ -x /etc/init.d/anacron ] && if [ ! -d /run/systemd/system ]; then /usr/sbin/invoke-rc.d anacron start >/dev/null; fi)
+Nov 17 15:32:44 user-Aspire-A315-56 systemd[1]: Condition check resulted in Run anacron jobs being skipped.
+Nov 17 15:59:26 user-Aspire-A315-56 systemd[1]: anacron.timer: Succeeded.
+Nov 17 15:59:26 user-Aspire-A315-56 systemd[1]: Stopped Trigger anacron every hour.
+Nov 17 16:10:05 user-Aspire-A315-56 anacron[510]: Anacron 2.3 started on 2022-11-17
+Nov 17 16:10:05 user-Aspire-A315-56 anacron[510]: Normal exit (0 jobs run)
+Nov 17 16:10:05 user-Aspire-A315-56 cron[514]: (CRON) INFO (pidfile fd = 3)
+Nov 17 16:10:05 user-Aspire-A315-56 cron[514]: (CRON) INFO (Running @reboot jobs)
+Nov 17 16:10:05 user-Aspire-A315-56 systemd[1]: Started Trigger anacron every hour.
+Nov 17 16:10:05 user-Aspire-A315-56 systemd[1]: Started Run anacron jobs.
+Nov 17 16:10:05 user-Aspire-A315-56 systemd[1]: anacron.service: Succeeded.
+Nov 17 16:17:01 user-Aspire-A315-56 CRON[2899]: (root) CMD (   cd / && run-parts --report /etc/cron.hourly)
+Nov 17 16:30:01 user-Aspire-A315-56 CRON[4930]: (root) CMD ([ -x /etc/init.d/anacron ] && if [ ! -d /run/systemd/system ]; then /usr/sbin/invoke-rc.d anacron start >/dev/null; fi)
+Nov 17 16:30:29 user-Aspire-A315-56 systemd[1]: Started Run anacron jobs.
+Nov 17 16:30:29 user-Aspire-A315-56 anacron[4960]: Anacron 2.3 started on 2022-11-17
+Nov 17 16:30:29 user-Aspire-A315-56 anacron[4960]: Normal exit (0 jobs run)
+Nov 17 16:30:29 user-Aspire-A315-56 systemd[1]: anacron.service: Succeeded.
+Nov 17 17:00:01 user-Aspire-A315-56 crontab[5533]: (root) LIST (root)
+Nov 17 17:00:01 user-Aspire-A315-56 crontab[5534]: (root) LIST (root)
+Nov 17 17:17:01 user-Aspire-A315-56 CRON[6077]: (root) CMD (   cd / && run-parts --report /etc/cron.hourly)
+Nov 17 17:30:01 user-Aspire-A315-56 CRON[6803]: (root) CMD ([ -x /etc/init.d/anacron ] && if [ ! -d /run/systemd/system ]; then /usr/sbin/invoke-rc.d anacron start >/dev/null; fi)
+Nov 17 17:34:51 user-Aspire-A315-56 systemd[1]: Started Run anacron jobs.
+Nov 17 17:34:51 user-Aspire-A315-56 anacron[6889]: Anacron 2.3 started on 2022-11-17
+Nov 17 17:34:51 user-Aspire-A315-56 anacron[6889]: Normal exit (0 jobs run)
+Nov 17 17:34:51 user-Aspire-A315-56 systemd[1]: anacron.service: Succeeded.
+Nov 17 18:00:01 user-Aspire-A315-56 crontab[8432]: (root) LIST (root)
+Nov 17 18:00:01 user-Aspire-A315-56 crontab[8433]: (root) LIST (root)
+Nov 17 18:17:01 user-Aspire-A315-56 CRON[9151]: (root) CMD (   cd / && run-parts --report /etc/cron.hourly)
+Nov 17 18:30:01 user-Aspire-A315-56 CRON[10845]: (root) CMD ([ -x /etc/init.d/anacron ] && if [ ! -d /run/systemd/system ]; then /usr/sbin/invoke-rc.d anacron start >/dev/null; fi)
+Nov 17 18:31:56 user-Aspire-A315-56 systemd[1]: Started Run anacron jobs.
+Nov 17 18:31:56 user-Aspire-A315-56 anacron[11107]: Anacron 2.3 started on 2022-11-17
+Nov 17 18:31:56 user-Aspire-A315-56 anacron[11107]: Normal exit (0 jobs run)
+Nov 17 18:31:56 user-Aspire-A315-56 systemd[1]: anacron.service: Succeeded.
+Nov 17 19:00:02 user-Aspire-A315-56 crontab[12522]: (root) LIST (root)
+Nov 17 19:00:02 user-Aspire-A315-56 crontab[12523]: (root) LIST (root)
+Nov 17 19:17:01 user-Aspire-A315-56 CRON[13432]: (root) CMD (   cd / && run-parts --report /etc/cron.hourly)
+Nov 17 19:30:01 user-Aspire-A315-56 CRON[13694]: (root) CMD ([ -x /etc/init.d/anacron ] && if [ ! -d /run/systemd/system ]; then /usr/sbin/invoke-rc.d anacron start >/dev/null; fi)
+Nov 17 19:34:29 user-Aspire-A315-56 systemd[1]: Condition check resulted in Run anacron jobs being skipped.
+Nov 17 20:00:01 user-Aspire-A315-56 crontab[14815]: (root) LIST (root)
+Nov 17 20:00:01 user-Aspire-A315-56 crontab[14816]: (root) LIST (root)
+Nov 17 20:17:01 user-Aspire-A315-56 CRON[15389]: (root) CMD (   cd / && run-parts --report /etc/cron.hourly)
+Nov 17 20:30:01 user-Aspire-A315-56 CRON[16798]: (root) CMD ([ -x /etc/init.d/anacron ] && if [ ! -d /run/systemd/system ]; then /usr/sbin/invoke-rc.d anacron start >/dev/null; fi)
+Nov 17 20:32:27 user-Aspire-A315-56 systemd[1]: Started Run anacron jobs.
+Nov 17 20:32:27 user-Aspire-A315-56 anacron[17342]: Anacron 2.3 started on 2022-11-17
+Nov 17 20:32:27 user-Aspire-A315-56 anacron[17342]: Normal exit (0 jobs run)
+Nov 17 20:32:27 user-Aspire-A315-56 systemd[1]: anacron.service: Succeeded.
+Nov 17 21:00:01 user-Aspire-A315-56 crontab[17733]: (root) LIST (root)
+Nov 17 21:00:01 user-Aspire-A315-56 crontab[17734]: (root) LIST (root)
+Nov 17 21:17:01 user-Aspire-A315-56 CRON[17907]: (root) CMD (   cd / && run-parts --report /etc/cron.hourly)
+Nov 17 21:30:01 user-Aspire-A315-56 CRON[17974]: (root) CMD ([ -x /etc/init.d/anacron ] && if [ ! -d /run/systemd/system ]; then /usr/sbin/invoke-rc.d anacron start >/dev/null; fi)
+Nov 17 21:33:29 user-Aspire-A315-56 systemd[1]: Started Run anacron jobs.
+Nov 17 21:33:29 user-Aspire-A315-56 anacron[17997]: Anacron 2.3 started on 2022-11-17
+Nov 17 21:33:29 user-Aspire-A315-56 anacron[17997]: Normal exit (0 jobs run)
+Nov 17 21:33:29 user-Aspire-A315-56 systemd[1]: anacron.service: Succeeded.
+Nov 17 21:54:44 user-Aspire-A315-56 systemd[1]: anacron.timer: Succeeded.
+Nov 17 21:54:44 user-Aspire-A315-56 systemd[1]: Stopped Trigger anacron every hour.
+Nov 18 11:49:50 user-Aspire-A315-56 systemd[1]: Started Trigger anacron every hour.
+Nov 18 11:49:50 user-Aspire-A315-56 systemd[1]: Condition check resulted in Run anacron jobs being skipped.
+Nov 18 11:49:50 user-Aspire-A315-56 cron[507]: (CRON) INFO (pidfile fd = 3)
+Nov 18 11:49:50 user-Aspire-A315-56 cron[507]: (CRON) INFO (Running @reboot jobs)
+Nov 18 11:54:10 user-Aspire-A315-56 systemd[1]: Condition check resulted in Run anacron jobs being skipped.
+Nov 18 12:00:49 user-Aspire-A315-56 crontab[4561]: (root) LIST (root)
+Nov 18 12:00:49 user-Aspire-A315-56 crontab[4562]: (root) LIST (root)
+Nov 18 12:17:01 user-Aspire-A315-56 CRON[16986]: (root) CMD (   cd / && run-parts --report /etc/cron.hourly)
+Nov 18 12:30:01 user-Aspire-A315-56 CRON[17355]: (root) CMD ([ -x /etc/init.d/anacron ] && if [ ! -d /run/systemd/system ]; then /usr/sbin/invoke-rc.d anacron start >/dev/null; fi)
+Nov 18 12:33:14 user-Aspire-A315-56 systemd[1]: Condition check resulted in Run anacron jobs being skipped.
+Nov 18 13:00:01 user-Aspire-A315-56 crontab[18259]: (root) LIST (root)
+Nov 18 13:00:01 user-Aspire-A315-56 crontab[18260]: (root) LIST (root)
+Nov 18 13:17:01 user-Aspire-A315-56 CRON[19724]: (root) CMD (   cd / && run-parts --report /etc/cron.hourly)
+Nov 18 13:30:01 user-Aspire-A315-56 CRON[20227]: (root) CMD ([ -x /etc/init.d/anacron ] && if [ ! -d /run/systemd/system ]; then /usr/sbin/invoke-rc.d anacron start >/dev/null; fi)
+Nov 18 13:34:02 user-Aspire-A315-56 systemd[1]: Started Run anacron jobs.
+Nov 18 13:34:02 user-Aspire-A315-56 anacron[20287]: Anacron 2.3 started on 2022-11-18
+Nov 18 13:34:02 user-Aspire-A315-56 anacron[20287]: Will run job `cron.daily' in 5 min.
+Nov 18 13:34:02 user-Aspire-A315-56 anacron[20287]: Jobs will be executed sequentially
+Nov 18 13:39:02 user-Aspire-A315-56 anacron[20287]: Job `cron.daily' started
+Nov 18 13:39:02 user-Aspire-A315-56 anacron[21113]: Updated timestamp for job `cron.daily' to 2022-11-18
+Nov 18 13:39:15 user-Aspire-A315-56 anacron[20287]: Job `cron.daily' terminated
+Nov 18 13:39:15 user-Aspire-A315-56 anacron[20287]: Normal exit (1 job run)
+Nov 18 13:39:15 user-Aspire-A315-56 systemd[1]: anacron.service: Succeeded.
+Nov 18 14:00:01 user-Aspire-A315-56 crontab[22515]: (root) LIST (root)
+Nov 18 14:00:01 user-Aspire-A315-56 crontab[22516]: (root) LIST (root)
+Nov 18 14:17:01 user-Aspire-A315-56 CRON[23673]: (root) CMD (   cd / && run-parts --report /etc/cron.hourly)
+Nov 18 14:30:01 user-Aspire-A315-56 CRON[23799]: (root) CMD ([ -x /etc/init.d/anacron ] && if [ ! -d /run/systemd/system ]; then /usr/sbin/invoke-rc.d anacron start >/dev/null; fi)
+Nov 18 14:34:56 user-Aspire-A315-56 systemd[1]: Started Run anacron jobs.
+Nov 18 14:34:56 user-Aspire-A315-56 anacron[23840]: Anacron 2.3 started on 2022-11-18
+Nov 18 14:34:56 user-Aspire-A315-56 anacron[23840]: Normal exit (0 jobs run)
+Nov 18 14:34:56 user-Aspire-A315-56 systemd[1]: anacron.service: Succeeded.
+Nov 18 15:00:01 user-Aspire-A315-56 crontab[24272]: (root) LIST (root)
+Nov 18 15:00:01 user-Aspire-A315-56 crontab[24273]: (root) LIST (root)
+Nov 18 15:17:02 user-Aspire-A315-56 CRON[24513]: (root) CMD (   cd / && run-parts --report /etc/cron.hourly)
+Nov 18 15:30:02 user-Aspire-A315-56 CRON[24658]: (root) CMD ([ -x /etc/init.d/anacron ] && if [ ! -d /run/systemd/system ]; then /usr/sbin/invoke-rc.d anacron start >/dev/null; fi)
+Nov 18 15:31:49 user-Aspire-A315-56 systemd[1]: Condition check resulted in Run anacron jobs being skipped.
+Nov 18 16:00:01 user-Aspire-A315-56 crontab[25174]: (root) LIST (root)
+Nov 18 16:00:01 user-Aspire-A315-56 crontab[25175]: (root) LIST (root)
+Nov 18 16:17:01 user-Aspire-A315-56 CRON[26461]: (root) CMD (   cd / && run-parts --report /etc/cron.hourly)
+Nov 18 16:30:01 user-Aspire-A315-56 CRON[27318]: (root) CMD ([ -x /etc/init.d/anacron ] && if [ ! -d /run/systemd/system ]; then /usr/sbin/invoke-rc.d anacron start >/dev/null; fi)
+Nov 18 16:33:02 user-Aspire-A315-56 systemd[1]: Started Run anacron jobs.
+Nov 18 16:33:02 user-Aspire-A315-56 systemd[1]: anacron.service: Succeeded.
+Nov 18 16:33:02 user-Aspire-A315-56 anacron[27367]: Anacron 2.3 started on 2022-11-18
+Nov 18 16:33:02 user-Aspire-A315-56 anacron[27367]: Normal exit (0 jobs run)
+Nov 18 17:00:01 user-Aspire-A315-56 crontab[28227]: (root) LIST (root)
+Nov 18 17:00:01 user-Aspire-A315-56 crontab[28228]: (root) LIST (root)
+Nov 18 17:17:01 user-Aspire-A315-56 CRON[28456]: (root) CMD (   cd / && run-parts --report /etc/cron.hourly)
+Nov 18 17:30:01 user-Aspire-A315-56 CRON[28888]: (root) CMD ([ -x /etc/init.d/anacron ] && if [ ! -d /run/systemd/system ]; then /usr/sbin/invoke-rc.d anacron start >/dev/null; fi)
+Nov 18 17:32:49 user-Aspire-A315-56 systemd[1]: Condition check resulted in Run anacron jobs being skipped.
+Nov 18 18:00:01 user-Aspire-A315-56 crontab[30618]: (root) LIST (root)
+Nov 18 18:00:01 user-Aspire-A315-56 crontab[30619]: (root) LIST (root)
+Nov 18 18:17:01 user-Aspire-A315-56 CRON[31962]: (root) CMD (   cd / && run-parts --report /etc/cron.hourly)
+Nov 18 18:30:01 user-Aspire-A315-56 CRON[32463]: (root) CMD ([ -x /etc/init.d/anacron ] && if [ ! -d /run/systemd/system ]; then /usr/sbin/invoke-rc.d anacron start >/dev/null; fi)
+Nov 18 18:31:02 user-Aspire-A315-56 systemd[1]: Started Run anacron jobs.
+Nov 18 18:31:02 user-Aspire-A315-56 anacron[32471]: Anacron 2.3 started on 2022-11-18
+Nov 18 18:31:02 user-Aspire-A315-56 anacron[32471]: Normal exit (0 jobs run)
+Nov 18 18:31:02 user-Aspire-A315-56 systemd[1]: anacron.service: Succeeded.
+Nov 18 19:00:01 user-Aspire-A315-56 crontab[32798]: (root) LIST (root)
+Nov 18 19:00:01 user-Aspire-A315-56 crontab[32799]: (root) LIST (root)
+Nov 18 19:17:01 user-Aspire-A315-56 CRON[32974]: (root) CMD (   cd / && run-parts --report /etc/cron.hourly)
+Nov 18 19:30:01 user-Aspire-A315-56 CRON[33532]: (root) CMD ([ -x /etc/init.d/anacron ] && if [ ! -d /run/systemd/system ]; then /usr/sbin/invoke-rc.d anacron start >/dev/null; fi)
+Nov 18 19:31:48 user-Aspire-A315-56 systemd[1]: Started Run anacron jobs.
+Nov 18 19:31:48 user-Aspire-A315-56 anacron[33635]: Anacron 2.3 started on 2022-11-18
+Nov 18 19:31:48 user-Aspire-A315-56 anacron[33635]: Normal exit (0 jobs run)
+Nov 18 19:31:48 user-Aspire-A315-56 systemd[1]: anacron.service: Succeeded.
+Nov 18 20:00:01 user-Aspire-A315-56 crontab[36412]: (root) LIST (root)
+Nov 18 20:00:01 user-Aspire-A315-56 crontab[36413]: (root) LIST (root)
+Nov 18 20:17:01 user-Aspire-A315-56 CRON[38121]: (root) CMD (   cd / && run-parts --report /etc/cron.hourly)
+Nov 18 20:30:01 user-Aspire-A315-56 CRON[38192]: (root) CMD ([ -x /etc/init.d/anacron ] && if [ ! -d /run/systemd/system ]; then /usr/sbin/invoke-rc.d anacron start >/dev/null; fi)
+Nov 18 20:32:37 user-Aspire-A315-56 systemd[1]: Condition check resulted in Run anacron jobs being skipped.
+Nov 18 20:37:01 user-Aspire-A315-56 systemd[1]: anacron.timer: Succeeded.
+Nov 18 20:37:01 user-Aspire-A315-56 systemd[1]: Stopped Trigger anacron every hour.
+Nov 18 22:55:44 user-Aspire-A315-56 systemd[1]: Started Trigger anacron every hour.
+Nov 18 22:55:44 user-Aspire-A315-56 systemd[1]: Condition check resulted in Run anacron jobs being skipped.
+Nov 18 22:55:44 user-Aspire-A315-56 cron[506]: (CRON) INFO (pidfile fd = 3)
+Nov 18 22:55:44 user-Aspire-A315-56 cron[506]: (CRON) INFO (Running @reboot jobs)
+Nov 18 22:55:50 user-Aspire-A315-56 systemd[1]: Condition check resulted in Run anacron jobs being skipped.
+Nov 18 23:00:01 user-Aspire-A315-56 crontab[3112]: (root) LIST (root)
+Nov 18 23:00:01 user-Aspire-A315-56 crontab[3113]: (root) LIST (root)
+Nov 18 23:17:01 user-Aspire-A315-56 CRON[4420]: (root) CMD (   cd / && run-parts --report /etc/cron.hourly)
+Nov 18 23:30:01 user-Aspire-A315-56 CRON[4494]: (root) CMD ([ -x /etc/init.d/anacron ] && if [ ! -d /run/systemd/system ]; then /usr/sbin/invoke-rc.d anacron start >/dev/null; fi)
+Nov 18 23:33:06 user-Aspire-A315-56 systemd[1]: Started Run anacron jobs.
+Nov 18 23:33:06 user-Aspire-A315-56 anacron[4724]: Anacron 2.3 started on 2022-11-18
+Nov 18 23:33:06 user-Aspire-A315-56 anacron[4724]: Normal exit (0 jobs run)
+Nov 18 23:33:06 user-Aspire-A315-56 systemd[1]: anacron.service: Succeeded.
+Nov 18 23:53:59 user-Aspire-A315-56 systemd[1]: anacron.timer: Succeeded.
+Nov 18 23:53:59 user-Aspire-A315-56 systemd[1]: Stopped Trigger anacron every hour.
+Nov 20 17:58:08 user-Aspire-A315-56 systemd[1]: Started Trigger anacron every hour.
+Nov 20 17:58:08 user-Aspire-A315-56 systemd[1]: Condition check resulted in Run anacron jobs being skipped.
+Nov 20 17:58:08 user-Aspire-A315-56 cron[507]: (CRON) INFO (pidfile fd = 3)
+Nov 20 17:58:08 user-Aspire-A315-56 cron[507]: (CRON) INFO (Running @reboot jobs)
+Nov 20 18:00:52 user-Aspire-A315-56 crontab[2861]: (root) LIST (root)
+Nov 20 18:00:52 user-Aspire-A315-56 crontab[2862]: (root) LIST (root)
+Nov 20 18:01:47 user-Aspire-A315-56 systemd[1]: Condition check resulted in Run anacron jobs being skipped.
+Nov 20 18:17:01 user-Aspire-A315-56 CRON[5110]: (root) CMD (   cd / && run-parts --report /etc/cron.hourly)
+Nov 20 18:30:01 user-Aspire-A315-56 CRON[5365]: (root) CMD ([ -x /etc/init.d/anacron ] && if [ ! -d /run/systemd/system ]; then /usr/sbin/invoke-rc.d anacron start >/dev/null; fi)
+Nov 20 18:30:47 user-Aspire-A315-56 systemd[1]: Condition check resulted in Run anacron jobs being skipped.
+Nov 20 19:00:01 user-Aspire-A315-56 crontab[6792]: (root) LIST (root)
+Nov 20 19:00:01 user-Aspire-A315-56 crontab[6793]: (root) LIST (root)
+Nov 20 19:17:01 user-Aspire-A315-56 CRON[6979]: (root) CMD (   cd / && run-parts --report /etc/cron.hourly)
+Nov 20 19:30:01 user-Aspire-A315-56 CRON[7911]: (root) CMD ([ -x /etc/init.d/anacron ] && if [ ! -d /run/systemd/system ]; then /usr/sbin/invoke-rc.d anacron start >/dev/null; fi)
+Nov 20 19:30:47 user-Aspire-A315-56 systemd[1]: Started Run anacron jobs.
+Nov 20 19:30:47 user-Aspire-A315-56 anacron[7917]: Anacron 2.3 started on 2022-11-20
+Nov 20 19:30:47 user-Aspire-A315-56 anacron[7917]: Will run job `cron.daily' in 5 min.
+Nov 20 19:30:47 user-Aspire-A315-56 anacron[7917]: Jobs will be executed sequentially
+Nov 20 19:35:47 user-Aspire-A315-56 anacron[7917]: Job `cron.daily' started
+Nov 20 19:35:47 user-Aspire-A315-56 anacron[8053]: Updated timestamp for job `cron.daily' to 2022-11-20
+Nov 20 19:36:01 user-Aspire-A315-56 anacron[7917]: Job `cron.daily' terminated
+Nov 20 19:36:01 user-Aspire-A315-56 anacron[7917]: Normal exit (1 job run)
+Nov 20 19:36:01 user-Aspire-A315-56 systemd[1]: anacron.service: Succeeded.
+Nov 20 19:56:01 user-Aspire-A315-56 crontab[8433]: (user) LIST (user)
+Nov 20 19:56:07 user-Aspire-A315-56 crontab[8437]: (user) BEGIN EDIT (user)
+Nov 20 19:59:51 user-Aspire-A315-56 crontab[8437]: (user) REPLACE (user)
+Nov 20 19:59:51 user-Aspire-A315-56 crontab[8437]: (user) END EDIT (user)
+Nov 20 19:59:54 user-Aspire-A315-56 crontab[8639]: (user) LIST (user)
+Nov 20 20:00:01 user-Aspire-A315-56 crontab[8690]: (root) LIST (root)
+Nov 20 20:00:01 user-Aspire-A315-56 crontab[8691]: (root) LIST (root)
+Nov 20 20:06:52 user-Aspire-A315-56 crontab[8754]: (user) BEGIN EDIT (user)
+Nov 20 20:07:12 user-Aspire-A315-56 crontab[8754]: (user) REPLACE (user)
+Nov 20 20:07:12 user-Aspire-A315-56 crontab[8754]: (user) END EDIT (user)
+Nov 20 20:07:37 user-Aspire-A315-56 crontab[8929]: (user) LIST (user)
+Nov 20 20:08:01 user-Aspire-A315-56 cron[507]: (user) RELOAD (crontabs/user)
+Nov 20 20:17:01 user-Aspire-A315-56 CRON[9904]: (root) CMD (   cd / && run-parts --report /etc/cron.hourly)
+Nov 20 20:21:28 user-Aspire-A315-56 crontab[9988]: (user) BEGIN EDIT (user)
+Nov 20 20:21:56 user-Aspire-A315-56 crontab[9988]: (user) REPLACE (user)
+Nov 20 20:21:56 user-Aspire-A315-56 crontab[9988]: (user) END EDIT (user)
+Nov 20 20:22:01 user-Aspire-A315-56 cron[507]: (user) RELOAD (crontabs/user)
+user@user-Aspire-A315-56:/etc$ 

@@ -1,0 +1,59 @@
+user@user-Aspire-A315-56:~$ uname
+Linux
+
+user@user-Aspire-A315-56:~$ uname -a
+Linux user-Aspire-A315-56 5.4.0-128-generic #144-Ubuntu SMP Tue Sep 20 11:00:04 UTC 2022 x86_64 x86_64 x86_64 GNU/Linux
+
+user@user-Aspire-A315-56:~$ hostnamectl
+   Static hostname: user-Aspire-A315-56
+         Icon name: computer-laptop
+           Chassis: laptop
+        Machine ID: dafd9a61376b4676aa8b190bc1ed4b43
+           Boot ID: 90104be88dcb489abe4ed498f3a1bb39
+  Operating System: Linux Mint 20.3
+            Kernel: Linux 5.4.0-128-generic
+      Architecture: x86-64
+user@user-Aspire-A315-56:~$ 
+
+
+user@user-Aspire-A315-56:~$ sudo apt update
+[sudo] пароль для user:            
+Сущ:1 http://deb.anydesk.com all InRelease
+Сущ:2 http://archive.canonical.com/ubuntu focal InRelease                      
+Игн:3 http://packages.linuxmint.com una InRelease                              
+Сущ:4 http://archive.ubuntu.com/ubuntu focal InRelease                         
+Сущ:5 https://linux.teamviewer.com/deb stable InRelease                        
+Сущ:6 http://packages.microsoft.com/repos/code stable InRelease                
+Игн:7 https://download.docker.com/linux/ubuntu una InRelease                   
+Пол:8 http://security.ubuntu.com/ubuntu focal-security InRelease [114 kB]      
+Сущ:9 http://packages.linuxmint.com una Release                                
+Сущ:10 https://repo.skype.com/deb stable InRelease                             
+Пол:11 http://archive.ubuntu.com/ubuntu focal-updates InRelease [114 kB]       
+Сущ:12 https://deb.nodesource.com/node_17.x focal InRelease                    
+Ошб:14 https://download.docker.com/linux/ubuntu una Release                    
+  404  Not Found [IP: 52.85.49.70 443]
+Пол:15 http://archive.ubuntu.com/ubuntu focal-backports InRelease [108 kB]     
+Пол:16 http://security.ubuntu.com/ubuntu focal-security/main amd64 DEP-11 Metadata [40,7 kB]
+Пол:17 http://security.ubuntu.com/ubuntu focal-security/universe amd64 DEP-11 Metadata [92,9 kB]
+Пол:18 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 DEP-11 Metadata [277 kB]
+Пол:19 http://security.ubuntu.com/ubuntu focal-security/multiverse amd64 DEP-11 Metadata [2 464 B]
+Пол:20 http://archive.ubuntu.com/ubuntu focal-updates/universe amd64 DEP-11 Metadata [406 kB]
+Пол:21 http://archive.ubuntu.com/ubuntu focal-updates/multiverse amd64 DEP-11 Metadata [944 B]
+Пол:22 http://archive.ubuntu.com/ubuntu focal-backports/main amd64 DEP-11 Metadata [7 976 B]
+Пол:23 http://archive.ubuntu.com/ubuntu focal-backports/universe amd64 DEP-11 Metadata [30,5 kB]
+Чтение списков пакетов… Готово                                             
+E: Репозиторий «https://download.docker.com/linux/ubuntu una Release» не содержит файла Release.
+N: Обновление из этого репозитория нельзя выполнить безопасным способом, поэтому по умолчанию он отключён.
+N: Информацию о создании репозитория и настройках пользователя смотрите в справочной странице apt-secure(8).
+
+
+user@user-Aspire-A315-56:~$ sudo apt install mc
+Чтение списков пакетов… Готово
+Построение дерева зависимостей       
+Чтение информации о состоянии… Готово
+Уже установлен пакет mc самой новой версии (3:4.8.24-2ubuntu1).
+Обновлено 0 пакетов, установлено 0 новых пакетов, для удаления отмечено 0 пакетов, и 0 пакетов не обновлено.
+user@user-Aspire-A315-56:~$ 
+
+
+

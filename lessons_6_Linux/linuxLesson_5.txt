@@ -1,0 +1,702 @@
+user@user-Aspire-A315-56:~$ df
+df: /run/user/1000/doc: Операция не позволена
+Файл.система   1K-блоков Использовано  Доступно Использовано% Cмонтировано в
+udev             5976536            0   5976536            0% /dev
+tmpfs            1204824         1672   1203152            1% /run
+/dev/nvme0n1p2 244506940    107856796 124157088           47% /
+tmpfs            6024108            0   6024108            0% /dev/shm
+tmpfs               5120            4      5116            1% /run/lock
+tmpfs            6024108            0   6024108            0% /sys/fs/cgroup
+/dev/nvme0n1p1    523248         5348    517900            2% /boot/efi
+tmpfs            1204820          120   1204700            1% /run/user/1000
+user@user-Aspire-A315-56:~$ df -h
+df: /run/user/1000/doc: Операция не позволена
+Файл.система   Размер Использовано  Дост Использовано% Cмонтировано в
+udev             5,7G            0  5,7G            0% /dev
+tmpfs            1,2G         1,7M  1,2G            1% /run
+/dev/nvme0n1p2   234G         103G  119G           47% /
+tmpfs            5,8G            0  5,8G            0% /dev/shm
+tmpfs            5,0M         4,0K  5,0M            1% /run/lock
+tmpfs            5,8G            0  5,8G            0% /sys/fs/cgroup
+/dev/nvme0n1p1   511M         5,3M  506M            2% /boot/efi
+tmpfs            1,2G         120K  1,2G            1% /run/user/1000
+user@user-Aspire-A315-56:~$ whatis df
+df (1)               - report file system disk space usage
+user@user-Aspire-A315-56:~$ df
+df: /run/user/1000/doc: Операция не позволена
+Файл.система   1K-блоков Использовано  Доступно Использовано% Cмонтировано в
+udev             5976536            0   5976536            0% /dev
+tmpfs            1204824         1692   1203132            1% /run
+/dev/nvme0n1p2 244506940    107856788 124157096           47% /
+tmpfs            6024108            0   6024108            0% /dev/shm
+tmpfs               5120            4      5116            1% /run/lock
+tmpfs            6024108            0   6024108            0% /sys/fs/cgroup
+/dev/nvme0n1p1    523248         5348    517900            2% /boot/efi
+tmpfs            1204820          116   1204704            1% /run/user/1000
+/dev/sda1       30265440           96  30265344            1% /media/user/KINGSTON
+user@user-Aspire-A315-56:~$ tree /media/
+/media/
+├── nomachine
+└── user
+    └── KINGSTON
+        └── LOST.DIR
+            ├── Согласие_1_обработка_ПД.docx
+            └── Согласие_2_обработка_ПД.docx
+
+4 directories, 2 files
+user@user-Aspire-A315-56:~$ ls -l
+итого 156
+drwxrwxr-x   3 user user  4096 июл  7 18:49  Dockerr
+drwxr-xr-x   4 user user  4096 авг 19 01:11  Documents
+-rw-rw-r--   1 user user    45 окт 20 22:24  filemy
+-rw-rw-r--   1 user user 19873 ноя 11 19:50  get-docker.sh
+drwxrwxr-x   3 user user  4096 ноя 11 12:40  lws
+drwxrwxr-x   6 user user  4096 янв 17  2022  my-app
+-rw-rw-r--   1 user user    75 окт 20 22:18  myNewFile
+-rw-rw-r--   1 user user    63 окт 20 22:16  myNewFile~
+drwxr-xr-x 312 user user 12288 мар  1  2022  node_modules
+drwxrwxr-x   8 user user  4096 мар 31  2022  phpshtorm
+lrwxrwxrwx   1 user user    36 ноя 25  2021 "PlayOnLinux's virtual drives" -> /home/user/.PlayOnLinux//wineprefix/
+drwxr-xr-x   3 user user  4096 окт  7 16:19  Postman
+-rw-rw-r--   1 user user    52 ноя 10 21:54  text.txt
+drwxrwxr-x   2 user user  4096 дек 13  2021  Warpinator
+drwxrwxr-x  12 user user  4096 авг  3 16:20  web
+drwxrwxr-x   4 user user  4096 мар 21  2022  workbox
+drwxr-xr-x   2 user user  4096 июл  7 18:50  Видео
+drwxr-xr-x  10 user user  4096 авг 30 16:55  ДЗ_продвинутый_JS
+drwxr-xr-x   9 user user  4096 окт  3 11:57  Документы
+-rw-rw-r--   1 user user    52 ноя 10 21:50  еучеюече
+drwxr-xr-x   9 user user 12288 ноя 14 21:02  Загрузки
+drwxr-xr-x   2 user user 20480 ноя 14 16:37  Изображения
+drwxr-xr-x   2 user user  4096 ноя 23  2021  Музыка
+drwxr-xr-x   2 user user  4096 ноя 23  2021  Общедоступные
+-rw-rw-r--   1 user user    52 ноя 10 21:50 'Пустой документ'
+drwxr-xr-x   3 user user  4096 ноя  9 12:10 'Рабочий стол'
+drwxr-xr-x   2 user user  4096 июл  7 16:46  Шаблоны
+user@user-Aspire-A315-56:~$ cd /
+user@user-Aspire-A315-56:/$ ls -l
+итого 2097244
+lrwxrwxrwx   1 root root          7 ноя 23  2021  bin -> usr/bin
+drwxr-xr-x   4 root root       4096 ноя  3 12:18  boot
+drwxr-xr-x   2 root root       4096 ноя 23  2021  cdrom
+drwxr-xr-x  18 root root       4380 ноя 14 21:34  dev
+drwxr-xr-x 161 root root      12288 ноя 11 12:41  etc
+drwxr-xr-x   5 root root       4096 ноя  8 00:03  home
+lrwxrwxrwx   1 root root          7 ноя 23  2021  lib -> usr/lib
+lrwxrwxrwx   1 root root          9 ноя 23  2021  lib32 -> usr/lib32
+lrwxrwxrwx   1 root root          9 ноя 23  2021  lib64 -> usr/lib64
+lrwxrwxrwx   1 root root         10 ноя 23  2021  libx32 -> usr/libx32
+drwx------   2 root root      16384 ноя 23  2021  lost+found
+drwxr-xr-x   4 root root       4096 мар 21  2022  media
+drwxr-xr-x   2 root root       4096 июл  3  2021  mnt
+drwxr-xr-x   2 root root       4096 окт 20 21:46  myfolder
+drwxr-xr-x   7 root root       4096 авг 10 17:39  opt
+dr-xr-xr-x 299 root root          0 ноя 14 11:49  proc
+drwx------  14 root root       4096 окт 17 19:52  root
+drwxr-xr-x  43 root root       1300 ноя 14 17:32  run
+lrwxrwxrwx   1 root root          8 ноя 23  2021  sbin -> usr/sbin
+drwxr-xr-x   2 root root       4096 июл  3  2021  srv
+-rw-------   1 root root 2147483648 ноя 23  2021  swapfile
+dr-xr-xr-x  13 root root          0 ноя 14 11:49  sys
+drwxr-xr-x   9 root root       4096 ноя 14 12:01  timeshift
+drwxrwxrwt  18 root root       4096 ноя 14 21:30  tmp
+drwxr-xr-x  15 root root       4096 мар 21  2022  usr
+drwxr-xr-x  13 root root       4096 мар 21  2022  var
+drwxr-xr-x   2 root root       4096 июл  7 16:42 'Рабочий стол'
+drwxr-xr-x   2 root root       4096 июл  7 16:42  Шаблоны
+user@user-Aspire-A315-56:/$ 
+user@user-Aspire-A315-56:/$ 
+user@user-Aspire-A315-56:/$ 
+user@user-Aspire-A315-56:/$ 
+
+user@user-Aspire-A315-56:/$ cd ~/lws/
+user@user-Aspire-A315-56:~/lws$ echo hi all > original_file
+user@user-Aspire-A315-56:~/lws$ ln original_file hardlink
+user@user-Aspire-A315-56:~/lws$ ll
+итого 2708
+drwxrwxr-x  3 user user    4096 ноя 14 21:50 ./
+drwxr-xr-x 51 user user    4096 ноя 14 11:49 ../
+-rw-rw-r--  1 user user  102812 ноя 11 12:40 allResults.txt
+-rw-rw-r--  1 user user      48 ноя 11 12:13 content_from.txt
+-rw-rw-r--  1 user user  107157 ноя 11 12:36 errors.txt
+-rw-rw-r--  1 user user      10 ноя 11 12:06 f1
+-rw-rw-r--  1 user user      12 ноя 11 12:14 f2
+-rw-rw-r--  1 user user      11 ноя 11 12:14 f3
+-rw-rw-r--  1 user user      55 ноя 11 12:19 files_list
+-rw-rw-r--  1 user user      30 ноя 11 12:09 f_sumary
+-rw-rw-r--  2 user user       7 ноя 14 21:49 hardlink
+-rw-rw-r--  1 user user     356 ноя 11 12:23 head-of-wc.txt
+drwxrwxr-x  2 user user    4096 окт 20 21:58 lesson02/
+-rw-rw-r--  2 user user       7 ноя 14 21:49 original_file
+-rw-rw-r--  1 user user 2500598 ноя 11 12:36 search_result.txt
+-rw-rw-r--  1 user user    2187 ноя 11 12:22 wc-help.txt
+user@user-Aspire-A315-56:~/lws$ ln -s original_file softlink
+user@user-Aspire-A315-56:~/lws$ ll
+итого 2708
+drwxrwxr-x  3 user user    4096 ноя 14 21:50 ./
+drwxr-xr-x 51 user user    4096 ноя 14 11:49 ../
+-rw-rw-r--  1 user user  102812 ноя 11 12:40 allResults.txt
+-rw-rw-r--  1 user user      48 ноя 11 12:13 content_from.txt
+-rw-rw-r--  1 user user  107157 ноя 11 12:36 errors.txt
+-rw-rw-r--  1 user user      10 ноя 11 12:06 f1
+-rw-rw-r--  1 user user      12 ноя 11 12:14 f2
+-rw-rw-r--  1 user user      11 ноя 11 12:14 f3
+-rw-rw-r--  1 user user      55 ноя 11 12:19 files_list
+-rw-rw-r--  1 user user      30 ноя 11 12:09 f_sumary
+-rw-rw-r--  2 user user       7 ноя 14 21:49 hardlink
+-rw-rw-r--  1 user user     356 ноя 11 12:23 head-of-wc.txt
+drwxrwxr-x  2 user user    4096 окт 20 21:58 lesson02/
+-rw-rw-r--  2 user user       7 ноя 14 21:49 original_file
+-rw-rw-r--  1 user user 2500598 ноя 11 12:36 search_result.txt
+lrwxrwxrwx  1 user user      13 ноя 14 21:50 softlink -> original_file
+-rw-rw-r--  1 user user    2187 ноя 11 12:22 wc-help.txt
+user@user-Aspire-A315-56:~/lws$ cp original_file copy
+user@user-Aspire-A315-56:~/lws$ ll
+итого 2712
+drwxrwxr-x  3 user user    4096 ноя 14 21:51 ./
+drwxr-xr-x 51 user user    4096 ноя 14 11:49 ../
+-rw-rw-r--  1 user user  102812 ноя 11 12:40 allResults.txt
+-rw-rw-r--  1 user user      48 ноя 11 12:13 content_from.txt
+-rw-rw-r--  1 user user       7 ноя 14 21:51 copy
+-rw-rw-r--  1 user user  107157 ноя 11 12:36 errors.txt
+-rw-rw-r--  1 user user      10 ноя 11 12:06 f1
+-rw-rw-r--  1 user user      12 ноя 11 12:14 f2
+-rw-rw-r--  1 user user      11 ноя 11 12:14 f3
+-rw-rw-r--  1 user user      55 ноя 11 12:19 files_list
+-rw-rw-r--  1 user user      30 ноя 11 12:09 f_sumary
+-rw-rw-r--  2 user user       7 ноя 14 21:49 hardlink
+-rw-rw-r--  1 user user     356 ноя 11 12:23 head-of-wc.txt
+drwxrwxr-x  2 user user    4096 окт 20 21:58 lesson02/
+-rw-rw-r--  2 user user       7 ноя 14 21:49 original_file
+-rw-rw-r--  1 user user 2500598 ноя 11 12:36 search_result.txt
+lrwxrwxrwx  1 user user      13 ноя 14 21:50 softlink -> original_file
+-rw-rw-r--  1 user user    2187 ноя 11 12:22 wc-help.txt
+user@user-Aspire-A315-56:~/lws$ cat original_file 
+hi all
+user@user-Aspire-A315-56:~/lws$ cat hardlink 
+hi all
+user@user-Aspire-A315-56:~/lws$ cat softlink 
+hi all
+user@user-Aspire-A315-56:~/lws$ cat copy
+hi all
+user@user-Aspire-A315-56:~/lws$ echo hello! >> original_file 
+user@user-Aspire-A315-56:~/lws$ ll
+итого 2712
+drwxrwxr-x  3 user user    4096 ноя 14 21:51 ./
+drwxr-xr-x 51 user user    4096 ноя 14 11:49 ../
+-rw-rw-r--  1 user user  102812 ноя 11 12:40 allResults.txt
+-rw-rw-r--  1 user user      48 ноя 11 12:13 content_from.txt
+-rw-rw-r--  1 user user       7 ноя 14 21:51 copy
+-rw-rw-r--  1 user user  107157 ноя 11 12:36 errors.txt
+-rw-rw-r--  1 user user      10 ноя 11 12:06 f1
+-rw-rw-r--  1 user user      12 ноя 11 12:14 f2
+-rw-rw-r--  1 user user      11 ноя 11 12:14 f3
+-rw-rw-r--  1 user user      55 ноя 11 12:19 files_list
+-rw-rw-r--  1 user user      30 ноя 11 12:09 f_sumary
+-rw-rw-r--  2 user user      14 ноя 14 21:52 hardlink
+-rw-rw-r--  1 user user     356 ноя 11 12:23 head-of-wc.txt
+drwxrwxr-x  2 user user    4096 окт 20 21:58 lesson02/
+-rw-rw-r--  2 user user      14 ноя 14 21:52 original_file
+-rw-rw-r--  1 user user 2500598 ноя 11 12:36 search_result.txt
+lrwxrwxrwx  1 user user      13 ноя 14 21:50 softlink -> original_file
+-rw-rw-r--  1 user user    2187 ноя 11 12:22 wc-help.txt
+user@user-Aspire-A315-56:~/lws$ cat original_file 
+hi all
+hello!
+user@user-Aspire-A315-56:~/lws$ cat softlink 
+hi all
+hello!
+user@user-Aspire-A315-56:~/lws$ cat copy 
+hi all
+user@user-Aspire-A315-56:~/lws$ cat hardlink 
+hi all
+hello!
+user@user-Aspire-A315-56:~/lws$ mv original_file o_f
+user@user-Aspire-A315-56:~/lws$ ll
+итого 2712
+drwxrwxr-x  3 user user    4096 ноя 14 21:54 ./
+drwxr-xr-x 51 user user    4096 ноя 14 11:49 ../
+-rw-rw-r--  1 user user  102812 ноя 11 12:40 allResults.txt
+-rw-rw-r--  1 user user      48 ноя 11 12:13 content_from.txt
+-rw-rw-r--  1 user user       7 ноя 14 21:51 copy
+-rw-rw-r--  1 user user  107157 ноя 11 12:36 errors.txt
+-rw-rw-r--  1 user user      10 ноя 11 12:06 f1
+-rw-rw-r--  1 user user      12 ноя 11 12:14 f2
+-rw-rw-r--  1 user user      11 ноя 11 12:14 f3
+-rw-rw-r--  1 user user      55 ноя 11 12:19 files_list
+-rw-rw-r--  1 user user      30 ноя 11 12:09 f_sumary
+-rw-rw-r--  2 user user      14 ноя 14 21:52 hardlink
+-rw-rw-r--  1 user user     356 ноя 11 12:23 head-of-wc.txt
+drwxrwxr-x  2 user user    4096 окт 20 21:58 lesson02/
+-rw-rw-r--  2 user user      14 ноя 14 21:52 o_f
+-rw-rw-r--  1 user user 2500598 ноя 11 12:36 search_result.txt
+lrwxrwxrwx  1 user user      13 ноя 14 21:50 softlink -> original_file
+-rw-rw-r--  1 user user    2187 ноя 11 12:22 wc-help.txt
+user@user-Aspire-A315-56:~/lws$ cat o_f 
+hi all
+hello!
+user@user-Aspire-A315-56:~/lws$ cat hardlink 
+hi all
+hello!
+user@user-Aspire-A315-56:~/lws$ cat softlink 
+cat: softlink: Нет такого файла или каталога
+user@user-Aspire-A315-56:~/lws$ mv o_f original_file
+user@user-Aspire-A315-56:~/lws$ cat softlink 
+hi all
+hello!
+user@user-Aspire-A315-56:~/lws$ rm original_file 
+user@user-Aspire-A315-56:~/lws$ cat hardlink 
+hi all
+hello!
+user@user-Aspire-A315-56:~/lws$ ll
+итого 2708
+drwxrwxr-x  3 user user    4096 ноя 14 21:56 ./
+drwxr-xr-x 51 user user    4096 ноя 14 11:49 ../
+-rw-rw-r--  1 user user  102812 ноя 11 12:40 allResults.txt
+-rw-rw-r--  1 user user      48 ноя 11 12:13 content_from.txt
+-rw-rw-r--  1 user user       7 ноя 14 21:51 copy
+-rw-rw-r--  1 user user  107157 ноя 11 12:36 errors.txt
+-rw-rw-r--  1 user user      10 ноя 11 12:06 f1
+-rw-rw-r--  1 user user      12 ноя 11 12:14 f2
+-rw-rw-r--  1 user user      11 ноя 11 12:14 f3
+-rw-rw-r--  1 user user      55 ноя 11 12:19 files_list
+-rw-rw-r--  1 user user      30 ноя 11 12:09 f_sumary
+-rw-rw-r--  1 user user      14 ноя 14 21:52 hardlink
+-rw-rw-r--  1 user user     356 ноя 11 12:23 head-of-wc.txt
+drwxrwxr-x  2 user user    4096 окт 20 21:58 lesson02/
+-rw-rw-r--  1 user user 2500598 ноя 11 12:36 search_result.txt
+lrwxrwxrwx  1 user user      13 ноя 14 21:50 softlink -> original_file
+-rw-rw-r--  1 user user    2187 ноя 11 12:22 wc-help.txt
+user@user-Aspire-A315-56:~/lws$ cat softlink 
+cat: softlink: Нет такого файла или каталога
+user@user-Aspire-A315-56:~/lws$ rm *
+rm: невозможно удалить 'lesson02': Это каталог
+user@user-Aspire-A315-56:~/lws$ rm*
+
+Команда «rm*» не найдена. Возможно, вы имели в виду:
+
+  command 'rm' from deb coreutils (8.30-3ubuntu2)
+  command 'rmt' from deb tar (1.30+dfsg-7ubuntu0.20.04.2)
+  command 'rmt' from deb dump (0.4b46-6)
+  command 'rmf' from deb mailutils-mh (1:3.7-2.1)
+  command 'rmf' from deb mmh (0.4-2)
+  command 'rmf' from deb nmh (1.7.1-6)
+  command 'rmm' from deb mailutils-mh (1:3.7-2.1)
+  command 'rmm' from deb mmh (0.4-2)
+  command 'rmm' from deb nmh (1.7.1-6)
+  command 'rme' from deb pvm-examples (3.4.6-2build2)
+
+Try: sudo apt install <deb name>
+
+user@user-Aspire-A315-56:~/lws$ ll
+итого 12
+drwxrwxr-x  3 user user 4096 ноя 14 21:56 ./
+drwxr-xr-x 51 user user 4096 ноя 14 11:49 ../
+drwxrwxr-x  2 user user 4096 окт 20 21:58 lesson02/
+user@user-Aspire-A315-56:~/lws$ !12
+bash: !12: event not found
+user@user-Aspire-A315-56:~/lws$ !14
+bash: !14: event not found
+user@user-Aspire-A315-56:~/lws$ ll -i
+итого 12
+ 1714110 drwxrwxr-x  3 user user 4096 ноя 14 21:56 ./
+12189698 drwxr-xr-x 51 user user 4096 ноя 14 11:49 ../
+ 1714115 drwxrwxr-x  2 user user 4096 окт 20 21:58 lesson02/
+user@user-Aspire-A315-56:~/lws$ echo hi all > original_file
+user@user-Aspire-A315-56:~/lws$ ll
+итого 16
+drwxrwxr-x  3 user user 4096 ноя 14 21:58 ./
+drwxr-xr-x 51 user user 4096 ноя 14 11:49 ../
+drwxrwxr-x  2 user user 4096 окт 20 21:58 lesson02/
+-rw-rw-r--  1 user user    7 ноя 14 21:58 original_file
+user@user-Aspire-A315-56:~/lws$ ll -i
+итого 16
+ 1714110 drwxrwxr-x  3 user user 4096 ноя 14 21:58 ./
+12189698 drwxr-xr-x 51 user user 4096 ноя 14 11:49 ../
+ 1714115 drwxrwxr-x  2 user user 4096 окт 20 21:58 lesson02/
+ 1704062 -rw-rw-r--  1 user user    7 ноя 14 21:58 original_file
+user@user-Aspire-A315-56:~/lws$ ln original_file hardlink
+user@user-Aspire-A315-56:~/lws$ ll -i
+итого 20
+ 1714110 drwxrwxr-x  3 user user 4096 ноя 14 21:59 ./
+12189698 drwxr-xr-x 51 user user 4096 ноя 14 11:49 ../
+ 1704062 -rw-rw-r--  2 user user    7 ноя 14 21:58 hardlink
+ 1714115 drwxrwxr-x  2 user user 4096 окт 20 21:58 lesson02/
+ 1704062 -rw-rw-r--  2 user user    7 ноя 14 21:58 original_file
+user@user-Aspire-A315-56:~/lws$ ln -s original_file softlink
+user@user-Aspire-A315-56:~/lws$ ll -i
+итого 20
+ 1714110 drwxrwxr-x  3 user user 4096 ноя 14 22:00 ./
+12189698 drwxr-xr-x 51 user user 4096 ноя 14 11:49 ../
+ 1704062 -rw-rw-r--  2 user user    7 ноя 14 21:58 hardlink
+ 1714115 drwxrwxr-x  2 user user 4096 окт 20 21:58 lesson02/
+ 1704062 -rw-rw-r--  2 user user    7 ноя 14 21:58 original_file
+ 1704095 lrwxrwxrwx  1 user user   13 ноя 14 22:00 softlink -> original_file
+user@user-Aspire-A315-56:~/lws$ cp original_file copy
+user@user-Aspire-A315-56:~/lws$ ll -i
+итого 24
+ 1714110 drwxrwxr-x  3 user user 4096 ноя 14 22:01 ./
+12189698 drwxr-xr-x 51 user user 4096 ноя 14 11:49 ../
+ 1704433 -rw-rw-r--  1 user user    7 ноя 14 22:01 copy
+ 1704062 -rw-rw-r--  2 user user    7 ноя 14 21:58 hardlink
+ 1714115 drwxrwxr-x  2 user user 4096 окт 20 21:58 lesson02/
+ 1704062 -rw-rw-r--  2 user user    7 ноя 14 21:58 original_file
+ 1704095 lrwxrwxrwx  1 user user   13 ноя 14 22:00 softlink -> original_file
+user@user-Aspire-A315-56:~/lws$ 
+user@user-Aspire-A315-56:~/lws$ 
+user@user-Aspire-A315-56:~/lws$ 
+user@user-Aspire-A315-56:~/lws$ 
+user@user-Aspire-A315-56:~/lws$ 
+user@user-Aspire-A315-56:~/lws$ rm *
+rm: невозможно удалить 'lesson02': Это каталог
+user@user-Aspire-A315-56:~/lws$ rm*
+
+Команда «rm*» не найдена. Возможно, вы имели в виду:
+
+  command 'rmf' from deb mailutils-mh (1:3.7-2.1)
+  command 'rmf' from deb mmh (0.4-2)
+  command 'rmf' from deb nmh (1.7.1-6)
+  command 'rmm' from deb mailutils-mh (1:3.7-2.1)
+  command 'rmm' from deb mmh (0.4-2)
+  command 'rmm' from deb nmh (1.7.1-6)
+  command 'rm' from deb coreutils (8.30-3ubuntu2)
+  command 'rme' from deb pvm-examples (3.4.6-2build2)
+  command 'rmt' from deb tar (1.30+dfsg-7ubuntu0.20.04.2)
+  command 'rmt' from deb dump (0.4b46-6)
+
+Try: sudo apt install <deb name>
+
+user@user-Aspire-A315-56:~/lws$ ls -l
+итого 4
+drwxrwxr-x 2 user user 4096 окт 20 21:58 lesson02
+user@user-Aspire-A315-56:~/lws$ whatis chmod
+chmod (2)            - change permissions of a file
+chmod (1)            - change file mode bits
+user@user-Aspire-A315-56:~/lws$ chmod --help
+Использование: chmod [ПАРАМЕТР]... РЕЖИМ[,РЕЖИМ]… ФАЙЛ
+       или:    chmod [ПАРАМЕТР]… ВОСЬМЕРИЧНЫЙ-РЕЖИМ ФАЙЛ…
+       или:    chmod [ПАРАМЕТР]… --reference=ОФАЙЛ ФАЙЛ…
+Смена РЕЖИМА доступа к указанным ФАЙЛАМ.
+При задании --reference, установить режим
+указанных ФАЙЛОВ как у ЭФАЙЛА.
+
+  -c, --changes          как verbose, но выводить только при выполнении
+                         изменений
+  -f, --silent, --quiet  не выводить большинство сообщений об ошибках
+  -v, --verbose          выводить диагностические сообщения по каждому файлу
+      --no-preserve-root не обрабатывать «/» особым образом (по умолчанию)
+      --preserve-root    отказываться рекурсивно обрабатывать «/»
+      --reference=ЭФАЙЛ  использовать режим доступа ЭФАЙЛА
+                         вместо значений РЕЖИМ
+  -R, --recursive        рекурсивно изменять файлы и каталоги
+      --help     показать эту справку и выйти
+      --version  показать информацию о версии и выйти
+
+Каждый РЕЖИМ задаётся в форме «[ugoa]*([-+=]([rwxXst]*|[ugo]))+|[-+=][0-7]+».
+
+Страница справки по GNU coreutils: <https://www.gnu.org/software/coreutils/>
+Об ошибках в переводе сообщений «chmod» сообщайте по адресу <gnu@d07.ru>
+Полная документация: <https://www.gnu.org/software/coreutils/chmod>
+или доступная локально: info '(coreutils) chmod invocation'
+user@user-Aspire-A315-56:~/lws$ ls -l
+итого 4
+drwxrwxr-x 2 user user 4096 окт 20 21:58 lesson02
+user@user-Aspire-A315-56:~/lws$ echo hi all > file1
+user@user-Aspire-A315-56:~/lws$ ls -l
+итого 8
+-rw-rw-r-- 1 user user    7 ноя 14 22:07 file1
+drwxrwxr-x 2 user user 4096 окт 20 21:58 lesson02
+user@user-Aspire-A315-56:~/lws$ pwd
+/home/user/lws
+user@user-Aspire-A315-56:~/lws$ chmod o+w file1 
+user@user-Aspire-A315-56:~/lws$ ls -l
+итого 8
+-rw-rw-rw- 1 user user    7 ноя 14 22:07 file1
+drwxrwxr-x 2 user user 4096 окт 20 21:58 lesson02
+user@user-Aspire-A315-56:~/lws$ chmod go-rw *
+user@user-Aspire-A315-56:~/lws$ ls -l
+итого 8
+-rw------- 1 user user    7 ноя 14 22:07 file1
+drwx--x--x 2 user user 4096 окт 20 21:58 lesson02
+user@user-Aspire-A315-56:~/lws$ chmod g+w,o+r f*
+user@user-Aspire-A315-56:~/lws$ ls -l
+итого 8
+-rw--w-r-- 1 user user    7 ноя 14 22:07 file1
+drwx--x--x 2 user user 4096 окт 20 21:58 lesson02
+user@user-Aspire-A315-56:~/lws$ cmod u=rwx,g=rw,o+r file1 
+
+Команда «cmod» не найдена. Возможно, вы имели в виду:
+
+  command 'jmod' from deb openjdk-11-jdk-headless (11.0.17+8-1ubuntu2~20.04)
+  command 'jmod' from deb openjdk-13-jdk-headless (13.0.7+5-0ubuntu1~20.04)
+  command 'jmod' from deb openjdk-16-jdk-headless (16.0.1+9-1~20.04)
+  command 'jmod' from deb openjdk-17-jdk-headless (17.0.5+8-2ubuntu1~20.04)
+  command 'chmod' from deb coreutils (8.30-3ubuntu2)
+  command 'mod' from deb monodoc-base (6.8.0.105+dfsg-2)
+  command 'kmod' from deb kmod (27-1ubuntu2.1)
+  command 'qmod' from deb gridengine-client (8.1.9+dfsg-9build2)
+
+Try: sudo apt install <deb name>
+
+user@user-Aspire-A315-56:~/lws$ chmod u=rwx,g=rw,o+r file1 
+user@user-Aspire-A315-56:~/lws$ ls -l
+итого 8
+-rwxrw-r-- 1 user user    7 ноя 14 22:07 file1
+drwx--x--x 2 user user 4096 окт 20 21:58 lesson02
+user@user-Aspire-A315-56:~/lws$ chmod a=rw file1
+user@user-Aspire-A315-56:~/lws$ ls -l
+итого 8
+-rw-rw-rw- 1 user user    7 ноя 14 22:07 file1
+drwx--x--x 2 user user 4096 окт 20 21:58 lesson02
+user@user-Aspire-A315-56:~/lws$ chmod 640 file1 
+user@user-Aspire-A315-56:~/lws$ ls -l
+итого 8
+-rw-r----- 1 user user    7 ноя 14 22:07 file1
+drwx--x--x 2 user user 4096 окт 20 21:58 lesson02
+user@user-Aspire-A315-56:~/lws$ ll
+итого 16
+drwxrwxr-x  3 user user 4096 ноя 14 22:07 ./
+drwxr-xr-x 51 user user 4096 ноя 14 11:49 ../
+-rw-r-----  1 user user    7 ноя 14 22:07 file1
+drwx--x--x  2 user user 4096 окт 20 21:58 lesson02/
+user@user-Aspire-A315-56:~/lws$ touch file2 file3
+user@user-Aspire-A315-56:~/lws$ ll
+итого 16
+drwxrwxr-x  3 user user 4096 ноя 14 22:15 ./
+drwxr-xr-x 51 user user 4096 ноя 14 11:49 ../
+-rw-r-----  1 user user    7 ноя 14 22:07 file1
+-rw-rw-r--  1 user user    0 ноя 14 22:15 file2
+-rw-rw-r--  1 user user    0 ноя 14 22:15 file3
+drwx--x--x  2 user user 4096 окт 20 21:58 lesson02/
+user@user-Aspire-A315-56:~/lws$ chmod 764 .
+user@user-Aspire-A315-56:~/lws$ ll
+итого 16
+drwxrw-r--  3 user user 4096 ноя 14 22:15 ./
+drwxr-xr-x 51 user user 4096 ноя 14 11:49 ../
+-rw-r-----  1 user user    7 ноя 14 22:07 file1
+-rw-rw-r--  1 user user    0 ноя 14 22:15 file2
+-rw-rw-r--  1 user user    0 ноя 14 22:15 file3
+drwx--x--x  2 user user 4096 окт 20 21:58 lesson02/
+user@user-Aspire-A315-56:~/lws$ chmod 764 -R .
+user@user-Aspire-A315-56:~/lws$ ll
+итого 16
+drwxrw-r--  3 user user 4096 ноя 14 22:15 ./
+drwxr-xr-x 51 user user 4096 ноя 14 11:49 ../
+-rwxrw-r--  1 user user    7 ноя 14 22:07 file1*
+-rwxrw-r--  1 user user    0 ноя 14 22:15 file2*
+-rwxrw-r--  1 user user    0 ноя 14 22:15 file3*
+drwxrw-r--  2 user user 4096 окт 20 21:58 lesson02/
+user@user-Aspire-A315-56:~/lws$ 
+user@user-Aspire-A315-56:~/lws$ 
+user@user-Aspire-A315-56:~/lws$ 
+user@user-Aspire-A315-56:~/lws$ 
+user@user-Aspire-A315-56:~/lws$
+user@user-Aspire-A315-56:~/lws$ touch file1 file2 file3
+user@user-Aspire-A315-56:~/lws$ ls -l
+итого 4
+-rw-rw-r-- 1 user user    0 ноя 14 22:18 file1
+-rw-rw-r-- 1 user user    0 ноя 14 22:18 file2
+-rw-rw-r-- 1 user user    0 ноя 14 22:18 file3
+drwxrw-r-- 2 user user 4096 окт 20 21:58 lesson02
+user@user-Aspire-A315-56:~/lws$ chmod u+x file1
+user@user-Aspire-A315-56:~/lws$ ls -l
+итого 4
+-rwxrw-r-- 1 user user    0 ноя 14 22:18 file1
+-rw-rw-r-- 1 user user    0 ноя 14 22:18 file2
+-rw-rw-r-- 1 user user    0 ноя 14 22:18 file3
+drwxrw-r-- 2 user user 4096 окт 20 21:58 lesson02
+user@user-Aspire-A315-56:~/lws$ #SUID
+user@user-Aspire-A315-56:~/lws$ ls -l
+итого 4
+-rwxrw-r-- 1 user user    0 ноя 14 22:18 file1
+-rw-rw-r-- 1 user user    0 ноя 14 22:18 file2
+-rw-rw-r-- 1 user user    0 ноя 14 22:18 file3
+drwxrw-r-- 2 user user 4096 окт 20 21:58 lesson02
+user@user-Aspire-A315-56:~/lws$ chmod u+s f*
+user@user-Aspire-A315-56:~/lws$ ls -l
+итого 4
+-rwsrw-r-- 1 user user    0 ноя 14 22:18 file1
+-rwSrw-r-- 1 user user    0 ноя 14 22:18 file2
+-rwSrw-r-- 1 user user    0 ноя 14 22:18 file3
+drwxrw-r-- 2 user user 4096 окт 20 21:58 lesson02
+user@user-Aspire-A315-56:~/lws$ chmod u-s *
+user@user-Aspire-A315-56:~/lws$ ls -l
+итого 4
+-rwxrw-r-- 1 user user    0 ноя 14 22:18 file1
+-rw-rw-r-- 1 user user    0 ноя 14 22:18 file2
+-rw-rw-r-- 1 user user    0 ноя 14 22:18 file3
+drwxrw-r-- 2 user user 4096 окт 20 21:58 lesson02
+user@user-Aspire-A315-56:~/lws$ #SGID
+user@user-Aspire-A315-56:~/lws$ ls -l
+итого 4
+-rwxrw-r-- 1 user user    0 ноя 14 22:18 file1
+-rw-rw-r-- 1 user user    0 ноя 14 22:18 file2
+-rw-rw-r-- 1 user user    0 ноя 14 22:18 file3
+drwxrw-r-- 2 user user 4096 окт 20 21:58 lesson02
+user@user-Aspire-A315-56:~/lws$ chmod 674 file1
+user@user-Aspire-A315-56:~/lws$ ls -l
+итого 4
+-rw-rwxr-- 1 user user    0 ноя 14 22:18 file1
+-rw-rw-r-- 1 user user    0 ноя 14 22:18 file2
+-rw-rw-r-- 1 user user    0 ноя 14 22:18 file3
+drwxrw-r-- 2 user user 4096 окт 20 21:58 lesson02
+user@user-Aspire-A315-56:~/lws$ chmod g+s *
+user@user-Aspire-A315-56:~/lws$ ls -l
+итого 4
+-rw-rwsr-- 1 user user    0 ноя 14 22:18 file1
+-rw-rwSr-- 1 user user    0 ноя 14 22:18 file2
+-rw-rwSr-- 1 user user    0 ноя 14 22:18 file3
+drwxrwSr-- 2 user user 4096 окт 20 21:58 lesson02
+user@user-Aspire-A315-56:~/lws$ chmod g-s *
+user@user-Aspire-A315-56:~/lws$ ls -l
+итого 4
+-rw-rwxr-- 1 user user    0 ноя 14 22:18 file1
+-rw-rw-r-- 1 user user    0 ноя 14 22:18 file2
+-rw-rw-r-- 1 user user    0 ноя 14 22:18 file3
+drwxrw-r-- 2 user user 4096 окт 20 21:58 lesson02
+user@user-Aspire-A315-56:~/lws$ chmod +t .
+user@user-Aspire-A315-56:~/lws$ ll
+итого 12
+drwxrw-r-T  3 user user 4096 ноя 14 22:18 ./
+drwxr-xr-x 51 user user 4096 ноя 14 11:49 ../
+-rw-rwxr--  1 user user    0 ноя 14 22:18 file1*
+-rw-rw-r--  1 user user    0 ноя 14 22:18 file2
+-rw-rw-r--  1 user user    0 ноя 14 22:18 file3
+drwxrw-r--  2 user user 4096 окт 20 21:58 lesson02/
+user@user-Aspire-A315-56:~/lws$ ll /tmp
+итого 92
+drwxrwxrwt 18 root root 4096 ноя 14 22:09 ./
+drwxr-xr-x 23 root root 4096 окт 20 21:46 ../
+-rw-------  1 user user    0 ноя 14 11:49 config-err-FuN5sV
+srwxrwxrwx  1 user user    0 ноя 14 16:11 ELiveClient_LiveCenteruser1000user=
+drwxrwxrwt  2 root root 4096 ноя 14 11:49 .font-unix/
+drwxrwxrwt  2 root root 4096 ноя 14 11:49 .ICE-unix/
+drwxrwxrwx  2 user user 4096 ноя 14 11:49 mintUpdate/
+-rw-rw-r--  1 user user    0 ноя 14 11:52 MozillaUpdateLock-4F96D1932A9F858E
+-rw-r--r--  1 user user    0 ноя 14 12:28 __#_PROME_INSTANCE_EXIST_KEY_#__.lock
+srwxrwxrwx  1 user user    0 ноя 14 16:11 QingBanGong_LocalPush1000=
+srwxrwxrwx  1 user user    0 ноя 14 16:11 _#_QingBanGong_Server_#_user=
+-rw-rw-r--  1 user user  108 ноя 14 16:11 __#_QING_EXIST_MUTEX_KEY_#__1000.lock
+-rw-r-----  1 user user    0 ноя 14 12:28 qipc_sharedmemory_UPDLogFileZMutxNamefa9ef7dcc10a811d72a9a600bc8bcdc0a89f1a5b
+-rw-r-----  1 user user    0 ноя 14 12:28 qipc_systemsem_UPDLogFileZMutxNamefa9ef7dcc10a811d72a9a600bc8bcdc0a89f1a5b
+srwxrwxrwx  1 user user    0 ноя 14 16:11 recentfile_server=
+drwx------  2 user user 4096 ноя 14 11:49 skype-1606/
+drwx------  2 user user 4096 ноя 14 11:49 ssh-0AQ5nQRBtxQQ/
+drwx------  3 root root 4096 ноя 14 11:49 systemd-private-60bab9e7e2d7491d9b965741bd26831c-colord.service-jZqbJi/
+drwx------  3 root root 4096 ноя 14 11:49 systemd-private-60bab9e7e2d7491d9b965741bd26831c-ModemManager.service-PkxK2i/
+drwx------  3 root root 4096 ноя 14 11:49 systemd-private-60bab9e7e2d7491d9b965741bd26831c-systemd-logind.service-LU3w0f/
+drwx------  3 root root 4096 ноя 14 11:49 systemd-private-60bab9e7e2d7491d9b965741bd26831c-systemd-resolved.service-7pW9cj/
+drwx------  3 root root 4096 ноя 14 11:49 systemd-private-60bab9e7e2d7491d9b965741bd26831c-systemd-timesyncd.service-toxZlg/
+drwx------  3 root root 4096 ноя 14 11:49 systemd-private-60bab9e7e2d7491d9b965741bd26831c-upower.service-guAkAi/
+drwx------  2 user user 4096 ноя 14 11:52 Temp-b972790d-1c35-4a4e-9314-55941e7d311c/
+drwxrwxrwt  2 root root 4096 ноя 14 11:49 .Test-unix/
+srwxrwxrwx  1 user user    0 ноя 14 16:11 _Thrift_Qing_IPC_=
+srwxrwxrwx  1 user user    0 ноя 14 16:11 _Thrift_Qing_IPC_2_=
+srwxrwxrwx  1 user user    0 ноя 14 16:11 _Thrift_Qing_IPC_2_user1000=
+srwxrwxrwx  1 user user    0 ноя 14 16:11 _Thrift_Qing_IPC_user1000=
+drwx------  2 user user 4096 ноя 14 12:28 wps-user/
+-r--r--r--  1 root root   11 ноя 14 11:49 .X0-lock
+drwxrwxrwt  2 root root 4096 ноя 14 11:49 .X11-unix/
+-rw-rw-r--  1 user user 1559 ноя 14 20:59 xapp-tmp-0x556a5eb38d40-1.png
+-rw-rw-r--  1 user user 1885 ноя 14 19:36 xapp-tmp-0x556a5eda0a80-0.png
+-rw-rw-r--  1 user user 2065 ноя 14 19:35 xapp-tmp-0x556a5eda0a80-1.png
+drwxrwxrwt  2 root root 4096 ноя 14 11:49 .XIM-unix/
+user@user-Aspire-A315-56:~/lws$ chmod -t .
+user@user-Aspire-A315-56:~/lws$ ll
+итого 12
+drwxrw-r--  3 user user 4096 ноя 14 22:18 ./
+drwxr-xr-x 51 user user 4096 ноя 14 11:49 ../
+-rw-rwxr--  1 user user    0 ноя 14 22:18 file1*
+-rw-rw-r--  1 user user    0 ноя 14 22:18 file2
+-rw-rw-r--  1 user user    0 ноя 14 22:18 file3
+drwxrw-r--  2 user user 4096 окт 20 21:58 lesson02/
+user@user-Aspire-A315-56:~/lws$ ll
+итого 12
+drwxrw-r--  3 user user 4096 ноя 14 22:18 ./
+drwxr-xr-x 51 user user 4096 ноя 14 11:49 ../
+-rw-rwxr--  1 user user    0 ноя 14 22:18 file1*
+-rw-rw-r--  1 user user    0 ноя 14 22:18 file2
+-rw-rw-r--  1 user user    0 ноя 14 22:18 file3
+drwxrw-r--  2 user user 4096 окт 20 21:58 lesson02/
+user@user-Aspire-A315-56:~/lws$ chown --help
+Использование: chown [ПАРАМЕТР]… [ВЛАДЕЛЕЦ][:[ГРУППА]] ФАЙЛ…
+       или:    chown [ПАРАМЕТР]… --reference=ОФАЙЛ ФАЙЛ…
+Смена владельца и группы указанного ФАЙЛА на ВЛАДЕЛЬЦА и/или ГРУППУ.
+При задании --reference, сменить владельца и группу
+указанных ФАЙЛОВ на такие же как у ЭФАЙЛА.
+
+  -c, --changes          как verbose, но выводить только при выполнении
+                         изменений
+  -f, --silent, --quiet  не выводить большинство сообщений об ошибках
+  -v, --verbose          выводить диагностические сообщения по каждому файлу
+      --dereference      применять к файлу по символьной ссылке, а не к
+                         самой ссылке (по умолчанию)
+  -h, --no-dereference   применять к символьной ссылке, а не к самому файлу
+                         (имеет смысл только на системах, где
+                         можно изменять владельца символьной ссылки)
+      --from=ТЕКУЩИЙ_ВЛАДЕЛЕЦ:ТЕКУЩАЯ_ГРУППА
+                         Изменяет владельца и/или группу каждого файла
+                         только если текущий владелец и/или группа
+                         совпадают с указанными.
+                         Как группа, так и владелец могут быть опущены;
+                         в этом случае совпадение для данного атрибута
+                         не обязательно.
+      --no-preserve-root не обрабатывать «/» особым образом (по умолчанию)
+      --preserve-root    отказываться рекурсивно обрабатывать «/»
+      --reference=ЭФАЙЛ  использовать владельца и группу ЭФАЙЛа, вместо
+                         указанных значений ВЛАДЕЛЕЦ:ГРУППА
+  -R, --recursive        рекурсивно обрабатывать файлы и каталоги
+
+Следующие параметры влияют на способ обхода дерева каталогов при
+заданном параметре -R. Если указано несколько этих параметров, действует
+только последний.
+
+  -H                     если аргумент командной строки является символьной
+                         ссылкой на каталог, перейти по ней
+  -L                     переходить по любой встреченной символьной ссылке на
+                         каталог
+  -P                     не переходить по символьным ссылкам (по умолчанию)
+
+      --help     показать эту справку и выйти
+      --version  показать информацию о версии и выйти
+
+Владелец не изменяется, если он не задан в аргументе.  Группа также не
+изменяется, если не задана; но если после символьного ВЛАДЕЛЬЦА стоит
+символ «:», подразумевается изменение группы на основную группу текущего
+пользователя.
+ВЛАДЕЛЕЦ и ГРУППА могут быть как числовыми, так и символьными.
+
+Примеры:
+  chown root /u        Меняет владельца /u на «root».
+  chown root:staff /u  То же, но еще меняет группу на «staff».
+  chown -hR root /u    Меняет владельца /u и вложенных файлов на «root».
+
+Страница справки по GNU coreutils: <https://www.gnu.org/software/coreutils/>
+Об ошибках в переводе сообщений «chown» сообщайте по адресу <gnu@d07.ru>
+Полная документация: <https://www.gnu.org/software/coreutils/chown>
+или доступная локально: info '(coreutils) chown invocation'
+user@user-Aspire-A315-56:~/lws$ ll
+итого 12
+drwxrw-r--  3 user user 4096 ноя 14 22:18 ./
+drwxr-xr-x 51 user user 4096 ноя 14 11:49 ../
+-rw-rwxr--  1 user user    0 ноя 14 22:18 file1*
+-rw-rw-r--  1 user user    0 ноя 14 22:18 file2
+-rw-rw-r--  1 user user    0 ноя 14 22:18 file3
+drwxrw-r--  2 user user 4096 окт 20 21:58 lesson02/
+user@user-Aspire-A315-56:~/lws$ sudo chown user44 file1
+[sudo] пароль для user:            
+chown: неверный пользователь: «user44»
+user@user-Aspire-A315-56:~/lws$ ll
+итого 12
+drwxrw-r--  3 user user 4096 ноя 14 22:18 ./
+drwxr-xr-x 51 user user 4096 ноя 14 11:49 ../
+-rw-rwxr--  1 user user    0 ноя 14 22:18 file1*
+-rw-rw-r--  1 user user    0 ноя 14 22:18 file2
+-rw-rw-r--  1 user user    0 ноя 14 22:18 file3
+drwxrw-r--  2 user user 4096 окт 20 21:58 lesson02/
+user@user-Aspire-A315-56:~/lws$ sudo chown : dev_team f*
+chown: невозможно получить доступ к 'dev_team': Нет такого файла или каталога
+user@user-Aspire-A315-56:~/lws$ sudo chown student:dev_team *
+chown: неверный пользователь: «student:dev_team»
+user@user-Aspire-A315-56:~/lws$ 
+ 

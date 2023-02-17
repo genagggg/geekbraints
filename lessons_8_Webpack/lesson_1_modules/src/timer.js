@@ -3,16 +3,10 @@ export function timerJS() {
     let timerInputValue = document.querySelector('#inputTimer');
     let buttonStart = document.querySelector('#buttonTimerStart');
     let buttonStop = document.querySelector('#buttonTimerStop');
-    //let a = Number(timerInputValue.value);
+    let a;
     let myInterval;
 
-
-
-
-
     buttonStart.addEventListener('click', (event) => {
-
-        let a;
         a = Number(timerInputValue.value)
         console.log(a)
         function intervalFunc() {
@@ -28,6 +22,6 @@ export function timerJS() {
         clearInterval(myInterval);
     })
 
-
+    //jjjjjjjjjj
 
 }

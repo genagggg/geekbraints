@@ -1,19 +1,33 @@
 export function timerJS() {
-
     let timerBox = document.querySelector('#timer');
     let timerInputValue = document.querySelector('#inputTimer');
+    let buttonStart = document.querySelector('#buttonTimerStart');
+    let buttonStop = document.querySelector('#buttonTimerStop');
+    //let a = Number(timerInputValue.value);
+    let myInterval;
 
 
-    let buttonTime = document.querySelector('#buttonTimer');
-    buttonTime.addEventListener('click', (event) => {
-        let a = Number(timerInputValue.value);
+
+
+
+    buttonStart.addEventListener('click', (event) => {
+
+        let a;
+        a = Number(timerInputValue.value)
         console.log(a)
-        setInterval(function () {
-            timerBox.innerHTML = a;
-            console.log(a++, timerBox, timerInputValue,);
-        }, 1000)
+        function intervalFunc() {
+            timerBox.innerHTML = a--;
+            console.log(a, timerBox, timerInputValue,);
+
+        }
+
+        myInterval = setInterval(intervalFunc, 1000);
+
     })
-    console.log(timerInputValue.value);
+    buttonStop.addEventListener('click', (event) => {
+        clearInterval(myInterval);
+    })
+
 
 
 }

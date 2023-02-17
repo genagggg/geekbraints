@@ -22,6 +22,6 @@ export function timerJS() {
         clearInterval(myInterval);
     })
 
-    //jjjjjjjjjj
+    //jjjjjjjjjjooooooo
 
 }

@@ -1,3 +1,5 @@
+import "https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.3/howler.js"
+
 export function timerJS() {
     let timerBox = document.querySelector('#timer');
     let timerInputValue = document.querySelector('#inputTimer');
@@ -11,6 +13,13 @@ export function timerJS() {
         console.log(a)
         function intervalFunc() {
             timerBox.innerHTML = a--;
+            if (a === 0) {
+                clearInterval(myInterval);
+                let sound = new Howl({
+                    src: ['../media/catmuz.mp3']
+                });
+                sound.play();
+            }
             console.log(a, timerBox, timerInputValue,);
 
         }
@@ -22,6 +31,6 @@ export function timerJS() {
         clearInterval(myInterval);
     })
 
-    //jjjjjjjjjjooooooo
+
 
 }

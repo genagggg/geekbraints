@@ -1,6 +1,8 @@
 import { diffDates, diffToHtml } from "./datecalc.js"; // 1
 import { formatError } from "./utils.js"; // 2
 import { timerJS } from "./timer.js";
+import chunk from 'lodash/chunk';
+console.log(chunk(['a', 'b', 'c', 'd'], 2));
 
 const dateCalcForm = document.getElementById("datecalc");
 const dateCalcResult = document.getElementById("datecalc__result");

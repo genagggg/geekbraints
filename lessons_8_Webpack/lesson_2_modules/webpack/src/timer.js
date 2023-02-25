@@ -1,4 +1,4 @@
-import "https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.3/howler.js"
+import { Howl, Howler } from 'howler';
 
 export function timerJS() {
     let timerBox = document.querySelector('#timer');

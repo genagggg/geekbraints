@@ -1,14 +1,14 @@
 const { resolve } = require('path')
 const HtmlWebpackPlagin = require('html-webpack-plugin')
 
-module.export = {
+module.exports = {
     entry: resolve(__dirname, 'src', 'index.js'),
     output: {
-        path: resolve(__dirname, dist),
+        path: resolve(__dirname, 'dist'),
         filename: 'main.[contenthash].js'
     },
     module: {
-        reles: [
+        rules: [
             {
                 test: /\.s[ac]ss$/i,
                 use: [

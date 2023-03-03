@@ -21,10 +21,18 @@ module.exports = {
                 test: /\.(png|jpe?g|gif)$/,
                 use: [
                     {
-                        loader: 'file-loader'
+                        loader: 'img-optimize-loader',
+                        options: {
+                            compress: {
+                                mode: 'high',
+                                webp: true,
+                                gifsicle: true,
+                                disableOnDevelopment: false
+                            }
+                        }
                     }
                 ]
-            }
+            },
         ]
     },
     plugins: [

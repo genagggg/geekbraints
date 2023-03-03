@@ -4,10 +4,11 @@ export function drawGalleryItem(item) {
     itemElement.classList = "gallery-item"
 
     const imgElement = document.createElement('img')
-    itemElement.classList = "gallery-item__image"
+    imgElement.classList = "gallery-item__image"
+    imgElement.src = item.resource
 
     const titleElement = document.createElement('span')
-    itemElement.classList = "gallery-item__title"
+    titleElement.classList = "gallery-item__title"
     titleElement.textContent = item.title
 
     itemElement.appendChild(imgElement)
